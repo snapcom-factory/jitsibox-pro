@@ -1,0 +1,12 @@
+{
+  "name": "jitsi-box-pro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/eric-nguyen-cs/jitsi-box-pro.git",
+  "author": "ParisDigitalLab",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "2.6.2"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": ["dom", "esnext"],
+    "importHelpers": true,
+    "rootDir": "./",
+    "sourceMap": true,
+    "declaration": true,
+    "baseUrl": "./"
+  }
+}
