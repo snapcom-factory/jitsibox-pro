@@ -1,18 +1,30 @@
 {
     "compilerOptions": {
-        "rootDir": "src",
-        "outDir": "dist",
-        "target": "es2021",
+        "target": "es5",
+
         "lib": ["es2021", "DOM"],
-        "module": "ES2020",
-        "moduleResolution": "Node",
-        "strict": true,
-        "noImplicitOverride": true,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
         "jsx": "react-jsx",
+        "include": [
+            "src"
+        ],
+        "noImplicitOverride": true,
         "jsxImportSource": "preact",
         "sourceMap": true,
         "declaration": true,
-        "declarationMap": true
+        "declarationMap": true,
+        "rootDir": "src",
+        "outDir": "dist",
     }
 }
