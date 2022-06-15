@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JitsiBox Pro Bridge</title>
+  </head>
+  <body>
+    <ul id="buttons">
+      <li>
+        <button id="mute">Mute</button>
+        <p>Valeur : <div id="mute-value">non</div></p>
+      </li>
+      <li>
+        <button id="camera">Camera</button>
+        <p>Valeur : <div id="camera-value">non</div></p>
+      </li>
+      <li>
+        <button id="raise-hand">Raise Hand</button>
+        <p>Valeur : <div id="raise-hand-value">non</div></p>
+      </li>
+      <li>
+        <button id="share-screen">Share Screen</button>
+        <p>Valeur : <div id="share-screen-value">non</div></p>
+      </li>
+      <li>
+        <button id="leave-call">Leave Call</button>
+        <p>Valeur : <div id="leave-call-value">non</div></p>
+      </li>
+    </ul>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js" type="text/javascript"></script>
+  </body>
+</html>
