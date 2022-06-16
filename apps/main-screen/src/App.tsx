@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useRef, useState } from "react"
 import "./App.css"
 import { IFrame } from "./iframe"
+
 function App() {
+  const iFrameRef = useRef(null)
+
   return (
     <>
-      <h1>Hello world</h1>
       <IFrame></IFrame>
     </>
   )
