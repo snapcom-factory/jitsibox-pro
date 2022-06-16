@@ -7,6 +7,7 @@ interface GlobalStatus {
   },
   keyboardMenu : {
     fullKeyboard: boolean;
+    loading: boolean;
   },
   meeting : {
     meetingId: string;
@@ -33,11 +34,12 @@ export const globalStatus : GlobalStatus = {
   },
   keyboardMenu: {
     fullKeyboard: false,
+    loading: false,
   },
   meeting: {
     meetingId: "",
     isMuted: false,
-    isCameraOn: false,
+    isCameraOn: true,
     isHandRaised: false,
     isAskingToShareScreen: false,
     isSharingScreen: false,

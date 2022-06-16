@@ -1,6 +1,7 @@
 export const events = {
   global: {
     cancel: "back_to_menu",
+    switchKeyboard: "switch_keyboard",
   },
   menu: {
     join: "join_call",
@@ -9,9 +10,11 @@ export const events = {
   },
   joinCall: {
     validate: "validate_join_typing",
+    error: "validation_failed",
   },
   createCall: {
     validate: "validate_creation_typing",
+    error: "validation_failed",
   },
   localSharing: {
     start: "start_sharing",
