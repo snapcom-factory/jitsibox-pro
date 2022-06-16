@@ -22,7 +22,8 @@ export const events = {
     camera: "toggle_camera",
     wave: "raise_hand",
     leave: "leave_call",
-    shareScreen: "share_screen",
+    askingToShareScreen: "ask_to_share_screen",
+    sharingScreen: "share_screen",
     stopSharing: "stop_sharing",
   }
 }
