@@ -1,4 +1,10 @@
-const socket = io();
+const socket = io({
+  auth: {
+    token: 'let me in',
+    name: 'controller',
+    roomName: "Ministère de l'écologie"
+  }
+});
 
 const muteButton = document.getElementById('mute');
 const cameraButton = document.getElementById('camera');

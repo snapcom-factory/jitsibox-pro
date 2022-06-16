@@ -7,6 +7,23 @@ const io = require('socket.io')(http);
 
 app.use(express.static(__dirname + "/front_mock"));
 
+// Authentication middleware
+io.use((socket, next) => {
+  const providedToken = socket.handshake.auth.token;
+  if (providedToken !== "let me in") {
+    next(new Error('Authentication error'));
+  } else {
+    if (socket.handshake.auth.controllerName === "controller") {
+      if (localStatus.mainScreenId !== "") {
+        next(new Error('Main screen already connected'));
+      } else {
+        localStatus.mainScreenId = socket.id;
+        next();
+      }
+    } else { next();}
+  }
+});
+
 io.on('connection', (socket) => {
   console.log("new user connected");
 
