@@ -6,7 +6,6 @@ interface GlobalStatus {
     isPlugged: boolean;
   },
   keyboardMenu : {
-    fullKeyboard: boolean;
     loading: boolean;
   },
   meeting : {
@@ -33,7 +32,6 @@ export const globalStatus : GlobalStatus = {
     isPlugged: false,
   },
   keyboardMenu: {
-    fullKeyboard: false,
     loading: false,
   },
   meeting: {

@@ -6,7 +6,6 @@ const globalStatus = {
     isPlugged: false,
   },
   keyboardMenu: {
-    fullKeyboard: false,
     loading: false,
   },
   meeting: {
@@ -66,42 +65,44 @@ io.on("connection", (socket) => {
     // Going back to the menu
     socket.on("global.cancel", () => {
       globalStatus.global.page = "menu";
-      globalStatus.keyboardMenu.fullKeyboard = false;
       globalStatus.keyboardMenu.loading = false;
       globalStatus.localSharing.isPlugged = false;
       socket.to(mainScreenId).emit("global.cancel");
+      io.to(`${roomName} controllers`).emit("global.cancel");
     });
 
     // When in the menu
     socket.on("menu.join", () => {
       globalStatus.global.page = "joiningCall";
+      // Warning the main screen that the user is trying to join a call
       socket.to(mainScreenId).emit("menu.join");
+      // Warning all the controllers (including the sender, to confirm reception)
+      io.to(`${roomName} controllers`).emit("menu.join");
     });
 
     socket.on("menu.create", () => {
       globalStatus.global.page = "creatingCall";
       socket.to(mainScreenId).emit("menu.create");
+      io.to(`${roomName} controllers`).emit("menu.create");
     });
 
     socket.on("menu.share", () => {
       globalStatus.global.page = "localSharing";
       socket.to(mainScreenId).emit("menu.share");
-    });
-
-    // When joining a call
-    socket.on("global.switchKeyboard", () => {
-      globalStatus.keyboardMenu.fullKeyboard = !globalStatus.keyboardMenu.fullKeyboard;
+      io.to(`${roomName} controllers`).emit("menu.share");
     });
 
     socket.on("joinCall.validate", (meetingId) => {
       globalStatus.keyboardMenu.loading = true;
-      socket.to(mainScreenId).emit("joinCall.validate", meetingId);
+      // The socket id is sent to the main screen in order to answer only to
+      // the sender if there is any error
+      socket.to(mainScreenId).emit("joinCall.validate", meetingId, socket.id);
     });
 
     // When creating a call
     socket.on("createCall.validate", (meetingId) => {
       globalStatus.keyboardMenu.loading = true;
-      socket.to(mainScreenId).emit("createCall.validate", meetingId);
+      socket.to(mainScreenId).emit("createCall.validate", meetingId, socket.id);
     });
 
     // The controller doesn't say whether the local sharing starts or not, only the
@@ -109,16 +110,16 @@ io.on("connection", (socket) => {
 
     // When in a meeting
     // Everything that happens in a meeting has to be sent to the Jitsi server
-    socket.on("meeting.mute", () => {
-      socket.to(mainScreenId).emit("meeting.mute");
+    socket.on("meeting.mute", (isMuted) => {
+      socket.to(mainScreenId).emit("meeting.mute", isMuted);
     });
 
-    socket.on("meeting.camera", () => {
-      socket.to(mainScreenId).emit("meeting.camera");
+    socket.on("meeting.camera", (isCameraOn) => {
+      socket.to(mainScreenId).emit("meeting.camera", isCameraOn);
     });
 
-    socket.on("meeting.wave", () => {
-      socket.to(mainScreenId).emit("meeting.wave");
+    socket.on("meeting.wave", (isHandRaised) => {
+      socket.to(mainScreenId).emit("meeting.wave", isHandRaised);
     });
 
     socket.on("meeting.leave", () => {
@@ -140,29 +141,27 @@ io.on("connection", (socket) => {
     // Joining a call
     socket.on("joinCall.validate", (meetingId) => {
       globalStatus.keyboardMenu.loading = false;
-      globalStatus.keyboardMenu.fullKeyboard = false;
       globalStatus.global.page = "meeting";
       globalStatus.meeting.meetingId = meetingId;
       socket.to(`${roomName} controllers`).emit("joinCall.validate", meetingId);
     });
 
-    socket.on("joinCall.error", () => {
+    socket.on("joinCall.error", (controllerId) => {
       globalStatus.keyboardMenu.loading = false;
-      socket.to(`${roomName} controllers`).emit("joinCall.error");
+      socket.to(controllerId).emit("joinCall.error");
     })
 
     // Creating a call
     socket.on("createCall.validate", (meetingId) => {
       globalStatus.keyboardMenu.loading = false;
-      globalStatus.keyboardMenu.fullKeyboard = false;
       globalStatus.global.page = "meeting";
       globalStatus.meeting.meetingId = meetingId;
       socket.to(`${roomName} controllers`).emit("createCall.validate", meetingId);
     });
 
-    socket.on("createCall.error", () => {
+    socket.on("createCall.error", (controllerId) => {
       globalStatus.keyboardMenu.loading = false;
-      socket.to(`${roomName} controllers`).emit("createCall.error");
+      socket.to(controllerId).emit("createCall.error");
     });
 
     // Local sharing
@@ -177,19 +176,19 @@ io.on("connection", (socket) => {
     });
 
     // When in a meeting
-    socket.on("meeting.mute", () => {
-      globalStatus.meeting.isMuted = !globalStatus.meeting.isMuted;
-      socket.to(`${roomName} controllers`).emit("meeting.mute");
+    socket.on("meeting.mute", (isMuted) => {
+      globalStatus.meeting.isMuted = isMuted;
+      socket.to(`${roomName} controllers`).emit("meeting.mute", isMuted);
     });
 
-    socket.on("meeting.camera", () => {
-      globalStatus.meeting.isCameraOn = !globalStatus.meeting.isCameraOn;
-      socket.to(`${roomName} controllers`).emit("meeting.camera");
+    socket.on("meeting.camera", (isCameraOn) => {
+      globalStatus.meeting.isCameraOn = isCameraOn;
+      socket.to(`${roomName} controllers`).emit("meeting.camera", isCameraOn);
     });
 
-    socket.on("meeting.wave", () => {
-      globalStatus.meeting.isHandRaised = !globalStatus.meeting.isHandRaised;
-      socket.to(`${roomName} controllers`).emit("meeting.wave");
+    socket.on("meeting.wave", (isHandRaised) => {
+      globalStatus.meeting.isHandRaised = isHandRaised;
+      socket.to(`${roomName} controllers`).emit("meeting.wave", isHandRaised);
     });
 
     socket.on("meeting.leave", () => {

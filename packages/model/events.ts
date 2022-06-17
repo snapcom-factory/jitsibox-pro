@@ -1,7 +1,6 @@
 export const events = {
   global: {
     cancel: "back_to_menu",
-    switchKeyboard: "switch_keyboard",
   },
   menu: {
     join: "join_call",
