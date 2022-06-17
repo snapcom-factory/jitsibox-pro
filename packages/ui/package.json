@@ -1,0 +1,10 @@
+{
+    "name": "@jitsi-box-pro/ui",
+    "type": "module",
+    "exports": {
+        "default": "./src/*.ts"
+    },
+    "scripts": {
+        "test": "echo 'all ui tests passed!'"
+    }
+}

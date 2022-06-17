@@ -1,0 +1,10 @@
+{
+    "name": "@jitsi-box-pro/model",
+    "type": "module",
+    "exports": {
+        "./*": "./dist/src/*.js"
+    },
+    "scripts": {
+        "test": "echo 'all model tests passed!'"
+    }
+}

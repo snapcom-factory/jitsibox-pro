@@ -1,0 +1,7 @@
+{
+    "name": "@jitsi-box-pro/main-screen",
+    "type": "module",
+    "dependencies": {
+        "@jitsi-box-pro/model": "*"
+    }
+}
