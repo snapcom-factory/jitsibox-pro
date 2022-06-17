@@ -12,10 +12,22 @@ const SocketProvider = ({
   children,
 }: SocketProviderProps): React.ReactElement => {
   const [socket, setSocket] = useState<Socket | null>(null)
+  const [isConnected, setIsConnected] = useState<boolean>(false)
 
   useEffect(() => {
     const newSocket = io()
-    newSocket.on("connect", () => {})
+    newSocket.on("connect", () => {
+      setIsConnected(true)
+    })
+    newSocket.on("connect_error", () => {
+      setIsConnected(false)
+      setTimeout(() => {
+        newSocket.connect()
+      }, 1000)
+    })
+    newSocket.on("disconnect", () => {
+      setIsConnected(false)
+    })
     setSocket(newSocket)
     return () => {
       newSocket.close()
@@ -25,8 +37,9 @@ const SocketProvider = ({
   const contextValue = useMemo<SocketContextType>(
     () => ({
       socket,
+      isConnected,
     }),
-    [socket]
+    [socket, isConnected]
   )
   return (
     <SocketContext.Provider value={contextValue}>

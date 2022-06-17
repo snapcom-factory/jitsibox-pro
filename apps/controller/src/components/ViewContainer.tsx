@@ -1,6 +1,8 @@
 import { Grid, SxProps, Theme } from "@mui/material"
 import { FooterProps } from "@/components/Footer"
 import { BaseHeaderProps } from "@/components/BaseHeader"
+import { useSocketContext } from "@/services/socket"
+import ReconnectingBackdrop from "./ReconnectingBackdrop"
 
 export interface HeaderProps extends BaseHeaderProps {
   sx: SxProps<Theme>
@@ -16,54 +18,61 @@ const ViewContainer = ({
   children,
   Header,
   Footer,
-}: AppContainerProps): React.ReactElement => (
-  <Grid
-    container
-    direction="column"
-    style={{
-      minHeight: "100vh",
-      minWidth: "100vh",
-    }}
-  >
-    <Grid
-      item
-      xs={2}
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      {/* Header */}
-      <Header
-        sx={{
-          flex: 1,
-          mx: 5,
-          my: 3,
+}: AppContainerProps): React.ReactElement => {
+  const { isConnected } = useSocketContext()
+
+  return (
+    <>
+      {!isConnected ? <ReconnectingBackdrop /> : null}
+      <Grid
+        container
+        direction="column"
+        style={{
+          minHeight: "100vh",
+          minWidth: "100vh",
         }}
-      />
-    </Grid>
-    <Grid item xs>
-      {/* Main content */}
-      {children}
-    </Grid>
-    <Grid
-      item
-      xs={2}
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      {/* Footer */}
-      <Footer
-        sx={{
-          flex: 1,
-          mx: 5,
-          my: 4,
-        }}
-      />
-    </Grid>
-  </Grid>
-)
+      >
+        <Grid
+          item
+          xs={2}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          {/* Header */}
+          <Header
+            sx={{
+              flex: 1,
+              mx: 5,
+              my: 3,
+            }}
+          />
+        </Grid>
+        <Grid item xs>
+          {/* Main content */}
+          {children}
+        </Grid>
+        <Grid
+          item
+          xs={2}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          {/* Footer */}
+          <Footer
+            sx={{
+              flex: 1,
+              mx: 5,
+              my: 4,
+            }}
+          />
+        </Grid>
+      </Grid>
+    </>
+  )
+}
 
 export default ViewContainer
