@@ -61,6 +61,7 @@ io.on("connection", (socket : any) => {
   const roomName = socket.handshake.auth.roomName;
 
   // Events are handled differently for the main screen and the controllers
+  socket.join(`${roomName}`);
   if (socket.handshake.auth.controllerName === "controller") {
     socket.join(`${roomName} controllers`);
 
@@ -69,29 +70,26 @@ io.on("connection", (socket : any) => {
       globalStatus.global.page = "menu";
       globalStatus.keyboardMenu.loading = false;
       globalStatus.localSharing.isPlugged = false;
-      socket.to(mainScreenId).emit("global.cancel");
-      io.to(`${roomName} controllers`).emit("global.cancel");
+      io.to(`${roomName}`).emit("global.cancel");
     });
 
     // When in the menu
     socket.on("menu.join", () => {
       globalStatus.global.page = "joiningCall";
-      // Warning the main screen that the user is trying to join a call
-      socket.to(mainScreenId).emit("menu.join");
-      // Warning all the controllers (including the sender, to confirm reception)
-      io.to(`${roomName} controllers`).emit("menu.join");
+      // Warning everyone that the user is trying to join a call
+      io.to(`${roomName}`).emit("menu.join");
     });
 
     socket.on("menu.create", () => {
       globalStatus.global.page = "creatingCall";
-      socket.to(mainScreenId).emit("menu.create");
-      io.to(`${roomName} controllers`).emit("menu.create");
+      // Warning everyone that the user is trying to create a call
+      io.to(`${roomName}`).emit("menu.create");
     });
 
     socket.on("menu.share", () => {
       globalStatus.global.page = "localSharing";
-      socket.to(mainScreenId).emit("menu.share");
-      io.to(`${roomName} controllers`).emit("menu.share");
+      // Warning everyone that the user is trying to share his screen
+      io.to(`${roomName}`).emit("menu.share");
     });
 
     socket.on("joinCall.validate", (meetingId : string) => {
