@@ -1,3 +1,5 @@
+import { BlobOptions } from "buffer"
+
 const globalStatus = {
   global: {
     page: "menu",
@@ -34,7 +36,7 @@ const io = require("socket.io")(http)
 app.use(express.static(__dirname + "/front_mock"))
 
 // Authentication middleware
-io.use((socket, next) => {
+io.use((socket : any, next : Function) => {
   const providedToken = socket.handshake.auth.token
   if (providedToken !== "let me in") {
     next(new Error("Authentication error"))
@@ -52,7 +54,7 @@ io.use((socket, next) => {
   }
 })
 
-io.on("connection", (socket) => {
+io.on("connection", (socket : any) => {
   socket.emit("connection-data", globalStatus)
 
   const mainScreenId = localStatus.mainScreenId
@@ -92,7 +94,7 @@ io.on("connection", (socket) => {
       io.to(`${roomName} controllers`).emit("menu.share");
     });
 
-    socket.on("joinCall.validate", (meetingId) => {
+    socket.on("joinCall.validate", (meetingId : string) => {
       globalStatus.keyboardMenu.loading = true;
       // The socket id is sent to the main screen in order to answer only to
       // the sender if there is any error
@@ -100,7 +102,7 @@ io.on("connection", (socket) => {
     });
 
     // When creating a call
-    socket.on("createCall.validate", (meetingId) => {
+    socket.on("createCall.validate", (meetingId : string) => {
       globalStatus.keyboardMenu.loading = true;
       socket.to(mainScreenId).emit("createCall.validate", meetingId, socket.id);
     });
@@ -110,15 +112,15 @@ io.on("connection", (socket) => {
 
     // When in a meeting
     // Everything that happens in a meeting has to be sent to the Jitsi server
-    socket.on("meeting.mute", (isMuted) => {
+    socket.on("meeting.mute", (isMuted : boolean) => {
       socket.to(mainScreenId).emit("meeting.mute", isMuted);
     });
 
-    socket.on("meeting.camera", (isCameraOn) => {
+    socket.on("meeting.camera", (isCameraOn : boolean) => {
       socket.to(mainScreenId).emit("meeting.camera", isCameraOn);
     });
 
-    socket.on("meeting.wave", (isHandRaised) => {
+    socket.on("meeting.wave", (isHandRaised : boolean) => {
       socket.to(mainScreenId).emit("meeting.wave", isHandRaised);
     });
 
@@ -139,27 +141,27 @@ io.on("connection", (socket) => {
   } else if ( socket.handshake.auth.controllerName === "mainScreen" ) {
 
     // Joining a call
-    socket.on("joinCall.validate", (meetingId) => {
+    socket.on("joinCall.validate", (meetingId : string) => {
       globalStatus.keyboardMenu.loading = false;
       globalStatus.global.page = "meeting";
       globalStatus.meeting.meetingId = meetingId;
       socket.to(`${roomName} controllers`).emit("joinCall.validate", meetingId);
     });
 
-    socket.on("joinCall.error", (controllerId) => {
+    socket.on("joinCall.error", (controllerId : string) => {
       globalStatus.keyboardMenu.loading = false;
       socket.to(controllerId).emit("joinCall.error");
     })
 
     // Creating a call
-    socket.on("createCall.validate", (meetingId) => {
+    socket.on("createCall.validate", (meetingId : string) => {
       globalStatus.keyboardMenu.loading = false;
       globalStatus.global.page = "meeting";
       globalStatus.meeting.meetingId = meetingId;
       socket.to(`${roomName} controllers`).emit("createCall.validate", meetingId);
     });
 
-    socket.on("createCall.error", (controllerId) => {
+    socket.on("createCall.error", (controllerId : string) => {
       globalStatus.keyboardMenu.loading = false;
       socket.to(controllerId).emit("createCall.error");
     });
@@ -176,17 +178,17 @@ io.on("connection", (socket) => {
     });
 
     // When in a meeting
-    socket.on("meeting.mute", (isMuted) => {
+    socket.on("meeting.mute", (isMuted : boolean) => {
       globalStatus.meeting.isMuted = isMuted;
       socket.to(`${roomName} controllers`).emit("meeting.mute", isMuted);
     });
 
-    socket.on("meeting.camera", (isCameraOn) => {
+    socket.on("meeting.camera", (isCameraOn : boolean) => {
       globalStatus.meeting.isCameraOn = isCameraOn;
       socket.to(`${roomName} controllers`).emit("meeting.camera", isCameraOn);
     });
 
-    socket.on("meeting.wave", (isHandRaised) => {
+    socket.on("meeting.wave", (isHandRaised : boolean) => {
       globalStatus.meeting.isHandRaised = isHandRaised;
       socket.to(`${roomName} controllers`).emit("meeting.wave", isHandRaised);
     });
