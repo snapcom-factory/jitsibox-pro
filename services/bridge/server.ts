@@ -1,5 +1,3 @@
-import { BlobOptions } from "buffer"
-
 const globalStatus = {
   global: {
     page: "menu",
@@ -26,12 +24,16 @@ const localStatus = {
   isMainScreenConnected: false,
 }
 
-const express = require("express")
+import express from "express";
+import http from "http";
+import { Server } from "socket.io";
+
 const port = process.env.PORT || 3000
 
 const app = express()
-const http = require("http").Server(app)
-const io = require("socket.io")(http)
+const server = http.createServer(app);
+
+const io = new Server(server);
 
 app.use(express.static(__dirname + "/front_mock"))
 
@@ -221,6 +223,6 @@ io.on("connection", (socket : any) => {
   }
 });
 
-http.listen(port, () => {
+server.listen(port, () => {
   console.log(`Socket.IO server running at http://localhost:${port}/`)
 })
