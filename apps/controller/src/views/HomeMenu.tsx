@@ -1,5 +1,6 @@
 import { Grid, Container } from "@mui/material"
 import { Add, PresentToAll, Videocam } from "@mui/icons-material"
+import { socketEvents } from "@jitsi-box-pro/model"
 import { MenuButton, Header, Footer, ViewContainer } from "@/components"
 
 const HomeMenu: React.FC = () => (
@@ -17,13 +18,25 @@ const HomeMenu: React.FC = () => (
     >
       <Grid container spacing={8} justifyContent="center" alignItems="center">
         <Grid item xs={4}>
-          <MenuButton text="Créer une réunion" Icon={Add} />
+          <MenuButton
+            text="Créer une réunion"
+            Icon={Add}
+            eventName={socketEvents.menu.create}
+          />
         </Grid>
         <Grid item xs={4}>
-          <MenuButton text="Rejoindre une réunion" Icon={Videocam} />
+          <MenuButton
+            text="Rejoindre une réunion"
+            Icon={Videocam}
+            eventName={socketEvents.menu.join}
+          />
         </Grid>
         <Grid item xs={4}>
-          <MenuButton text="Partager l'écran" Icon={PresentToAll} />
+          <MenuButton
+            text="Partager l'écran"
+            Icon={PresentToAll}
+            eventName={socketEvents.menu.share}
+          />
         </Grid>
       </Grid>
     </Container>
