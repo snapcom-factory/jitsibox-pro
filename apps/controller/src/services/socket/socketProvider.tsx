@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useState } from "react"
 import { io, Socket } from "socket.io-client"
+import {
+  ServerToControllerEvents,
+  ControllerToServerEvents,
+} from "@jitsi-box-pro/model"
 import SocketContext, {
   SocketContextType,
 } from "@/services/socket/socketContext"
@@ -11,7 +15,10 @@ interface SocketProviderProps {
 const SocketProvider = ({
   children,
 }: SocketProviderProps): React.ReactElement => {
-  const [socket, setSocket] = useState<Socket | null>(null)
+  const [socket, setSocket] = useState<Socket<
+    ServerToControllerEvents,
+    ControllerToServerEvents
+  > | null>(null)
   const [isConnected, setIsConnected] = useState<boolean>(false)
 
   useEffect(() => {
