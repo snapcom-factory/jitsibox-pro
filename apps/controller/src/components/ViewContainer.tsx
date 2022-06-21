@@ -1,23 +1,18 @@
-import { Grid, SxProps, Theme } from "@mui/material"
-import { FooterProps } from "@/components/Footer"
-import { BaseHeaderProps } from "@/components/BaseHeader"
+import { Box, Grid } from "@mui/material"
 import { useSocketContext } from "@/services/socket"
 import { ReconnectingBackdrop } from "@/components"
-
-export interface HeaderProps extends BaseHeaderProps {
-  sx: SxProps<Theme>
-}
+import { HeaderProps } from "./Header"
 
 interface AppContainerProps {
   children: React.ReactNode
-  Header: React.FC<HeaderProps>
-  Footer: React.FC<FooterProps>
+  header: React.ReactElement<HeaderProps>
+  footer: React.ReactElement
 }
 
 const ViewContainer = ({
   children,
-  Header,
-  Footer,
+  header,
+  footer,
 }: AppContainerProps): React.ReactElement => {
   const { isConnected } = useSocketContext()
 
@@ -41,13 +36,15 @@ const ViewContainer = ({
           }}
         >
           {/* Header */}
-          <Header
+          <Box
             sx={{
               flex: 1,
               mx: 5,
               my: 3,
             }}
-          />
+          >
+            {header}
+          </Box>
         </Grid>
         <Grid item xs>
           {/* Main content */}
@@ -62,13 +59,15 @@ const ViewContainer = ({
           }}
         >
           {/* Footer */}
-          <Footer
+          <Box
             sx={{
               flex: 1,
               mx: 5,
               my: 4,
             }}
-          />
+          >
+            {footer}
+          </Box>
         </Grid>
       </Grid>
     </>

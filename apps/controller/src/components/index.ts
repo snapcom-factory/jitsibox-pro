@@ -1,4 +1,4 @@
-export { default as BaseHeader } from "@/components/BaseHeader"
+export { default as Header } from "@/components/Header"
 export { default as Footer } from "@/components/Footer"
 export { default as MenuButton } from "@/components/MenuButton"
 export { default as ReconnectingBackdrop } from "@/components/ReconnectingBackdrop"

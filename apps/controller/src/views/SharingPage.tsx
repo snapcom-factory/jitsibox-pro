@@ -1,8 +1,8 @@
 import { Typography, Stack, Grid } from "@mui/material"
-import { ViewContainer, BaseHeader, Footer } from "@/components"
+import { ViewContainer, Header, Footer } from "@/components"
 
 const SharingPage = () => (
-  <ViewContainer Header={BaseHeader} Footer={Footer}>
+  <ViewContainer header={<Header />} footer={<Footer />}>
     <Stack
       direction="column"
       justifyContent="center"
