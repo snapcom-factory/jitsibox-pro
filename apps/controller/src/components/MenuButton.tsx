@@ -3,7 +3,7 @@ import { OverridableComponent } from "@mui/material/OverridableComponent"
 
 interface MenuButtonProps {
   text: string
-  Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
+  Icon: OverridableComponent<SvgIconTypeMap>
 }
 
 const MenuButton = ({ text, Icon }: MenuButtonProps): React.ReactElement => (
