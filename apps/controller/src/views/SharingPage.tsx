@@ -1,7 +1,5 @@
 import { Typography, Stack, Grid } from "@mui/material"
-import ViewContainer from "@/components/ViewContainer"
-import BaseHeader from "@/components/BaseHeader"
-import Footer from "@/components/Footer"
+import { ViewContainer, BaseHeader, Footer } from "@/components"
 
 const SharingPage = () => (
   <ViewContainer Header={BaseHeader} Footer={Footer}>

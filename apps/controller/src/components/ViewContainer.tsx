@@ -2,7 +2,7 @@ import { Grid, SxProps, Theme } from "@mui/material"
 import { FooterProps } from "@/components/Footer"
 import { BaseHeaderProps } from "@/components/BaseHeader"
 import { useSocketContext } from "@/services/socket"
-import ReconnectingBackdrop from "./ReconnectingBackdrop"
+import { ReconnectingBackdrop } from "@/components"
 
 export interface HeaderProps extends BaseHeaderProps {
   sx: SxProps<Theme>

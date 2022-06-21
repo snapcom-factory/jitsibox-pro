@@ -1,9 +1,6 @@
 import { Grid, Container } from "@mui/material"
 import { Add, PresentToAll, Videocam } from "@mui/icons-material"
-import MenuButton from "@/components/MenuButton"
-import ViewContainer from "@/components/ViewContainer"
-import BaseHeader from "@/components/BaseHeader"
-import Footer from "@/components/Footer"
+import { MenuButton, BaseHeader, Footer, ViewContainer } from "@/components"
 
 const HomeMenu: React.FC = () => (
   <ViewContainer Header={BaseHeader} Footer={Footer}>

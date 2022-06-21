@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes as Switch, Route } from "react-router-dom"
-import HomeMenu from "@/views/HomeMenu"
-import SharingPage from "./views/SharingPage"
+import { HomeMenu, SharingPage } from "@/views"
 
 const Routes = (): React.ReactElement => (
   <BrowserRouter>
