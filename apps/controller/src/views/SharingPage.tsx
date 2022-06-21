@@ -15,7 +15,7 @@ const SharingPage = () => (
       <Grid container spacing={8}>
         <Grid item xs={7}>
           <Typography variant="h3">
-            Pour partager votre écran sur la télévision, brancher le cable hdmi
+            Pour partager votre écran sur la télévision, brancher le cable HDMI
             à votre ordinateur.
           </Typography>
         </Grid>
