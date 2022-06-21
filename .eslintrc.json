@@ -44,6 +44,7 @@
         "js": "never",
         "jsx": "never"
       }
-    ]
+    ],
+    "@typescript-eslint/no-explicit-any": ["warn", { "ignoreRestArgs": true }]
   }
 }

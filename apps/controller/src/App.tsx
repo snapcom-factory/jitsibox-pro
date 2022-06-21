@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@mui/material"
+import { BrowserRouter } from "react-router-dom"
 import defaultTheme from "@/services/theme"
 import Routes from "@/Routes"
 import { SocketProvider } from "@/services/socket"
@@ -6,7 +7,9 @@ import { SocketProvider } from "@/services/socket"
 const App = (): React.ReactElement => (
   <ThemeProvider theme={defaultTheme}>
     <SocketProvider>
-      <Routes />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
     </SocketProvider>
   </ThemeProvider>
 )
