@@ -11,18 +11,18 @@ import { useSocketContext } from "@/services/socket"
 
 const useSocketNavigate = (
   socket: Socket<ServerToControllerEvents, ControllerToServerEvents> | null,
-  eventName: keyof ServerToControllerEvents & (string | symbol),
-  naviguateCallback: (...args: any[]) => void
+  eventName: keyof ServerToControllerEvents & string,
+  navigateCallback: (...args: any[]) => void
 ) => {
   useEffect(() => {
     if (socket != null) {
-      socket.on(eventName, naviguateCallback)
+      socket.on(eventName, navigateCallback)
       return () => {
         socket.off(eventName)
       }
     }
     return undefined
-  }, [socket, naviguateCallback])
+  }, [socket, navigateCallback])
 }
 
 const Routes = (): React.ReactElement => {

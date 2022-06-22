@@ -6,7 +6,7 @@ import { useSocketContext } from "@/services/socket"
 interface MenuButtonProps {
   text: string
   Icon: OverridableComponent<SvgIconTypeMap>
-  eventName: keyof ControllerToServerEvents & (string | symbol)
+  eventName: keyof ControllerToServerEvents & string
 }
 
 const MenuButton = ({
