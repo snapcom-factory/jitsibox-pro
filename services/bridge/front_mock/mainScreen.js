@@ -1,4 +1,4 @@
-const socket = io({
+const socket = io("ws://localhost:3001/mainScreen", {
   auth: {
     token: 'let me in',
     roomName: "Ministère de l'écologie"

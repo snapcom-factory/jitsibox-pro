@@ -22,7 +22,12 @@ const SocketProvider = ({
   const [isConnected, setIsConnected] = useState<boolean>(false)
 
   useEffect(() => {
-    const newSocket = io()
+    const newSocket = io("ws://localhost:3001/controllers", {
+      auth: {
+        token: 'let me in',
+        roomName: "Ministère de l'écologie"
+      }
+    })
     newSocket.on("connect", () => {
       setIsConnected(true)
     })
