@@ -6,7 +6,7 @@ import {
   ServerToControllerEvents,
   socketEvents,
 } from "@jitsi-box-pro/model"
-import { HomeMenu, SharingPage } from "@/views"
+import { HomeMenu, SharingPage, MeetingPage } from "@/views"
 import { useSocketContext } from "@/services/socket"
 
 const useSocketNavigate = (
@@ -46,7 +46,7 @@ const Routes = (): React.ReactElement => {
   return (
     <Switch>
       <Route path="/share" element={<SharingPage />} />
-      <Route path="/meeting/:meetingId" element={<div>Meeting page</div>} />
+      <Route path="/meeting/:meetingId" element={<MeetingPage />} />
       <Route path="/join" element={<div>Join page</div>} />
       <Route path="/create" element={<div>Create page</div>} />
       <Route path="/" element={<HomeMenu />} />
