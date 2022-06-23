@@ -1,44 +1,22 @@
-import { useEffect } from "react"
 import { Routes as Switch, Route, useNavigate } from "react-router-dom"
-import { Socket } from "socket.io-client"
-import {
-  ControllerToServerEvents,
-  ServerToControllerEvents,
-  socketEvents,
-} from "@jitsi-box-pro/model"
+import { socketEvents } from "@jitsi-box-pro/model"
 import { HomeMenu, SharingPage, MeetingPage } from "@/views"
-import { useSocketContext } from "@/services/socket"
-
-const useSocketNavigate = (
-  socket: Socket<ServerToControllerEvents, ControllerToServerEvents> | null,
-  eventName: keyof ServerToControllerEvents & string,
-  navigateCallback: (...args: any[]) => void
-) => {
-  useEffect(() => {
-    if (socket != null) {
-      socket.on(eventName, navigateCallback)
-      return () => {
-        socket.off(eventName)
-      }
-    }
-    return undefined
-  }, [socket, navigateCallback])
-}
+import { useSocketContext, useSocketListener } from "@/services/socket"
 
 const Routes = (): React.ReactElement => {
   const { socket } = useSocketContext()
   const navigate = useNavigate()
 
-  useSocketNavigate(socket, socketEvents.global.cancel, () => navigate("/"))
-  useSocketNavigate(socket, socketEvents.menu.share, () => navigate("/share"))
-  useSocketNavigate(socket, socketEvents.menu.join, () => navigate("/join"))
-  useSocketNavigate(socket, socketEvents.menu.create, () => navigate("/create"))
-  useSocketNavigate(
+  useSocketListener(socket, socketEvents.global.cancel, () => navigate("/"))
+  useSocketListener(socket, socketEvents.menu.share, () => navigate("/share"))
+  useSocketListener(socket, socketEvents.menu.join, () => navigate("/join"))
+  useSocketListener(socket, socketEvents.menu.create, () => navigate("/create"))
+  useSocketListener(
     socket,
     socketEvents.joinCall.validate,
     (meetingId: string) => navigate(`/meeting/${meetingId}`)
   )
-  useSocketNavigate(
+  useSocketListener(
     socket,
     socketEvents.createCall.validate,
     (meetingId: string) => navigate(`/meeting/${meetingId}`)
