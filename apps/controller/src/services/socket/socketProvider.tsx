@@ -4,6 +4,7 @@ import {
   ServerToControllerEvents,
   ControllerToServerEvents,
   token,
+  roomName,
   controllersApiURL
 } from "@jitsi-box-pro/model"
 import SocketContext, {
@@ -27,7 +28,7 @@ const SocketProvider = ({
     const newSocket = io(controllersApiURL, {
       auth: {
         token: token,
-        roomName: "Ministère de l'écologie"
+        roomName: roomName
       }
     })
     newSocket.on("connect", () => {

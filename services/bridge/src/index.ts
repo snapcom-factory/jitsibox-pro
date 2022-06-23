@@ -62,5 +62,5 @@ io.of("/controllers").on("connection", (socket : Socket) => {
 io.of("/mainScreen").on("connection", (socket : Socket) => {
   socket.emit("connection-data", globalStatus);
   socket.join(`${socket.handshake.auth.roomName}`);
-  socketMainScreen(socket);
+  socketMainScreen(io, socket);
 })
