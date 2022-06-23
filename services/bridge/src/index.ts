@@ -3,6 +3,7 @@ import http from "http";
 import path from "path";
 import { Server, Socket } from "socket.io";
 import { globalStatus, localStatus } from "./status";
+import { token, controllersURL, mainScreenURL } from "../../../packages/model/src";
 import socketControllers from "./controllers";
 import socketMainScreen from "./mainScreen";
 
@@ -13,7 +14,7 @@ const server = http.createServer(app);
 
 const io = new Server(server,  {
   cors: {
-    origin: "http://localhost:3000",
+    origin: [controllersURL, mainScreenURL],
     methods: ["GET", "POST"]
   }
 });
@@ -28,27 +29,23 @@ server.listen(port, () => {
 // Authentication middleware for controllers
 io.of("/controllers").use((socket : Socket, next : Function) => {
   const providedToken = socket.handshake.auth.token
-  console.log("controller entered here");
-  if (providedToken !== "let me in") {
-    console.log("bad controller token");
+  if (providedToken !== token) {
+    console.log(`bad controller token : ${providedToken}`);
     next(new Error("Authentication error"))
-  } else { console.log("good controller token"); next() }
+  } else { next() }
 });
 
 // Authentication middleware for main screen
 io.of("/mainScreen").use((socket : Socket, next : Function) => {
   const providedToken = socket.handshake.auth.token
-  console.log("main screen entered here");
-  if (providedToken !== "let me in") {
-    console.log("bad main screen token");
+  if (providedToken !== token) {
+    console.log(`bad main screen token : ${providedToken}`);
     next(new Error("Authentication error"))
   } else {
     if (localStatus.mainScreenId !== "") {
-      console.log("main screen already connected");
       next(new Error("Main screen already connected"))
     } else {
       localStatus.mainScreenId = socket.id
-      console.log("good main screen token");
       next()
     }
   }

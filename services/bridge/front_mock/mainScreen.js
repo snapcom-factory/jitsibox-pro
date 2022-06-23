@@ -1,6 +1,6 @@
 const socket = io("ws://localhost:3001/mainScreen", {
   auth: {
-    token: 'let me in',
+    token: 'fakeAuthToken',
     roomName: "Ministère de l'écologie"
   }
 });

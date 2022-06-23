@@ -3,6 +3,8 @@ import { io, Socket } from "socket.io-client"
 import {
   ServerToControllerEvents,
   ControllerToServerEvents,
+  token,
+  controllersApiURL
 } from "@jitsi-box-pro/model"
 import SocketContext, {
   SocketContextType,
@@ -22,9 +24,9 @@ const SocketProvider = ({
   const [isConnected, setIsConnected] = useState<boolean>(false)
 
   useEffect(() => {
-    const newSocket = io("ws://localhost:3001/controllers", {
+    const newSocket = io(controllersApiURL, {
       auth: {
-        token: 'let me in',
+        token: token,
         roomName: "Ministère de l'écologie"
       }
     })
