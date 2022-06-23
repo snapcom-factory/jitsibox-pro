@@ -1,4 +1,5 @@
 export { socketEvents } from "./socketEvents"
+
 export type {
   GlobalStatus,
   ServerToControllerEvents,
@@ -8,3 +9,12 @@ export type {
   ServerToClientEvents,
   ClientToServerEvents,
 } from "./socketEvents"
+
+export {
+  token,
+  roomName,
+  controllersApiURL,
+  mainScreenApiURL,
+  controllersURL,
+  mainScreenURL,
+} from "./constants"

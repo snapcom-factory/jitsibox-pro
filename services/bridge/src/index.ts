@@ -19,7 +19,7 @@ const io = new Server(server,  {
 });
 
 // TODO : Enlever après les tests
-app.use(express.static(path.resolve(__dirname, "../front_mock")))
+app.use(express.static(path.resolve(__dirname, "../../../../front_mock")))
 
 server.listen(port, () => {
   console.log(`Socket.IO server running at http://localhost:${port}/`)
@@ -65,5 +65,5 @@ io.of("/controllers").on("connection", (socket : Socket) => {
 io.of("/mainScreen").on("connection", (socket : Socket) => {
   socket.emit("connection-data", globalStatus);
   socket.join(`${socket.handshake.auth.roomName}`);
-  socketMainScreen(io, socket);
+  socketMainScreen(socket);
 })

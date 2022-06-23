@@ -1,64 +1,64 @@
-import { Server, Socket } from "socket.io";
+import { Socket } from "socket.io";
 import { globalStatus, localStatus } from "./status";
+import { socketEvents } from "../../../packages/model/src/socketEvents";
 
-const socketMainScreen = (io: Server, socket : Socket) => {
+const socketMainScreen = (socket : Socket) => {
   const roomName = socket.handshake.auth.roomName;
-  const mainScreenId = localStatus.mainScreenId;
 
   // Joining a call
-  socket.on("joinCall.validate", (meetingId : string) => {
+  socket.on(socketEvents.joinCall.validate, (meetingId : string) => {
     globalStatus.keyboardMenu.loading = false;
     globalStatus.global.page = "meeting";
     globalStatus.meeting.meetingId = meetingId;
-    socket.to(`${roomName} controllers`).emit("joinCall.validate", meetingId);
+    socket.to(`${roomName} controllers`).emit(socketEvents.joinCall.validate, meetingId);
   });
 
-  socket.on("joinCall.error", (controllerId : string) => {
+  socket.on(socketEvents.joinCall.error, (controllerId : string) => {
     globalStatus.keyboardMenu.loading = false;
-    socket.to(controllerId).emit("joinCall.error");
+    socket.to(controllerId).emit(socketEvents.joinCall.error);
   })
 
   // Creating a call
-  socket.on("createCall.validate", (meetingId : string) => {
+  socket.on(socketEvents.createCall.validate, (meetingId : string) => {
     globalStatus.keyboardMenu.loading = false;
     globalStatus.global.page = "meeting";
     globalStatus.meeting.meetingId = meetingId;
-    socket.to(`${roomName} controllers`).emit("createCall.validate", meetingId);
+    socket.to(`${roomName} controllers`).emit(socketEvents.createCall.validate, meetingId);
   });
 
-  socket.on("createCall.error", (controllerId : string) => {
+  socket.on(socketEvents.createCall.error, (controllerId : string) => {
     globalStatus.keyboardMenu.loading = false;
-    socket.to(controllerId).emit("createCall.error");
+    socket.to(controllerId).emit(socketEvents.createCall.error);
   });
 
   // Local sharing
-  socket.on("localSharing.start", () => {
+  socket.on(socketEvents.localSharing.start, () => {
     globalStatus.localSharing.isPlugged = true;
-    socket.to(`${roomName} controllers`).emit("localSharing.start");
+    socket.to(`${roomName} controllers`).emit(socketEvents.localSharing.start);
   });
 
-  socket.on("localSharing.stop", () => {
+  socket.on(socketEvents.localSharing.stop, () => {
     globalStatus.localSharing.isPlugged = false;
-    socket.to(`${roomName} controllers`).emit("localSharing.stop");
+    socket.to(`${roomName} controllers`).emit(socketEvents.localSharing.stop);
   });
 
   // When in a meeting
-  socket.on("meeting.mute", (isMuted : boolean) => {
+  socket.on(socketEvents.meeting.mute, (isMuted : boolean) => {
     globalStatus.meeting.isMuted = isMuted;
-    socket.to(`${roomName} controllers`).emit("meeting.mute", isMuted);
+    socket.to(`${roomName} controllers`).emit(socketEvents.meeting.mute, isMuted);
   });
 
-  socket.on("meeting.camera", (isCameraOn : boolean) => {
+  socket.on(socketEvents.meeting.camera, (isCameraOn : boolean) => {
     globalStatus.meeting.isCameraOn = isCameraOn;
-    socket.to(`${roomName} controllers`).emit("meeting.camera", isCameraOn);
+    socket.to(`${roomName} controllers`).emit(socketEvents.meeting.camera, isCameraOn);
   });
 
-  socket.on("meeting.wave", (isHandRaised : boolean) => {
+  socket.on(socketEvents.meeting.wave, (isHandRaised : boolean) => {
     globalStatus.meeting.isHandRaised = isHandRaised;
-    socket.to(`${roomName} controllers`).emit("meeting.wave", isHandRaised);
+    socket.to(`${roomName} controllers`).emit(socketEvents.meeting.wave, isHandRaised);
   });
 
-  socket.on("meeting.leave", () => {
+  socket.on(socketEvents.meeting.leave, () => {
     globalStatus.global.page = "menu";
     globalStatus.meeting = {
       meetingId: "",
@@ -68,18 +68,18 @@ const socketMainScreen = (io: Server, socket : Socket) => {
       isAskingToShareScreen: false,
       isSharingScreen: false
     }
-    socket.to(`${roomName} controllers`).emit("meeting.leave");
+    socket.to(`${roomName} controllers`).emit(socketEvents.meeting.leave);
   });
 
-  socket.on("meeting.sharingScreen", () => {
+  socket.on(socketEvents.meeting.sharingScreen, () => {
     globalStatus.meeting.isAskingToShareScreen = false;
     globalStatus.meeting.isSharingScreen = true;
-    socket.to(`${roomName} controllers`).emit("meeting.sharingScreen");
+    socket.to(`${roomName} controllers`).emit(socketEvents.meeting.sharingScreen);
   });
 
-  socket.on("meeting.stopSharing", () => {
+  socket.on(socketEvents.meeting.stopSharing, () => {
     globalStatus.meeting.isSharingScreen = false;
-    socket.to(`${roomName} controllers`).emit("meeting.stopSharing");
+    socket.to(`${roomName} controllers`).emit(socketEvents.meeting.stopSharing);
   });
 
   socket.on("disconnect", () => {
