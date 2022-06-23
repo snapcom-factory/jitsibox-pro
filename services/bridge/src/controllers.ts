@@ -20,7 +20,6 @@ const socketControllers = (io: Server, socket : Socket) => {
   // When in the menu
   socket.on(socketEvents.menu.join, () => {
     globalStatus.global.page = "joiningCall";
-    console.log("ici1");
     // Warning everyone that the user is trying to join a call
     controllers.emit(socketEvents.menu.join);
     mainScreen.emit(socketEvents.menu.join);

@@ -1,7 +1,40 @@
+const socketEvents = {
+  global: {
+    cancel: "backToMenu",
+    connectionData: "connectionData",
+  },
+  menu: {
+    join: "joinCall",
+    create: "createCall",
+    share: "localSharing",
+  },
+  joinCall: {
+    validate: "validateJoinTyping",
+    error: "validationFailed",
+  },
+  createCall: {
+    validate: "validateCreationTyping",
+    error: "validationFailed",
+  },
+  localSharing: {
+    start: "startSharing",
+    stop: "stopSharing",
+  },
+  meeting: {
+    mute: "muteMicrophone",
+    camera: "toggleCamera",
+    wave: "raiseHand",
+    leave: "leaveCall",
+    askingToShareScreen: "askingToShareScreen",
+    sharingScreen: "shareScreen",
+    stopSharing: "stopSharing",
+  },
+}
+
 const socket = io("ws://localhost:3001/mainScreen", {
   auth: {
     token: 'fakeAuthToken',
-    roomName: "Ministère de l'écologie"
+    roomName: "fakeRoomName"
   }
 });
 
@@ -27,82 +60,82 @@ sharing.innerHTML = "No";
 
 // Events
 
-socket.on("global.cancel", () => {
+socket.on(socketEvents.global.cancel, () => {
   currentPage.innerHTML = "Menu";
   isPlugged.innerHTML = "No";
-  socket.emit("global.cancel");
+  socket.emit(socketEvents.global.cancel);
 })
 
-socket.on("menu.join", () => {
+socket.on(socketEvents.menu.join, () => {
   currentPage.innerHTML = "Joining call";
-  socket.emit("menu.join");
+  socket.emit(socketEvents.menu.join);
 });
 
-socket.on("menu.create", () => {
+socket.on(socketEvents.menu.create, () => {
   currentPage.innerHTML = "Creating call";
-  socket.emit("menu.create");
+  socket.emit(socketEvents.menu.create);
 });
 
-socket.on("menu.share", () => {
+socket.on(socketEvents.menu.share, () => {
   currentPage.innerHTML = "Sharing screen";
-  socket.emit("menu.share");
+  socket.emit(socketEvents.menu.share);
   setTimeout(() => {
     isPlugged.innerHTML = "Yes";
     socket.emit("localSharing.start");
   }, 3000);
 });
 
-socket.on("joinCall.validate", (meetingId, controllerId) => {
+socket.on(socketEvents.joinCall.validate, (meetingId, controllerId) => {
   if (meetingId === "error") {
-    socket.emit("joinCall.error", controllerId, "Une erreur a été rencontrée");
+    socket.emit(socketEvents.joinCall.error, controllerId, "Une erreur a été rencontrée");
   } else {
     currentPage.innerHTML = "Meeting";
     meetingId.innerHTML = meetingId;
-    socket.emit("joinCall.validate", meetingId);
+    socket.emit(socketEvents.joinCall.validate, meetingId);
   }
 });
 
-socket.on("creatingCall.validate", (meetingId, controllerId) => {
+socket.on(socketEvents.createCall.validate, (meetingId, controllerId) => {
   if (meetingId === "error") {
-    socket.emit("creating.error", controllerId, "Une erreur a été rencontrée");
+    socket.emit(socketEvents.createCall.error, controllerId, "Une erreur a été rencontrée");
   } else {
     currentPage.innerHTML = "Meeting";
     meetingId.innerHTML = meetingId;
-    socket.emit("creating.validate", meetingId);
+    socket.emit(socketEvents.createCall.validate, meetingId);
   }
 });
 
-socket.on("meeting.mute", (isMuted) => {
+socket.on(socketEvents.meeting.mute, (isMuted) => {
   mute.innerHTML = isMuted ? "Yes" : "No";
-  socket.emit("meeting.mute", isMuted);
+  socket.emit(socketEvents.meeting.mute, isMuted);
 });
 
-socket.on("meeting.camera", (isCameraOn) => {
+socket.on(socketEvents.meeting.camera, (isCameraOn) => {
   camera.innerHTML = isCameraOn ? "Yes" : "No";
-  socket.emit("meeting.camera", isCameraOn);
+  socket.emit(socketEvents.meeting.camera, isCameraOn);
 });
 
-socket.on("meeting.wave", (isHandRaised) => {
+socket.on(socketEvents.meeting.wave, (isHandRaised) => {
   wave.innerHTML = isHandRaised ? "Yes" : "No";
-  socket.emit("meeting.wave", isHandRaised);
+  socket.emit(socketEvents.meeting.wave, isHandRaised);
 });
 
-socket.on("meeting.askingToShareScreen", () => {
+socket.on(socketEvents.meeting.askingToShareScreen, () => {
   askingToShare.innerHTML = "Yes";
   setTimeout(() => {
     sharing.innerHTML = "Yes";
     askingToShare.innerHTML = "No";
-    socket.emit("meeting.sharingScreen");
+    socket.emit(socketEvents.meeting.sharingScreen);
   }, 3000);
 });
 
-socket.on("meeting.stopSharing", () => {
+socket.on(socketEvents.meeting.stopSharing, () => {
   askingToShare.innerHTML = "No";
   sharing.innerHTML = "No";
-  socket.emit("meeting.stopSharing");
+  socket.emit(socketEvents.meeting.stopSharing);
 })
 
-socket.on("meeting.leave", () => {
+socket.on(socketEvents.meeting.leave, () => {
   currentPage.innerHTML = "Menu";
   meetingId.innerHTML = "";
   mute.innerHTML = "No";
@@ -110,5 +143,5 @@ socket.on("meeting.leave", () => {
   wave.innerHTML = "No";
   askingToShare.innerHTML = "No";
   sharing.innerHTML = "No";
-  socket.emit("meeting.leave");
+  socket.emit(socketEvents.meeting.leave);
 });
