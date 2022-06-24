@@ -5,9 +5,9 @@ const QRCodeButton = () => (
   <ButtonBase sx={{ borderRadius: 20 }}>
     <Chip
       label="webconf.numerique.gouv.fr/tuweruywe345"
-      color="primary"
-      variant="outlined"
       sx={{
+        backgroundColor: "primary_light.main",
+        color: "primary.main",
         height: 30,
         paddingLeft: 1,
         borderTopLeftRadius: 20,

@@ -1,12 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom"
-import { Chip, Container, Stack, Typography } from "@mui/material"
-import { CallEnd, Person } from "@mui/icons-material"
+import { Container, Stack, Typography } from "@mui/material"
+import { CallEnd } from "@mui/icons-material"
 import { socketEvents } from "@jitsi-box-pro/model"
-
 import { ViewContainer, MeetingButton, Header, Footer } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import QRCodeButton from "@/views/MeetingPage/QRCodeButton"
 import MeetingMainControls from "@/views/MeetingPage/MeetingMainControls"
+import NumberOfParticipantsIndicator from "./NumberOfParticipantsIndicator"
 
 const MeetingPage = () => {
   const { meetingId } = useParams()
@@ -20,7 +20,7 @@ const MeetingPage = () => {
       header={
         <Header
           middleContent={<QRCodeButton />}
-          endContent={<Chip icon={<Person />} label="12" color="primary" />}
+          endContent={<NumberOfParticipantsIndicator />}
         />
       }
       footer={<Footer />}
