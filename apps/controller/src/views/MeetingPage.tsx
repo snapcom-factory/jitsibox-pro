@@ -56,41 +56,25 @@ const QRCodeButton = () => (
 )
 
 const MeetingMainControls = (): React.ReactElement => {
-  const [meetingState, setMeetingState] = useState({
-    isMuted: false,
-    isCameraOn: true,
-    isHandRaised: false,
-    isSharingScreen: false,
+  const [isMuted, setIsMuted] = useState(false)
+  const [isCameraOn, setIsCameraOn] = useState(true)
+  const [isHandRaised, setIsHandRaised] = useState(false)
+  const [isSharingScreen, setIsSharingScreen] = useState(false)
+
+  useSocketListener(socketEvents.meeting.mute, (userIsMuted: boolean) => {
+    setIsMuted(userIsMuted)
   })
-  useSocketListener(socketEvents.meeting.mute, (isMuted: boolean) => {
-    setMeetingState((previousMeetingState) => ({
-      ...previousMeetingState,
-      isMuted,
-    }))
+  useSocketListener(socketEvents.meeting.camera, (userHasCameraOn: boolean) => {
+    setIsCameraOn(userHasCameraOn)
   })
-  useSocketListener(socketEvents.meeting.camera, (isCameraOn: boolean) => {
-    setMeetingState((previousMeetingState) => ({
-      ...previousMeetingState,
-      isCameraOn,
-    }))
-  })
-  useSocketListener(socketEvents.meeting.wave, (isHandRaised: boolean) => {
-    setMeetingState((previousMeetingState) => ({
-      ...previousMeetingState,
-      isHandRaised,
-    }))
+  useSocketListener(socketEvents.meeting.wave, (userHasHandRaised: boolean) => {
+    setIsHandRaised(userHasHandRaised)
   })
   useSocketListener(socketEvents.meeting.sharingScreen, () => {
-    setMeetingState((previousMeetingState) => ({
-      ...previousMeetingState,
-      isSharingScreen: true,
-    }))
+    setIsSharingScreen(true)
   })
   useSocketListener(socketEvents.meeting.stopSharing, () => {
-    setMeetingState((previousMeetingState) => ({
-      ...previousMeetingState,
-      isSharingScreen: false,
-    }))
+    setIsSharingScreen(false)
   })
   return (
     <Grid container spacing={0} justifyContent="center" alignItems="center">
@@ -99,13 +83,13 @@ const MeetingMainControls = (): React.ReactElement => {
           color="primary"
           Icon={Mic}
           event={{ name: socketEvents.meeting.mute, payload: true }}
-          render={!meetingState.isMuted}
+          render={!isMuted}
         />
         <MeetingButton
           color="primary"
           Icon={MicOff}
           event={{ name: socketEvents.meeting.mute, payload: false }}
-          render={meetingState.isMuted}
+          render={isMuted}
         />
       </Grid>
       <Grid item xs={3}>
@@ -113,13 +97,13 @@ const MeetingMainControls = (): React.ReactElement => {
           color="primary"
           Icon={Videocam}
           event={{ name: socketEvents.meeting.camera, payload: false }}
-          render={meetingState.isCameraOn}
+          render={isCameraOn}
         />
         <MeetingButton
           color="primary"
           Icon={VideocamOff}
           event={{ name: socketEvents.meeting.camera, payload: true }}
-          render={!meetingState.isCameraOn}
+          render={!isCameraOn}
         />
       </Grid>
       <Grid item xs={3}>
@@ -127,13 +111,13 @@ const MeetingMainControls = (): React.ReactElement => {
           color="primary"
           Icon={WaveHand}
           event={{ name: socketEvents.meeting.wave, payload: true }}
-          render={!meetingState.isHandRaised}
+          render={!isHandRaised}
         />
         <MeetingButton
           color="primary"
           Icon={WavingHand}
           event={{ name: socketEvents.meeting.mute, payload: false }}
-          render={meetingState.isHandRaised}
+          render={isHandRaised}
         />
       </Grid>
       <Grid item xs={3}>
@@ -141,13 +125,13 @@ const MeetingMainControls = (): React.ReactElement => {
           color="primary"
           Icon={PresentToAll}
           event={{ name: socketEvents.meeting.sharingScreen }}
-          render={!meetingState.isSharingScreen}
+          render={!isSharingScreen}
         />
         <MeetingButton
           color="primary"
           Icon={CancelPresentation}
           event={{ name: socketEvents.meeting.stopSharing }}
-          render={meetingState.isSharingScreen}
+          render={isSharingScreen}
         />
       </Grid>
     </Grid>
