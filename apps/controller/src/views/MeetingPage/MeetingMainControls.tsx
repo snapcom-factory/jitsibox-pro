@@ -36,7 +36,13 @@ const MeetingMainControls = (): React.ReactElement => {
     setIsSharingScreen(false)
   })
   return (
-    <Grid container spacing={0} justifyContent="center" alignItems="center">
+    <Grid
+      container
+      spacing={0}
+      justifyContent="center"
+      alignItems="center"
+      sx={{ paddingBottom: 3 }}
+    >
       <Grid item xs={3}>
         <MeetingButton
           color="primary"
