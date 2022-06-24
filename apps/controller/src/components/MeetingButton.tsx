@@ -12,15 +12,13 @@ interface MeetingButtonProps {
   color: "primary" | "secondary"
   Icon: OverridableComponent<SvgIconTypeMap>
   event: EventArguments
-  render: boolean
 }
 
 const MeetingButton = ({
   color,
   Icon,
   event,
-  render,
-}: MeetingButtonProps): React.ReactElement | null => {
+}: MeetingButtonProps): React.ReactElement => {
   const { socket } = useSocketContext()
   const handleClick = () => {
     if (socket !== null) {
@@ -31,7 +29,7 @@ const MeetingButton = ({
       }
     }
   }
-  return render ? (
+  return (
     <Fade in>
       <CenteringDiv>
         <Button
@@ -44,7 +42,7 @@ const MeetingButton = ({
         </Button>
       </CenteringDiv>
     </Fade>
-  ) : null
+  )
 }
 
 export default MeetingButton

@@ -50,7 +50,6 @@ const MeetingPage = () => {
           color="secondary"
           Icon={CallEnd}
           event={{ name: socketEvents.meeting.leave }}
-          render
         />
       </Container>
     </ViewContainer>

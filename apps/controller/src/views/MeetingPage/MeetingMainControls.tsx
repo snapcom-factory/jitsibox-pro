@@ -44,60 +44,64 @@ const MeetingMainControls = (): React.ReactElement => {
       sx={{ paddingBottom: 3 }}
     >
       <Grid item xs={3}>
-        <MeetingButton
-          color="primary"
-          Icon={Mic}
-          event={{ name: socketEvents.meeting.mute, payload: true }}
-          render={!isMuted}
-        />
-        <MeetingButton
-          color="primary"
-          Icon={MicOff}
-          event={{ name: socketEvents.meeting.mute, payload: false }}
-          render={isMuted}
-        />
+        {!isMuted ? (
+          <MeetingButton
+            color="primary"
+            Icon={Mic}
+            event={{ name: socketEvents.meeting.mute, payload: true }}
+          />
+        ) : (
+          <MeetingButton
+            color="primary"
+            Icon={MicOff}
+            event={{ name: socketEvents.meeting.mute, payload: false }}
+          />
+        )}
       </Grid>
       <Grid item xs={3}>
-        <MeetingButton
-          color="primary"
-          Icon={Videocam}
-          event={{ name: socketEvents.meeting.camera, payload: false }}
-          render={isCameraOn}
-        />
-        <MeetingButton
-          color="primary"
-          Icon={VideocamOff}
-          event={{ name: socketEvents.meeting.camera, payload: true }}
-          render={!isCameraOn}
-        />
+        {isCameraOn ? (
+          <MeetingButton
+            color="primary"
+            Icon={Videocam}
+            event={{ name: socketEvents.meeting.camera, payload: false }}
+          />
+        ) : (
+          <MeetingButton
+            color="primary"
+            Icon={VideocamOff}
+            event={{ name: socketEvents.meeting.camera, payload: true }}
+          />
+        )}
       </Grid>
       <Grid item xs={3}>
-        <MeetingButton
-          color="primary"
-          Icon={WaveHand}
-          event={{ name: socketEvents.meeting.wave, payload: true }}
-          render={!isHandRaised}
-        />
-        <MeetingButton
-          color="primary"
-          Icon={WavingHand}
-          event={{ name: socketEvents.meeting.mute, payload: false }}
-          render={isHandRaised}
-        />
+        {!isHandRaised ? (
+          <MeetingButton
+            color="primary"
+            Icon={WaveHand}
+            event={{ name: socketEvents.meeting.wave, payload: true }}
+          />
+        ) : (
+          <MeetingButton
+            color="primary"
+            Icon={WavingHand}
+            event={{ name: socketEvents.meeting.mute, payload: false }}
+          />
+        )}
       </Grid>
       <Grid item xs={3}>
-        <MeetingButton
-          color="primary"
-          Icon={PresentToAll}
-          event={{ name: socketEvents.meeting.sharingScreen }}
-          render={!isSharingScreen}
-        />
-        <MeetingButton
-          color="primary"
-          Icon={CancelPresentation}
-          event={{ name: socketEvents.meeting.stopSharing }}
-          render={isSharingScreen}
-        />
+        {!isSharingScreen ? (
+          <MeetingButton
+            color="primary"
+            Icon={PresentToAll}
+            event={{ name: socketEvents.meeting.sharingScreen }}
+          />
+        ) : (
+          <MeetingButton
+            color="primary"
+            Icon={CancelPresentation}
+            event={{ name: socketEvents.meeting.stopSharing }}
+          />
+        )}
       </Grid>
     </Grid>
   )
