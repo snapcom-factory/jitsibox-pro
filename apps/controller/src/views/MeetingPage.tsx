@@ -23,7 +23,7 @@ import { socketEvents } from "@jitsi-box-pro/model"
 import WaveHand from "@/assets/WaveHand"
 import WavingHand from "@/assets/WavingHand"
 import { ViewContainer, MeetingButton, Header, Footer } from "@/components"
-import { useSocketContext, useSocketListener } from "@/services/socket"
+import { useSocketListener } from "@/services/socket"
 
 const QRCodeButton = () => (
   <ButtonBase sx={{ borderRadius: 20 }}>
@@ -56,46 +56,37 @@ const QRCodeButton = () => (
 )
 
 const MeetingMainControls = (): React.ReactElement => {
-  const { socket } = useSocketContext()
   const [meetingState, setMeetingState] = useState({
     isMuted: false,
     isCameraOn: true,
     isHandRaised: false,
     isSharingScreen: false,
   })
-  useSocketListener(socket, socketEvents.meeting.mute, (isMuted: boolean) => {
+  useSocketListener(socketEvents.meeting.mute, (isMuted: boolean) => {
     setMeetingState((previousMeetingState) => ({
       ...previousMeetingState,
       isMuted,
     }))
   })
-  useSocketListener(
-    socket,
-    socketEvents.meeting.camera,
-    (isCameraOn: boolean) => {
-      setMeetingState((previousMeetingState) => ({
-        ...previousMeetingState,
-        isCameraOn,
-      }))
-    }
-  )
-  useSocketListener(
-    socket,
-    socketEvents.meeting.wave,
-    (isHandRaised: boolean) => {
-      setMeetingState((previousMeetingState) => ({
-        ...previousMeetingState,
-        isHandRaised,
-      }))
-    }
-  )
-  useSocketListener(socket, socketEvents.meeting.sharingScreen, () => {
+  useSocketListener(socketEvents.meeting.camera, (isCameraOn: boolean) => {
+    setMeetingState((previousMeetingState) => ({
+      ...previousMeetingState,
+      isCameraOn,
+    }))
+  })
+  useSocketListener(socketEvents.meeting.wave, (isHandRaised: boolean) => {
+    setMeetingState((previousMeetingState) => ({
+      ...previousMeetingState,
+      isHandRaised,
+    }))
+  })
+  useSocketListener(socketEvents.meeting.sharingScreen, () => {
     setMeetingState((previousMeetingState) => ({
       ...previousMeetingState,
       isSharingScreen: true,
     }))
   })
-  useSocketListener(socket, socketEvents.meeting.stopSharing, () => {
+  useSocketListener(socketEvents.meeting.stopSharing, () => {
     setMeetingState((previousMeetingState) => ({
       ...previousMeetingState,
       isSharingScreen: false,
@@ -165,9 +156,8 @@ const MeetingMainControls = (): React.ReactElement => {
 
 const MeetingPage = () => {
   const { meetingId } = useParams()
-  const { socket } = useSocketContext()
   const navigate = useNavigate()
-  useSocketListener(socket, socketEvents.meeting.leave, () => {
+  useSocketListener(socketEvents.meeting.leave, () => {
     navigate("/")
   })
 
