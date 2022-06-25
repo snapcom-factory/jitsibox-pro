@@ -15,7 +15,7 @@ const ReconnectingBackdrop = () => (
       alignItems="center"
       spacing={4}
     >
-      <Typography variant="h6">Reconnexion...</Typography>
+      <Typography variant="h3">Reconnexion...</Typography>
       <CircularProgress color="inherit" />
     </Stack>
   </Backdrop>

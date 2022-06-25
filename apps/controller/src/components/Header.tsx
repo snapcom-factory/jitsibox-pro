@@ -12,10 +12,10 @@ const Header = ({
 }: HeaderProps): React.ReactElement => (
   <Grid container direction="row" alignItems="center">
     <Grid item xs>
-      <Stack direction="column" sx={{ width: "20vh" }}>
-        <MarianneLogo />
-        <Typography variant="h6" sx={{ paddingTop: 1, lineHeight: 1.1 }}>
-          WEBCONFÉRENCE DE L&apos;ÉTAT
+      <Stack direction="column">
+        <MarianneLogo height="2rem" />
+        <Typography variant="h4" sx={{ paddingTop: 0.5 }}>
+          WEBCONFÉRENCE <br /> DE L&apos;ÉTAT
         </Typography>
       </Stack>
     </Grid>

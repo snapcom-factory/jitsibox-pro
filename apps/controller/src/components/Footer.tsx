@@ -7,11 +7,8 @@ const Footer = (): React.ReactElement => (
       justifyContent="space-between"
       alignItems="flex-start"
     >
-      <Typography variant="subtitle2" sx={{ lineHeight: 1 }}>
-        Jitsi-Box
-      </Typography>
-      <Typography variant="subtitle2" sx={{ lineHeight: 1 }}>
-        Controller #1234
+      <Typography variant="caption">
+        Jitsi-Box <br /> Controller #1234
       </Typography>
     </Stack>
   </Stack>

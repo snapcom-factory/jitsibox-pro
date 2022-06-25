@@ -29,12 +29,17 @@ const MenuButton = ({
     >
       <Button
         variant="contained"
-        sx={{ fontSize: 80, height: 130, width: 130, borderRadius: 4 }}
+        sx={{
+          fontSize: 80,
+          height: 130,
+          width: 130,
+          borderRadius: 4,
+        }}
         onClick={handleClick}
       >
         <Icon fontSize="inherit" />
       </Button>
-      <Typography align="center" variant="h6">
+      <Typography align="center" variant="subtitle1" color="primary">
         {text}
       </Typography>
     </Stack>

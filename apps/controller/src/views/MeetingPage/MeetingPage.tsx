@@ -42,8 +42,8 @@ const MeetingPage = () => {
           spacing={4}
           sx={{ paddingBottom: 10 }}
         >
-          <Typography variant="h5">Identifiant de la réunion</Typography>
-          <Typography variant="h3">{meetingId}</Typography>
+          <Typography variant="body2">Identifiant de la réunion</Typography>
+          <Typography variant="h2">{meetingId}</Typography>
         </Stack>
         <MeetingMainControls />
         <MeetingButton
