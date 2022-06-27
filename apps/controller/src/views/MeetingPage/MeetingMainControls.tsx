@@ -84,7 +84,7 @@ const MeetingMainControls = (): React.ReactElement => {
           <MeetingButton
             color="primary"
             Icon={WavingHand}
-            event={{ name: socketEvents.meeting.mute, payload: false }}
+            event={{ name: socketEvents.meeting.wave, payload: false }}
           />
         )}
       </Grid>
@@ -93,7 +93,7 @@ const MeetingMainControls = (): React.ReactElement => {
           <MeetingButton
             color="primary"
             Icon={PresentToAll}
-            event={{ name: socketEvents.meeting.sharingScreen }}
+            event={{ name: socketEvents.meeting.askingToShareScreen }}
           />
         ) : (
           <MeetingButton
