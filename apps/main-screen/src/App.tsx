@@ -2,14 +2,10 @@ import React, { useRef, useState } from "react"
 import "./App.css"
 import { IFrame } from "./iframe"
 
-function App() {
+function App(): React.ReactElement {
   const iFrameRef = useRef(null)
 
-  return (
-    <>
-      <IFrame></IFrame>
-    </>
-  )
+  return <IFrame></IFrame>
 }
 
 export default App

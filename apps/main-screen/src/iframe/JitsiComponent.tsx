@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 const generateRoomName = () =>
   `JitsiMeetRoomNo${Math.random() * 100}-${Date.now()}`
 
-const JitsiComponent = () => {
+const JitsiComponent = (): React.ReactElement => {
   const apiRef = useRef<any>()
 
   useEffect(() => {
@@ -14,18 +14,33 @@ const JitsiComponent = () => {
     })
   })
 
+  const handleAudioStatusChange = (payload: any, feature: any) => {
+    console.log({ payload: payload, feature: feature })
+  }
   const handleApiReady = (apiObj: any) => {
     console.log("api is ready")
     apiRef.current = apiObj
+    apiRef.current.on("audioMuteStatusChanged", (payload: any) =>
+      handleAudioStatusChange(payload, "audio")
+    )
+    apiRef.current.on("")
   }
 
   const toggleAudio = () => {
     if (!apiRef.current) return
     apiRef.current.executeCommand("toggleAudio")
   }
+  const toggleVideo = () => {
+    if (!apiRef.current) return
+    apiRef.current.executeCommand("toggleVideo")
+  }
   return (
     <>
-      <button onClick={toggleAudio}>MUTE</button>
+      <div>
+        <button onClick={toggleAudio}>MUTE</button>
+        <button onClick={toggleVideo}>VIDEO</button>
+        <button>HAND RAISE</button>
+      </div>
       <JitsiMeeting
         roomName="Test zerazer OPENFUN"
         interfaceConfigOverwrite={{
