@@ -1,8 +1,15 @@
 import { Server, Socket } from "socket.io"
 import { globalStatus } from "./status"
-import { socketEvents } from "../../../packages/model/src/socketEvents"
+import {
+  socketEvents,
+  ControllerToServerEvents,
+  ServerToClientEvents
+} from "../../../packages/model/src/socketEvents"
 
-const socketControllers = (io: Server, socket: Socket) => {
+const socketControllers = (
+  io: Server,
+  socket: Socket<ControllerToServerEvents, ServerToClientEvents>
+) => {
   const { roomName } = socket.handshake.auth
 
   const controllers = io.of("/controllers").to(roomName)
