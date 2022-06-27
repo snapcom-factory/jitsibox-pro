@@ -3,7 +3,7 @@ import { globalStatus, localStatus } from "./status";
 import { socketEvents } from "../../../packages/model/src/socketEvents";
 
 const socketMainScreen = (io : Server, socket : Socket) => {
-  const roomName = socket.handshake.auth.roomName;
+  const { roomName } = socket.handshake.auth;
 
   const controllers = io.of("/controllers").to(roomName);
 

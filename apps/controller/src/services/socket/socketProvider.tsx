@@ -27,8 +27,8 @@ const SocketProvider = ({
   useEffect(() => {
     const newSocket = io(controllersApiURL, {
       auth: {
-        token: token,
-        roomName: roomName
+        token,
+        roomName
       }
     })
     newSocket.on("connect", () => {
