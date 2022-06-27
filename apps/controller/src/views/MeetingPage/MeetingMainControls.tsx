@@ -9,16 +9,16 @@ import {
   VideocamOff,
 } from "@mui/icons-material"
 import { socketEvents } from "@jitsi-box-pro/model"
-import { MeetingButton } from "@/components"
+import { ActionButton } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import WaveHand from "@/assets/WaveHand"
 import WavingHand from "@/assets/WavingHand"
 
 const MeetingMainControls = (): React.ReactElement => {
-  const [isMuted, setIsMuted] = useState(false)
-  const [isCameraOn, setIsCameraOn] = useState(true)
-  const [isHandRaised, setIsHandRaised] = useState(false)
-  const [isSharingScreen, setIsSharingScreen] = useState(false)
+  const [isMuted, setIsMuted] = useState(true)
+  const [isCameraOn, setIsCameraOn] = useState(false)
+  const [isHandRaised, setIsHandRaised] = useState(true)
+  const [isSharingScreen, setIsSharingScreen] = useState(true)
 
   useSocketListener(socketEvents.meeting.mute, (userIsMuted: boolean) => {
     setIsMuted(userIsMuted)
@@ -41,17 +41,19 @@ const MeetingMainControls = (): React.ReactElement => {
       spacing={0}
       justifyContent="center"
       alignItems="center"
-      sx={{ paddingBottom: 3 }}
+      sx={{ paddingBottom: 6 }}
     >
       <Grid item xs={3}>
         {!isMuted ? (
-          <MeetingButton
+          <ActionButton
+            text="Couper le micro"
             color="primary"
             Icon={Mic}
             event={{ name: socketEvents.meeting.mute, payload: true }}
           />
         ) : (
-          <MeetingButton
+          <ActionButton
+            text="Allumer le micro"
             color="primary"
             Icon={MicOff}
             event={{ name: socketEvents.meeting.mute, payload: false }}
@@ -60,13 +62,15 @@ const MeetingMainControls = (): React.ReactElement => {
       </Grid>
       <Grid item xs={3}>
         {isCameraOn ? (
-          <MeetingButton
+          <ActionButton
+            text="Couper la caméra"
             color="primary"
             Icon={Videocam}
             event={{ name: socketEvents.meeting.camera, payload: false }}
           />
         ) : (
-          <MeetingButton
+          <ActionButton
+            text="Allumer la caméra"
             color="primary"
             Icon={VideocamOff}
             event={{ name: socketEvents.meeting.camera, payload: true }}
@@ -75,13 +79,15 @@ const MeetingMainControls = (): React.ReactElement => {
       </Grid>
       <Grid item xs={3}>
         {!isHandRaised ? (
-          <MeetingButton
+          <ActionButton
+            text="Lever la main"
             color="primary"
             Icon={WaveHand}
             event={{ name: socketEvents.meeting.wave, payload: true }}
           />
         ) : (
-          <MeetingButton
+          <ActionButton
+            text="Baisser la main"
             color="primary"
             Icon={WavingHand}
             event={{ name: socketEvents.meeting.wave, payload: false }}
@@ -90,13 +96,15 @@ const MeetingMainControls = (): React.ReactElement => {
       </Grid>
       <Grid item xs={3}>
         {!isSharingScreen ? (
-          <MeetingButton
+          <ActionButton
+            text="Partager l'écran"
             color="primary"
             Icon={PresentToAll}
             event={{ name: socketEvents.meeting.askingToShareScreen }}
           />
         ) : (
-          <MeetingButton
+          <ActionButton
+            text="Arrêter le partage"
             color="primary"
             Icon={CancelPresentation}
             event={{ name: socketEvents.meeting.stopSharing }}

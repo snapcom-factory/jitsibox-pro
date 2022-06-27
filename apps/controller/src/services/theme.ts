@@ -142,8 +142,13 @@ export const countryTheme = createTheme({
       fontWeight: 400,
     },
     subtitle1: {
-      fontSize: "1.2rem",
+      fontSize: "1.4rem",
       fontWeight: 700,
+      lineHeight: 1,
+    },
+    subtitle2: {
+      fontSize: "1.125rem",
+      fontWeight: 500,
       lineHeight: 1,
     },
     caption: {

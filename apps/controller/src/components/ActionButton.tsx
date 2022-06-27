@@ -1,24 +1,25 @@
-import { Button, Fade, SvgIconTypeMap } from "@mui/material"
+import { Button, Fade, Stack, SvgIconTypeMap, Typography } from "@mui/material"
 import { OverridableComponent } from "@mui/material/OverridableComponent"
 import { ControllerToServerEvents } from "@jitsi-box-pro/model"
 import { useSocketContext } from "@/services/socket"
-import CenteringDiv from "./utils/CenteringDiv"
 
 interface EventArguments {
   name: keyof ControllerToServerEvents & string
   payload?: boolean
 }
-interface MeetingButtonProps {
+interface ActionButtonProps {
   color: "primary" | "secondary"
+  text?: string
   Icon: OverridableComponent<SvgIconTypeMap>
   event: EventArguments
 }
 
-const MeetingButton = ({
+const ActionButton = ({
   color,
+  text,
   Icon,
   event,
-}: MeetingButtonProps): React.ReactElement => {
+}: ActionButtonProps): React.ReactElement => {
   const { socket } = useSocketContext()
   const handleClick = () => {
     if (socket !== null) {
@@ -31,7 +32,12 @@ const MeetingButton = ({
   }
   return (
     <Fade in>
-      <CenteringDiv>
+      <Stack
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        spacing={2}
+      >
         <Button
           variant="contained"
           color={color}
@@ -40,9 +46,14 @@ const MeetingButton = ({
         >
           <Icon fontSize="inherit" />
         </Button>
-      </CenteringDiv>
+        {text !== undefined && (
+          <Typography align="center" variant="subtitle2" color={color}>
+            {text}
+          </Typography>
+        )}
+      </Stack>
     </Fade>
   )
 }
 
-export default MeetingButton
+export default ActionButton

@@ -31,9 +31,9 @@ const MenuButton = ({
         variant="contained"
         sx={{
           fontSize: 80,
-          height: 130,
-          width: 130,
-          borderRadius: 4,
+          height: 150,
+          width: 150,
+          borderRadius: 20,
         }}
         onClick={handleClick}
       >

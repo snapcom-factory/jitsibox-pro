@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { Container, Stack, Typography } from "@mui/material"
 import { CallEnd } from "@mui/icons-material"
 import { socketEvents } from "@jitsi-box-pro/model"
-import { ViewContainer, MeetingButton, Header, Footer } from "@/components"
+import { ViewContainer, ActionButton, Header, Footer } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import QRCodeButton from "@/views/MeetingPage/QRCodeButton"
 import MeetingMainControls from "@/views/MeetingPage/MeetingMainControls"
@@ -40,13 +40,13 @@ const MeetingPage = () => {
           justifyContent="center"
           alignItems="center"
           spacing={4}
-          sx={{ paddingBottom: 10 }}
+          sx={{ paddingBottom: 8 }}
         >
           <Typography variant="body2">Identifiant de la réunion</Typography>
           <Typography variant="h2">{meetingId}</Typography>
         </Stack>
         <MeetingMainControls />
-        <MeetingButton
+        <ActionButton
           color="secondary"
           Icon={CallEnd}
           event={{ name: socketEvents.meeting.leave }}
