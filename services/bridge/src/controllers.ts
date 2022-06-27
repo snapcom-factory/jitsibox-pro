@@ -13,7 +13,7 @@ const socketControllers = (
   const { roomName } = socket.handshake.auth
 
   const controllers = io.of("/controllers").to(roomName)
-  const mainScreen = io.of("/mainScreen").to(roomName)
+  const mainScreen = io.of("/mainScreens").to(roomName)
 
   // Going back to the menu
   socket.on(socketEvents.global.cancel, () => {

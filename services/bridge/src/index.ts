@@ -13,7 +13,7 @@ import {
   socketEvents,
 } from "../../../packages/model/src"
 import socketControllers from "./controllers"
-import socketMainScreen from "./mainScreen"
+import socketMainScreen from "./mainScreens"
 
 const port = 3001
 
@@ -51,7 +51,7 @@ io.of("/controllers").use(
 )
 
 // Authentication middleware for main screen
-io.of("/mainScreen").use(
+io.of("/mainScreens").use(
   (
     socket: Socket<ClientToServerEvents, ServerToClientEvents>,
     next: (err?: ExtendedError | undefined) => void
@@ -79,7 +79,7 @@ io.of("/controllers").on(
 )
 
 // Main screen connection
-io.of("/mainScreen").on(
+io.of("/mainScreens").on(
   "connection",
   (socket: Socket<ClientToServerEvents, ServerToClientEvents>) => {
     socket.emit(socketEvents.global.connectionData, globalStatus)
