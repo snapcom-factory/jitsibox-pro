@@ -1,0 +1,35 @@
+.keyboard {
+  position: fixed;
+  bottom: 0;
+}
+
+.numpad {
+  width: 50vw;
+  margin-left: 25vw;
+}
+
+.keyboard-classic-buttons {
+  height: 12.5vh !important;
+  width: 9.99vw !important;
+  font-size: 1.5em;
+}
+
+.keyboard-long-buttons {
+  height: 12.5vh !important;
+  width: 20.38vw !important;
+  font-size: 1.5em;
+}
+
+.keyboard-numpad-buttons {
+  height: 12.5vh !important;
+  width: 17vw !important;
+  font-size: 1.5em;
+}
+
+.side-panel {
+  width: 25vw;
+  background-color: #F0ECEC;
+  position: absolute;
+  bottom: 0;
+  height: 53vh;
+}

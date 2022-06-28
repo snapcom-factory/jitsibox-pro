@@ -15,6 +15,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
+    "react-simple-keyboard": "^3.4.161",
     "socket.io-client": "^4.5.1",
     "@jitsi-box-pro/model": "*"
   },
