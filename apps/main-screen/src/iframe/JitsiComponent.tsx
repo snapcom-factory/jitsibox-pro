@@ -1,29 +1,31 @@
+/* eslint-disable no-console */
+/* eslint-disable no-param-reassign */
 import { JitsiMeeting } from "@jitsi/react-sdk"
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
+import IJitsiMeetExternalApi from "@jitsi/react-sdk/lib/types/IJitsiMeetExternalApi"
 
-const generateRoomName = () =>
-  `JitsiMeetRoomNo${Math.random() * 100}-${Date.now()}`
+interface streamPayload {
+  muted: boolean
+}
 
 const JitsiComponent = (): React.ReactElement => {
-  const apiRef = useRef<any>()
+  const apiRef = useRef<IJitsiMeetExternalApi>()
 
-  useEffect(() => {
-    window.addEventListener("mute", function (e) {
-      if (!apiRef.current) return
-      apiRef.current.executeCommand("toggleAudio")
-    })
-  })
-
-  const handleAudioStatusChange = (payload: any, feature: any) => {
-    console.log({ payload: payload, feature: feature })
+  const handleAudioStatusChange = (payload: streamPayload, feature: string) => {
+    console.log({ payload, feature })
   }
-  const handleApiReady = (apiObj: any) => {
+  const handleVideoStatusChange = (payload: streamPayload, feature: string) => {
+    console.log({ payload, feature })
+  }
+  const handleApiReady = (apiObj: IJitsiMeetExternalApi) => {
     console.log("api is ready")
     apiRef.current = apiObj
-    apiRef.current.on("audioMuteStatusChanged", (payload: any) =>
+    apiRef.current.on("audioMuteStatusChanged", (payload) =>
       handleAudioStatusChange(payload, "audio")
     )
-    apiRef.current.on("")
+    apiRef.current.on("videoMuteStatusChanged", (payload) =>
+      handleVideoStatusChange(payload, "video")
+    )
   }
 
   const toggleAudio = () => {
@@ -37,9 +39,12 @@ const JitsiComponent = (): React.ReactElement => {
   return (
     <>
       <div>
-        <button onClick={toggleAudio}>MUTE</button>
-        <button onClick={toggleVideo}>VIDEO</button>
-        <button>HAND RAISE</button>
+        <button type="button" onClick={toggleAudio}>
+          MUTE
+        </button>
+        <button type="button" onClick={toggleVideo}>
+          VIDEO
+        </button>
       </div>
       <JitsiMeeting
         roomName="Test zerazer OPENFUN"
