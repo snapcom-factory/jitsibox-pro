@@ -3,9 +3,12 @@ import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 import "./CustomKeyboard.css";
 
-const CustomKeyboard = () : React.ReactElement => {
+interface KeyboardProps {
+  setValue: (value: string) => void;
+}
+
+const CustomKeyboard = ({ setValue } : KeyboardProps) : React.ReactElement => {
   const [currentLayout, setCurrentLayout] = useState<string>('numpad');
-  const [value, setValue] = useState<string>('');
 
   const alphabet = "a b c d e f g h i j k l m n o p q r s t u v w x y z";
 
@@ -21,7 +24,6 @@ const CustomKeyboard = () : React.ReactElement => {
 
   return (
     <div>
-      <input className='input' value={value} style={{ width: '100vw', height: '5vh', fontSize: '2em' }}/>
       {currentLayout === 'numpad' ? (
         <div className='side-panel' />
       ) : null}
