@@ -5,4 +5,5 @@ export { default as ReconnectingBackdrop } from "@/components/ReconnectingBackdr
 export { default as ViewContainer } from "@/components/ViewContainer"
 export { default as ActionButton } from "@/components/ActionButton"
 export { default as ReturnToMenuButton } from "@/components/ReturnToMenuButton"
+export { default as TextInput } from "@/components/TextInput"
 export { CustomKeyboard } from "@/components/CustomKeyboard"
