@@ -1,8 +1,11 @@
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
+
+import { socketEvents } from "@jitsi-box-pro/model"
 import { JitsiMeeting } from "@jitsi/react-sdk"
 import { useRef } from "react"
 import IJitsiMeetExternalApi from "@jitsi/react-sdk/lib/types/IJitsiMeetExternalApi"
+import { useSocketContext } from "@/services/socket"
 
 interface streamPayload {
   muted: boolean
@@ -10,9 +13,12 @@ interface streamPayload {
 
 const JitsiComponent = (): React.ReactElement => {
   const apiRef = useRef<IJitsiMeetExternalApi>()
+  const { socket } = useSocketContext()
 
   const handleAudioStatusChange = (payload: streamPayload, feature: string) => {
-    console.log({ payload, feature })
+    if (socket !== null && payload.muted) {
+      socket.emit(socketEvents.meeting.camera, payload.muted)
+    }
   }
   const handleVideoStatusChange = (payload: streamPayload, feature: string) => {
     console.log({ payload, feature })
@@ -36,6 +42,7 @@ const JitsiComponent = (): React.ReactElement => {
     if (!apiRef.current) return
     apiRef.current.executeCommand("toggleVideo")
   }
+
   return (
     <>
       <div>

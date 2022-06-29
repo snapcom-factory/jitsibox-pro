@@ -1,23 +1,26 @@
 {
-  "name": "@jitsi-box-pro/main-screen",
-  "type": "module",
-  "private": true,
-  "dependencies": {
-    "@jitsi/react-sdk": "^1.0.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "socket.io-client": "^4.5.1",
-    "@jitsi-box-pro/model": "*"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.14",
-    "@types/react-dom": "^18.0.5",
-    "@types/node": "^16.11.39",
-    "typescript": "^4.6.3"
-  }
+    "name": "@jitsi-box-pro/main-screen",
+    "type": "module",
+    "private": true,
+    "dependencies": {
+        "@jitsi/react-sdk": "^1.0.1",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
+        "react-scripts": "5.0.1",
+        "socket.io-client": "^4.5.1",
+        "@jitsi-box-pro/model": "*"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.14",
+        "@types/react-dom": "^18.0.5",
+        "@types/node": "^16.11.39",
+        "typescript": "^4.6.3",
+        "@vitejs/plugin-react": "^1.3.0",
+        "vite": "^2.9.9"
+    }
 }
