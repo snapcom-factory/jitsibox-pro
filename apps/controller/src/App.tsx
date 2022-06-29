@@ -8,6 +8,8 @@ import { SocketProvider } from "@/services/socket"
 import { SnackbarProvider } from "@/services/snackbar"
 
 const App = (): React.ReactElement => {
+
+  // Disable zoom on tablets and mobile devices
   useEffect(() => {
     const disablePinchZoom = (e : TouchEvent) => {
         if (e.touches.length > 1) {

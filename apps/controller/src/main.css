@@ -1,0 +1,9 @@
+/* Hide cursor so that it doesn't appear on tablet */
+#root * {
+  cursor: none;
+}
+
+/* Prevent user from selecting some text on tablet */
+#root {
+  user-select: none;
+}
