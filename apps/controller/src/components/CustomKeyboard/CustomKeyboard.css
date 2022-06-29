@@ -1,6 +1,7 @@
 .keyboard {
   position: fixed;
   bottom: 0;
+  border-radius: 0px;
 }
 
 .numpad {
@@ -28,8 +29,8 @@
 
 .side-panel {
   width: 25vw;
-  background-color: #F0ECEC;
+  background-color: #EBEBEB;
   position: absolute;
   bottom: 0;
-  height: 53vh;
+  height: 53.6vh;
 }
