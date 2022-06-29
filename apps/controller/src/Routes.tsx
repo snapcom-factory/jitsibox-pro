@@ -1,11 +1,14 @@
 import { Routes as Switch, Route, useNavigate } from "react-router-dom"
 import { socketEvents } from "@jitsi-box-pro/model"
+import { useState } from "react"
 import { HomeMenu, SharingPage, MeetingPage } from "@/views"
 import { useSocketListener } from "@/services/socket"
 import CustomKeyboard from "./components/CustomKeyboard/CustomKeyboard"
 
 const Routes = (): React.ReactElement => {
   const navigate = useNavigate()
+
+  const [value, setValue] = useState<string>("");
 
   useSocketListener(socketEvents.global.cancel, () => navigate("/"))
   useSocketListener(socketEvents.menu.share, () => navigate("/share"))
@@ -23,7 +26,7 @@ const Routes = (): React.ReactElement => {
       <Route path="/meeting/:meetingId" element={<MeetingPage />} />
       <Route path="/join" element={<div>Join page</div>} />
       <Route path="/create" element={<div>Create page</div>} />
-      <Route path="/keyboard" element={<CustomKeyboard />} />
+      <Route path="/keyboard" element={<CustomKeyboard setValue={setValue}/>} />
       <Route path="/" element={<HomeMenu />} />
     </Switch>
   )

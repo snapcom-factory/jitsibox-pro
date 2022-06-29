@@ -1,12 +1,10 @@
 .keyboard {
-  position: fixed;
-  bottom: 0;
   border-radius: 0px;
 }
 
 .numpad {
   width: 50vw;
-  margin-left: 25vw;
+  margin: 0 auto;
 }
 
 .keyboard-classic-buttons {
@@ -25,12 +23,4 @@
   height: 12.5vh !important;
   width: 17vw !important;
   font-size: 1.5em;
-}
-
-.side-panel {
-  width: 25vw;
-  background-color: #EBEBEB;
-  position: absolute;
-  bottom: 0;
-  height: 53.6vh;
 }
