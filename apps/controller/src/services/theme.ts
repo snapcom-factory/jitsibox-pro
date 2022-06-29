@@ -44,6 +44,7 @@ export const countryTheme = createTheme({
     },
     background: {
       default: "#F5F5FE",
+      paper: "#F5F5FE",
     },
   },
   components: {

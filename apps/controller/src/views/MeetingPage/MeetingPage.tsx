@@ -19,7 +19,9 @@ const MeetingPage = () => {
     <ViewContainer
       header={
         <Header
-          middleContent={<QRCodeButton />}
+          middleContent={
+            <QRCodeButton meetingLink="webconf.numerique.gouv.fr/tuweruywe345" />
+          }
           endContent={<NumberOfParticipantsIndicator />}
         />
       }
