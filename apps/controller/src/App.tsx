@@ -4,13 +4,16 @@ import { BrowserRouter } from "react-router-dom"
 import { countryTheme } from "@/services/theme"
 import Routes from "@/Routes"
 import { SocketProvider } from "@/services/socket"
+import { SnackbarProvider } from "@/services/snackbar"
 
 const App = (): React.ReactElement => (
   <ThemeProvider theme={countryTheme}>
     <SocketProvider>
       <BrowserRouter>
-        <CssBaseline />
-        <Routes />
+        <SnackbarProvider>
+          <CssBaseline />
+          <Routes />
+        </SnackbarProvider>
       </BrowserRouter>
     </SocketProvider>
   </ThemeProvider>
