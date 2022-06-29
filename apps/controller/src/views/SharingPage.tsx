@@ -12,7 +12,7 @@ import {
 import { useSocketListener } from "@/services/socket"
 
 const SharingPage = () => {
-  const [isSharing, setIsSharing] = useState<boolean>(true)
+  const [isSharing, setIsSharing] = useState<boolean>(false)
   useSocketListener(socketEvents.localSharing.start, () => {
     setIsSharing(true)
   })

@@ -15,10 +15,10 @@ import WaveHand from "@/assets/WaveHand"
 import WavingHand from "@/assets/WavingHand"
 
 const MeetingMainControls = (): React.ReactElement => {
-  const [isMuted, setIsMuted] = useState(true)
-  const [isCameraOn, setIsCameraOn] = useState(false)
-  const [isHandRaised, setIsHandRaised] = useState(true)
-  const [isSharingScreen, setIsSharingScreen] = useState(true)
+  const [isMuted, setIsMuted] = useState(false)
+  const [isCameraOn, setIsCameraOn] = useState(true)
+  const [isHandRaised, setIsHandRaised] = useState(false)
+  const [isSharingScreen, setIsSharingScreen] = useState(false)
 
   useSocketListener(socketEvents.meeting.mute, (userIsMuted: boolean) => {
     setIsMuted(userIsMuted)
