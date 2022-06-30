@@ -13,12 +13,14 @@ import { ActionButton } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import WaveHand from "@/assets/WaveHand"
 import WavingHand from "@/assets/WavingHand"
+import { useSnackbarContext } from "@/services/snackbar"
 
 const MeetingMainControls = (): React.ReactElement => {
   const [isMuted, setIsMuted] = useState(false)
   const [isCameraOn, setIsCameraOn] = useState(true)
   const [isHandRaised, setIsHandRaised] = useState(false)
   const [isSharingScreen, setIsSharingScreen] = useState(false)
+  const { openSnackbar } = useSnackbarContext()
 
   useSocketListener(socketEvents.meeting.mute, (userIsMuted: boolean) => {
     setIsMuted(userIsMuted)
@@ -29,8 +31,21 @@ const MeetingMainControls = (): React.ReactElement => {
   useSocketListener(socketEvents.meeting.wave, (userHasHandRaised: boolean) => {
     setIsHandRaised(userHasHandRaised)
   })
+  useSocketListener(socketEvents.meeting.askingToShareScreen, () => {
+    setIsSharingScreen(true)
+    openSnackbar(
+      "info",
+      { vertical: "bottom", horizontal: "center" },
+      "Pour partager votre écran dans le meeting, brancher le cable HDMI à votre ordinateur."
+    )
+  })
   useSocketListener(socketEvents.meeting.sharingScreen, () => {
     setIsSharingScreen(true)
+    openSnackbar(
+      "success",
+      { vertical: "bottom", horizontal: "center" },
+      "Écran partagé"
+    )
   })
   useSocketListener(socketEvents.meeting.stopSharing, () => {
     setIsSharingScreen(false)
