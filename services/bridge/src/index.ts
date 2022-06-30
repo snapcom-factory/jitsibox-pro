@@ -27,9 +27,6 @@ const io = new Server<ClientToServerEvents, ServerToClientEvents>(server, {
   },
 })
 
-// TODO : Enlever après les tests
-app.use(express.static(path.resolve(__dirname, "../../../../front_mock")))
-
 server.listen(port, () => {
   // eslint-disable-next-line no-console
   console.log(`Socket.IO server running at http://localhost:${port}/`)

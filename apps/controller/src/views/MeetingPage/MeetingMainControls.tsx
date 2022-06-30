@@ -23,10 +23,12 @@ const MeetingMainControls = (): React.ReactElement => {
   const { openSnackbar } = useSnackbarContext()
 
   useSocketListener(socketEvents.meeting.mute, (userIsMuted: boolean) => {
-    setIsMuted(userIsMuted)
+    setIsMuted(!userIsMuted)
   })
+
   useSocketListener(socketEvents.meeting.camera, (userHasCameraOn: boolean) => {
-    setIsCameraOn(userHasCameraOn)
+    console.log("camera")
+    setIsCameraOn(!userHasCameraOn)
   })
   useSocketListener(socketEvents.meeting.wave, (userHasHandRaised: boolean) => {
     setIsHandRaised(userHasHandRaised)

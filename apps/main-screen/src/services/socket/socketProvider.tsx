@@ -3,6 +3,9 @@ import { io, Socket } from "socket.io-client"
 import {
   ServerToControllerEvents,
   ControllerToServerEvents,
+  mainScreenApiURL,
+  token,
+  roomName,
 } from "@jitsi-box-pro/model"
 import SocketContext, {
   SocketContextType,
@@ -22,7 +25,12 @@ const SocketProvider = ({
   const [isConnected, setIsConnected] = useState<boolean>(false)
 
   useEffect(() => {
-    const newSocket = io()
+    const newSocket = io(mainScreenApiURL, {
+      auth: {
+        token,
+        roomName,
+      },
+    })
     newSocket.on("connect", () => {
       setIsConnected(true)
     })
