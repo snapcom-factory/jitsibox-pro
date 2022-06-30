@@ -6,43 +6,57 @@ import { JitsiMeeting } from "@jitsi/react-sdk"
 import { useRef } from "react"
 import IJitsiMeetExternalApi from "@jitsi/react-sdk/lib/types/IJitsiMeetExternalApi"
 import { useSocketContext, useSocketListener } from "@/services/socket"
-interface streamPayload {
+interface audioVideoPayload {
   muted: boolean
+}
+
+interface handRaisedPayload {
+  id: string
+  handRaised: number
 }
 
 const JitsiComponent = (): React.ReactElement => {
   const apiRef = useRef<IJitsiMeetExternalApi>()
   const { socket } = useSocketContext()
-  const toggleAudio = () => {
-    if (!apiRef.current) return
-    apiRef.current.executeCommand("toggleAudio")
-  }
-  const toggleVideo = () => {
-    if (!apiRef.current) return
-    apiRef.current.executeCommand("toggleVideo")
-  }
 
-  useSocketListener(socketEvents.meeting.camera, toggleVideo)
-  useSocketListener(socketEvents.meeting.mute, toggleAudio)
+  // commands
+  const execute = (command: string) => {
+    if (!apiRef.current) return
+    apiRef.current.executeCommand(command)
+  }
+  // listening to events from bridge
+  useSocketListener(socketEvents.meeting.camera, () => execute("toggleVideo"))
+  useSocketListener(socketEvents.meeting.mute, () => execute("toggleAudio"))
+  useSocketListener(socketEvents.meeting.wave, () => execute("toggleRaiseHand"))
 
-  const handleAudioStatusChange = (payload: streamPayload, feature: string) => {
+  // sending events to bridge
+  const handleAudioStatusChange = (payload: audioVideoPayload) => {
     if (socket !== null) {
       socket.emit(socketEvents.meeting.mute, payload.muted)
     }
   }
-  const handleVideoStatusChange = (payload: streamPayload, feature: string) => {
+  const handleVideoStatusChange = (payload: audioVideoPayload) => {
     if (socket !== null) {
       socket.emit(socketEvents.meeting.camera, payload.muted)
     }
   }
+  const handleHandUpdate = (payload: handRaisedPayload) => {
+    if (socket !== null) {
+      socket.emit(socketEvents.meeting.wave, payload.handRaised !== 0) // 0  means hand is lowered
+    }
+  }
+
+  // listening to the events from the jitsi-meet-external-api
   const handleApiReady = (apiObj: IJitsiMeetExternalApi) => {
-    console.log("api is ready")
     apiRef.current = apiObj
     apiRef.current.on("audioMuteStatusChanged", (payload) =>
-      handleAudioStatusChange(payload, "audio")
+      handleAudioStatusChange(payload)
     )
     apiRef.current.on("videoMuteStatusChanged", (payload) =>
-      handleVideoStatusChange(payload, "video")
+      handleVideoStatusChange(payload)
+    )
+    apiRef.current.on("raiseHandUpdated", (payload) =>
+      handleHandUpdate(payload)
     )
   }
 
