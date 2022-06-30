@@ -6,6 +6,7 @@ import { JitsiMeeting } from "@jitsi/react-sdk"
 import { useRef } from "react"
 import IJitsiMeetExternalApi from "@jitsi/react-sdk/lib/types/IJitsiMeetExternalApi"
 import { useSocketContext, useSocketListener } from "@/services/socket"
+
 interface audioVideoPayload {
   muted: boolean
 }
