@@ -1,3 +1,2 @@
-import MeetingPage from "./MeetingPage"
-
-export default MeetingPage
+// eslint-disable-next-line import/prefer-default-export
+export { default as MeetingPage } from "@/views/MeetingPage/MeetingPage"

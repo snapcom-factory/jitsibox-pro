@@ -6,7 +6,7 @@ import { ViewContainer, ActionButton, Header, Footer } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import QRCodeButton from "@/views/MeetingPage/QRCodeButton"
 import MeetingMainControls from "@/views/MeetingPage/MeetingMainControls"
-import NumberOfParticipantsIndicator from "./NumberOfParticipantsIndicator"
+import NumberOfParticipantsIndicator from "@/views/MeetingPage/NumberOfParticipantsIndicator"
 
 const MeetingPage = () => {
   const { meetingId } = useParams()

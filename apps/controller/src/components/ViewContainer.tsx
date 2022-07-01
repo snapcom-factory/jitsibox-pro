@@ -1,7 +1,7 @@
 import { Box, Grid } from "@mui/material"
 import { useSocketContext } from "@/services/socket"
 import { ReconnectingBackdrop } from "@/components"
-import { HeaderProps } from "./Header"
+import { HeaderProps } from "@/components/Header"
 
 interface AppContainerProps {
   children: React.ReactNode
