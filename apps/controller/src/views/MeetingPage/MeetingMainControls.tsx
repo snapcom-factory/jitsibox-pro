@@ -36,7 +36,7 @@ const MeetingMainControls = (): React.ReactElement => {
     openSnackbar(
       "info",
       { vertical: "bottom", horizontal: "center" },
-      "Pour partager votre écran dans le meeting, brancher le cable HDMI à votre ordinateur."
+      "Pour partager votre écran dans le meeting, brancher le câble HDMI à votre ordinateur."
     )
   })
   useSocketListener(socketEvents.meeting.sharingScreen, () => {

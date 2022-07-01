@@ -37,7 +37,7 @@ const SharingPage = () => {
           {!isSharing ? (
             <Grid item xs={7}>
               <Typography variant="h3">
-                Pour partager votre écran sur la télévision, brancher le cable
+                Pour partager votre écran sur la télévision, brancher le câble
                 HDMI à votre ordinateur.
               </Typography>
             </Grid>
@@ -53,7 +53,7 @@ const SharingPage = () => {
                     paddingTop: 6,
                   }}
                 >
-                  Pour cesser le partage d&apos;écran, appuyer sur le bouton ou
+                  Pour arrêter le partage d&apos;écran, appuyer sur le bouton ou
                   débrancher le câble.
                 </Typography>
               </Grid>
