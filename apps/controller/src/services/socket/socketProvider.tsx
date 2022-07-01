@@ -5,7 +5,7 @@ import {
   ControllerToServerEvents,
   token,
   roomName,
-  controllersApiURL
+  controllersApiURL,
 } from "@jitsi-box-pro/model"
 import SocketContext, {
   SocketContextType,
@@ -28,8 +28,8 @@ const SocketProvider = ({
     const newSocket = io(controllersApiURL, {
       auth: {
         token,
-        roomName
-      }
+        roomName,
+      },
     })
     newSocket.on("connect", () => {
       setIsConnected(true)

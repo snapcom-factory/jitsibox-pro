@@ -10,14 +10,29 @@ import {
   ReturnToMenuButton,
 } from "@/components"
 import { useSocketListener } from "@/services/socket"
+import hdmiImageURL from "@/assets/hdmi.png"
+import { useSnackbarContext } from "@/services/snackbar"
 
 const SharingPage = () => {
   const [isSharing, setIsSharing] = useState<boolean>(false)
+  const { openSnackbar } = useSnackbarContext()
   useSocketListener(socketEvents.localSharing.start, () => {
     setIsSharing(true)
+    openSnackbar(
+      "success",
+      { vertical: "bottom", horizontal: "center" },
+      "Écran partagé",
+      5000
+    )
   })
   useSocketListener(socketEvents.localSharing.stop, () => {
     setIsSharing(false)
+    openSnackbar(
+      "warning",
+      { vertical: "bottom", horizontal: "center" },
+      "Câble HDMI débranché",
+      5000
+    )
   })
   return (
     <ViewContainer
@@ -30,17 +45,29 @@ const SharingPage = () => {
         sx={{
           height: "100%",
           mx: 8,
-          paddingBottom: 6,
         }}
       >
         <Grid container spacing={8}>
           {!isSharing ? (
-            <Grid item xs={7}>
-              <Typography variant="h3">
-                Pour partager votre écran sur la télévision, brancher le câble
-                HDMI à votre ordinateur.
-              </Typography>
-            </Grid>
+            <>
+              <Grid item xs={7} sx={{ display: "flex", alignItems: "center" }}>
+                <Typography variant="h3">
+                  Pour partager votre écran sur la télévision, brancher le câble
+                  HDMI à votre ordinateur.
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={5}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <img src={hdmiImageURL} alt="Câble HDMI" height={380} />
+              </Grid>
+            </>
           ) : (
             <>
               <Grid item xs={9}>
