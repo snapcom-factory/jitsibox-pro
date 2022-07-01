@@ -41,7 +41,7 @@ const ActionButton = ({
         <Button
           variant="contained"
           color={color}
-          sx={{ fontSize: 70, height: 115, width: 115, borderRadius: 20 }}
+          sx={{ fontSize: 70, height: 125, width: 125, borderRadius: 20 }}
           onClick={handleClick}
         >
           <Icon fontSize="inherit" />

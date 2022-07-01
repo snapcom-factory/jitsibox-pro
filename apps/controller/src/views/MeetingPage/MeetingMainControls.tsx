@@ -57,7 +57,7 @@ const MeetingMainControls = (): React.ReactElement => {
       spacing={0}
       justifyContent="center"
       alignItems="center"
-      sx={{ paddingBottom: 6 }}
+      sx={{ paddingBottom: 4 }}
     >
       <Grid item xs={3}>
         {!isMuted ? (

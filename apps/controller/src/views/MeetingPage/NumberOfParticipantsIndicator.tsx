@@ -3,6 +3,7 @@ import { Chip } from "@mui/material"
 
 const NumberOfParticipantsIndicator = () => (
   <Chip
+    size="large"
     icon={<Person color="inherit" />}
     label="12"
     color="primary"

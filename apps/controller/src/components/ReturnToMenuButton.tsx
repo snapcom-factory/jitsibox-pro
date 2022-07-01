@@ -16,13 +16,13 @@ const ReturnToMenuButton = () => {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        spacing={2}
+        spacing={1}
       >
         <ArrowCircleLeft fontSize="large" color="primary" />
         <Typography
           variant="subtitle1"
           color="primary"
-          sx={{ paddingBottom: 0.7 }}
+          sx={{ paddingBottom: 0.5 }}
         >
           Retourner au menu
         </Typography>

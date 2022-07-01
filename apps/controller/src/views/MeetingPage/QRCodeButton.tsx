@@ -48,55 +48,56 @@ const QRCodeButton = ({ meetingLink }: QRCodeButtonProps) => {
         sx={{ borderRadius: 20 }}
       >
         <Chip
+          size="large"
           label={meetingLink}
           sx={{
             backgroundColor: "primary_light.main",
             color: "primary.main",
-            height: 30,
             paddingLeft: 1,
-            borderTopLeftRadius: 20,
-            borderBottomLeftRadius: 20,
             borderTopRightRadius: 0,
             borderBottomRightRadius: 0,
           }}
         />
         <Chip
+          size="large"
           color="primary"
           sx={{
-            height: 30,
             paddingLeft: 1,
             borderTopLeftRadius: 0,
             borderBottomLeftRadius: 0,
-            borderTopRightRadius: 20,
-            borderBottomRightRadius: 20,
           }}
           icon={<QrCode />}
         />
       </ButtonBase>
       <Dialog
         open={open}
-        onClose={() => {
-          setOpen(false)
-        }}
+        onClose={() => setOpen(false)}
         maxWidth="md"
         fullWidth
+        PaperProps={{
+          sx: { borderRadius: 6 },
+        }}
       >
+        <IconButton
+          size="large"
+          sx={{
+            alignSelf: "flex-end",
+            marginTop: 2,
+            mx: 2,
+            marginBottom: 0,
+            padding: 0,
+          }}
+          onClick={() => setOpen(false)}
+        >
+          <Close fontSize="inherit" />
+        </IconButton>
         <Stack
           direction="column"
-          justifyContent="center"
+          justifyContent="space-between"
           alignItems="center"
           spacing={2}
-          sx={{ height: "100%", paddingBottom: 6, paddingTop: 1, px: 1 }}
+          sx={{ paddingBottom: 6 }}
         >
-          <IconButton
-            size="large"
-            sx={{ alignSelf: "flex-end" }}
-            onClick={() => {
-              setOpen(false)
-            }}
-          >
-            <Close fontSize="inherit" />
-          </IconButton>
           <Typography variant="body2">Lien de la réunion</Typography>
           <Typography variant="h4">{meetingLink}</Typography>
           {/* eslint-disable-next-line react/no-danger */}

@@ -11,6 +11,16 @@ import MarianneMediumItalic from "@/assets/fonts/Marianne/Marianne-Medium_Italic
 export const defaultTheme = createTheme({})
 
 export const countryTheme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      tablet: 1050,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   palette: {
     primary: {
       main: "#000491",
@@ -143,6 +153,20 @@ export const countryTheme = createTheme({
         
       `,
     },
+    MuiChip: {
+      variants: [
+        {
+          props: { size: "large" },
+          style: {
+            fontSize: "1.3rem",
+            height: 40,
+            borderRadius: 30,
+            paddingLeft: "0.2rem",
+            paddingRight: "0.2rem",
+          },
+        },
+      ],
+    },
   },
   typography: {
     fontFamily: ["Marianne", "Arial", "sans-serif"].join(","),
@@ -152,7 +176,7 @@ export const countryTheme = createTheme({
       fontWeight: 700,
     },
     h3: {
-      fontSize: "3.5rem",
+      fontSize: "2.75rem",
       fontWeight: 500,
     },
     h4: {
@@ -166,7 +190,7 @@ export const countryTheme = createTheme({
       fontWeight: 500,
     },
     body2: {
-      fontSize: "1.5rem",
+      fontSize: "2rem",
       fontWeight: 400,
     },
     subtitle1: {
@@ -175,12 +199,12 @@ export const countryTheme = createTheme({
       lineHeight: 1,
     },
     subtitle2: {
-      fontSize: "1.125rem",
+      fontSize: "1.4rem",
       fontWeight: 500,
       lineHeight: 1,
     },
     caption: {
-      fontSize: "0.9rem",
+      fontSize: "1.1rem",
       fontWeight: 700,
       lineHeight: 1,
     },

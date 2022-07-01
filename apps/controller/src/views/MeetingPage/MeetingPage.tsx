@@ -28,25 +28,27 @@ const MeetingPage = () => {
       footer={<Footer />}
     >
       <Container
-        maxWidth="md"
+        maxWidth="tablet"
         sx={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
           alignItems: "center",
           height: "100%",
+          paddingBottom: 1.5,
         }}
       >
         <Stack
           direction="column"
           justifyContent="center"
           alignItems="center"
-          spacing={4}
-          sx={{ paddingBottom: 8 }}
+          spacing={1}
+          sx={{ paddingBottom: 4 }}
         >
           <Typography variant="body2">Identifiant de la réunion</Typography>
           <Typography variant="h2">{meetingId}</Typography>
         </Stack>
+
         <MeetingMainControls />
         <ActionButton
           color="secondary"
