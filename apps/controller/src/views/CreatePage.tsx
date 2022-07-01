@@ -32,10 +32,10 @@ const CreatePage = () => {
         spacing={6}
       >
         <Typography variant="body1" align="center">
-          Pour créer une réunion, saississez un nom...
+          Pour créer une réunion, entrer un nom
         </Typography>
         <TextInput
-          placeholder="Saisissez un nom de réunion..."
+          placeholder="Saisir un nom de réunion..."
           eventName={socketEvents.createCall.validate}
         />
       </Stack>

@@ -36,7 +36,7 @@ const JoinPage = () => {
           <br /> entrer le nom du meeting ou le code réunion à 10 chiffres
         </Typography>
         <TextInput
-          placeholder="Saisissez le nom ou le code du meeting..."
+          placeholder="Saisir le nom ou le code du meeting..."
           eventName={socketEvents.joinCall.validate}
         />
       </Stack>
