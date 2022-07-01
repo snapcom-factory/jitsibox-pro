@@ -1,12 +1,16 @@
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, useLocation } from "react-router-dom"
 import { Container, Stack, Typography } from "@mui/material"
 import { CallEnd } from "@mui/icons-material"
 import { socketEvents } from "@jitsi-box-pro/model"
 import { ViewContainer, ActionButton, Header, Footer } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import QRCodeButton from "@/views/MeetingPage/QRCodeButton"
-import MeetingMainControls from "@/views/MeetingPage/MeetingMainControls"
 import NumberOfParticipantsIndicator from "@/views/MeetingPage/NumberOfParticipantsIndicator"
+import MeetingMainControls, { MeetingProps } from "@/views/MeetingPage/MeetingMainControls"
+
+interface LocationProps {
+  state: MeetingProps
+}
 
 const MeetingPage = () => {
   const { meetingId } = useParams()
@@ -14,6 +18,15 @@ const MeetingPage = () => {
   useSocketListener(socketEvents.meeting.leave, () => {
     navigate("/")
   })
+
+  const { state } = useLocation() as LocationProps
+  const {
+    isAlreadyMuted,
+    isCameraAlreadyOn,
+    isHandAlreadyRaised,
+    isAlreadyAskingToShareScreen,
+    isAlreadySharingScreen,
+  } = state;
 
   return (
     <ViewContainer
@@ -48,8 +61,13 @@ const MeetingPage = () => {
           <Typography variant="body2">Identifiant de la réunion</Typography>
           <Typography variant="h2">{meetingId}</Typography>
         </Stack>
-
-        <MeetingMainControls />
+        <MeetingMainControls
+          isAlreadyMuted={isAlreadyMuted}
+          isCameraAlreadyOn={isCameraAlreadyOn}
+          isHandAlreadyRaised={isHandAlreadyRaised}
+          isAlreadyAskingToShareScreen={isAlreadyAskingToShareScreen}
+          isAlreadySharingScreen={isAlreadySharingScreen}
+        />
         <ActionButton
           color="secondary"
           Icon={CallEnd}

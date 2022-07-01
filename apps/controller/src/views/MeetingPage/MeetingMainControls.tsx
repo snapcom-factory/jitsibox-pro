@@ -15,12 +15,34 @@ import WaveHand from "@/assets/WaveHand"
 import WavingHand from "@/assets/WavingHand"
 import { useSnackbarContext } from "@/services/snackbar"
 
-const MeetingMainControls = (): React.ReactElement => {
-  const [isMuted, setIsMuted] = useState(false)
-  const [isCameraOn, setIsCameraOn] = useState(true)
-  const [isHandRaised, setIsHandRaised] = useState(false)
-  const [isAskingtoShareScreen, setIsAskingtoShareScreen] = useState(false)
+export interface MeetingProps {
+  isAlreadyMuted: boolean
+  isCameraAlreadyOn: boolean
+  isHandAlreadyRaised: boolean
+  isAlreadyAskingToShareScreen: boolean
+  isAlreadySharingScreen: boolean
+}
+
+const MeetingMainControls = ({
+  isAlreadyMuted,
+  isCameraAlreadyOn,
+  isHandAlreadyRaised,
+  isAlreadyAskingToShareScreen,
+  isAlreadySharingScreen
+}: MeetingProps): React.ReactElement => {
+  const [isMuted, setIsMuted] = useState<boolean>(isAlreadyMuted)
+  const [isCameraOn, setIsCameraOn] = useState<boolean>(isCameraAlreadyOn)
+  const [isHandRaised, setIsHandRaised] = useState<boolean>(isHandAlreadyRaised)
+  const [isAskingtoShareScreen, setIsAskingtoShareScreen] = useState(isAlreadyAskingToShareScreen)
   const { openSnackbar } = useSnackbarContext()
+
+  if (!isAlreadySharingScreen) {
+    openSnackbar(
+      "info",
+      { vertical: "bottom", horizontal: "center" },
+      "Pour partager votre écran dans le meeting, brancher le câble HDMI à votre ordinateur."
+    )
+  }
 
   useSocketListener(socketEvents.meeting.mute, (userIsMuted: boolean) => {
     setIsMuted(userIsMuted)

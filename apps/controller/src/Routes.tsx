@@ -1,5 +1,5 @@
-import { Routes as Switch, Route, useNavigate } from "react-router-dom"
-import { socketEvents } from "@jitsi-box-pro/model"
+import { Routes as Switch, Route, useNavigate, NavigateFunction } from "react-router-dom"
+import { GlobalStatus, socketEvents } from "@jitsi-box-pro/model"
 import {
   HomeMenu,
   SharingPage,
@@ -10,8 +10,49 @@ import {
 } from "@/views"
 import { useSocketListener } from "@/services/socket"
 
+const adaptToCurrentStatus = (
+  statusFromSocket : GlobalStatus,
+  navigate : NavigateFunction
+) => {
+  switch (statusFromSocket.global.page) {
+    case "localSharing":
+      navigate(
+        "/share",
+        {state: { isPlugged: statusFromSocket.localSharing.isPlugged }}
+      );
+      break;
+    case "joiningCall":
+      navigate(
+        "/join",
+        {state: { loading: statusFromSocket.keyboardMenu.loading }}
+      );
+      break;
+    case "creatingCall":
+      navigate(
+        "/create",
+        {state: { loading: statusFromSocket.keyboardMenu.loading }}
+      );
+      break;
+    case "meeting":
+      navigate(
+        `/meeting/${statusFromSocket.meeting.meetingId}`,
+        {state: {
+          isAlreadyMuted: statusFromSocket.meeting.isMuted,
+          isCameraAlreadyOn: statusFromSocket.meeting.isCameraOn,
+          isHandAlreadyRaised: statusFromSocket.meeting.isHandRaised,
+          isAlreadyAskingToShareScreen: statusFromSocket.meeting.isAskingToShareScreen,
+          isAlreadySharingScreen: statusFromSocket.meeting.isSharingScreen,
+        }});
+      break;
+    default:
+      navigate("/");
+  }
+}
+
 const Routes = (): React.ReactElement => {
   const navigate = useNavigate()
+
+  useSocketListener(socketEvents.global.connectionData, (globalStatus : GlobalStatus) => adaptToCurrentStatus(globalStatus, navigate))
 
   useSocketListener(socketEvents.global.cancel, () => navigate("/"))
   useSocketListener(socketEvents.menu.share, () => navigate("/share"))
