@@ -19,7 +19,7 @@ const MeetingMainControls = (): React.ReactElement => {
   const [isMuted, setIsMuted] = useState(false)
   const [isCameraOn, setIsCameraOn] = useState(true)
   const [isHandRaised, setIsHandRaised] = useState(false)
-  const [isSharingScreen, setIsSharingScreen] = useState(false)
+  const [isAskingtoShareScreen, setIsAskingtoShareScreen] = useState(false)
   const { openSnackbar } = useSnackbarContext()
 
   useSocketListener(socketEvents.meeting.mute, (userIsMuted: boolean) => {
@@ -32,7 +32,7 @@ const MeetingMainControls = (): React.ReactElement => {
     setIsHandRaised(userHasHandRaised)
   })
   useSocketListener(socketEvents.meeting.askingToShareScreen, () => {
-    setIsSharingScreen(true)
+    setIsAskingtoShareScreen(true)
     openSnackbar(
       "info",
       { vertical: "bottom", horizontal: "center" },
@@ -40,16 +40,15 @@ const MeetingMainControls = (): React.ReactElement => {
     )
   })
   useSocketListener(socketEvents.meeting.sharingScreen, () => {
-    setIsSharingScreen(true)
     openSnackbar(
       "success",
       { vertical: "bottom", horizontal: "center" },
       "Écran partagé",
-      50000
+      5000
     )
   })
   useSocketListener(socketEvents.meeting.stopSharing, () => {
-    setIsSharingScreen(false)
+    setIsAskingtoShareScreen(false)
   })
   return (
     <Grid
@@ -111,7 +110,7 @@ const MeetingMainControls = (): React.ReactElement => {
         )}
       </Grid>
       <Grid item xs={3}>
-        {!isSharingScreen ? (
+        {!isAskingtoShareScreen ? (
           <ActionButton
             text="Partager l'écran"
             color="primary"
