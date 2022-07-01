@@ -56,6 +56,8 @@ const QRCodeButton = ({ meetingLink }: QRCodeButtonProps) => {
             paddingLeft: 1,
             borderTopRightRadius: 0,
             borderBottomRightRadius: 0,
+            textOverflow: "ellipsis",
+            maxWidth: "45vw",
           }}
         />
         <Chip
@@ -99,7 +101,13 @@ const QRCodeButton = ({ meetingLink }: QRCodeButtonProps) => {
           sx={{ paddingBottom: 6 }}
         >
           <Typography variant="body2">Lien de la réunion</Typography>
-          <Typography variant="h4">{meetingLink}</Typography>
+          <Typography
+            variant="h4"
+            align="center"
+            sx={{ wordBreak: "break-all", px: 12 }}
+          >
+            {meetingLink}
+          </Typography>
           {/* eslint-disable-next-line react/no-danger */}
           <div dangerouslySetInnerHTML={{ __html: qrCodeSvgString }} />
           <Typography variant="body1">
