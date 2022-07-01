@@ -44,7 +44,8 @@ const MeetingMainControls = (): React.ReactElement => {
     openSnackbar(
       "success",
       { vertical: "bottom", horizontal: "center" },
-      "Écran partagé"
+      "Écran partagé",
+      50000
     )
   })
   useSocketListener(socketEvents.meeting.stopSharing, () => {

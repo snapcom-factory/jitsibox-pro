@@ -25,10 +25,20 @@ const SnackbarProvider = ({
     vertical: "bottom",
     horizontal: "center",
   })
+  const [sbAutoHideDuration, setAutoHideDuration] = useState<number | null>(
+    null
+  )
 
-  const handleClose = () => {
+  const handleClose = (
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return
+    }
     setOpen(false)
   }
+
   const location = useLocation()
   useEffect(() => setOpen(false), [location.pathname])
 
@@ -37,12 +47,18 @@ const SnackbarProvider = ({
       openSnackbar: (
         severity: AlertColor,
         position: SnackbarOrigin,
-        message: string
+        message: string,
+        autoHideDuration?: number
       ) => {
         setOpen(true)
         setSeverity(severity)
         setPosition(position)
         setMessage(message)
+        if (autoHideDuration !== undefined) {
+          setAutoHideDuration(autoHideDuration)
+        } else {
+          setAutoHideDuration(null)
+        }
       },
     }),
     []
@@ -52,18 +68,14 @@ const SnackbarProvider = ({
     <SnackbarContext.Provider value={contextValue}>
       <Snackbar
         open={open}
-        autoHideDuration={8000}
+        autoHideDuration={sbAutoHideDuration}
         anchorOrigin={sbPosition}
         onClose={handleClose}
       >
-        <Alert
-          severity={sbSeverity}
-          sx={{
-            px: 2,
-            borderRadius: 100,
-          }}
-        >
-          <Typography variant="subtitle2">{sbMessage}</Typography>
+        <Alert severity={sbSeverity}>
+          <Typography variant="subtitle2" sx={{ paddingBottom: 0.5 }}>
+            {sbMessage}
+          </Typography>
         </Alert>
       </Snackbar>
       {children}

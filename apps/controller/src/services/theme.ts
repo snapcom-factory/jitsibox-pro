@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles"
+import { ComponentsPropsList, createTheme, Theme } from "@mui/material/styles"
 import MarianneRegular from "@/assets/fonts/Marianne/Marianne-Regular.woff2"
 import MarianneRegularItalic from "@/assets/fonts/Marianne/Marianne-Regular_Italic.woff2"
 import MarianneBold from "@/assets/fonts/Marianne/Marianne-Bold.woff2"
@@ -32,15 +32,19 @@ export const countryTheme = createTheme({
     },
     error: {
       main: "#F60700",
+      light: "#ffe9e9",
     },
     warning: {
       main: "#D64D00",
+      light: "#ffe9e6",
     },
     success: {
       main: "#1F8D49",
+      light: "#b8fec9",
     },
     info: {
       main: "#0078F3",
+      light: "#e8edff",
     },
     background: {
       default: "#F5F5FE",
@@ -53,6 +57,29 @@ export const countryTheme = createTheme({
         root: {
           boxShadow: "none",
         },
+      },
+    },
+    MuiAlert: {
+      styleOverrides: {
+        root: ({
+          ownerState,
+          theme,
+        }: {
+          ownerState: ComponentsPropsList["MuiAlert"] & Record<string, unknown>
+          theme: Theme
+        }) => ({
+          alignItems: "center",
+          px: 2,
+          borderRadius: 100,
+          color: theme.palette.text.primary,
+          backgroundColor:
+            theme.palette[ownerState.severity || "success"].light,
+          ...{
+            "& .MuiAlert-icon": {
+              color: theme.palette[ownerState.severity || "success"].main,
+            },
+          },
+        }),
       },
     },
     MuiCssBaseline: {

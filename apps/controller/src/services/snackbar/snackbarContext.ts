@@ -5,7 +5,8 @@ export interface SnackbarContextType {
   openSnackbar: (
     severity: AlertColor,
     position: SnackbarOrigin,
-    message: string
+    message: string,
+    autoHideDuration?: number
   ) => void
 }
 
