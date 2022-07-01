@@ -1,26 +1,42 @@
 .keyboard {
   border-radius: 0px;
+  background-color: #e3e3fd; /* theme.palette.primary_lighter.main */
+  font-family: "Marianne"; /* theme.typography.fontFamily */
+  font-weight: 500;
 }
 
 .numpad {
-  width: 50vw;
+  width: 40vw;
   margin: 0 auto;
 }
 
 .keyboard-classic-buttons {
   height: 12.5vh !important;
   width: 9.99vw !important;
-  font-size: 1.5em;
+}
+
+.keyboard-bksp-buttons {
+  height: 12.5vh !important;
+  width: 19vw !important;
+  font-size: 1.8em !important;
+  font-weight: 700;
 }
 
 .keyboard-long-buttons {
   height: 12.5vh !important;
   width: 20.38vw !important;
-  font-size: 1.5em;
 }
 
 .keyboard-numpad-buttons {
   height: 12.5vh !important;
   width: 17vw !important;
+}
+
+.buttons {
   font-size: 1.5em;
+  color: #000491; /* theme.palette.primary.main */
+}
+
+.buttons:active {
+  background-color: #cacafb !important; /* theme.palette.primary_light.main */
 }

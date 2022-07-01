@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Keyboard from "react-simple-keyboard"
-import { Box } from "@mui/material"
+import { Paper, useTheme } from "@mui/material"
 import "react-simple-keyboard/build/css/index.css"
 import "@/components/CustomKeyboard/CustomKeyboard.css"
 
@@ -12,24 +12,38 @@ interface KeyboardProps {
 const alphabet = "a b c d e f g h i j k l m n o p q r s t u v w x y z"
 const defaultLayout: string[] = [
   "1 2 3 4 5 6 7 8 9 0 {bksp}",
-  "a z e r t y u i o p {enter}",
-  "q s d f g h j k l m _",
-  "{shift} w x c v b n - {switch}",
+  "a z e r t y u i o p",
+  "q s d f g h j k l m",
+  "{shift} w x c v b n {switchTo123}",
 ]
 const defaultCapsLayout: string[] = [
   "1 2 3 4 5 6 7 8 9 0 {bksp}",
-  "A Z E R T Y U I O P {enter}",
-  "Q S D F G H J K L M _",
-  "{shift} W X C V B N - {switch}",
+  "A Z E R T Y U I O P",
+  "Q S D F G H J K L M",
+  "{shift} W X C V B N {switchTo123}",
 ]
-const numpadLayout: string[] = ["1 2 3", "4 5 6", "7 8 9", "{switch} 0 {bksp}"]
+const numpadLayout: string[] = [
+  "1 2 3",
+  "4 5 6",
+  "7 8 9",
+  "{switchToABC} 0 {bksp}",
+]
+
+// TODO : This keyboard is a good MVP keyboard, but should be replaced for production.
+/* Major defaults are :
+- The keyboard is not natively responsive
+- The keyboard does not handle well HTML Change Events
+- The styling of this keyboard MUST BE done with CSS classnames that have to be added the theme props of this component. This does not play well with the CSS-in-JS solution used in the rest of the application. Moreover, to overcome the native CSS specificity of the library, !important tags have to be added to some of our CSS properties.
+*/
 
 const CustomKeyboard = ({ setValue }: KeyboardProps): React.ReactElement => {
   const [currentLayout, setCurrentLayout] = useState<string>("numpad")
 
   const handleSpecialKeys = (button: string) => {
-    if (button === "{switch}") {
-      setCurrentLayout(currentLayout.includes("default") ? "numpad" : "default")
+    if (button === "{switchToABC}") {
+      setCurrentLayout("default")
+    } else if (button === "{switchTo123}") {
+      setCurrentLayout("numpad")
     } else if (button === "{shift}") {
       setCurrentLayout(currentLayout === "default" ? "defaultCaps" : "default")
     } else if (
@@ -39,16 +53,19 @@ const CustomKeyboard = ({ setValue }: KeyboardProps): React.ReactElement => {
       setCurrentLayout("default")
     }
   }
+  const theme = useTheme()
 
   return (
-    <Box
+    <Paper
+      elevation={4}
       sx={{
-        zIndex: "10000",
-        width: "100vw",
-        backgroundColor: "#EBEBEB",
-        position: "absolute",
-        bottom: "0",
         height: "53.1vh",
+        width: "100vw",
+        position: "fixed",
+        bottom: "0",
+        left: "0",
+        borderRadius: 0,
+        backgroundColor: theme.palette.primary_lighter.main,
       }}
     >
       <Keyboard
@@ -58,8 +75,8 @@ const CustomKeyboard = ({ setValue }: KeyboardProps): React.ReactElement => {
         display={{
           "{bksp}": "⌫",
           "{shift}": "⇧",
-          "{switch}": "123 ⇄ ABC",
-          "{enter}": "⇨",
+          "{switchTo123}": "123",
+          "{switchToABC}": "ABC",
         }}
         layout={{
           default: defaultLayout,
@@ -73,23 +90,27 @@ const CustomKeyboard = ({ setValue }: KeyboardProps): React.ReactElement => {
           currentLayout !== "numpad"
             ? [
                 {
-                  class: "keyboard-classic-buttons",
-                  buttons: `${alphabet} ${alphabet.toUpperCase()} 0 1 2 3 4 5 6 7 8 9 _ - {bksp} {enter}`,
+                  class: "keyboard-classic-buttons buttons",
+                  buttons: `${alphabet} ${alphabet.toUpperCase()} 0 1 2 3 4 5 6 7 8 9`,
                 },
                 {
-                  class: "keyboard-long-buttons",
-                  buttons: "{shift} {switch}",
+                  class: "keyboard-long-buttons buttons",
+                  buttons: "{shift} {switchTo123}",
+                },
+                {
+                  class: "keyboard-bksp-buttons buttons",
+                  buttons: "{bksp}",
                 },
               ]
             : [
                 {
-                  class: "keyboard-numpad-buttons",
-                  buttons: "1 2 3 4 5 6 7 8 9 0 {bksp} {switch}",
+                  class: "keyboard-numpad-buttons buttons",
+                  buttons: "1 2 3 4 5 6 7 8 9 0 {bksp} {switchToABC}",
                 },
               ]
         }
       />
-    </Box>
+    </Paper>
   )
 }
 

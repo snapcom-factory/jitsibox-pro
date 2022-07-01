@@ -3,6 +3,7 @@ import { ArrowForward } from "@mui/icons-material"
 import { Box, IconButton, InputBase } from "@mui/material"
 import { socketEvents } from "@jitsi-box-pro/model"
 import { useSocketContext } from "@/services/socket"
+import { CustomKeyboard } from "@/components"
 
 type AllowedEvents =
   | `${typeof socketEvents.joinCall.validate}`
@@ -32,20 +33,21 @@ const TextInput = ({
     }
   }
   return (
-    <Box
-      component="form"
-      sx={{
+    <>
+      <Box
+        component="form"
+        sx={{
           display: "grid",
           gridTemplateColumns: "1fr auto",
           gridTemplateRows: "1fr",
           alignItems: "center",
-        width: 650,
-      }}
-    >
-      <InputBase
-        value={input}
-        onChange={handleInputChange}
-        placeholder={placeholder}
+          width: 650,
+        }}
+      >
+        <InputBase
+          value={input}
+          onChange={handleInputChange}
+          placeholder={placeholder}
           sx={{
             gridColumn: "1 / 3",
             gridRow: "1 / 2",
@@ -59,9 +61,9 @@ const TextInput = ({
             borderColor: "primary_light.main",
           }}
           multiline
-      />
-      <IconButton
-        color="primary"
+        />
+        <IconButton
+          color="primary"
           sx={{
             gridColumn: "2 / 3",
             gridRow: "1 / 2",
@@ -70,11 +72,13 @@ const TextInput = ({
             width: 55,
             backgroundColor: "primary_light.main",
           }}
-        onClick={handleSubmit}
-      >
-        <ArrowForward />
-      </IconButton>
-    </Box>
+          onClick={handleSubmit}
+        >
+          <ArrowForward />
+        </IconButton>
+      </Box>
+      <CustomKeyboard setValue={setInput} />
+    </>
   )
 }
 
