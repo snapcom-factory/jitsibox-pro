@@ -16,13 +16,13 @@ import { useSnackbarContext } from "@/services/snackbar"
 
 interface SharingProps {
   state: {
-    isPlugged: boolean | undefined
-  }
+    isPlugged: boolean
+  } | undefined
 }
 
 const SharingPage = () => {
   const { state } = useLocation() as SharingProps;
-  const { isPlugged } = state;
+  const { isPlugged } = state ?? { isPlugged: false };
 
   const [isSharing, setIsSharing] = useState<boolean>(isPlugged ?? false);
   const { openSnackbar } = useSnackbarContext()

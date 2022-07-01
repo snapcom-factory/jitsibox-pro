@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Grid } from "@mui/material"
 import {
   CancelPresentation,
@@ -36,13 +36,15 @@ const MeetingMainControls = ({
   const [isAskingtoShareScreen, setIsAskingtoShareScreen] = useState(isAlreadyAskingToShareScreen)
   const { openSnackbar } = useSnackbarContext()
 
-  if (!isAlreadySharingScreen) {
-    openSnackbar(
-      "info",
-      { vertical: "bottom", horizontal: "center" },
-      "Pour partager votre écran dans le meeting, brancher le câble HDMI à votre ordinateur."
-    )
-  }
+  useEffect(() => {
+    if (!isAlreadySharingScreen) {
+      openSnackbar(
+        "info",
+        { vertical: "bottom", horizontal: "center" },
+        "Pour partager votre écran dans le meeting, brancher le câble HDMI à votre ordinateur."
+      )
+    }
+  }, [isAlreadySharingScreen])
 
   useSocketListener(socketEvents.meeting.mute, (userIsMuted: boolean) => {
     setIsMuted(userIsMuted)
@@ -72,6 +74,12 @@ const MeetingMainControls = ({
   })
   useSocketListener(socketEvents.meeting.stopSharing, () => {
     setIsAskingtoShareScreen(false)
+    openSnackbar(
+      "error",
+      { vertical: "bottom", horizontal: "center" },
+      "Partage d'écran arrêté",
+      2000
+    )
   })
   return (
     <Grid

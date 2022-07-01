@@ -9,7 +9,7 @@ import NumberOfParticipantsIndicator from "@/views/MeetingPage/NumberOfParticipa
 import MeetingMainControls, { MeetingProps } from "@/views/MeetingPage/MeetingMainControls"
 
 interface LocationProps {
-  state: MeetingProps
+  state: MeetingProps | undefined
 }
 
 const MeetingPage = () => {
@@ -26,7 +26,13 @@ const MeetingPage = () => {
     isHandAlreadyRaised,
     isAlreadyAskingToShareScreen,
     isAlreadySharingScreen,
-  } = state;
+  } = state ?? {
+    isAlreadyMuted: false,
+    isCameraAlreadyOn: true,
+    isHandAlreadyRaised: false,
+    isAlreadyAskingToShareScreen: false,
+    isAlreadySharingScreen: false,
+  };
 
   return (
     <ViewContainer
