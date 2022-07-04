@@ -4,6 +4,7 @@ import { Box, IconButton, InputBase } from "@mui/material"
 import { socketEvents } from "@jitsi-box-pro/model"
 import { useSocketContext } from "@/services/socket"
 import { CustomKeyboard } from "@/components"
+import { useSnackbarContext } from "@/services/snackbar"
 
 type AllowedEvents =
   | `${typeof socketEvents.joinCall.validate}`
@@ -19,12 +20,16 @@ const TextInput = ({
   placeholder,
 }: TextInputProps): React.ReactElement => {
   const { socket } = useSocketContext()
+  const { openSnackbar } = useSnackbarContext()
   const [input, setInput] = useState<string>("")
 
-  const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ): void => {
-    setInput(event.target.value)
+  const handleInputChange = (): void => {
+    openSnackbar(
+      "warning",
+      { vertical: "top", horizontal: "center" },
+      "Veuillez utiliser le clavier virtuel",
+      5000
+    )
   }
 
   const handleSubmit = () => {
@@ -48,6 +53,7 @@ const TextInput = ({
           value={input}
           onChange={handleInputChange}
           placeholder={placeholder}
+          inputProps={{ maxLength: 46 }}
           sx={{
             gridColumn: "1 / 3",
             gridRow: "1 / 2",
@@ -60,7 +66,6 @@ const TextInput = ({
             borderStyle: "solid",
             borderColor: "primary_light.main",
           }}
-          multiline
         />
         <IconButton
           color="primary"
@@ -71,6 +76,12 @@ const TextInput = ({
             height: 55,
             width: 55,
             backgroundColor: "primary_light.main",
+            ":hover": {
+              backgroundColor: "primary_lighter.main",
+              borderWidth: 1,
+              borderStyle: "solid",
+              borderColor: "primary_light.main",
+            },
           }}
           onClick={handleSubmit}
         >
