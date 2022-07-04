@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { ArrowForward, CloseRounded, CheckRounded } from "@mui/icons-material"
-import { Box, IconButton, InputBase, Stack, Typography } from "@mui/material"
+import { Box, IconButton, InputBase, Stack, Typography, CircularProgress } from "@mui/material"
 import { socketEvents } from "@jitsi-box-pro/model"
 import { useSocketContext } from "@/services/socket"
 import { CustomKeyboard } from "@/components"
@@ -14,12 +14,16 @@ interface TextInputProps {
   eventName: AllowedEvents
   placeholder: string
   creating?: boolean
+  loading: boolean
+  setLoading: (value: boolean) => void
 }
 
 const TextInput = ({
   eventName,
   placeholder,
   creating = false,
+  loading,
+  setLoading
 }: TextInputProps): React.ReactElement => {
   const { socket } = useSocketContext()
   const { openSnackbar } = useSnackbarContext()
@@ -33,12 +37,13 @@ const TextInput = ({
       "warning",
       { vertical: "top", horizontal: "center" },
       "Veuillez utiliser le clavier virtuel",
-      5000
+      3000
     )
   }
 
   const handleSubmit = () => {
     if (socket !== null && (!creating || (hasTenCharacters && hasThreeDigits))) {
+      setLoading(true)
       socket.emit(eventName, input)
     }
   }
@@ -90,7 +95,11 @@ const TextInput = ({
           }}
           onClick={handleSubmit}
         >
-          <ArrowForward />
+          {loading ? (
+            <CircularProgress />
+          ) : (
+            <ArrowForward />
+          )}
         </IconButton>
         {creating && input.length > 0 ? (
           <div

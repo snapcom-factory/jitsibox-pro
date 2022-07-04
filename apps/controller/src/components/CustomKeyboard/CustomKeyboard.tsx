@@ -60,7 +60,7 @@ const CustomKeyboard = ({
         "warning",
         { vertical: "top", horizontal: "center" },
         "Limite de caractères atteinte",
-        5000
+        3000
       )
     }
   }

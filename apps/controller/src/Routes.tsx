@@ -24,13 +24,13 @@ const adaptToCurrentStatus = (
     case "joiningCall":
       navigate(
         "/join",
-        {state: { loading: statusFromSocket.keyboardMenu.loading }}
+        {state: { isLoading: statusFromSocket.keyboardMenu.loading }}
       );
       break;
     case "creatingCall":
       navigate(
         "/create",
-        {state: { loading: statusFromSocket.keyboardMenu.loading }}
+        {state: { isLoading: statusFromSocket.keyboardMenu.loading }}
       );
       break;
     case "meeting":

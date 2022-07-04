@@ -1,5 +1,7 @@
 import { Stack, Typography } from "@mui/material"
 import { socketEvents } from "@jitsi-box-pro/model"
+import { useLocation } from "react-router-dom"
+import { useState } from "react"
 import {
   Header,
   Footer,
@@ -10,13 +12,26 @@ import {
 import { useSocketListener } from "@/services/socket"
 import { useSnackbarContext } from "@/services/snackbar"
 
+interface CreateProps {
+  state: {
+    isLoading: boolean
+  } | undefined
+}
+
 const CreatePage = () => {
+  const { state } = useLocation() as CreateProps
+  const { isLoading } = state ?? { isLoading: false }
+
+  const [loading, setLoading] = useState<boolean>(isLoading)
+
   const { openSnackbar } = useSnackbarContext()
   useSocketListener(socketEvents.createCall.error, () => {
+    setLoading(false);
     openSnackbar(
       "error",
       { vertical: "top", horizontal: "center" },
-      "Nom de réunion invalide"
+      "Nom de réunion invalide",
+      3000
     )
   })
 
@@ -38,6 +53,8 @@ const CreatePage = () => {
           placeholder="Saisir un nom de réunion..."
           eventName={socketEvents.createCall.validate}
           creating
+          loading={loading}
+          setLoading={setLoading}
         />
       </Stack>
     </ViewContainer>

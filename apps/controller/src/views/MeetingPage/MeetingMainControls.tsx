@@ -37,7 +37,7 @@ const MeetingMainControls = ({
   const { openSnackbar } = useSnackbarContext()
 
   useEffect(() => {
-    if (!isAlreadySharingScreen) {
+    if (isAlreadyAskingToShareScreen && !isAlreadySharingScreen) {
       openSnackbar(
         "info",
         { vertical: "bottom", horizontal: "center" },
@@ -69,7 +69,7 @@ const MeetingMainControls = ({
       "success",
       { vertical: "bottom", horizontal: "center" },
       "Écran partagé",
-      5000
+      3000
     )
   })
   useSocketListener(socketEvents.meeting.stopSharing, () => {
