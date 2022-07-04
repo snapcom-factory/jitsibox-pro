@@ -98,7 +98,7 @@ const CustomKeyboard = ({ setValue }: KeyboardProps): React.ReactElement => {
                   buttons: "{shift} {switchTo123}",
                 },
                 {
-                  class: "keyboard-bksp-buttons buttons",
+                  class: "keyboard-bksp-button buttons",
                   buttons: "{bksp}",
                 },
               ]

@@ -12,12 +12,11 @@ import { useSnackbarContext } from "@/services/snackbar"
 
 const CreatePage = () => {
   const { openSnackbar } = useSnackbarContext()
-  useSocketListener(socketEvents.createCall.error, (error: string) => {
-    console.error(error)
+  useSocketListener(socketEvents.createCall.error, () => {
     openSnackbar(
       "error",
       { vertical: "top", horizontal: "center" },
-      "Nom de réunion non valide"
+      "Nom de réunion invalide"
     )
   })
 
