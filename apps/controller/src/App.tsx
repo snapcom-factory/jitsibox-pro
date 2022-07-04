@@ -1,7 +1,6 @@
 import CssBaseline from "@mui/material/CssBaseline"
 import { ThemeProvider } from "@mui/material"
 import { BrowserRouter } from "react-router-dom"
-import { useEffect } from "react"
 import { countryTheme } from "@/services/theme"
 import Routes from "@/Routes"
 import { SocketProvider } from "@/services/socket"
@@ -10,16 +9,14 @@ import { SnackbarProvider } from "@/services/snackbar"
 const App = (): React.ReactElement => {
 
   // Disable zoom on tablets and mobile devices
-  useEffect(() => {
-    const disablePinchZoom = (e : TouchEvent) => {
-        if (e.touches.length > 1) {
-          e.preventDefault()
-        }
+  const disablePinchZoom = (e : TouchEvent) => {
+    if (e.touches.length > 1) {
+      e.preventDefault()
     }
-    document.addEventListener("touchmove", disablePinchZoom, {
-        passive: false
-    })
-  }, [])
+  }
+  document.addEventListener("touchmove", disablePinchZoom, {
+      passive: false
+  })
 
   return (
     <ThemeProvider theme={countryTheme}>
