@@ -19,7 +19,7 @@ interface handRaisedPayload {
 const JitsiComponent = (): React.ReactElement => {
   const apiRef = useRef<IJitsiMeetExternalApi>()
   const { socket } = useSocketContext()
-
+  const id = "1234"
   // commands
   const execute = (command: string) => {
     if (!apiRef.current) return
@@ -42,7 +42,7 @@ const JitsiComponent = (): React.ReactElement => {
     }
   }
   const handleHandUpdate = (payload: handRaisedPayload) => {
-    if (socket !== null) {
+    if (socket !== null && payload.id === id) {
       socket.emit(socketEvents.meeting.wave, payload.handRaised !== 0) // 0  means hand is lowered
     }
   }
@@ -63,7 +63,7 @@ const JitsiComponent = (): React.ReactElement => {
 
   return (
     <JitsiMeeting
-      roomName="Test OPENFUN"
+      roomName="azerfdsi67832"
       interfaceConfigOverwrite={{
         MOBILE_APP_PROMO: false,
         filmStripOnly: false,
