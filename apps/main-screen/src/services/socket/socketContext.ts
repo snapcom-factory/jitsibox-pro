@@ -1,12 +1,12 @@
 import {
-  ControllerToServerEvents,
-  ServerToControllerEvents,
+  MainScreenToServerEvents,
+  ServerToMainScreenEvents,
 } from "@jitsi-box-pro/model"
 import { createContext } from "react"
 import { Socket } from "socket.io-client"
 
 export interface SocketContextType {
-  socket: Socket<ServerToControllerEvents, ControllerToServerEvents> | null
+  socket: Socket<ServerToMainScreenEvents, MainScreenToServerEvents> | null
   isConnected: boolean
 }
 
