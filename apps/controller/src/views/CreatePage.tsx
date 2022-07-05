@@ -37,6 +37,7 @@ const CreatePage = () => {
         <TextInput
           placeholder="Saisir un nom de réunion..."
           eventName={socketEvents.createCall.validate}
+          creating
         />
       </Stack>
     </ViewContainer>

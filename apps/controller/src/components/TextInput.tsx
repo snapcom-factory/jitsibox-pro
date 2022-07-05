@@ -13,11 +13,13 @@ type AllowedEvents =
 interface TextInputProps {
   eventName: AllowedEvents
   placeholder: string
+  creating?: boolean
 }
 
 const TextInput = ({
   eventName,
   placeholder,
+  creating = false,
 }: TextInputProps): React.ReactElement => {
   const { socket } = useSocketContext()
   const { openSnackbar } = useSnackbarContext()
@@ -88,7 +90,11 @@ const TextInput = ({
           <ArrowForward />
         </IconButton>
       </Box>
-      <CustomKeyboard setValue={setInput} />
+      <CustomKeyboard
+        setValue={setInput}
+        creating={creating}
+        handleSubmit={handleSubmit}
+      />
     </>
   )
 }
