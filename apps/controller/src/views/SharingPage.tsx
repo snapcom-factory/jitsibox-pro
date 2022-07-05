@@ -1,8 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Typography, Stack, Grid } from "@mui/material"
 import { Close } from "@mui/icons-material"
 import { socketEvents } from "@jitsi-box-pro/model"
-import { useLocation } from "react-router-dom"
 import {
   ViewContainer,
   Header,
@@ -15,16 +14,13 @@ import hdmiImageURL from "@/assets/hdmi.png"
 import { useSnackbarContext } from "@/services/snackbar"
 
 interface SharingProps {
-  state: {
-    isPlugged: boolean
-  } | undefined
+  isPlugged: boolean
 }
 
-const SharingPage = () => {
-  const { state } = useLocation() as SharingProps;
-  const { isPlugged } = state ?? { isPlugged: false };
+const SharingPage = ({ isPlugged } : SharingProps) => {
+  const [isSharing, setIsSharing] = useState<boolean>(false);
+  useEffect(() => setIsSharing(isPlugged), [isPlugged]);
 
-  const [isSharing, setIsSharing] = useState<boolean>(isPlugged ?? false);
   const { openSnackbar } = useSnackbarContext()
   useSocketListener(socketEvents.localSharing.start, () => {
     setIsSharing(true)

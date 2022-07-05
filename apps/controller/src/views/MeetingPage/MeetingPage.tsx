@@ -1,4 +1,4 @@
-import { useParams, useNavigate, useLocation } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { Container, Stack, Typography } from "@mui/material"
 import { CallEnd } from "@mui/icons-material"
 import { socketEvents } from "@jitsi-box-pro/model"
@@ -8,31 +8,18 @@ import QRCodeButton from "@/views/MeetingPage/QRCodeButton"
 import NumberOfParticipantsIndicator from "@/views/MeetingPage/NumberOfParticipantsIndicator"
 import MeetingMainControls, { MeetingProps } from "@/views/MeetingPage/MeetingMainControls"
 
-interface LocationProps {
-  state: MeetingProps | undefined
-}
-
-const MeetingPage = () => {
+const MeetingPage = ({
+  isAlreadyMuted,
+  isCameraAlreadyOn,
+  isHandAlreadyRaised,
+  isAlreadyAskingToShareScreen,
+  isAlreadySharingScreen
+} : MeetingProps) => {
   const { meetingId } = useParams()
   const navigate = useNavigate()
   useSocketListener(socketEvents.meeting.leave, () => {
     navigate("/")
   })
-
-  const { state } = useLocation() as LocationProps
-  const {
-    isAlreadyMuted,
-    isCameraAlreadyOn,
-    isHandAlreadyRaised,
-    isAlreadyAskingToShareScreen,
-    isAlreadySharingScreen,
-  } = state ?? {
-    isAlreadyMuted: false,
-    isCameraAlreadyOn: true,
-    isHandAlreadyRaised: false,
-    isAlreadyAskingToShareScreen: false,
-    isAlreadySharingScreen: false,
-  };
 
   return (
     <ViewContainer

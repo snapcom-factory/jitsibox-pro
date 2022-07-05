@@ -28,13 +28,29 @@ const MeetingMainControls = ({
   isCameraAlreadyOn,
   isHandAlreadyRaised,
   isAlreadyAskingToShareScreen,
-  isAlreadySharingScreen
+  isAlreadySharingScreen,
 }: MeetingProps): React.ReactElement => {
-  const [isMuted, setIsMuted] = useState<boolean>(isAlreadyMuted)
-  const [isCameraOn, setIsCameraOn] = useState<boolean>(isCameraAlreadyOn)
-  const [isHandRaised, setIsHandRaised] = useState<boolean>(isHandAlreadyRaised)
-  const [isAskingtoShareScreen, setIsAskingtoShareScreen] = useState(isAlreadyAskingToShareScreen)
+  const [isMuted, setIsMuted] = useState<boolean>(false)
+  const [isCameraOn, setIsCameraOn] = useState<boolean>(false)
+  const [isHandRaised, setIsHandRaised] = useState<boolean>(false)
+  const [isAskingToShareScreen, setIsAskingToShareScreen] =
+    useState<boolean>(false)
+  const [isSharingScreen, setIsSharingScreen] = useState<boolean>(false)
   const { openSnackbar } = useSnackbarContext()
+
+  useEffect(() => {
+    setIsMuted(isAlreadyMuted)
+    setIsCameraOn(isCameraAlreadyOn)
+    setIsHandRaised(isHandAlreadyRaised)
+    setIsAskingToShareScreen(isAlreadyAskingToShareScreen)
+    setIsSharingScreen(isAlreadySharingScreen)
+  }, [
+    isAlreadyMuted,
+    isCameraAlreadyOn,
+    isHandAlreadyRaised,
+    isAlreadyAskingToShareScreen,
+    isAlreadySharingScreen,
+  ])
 
   useEffect(() => {
     if (isAlreadyAskingToShareScreen && !isAlreadySharingScreen) {
@@ -44,7 +60,7 @@ const MeetingMainControls = ({
         "Pour partager votre écran dans le meeting, brancher le câble HDMI à votre ordinateur."
       )
     }
-  }, [isAlreadySharingScreen])
+  }, [isAlreadyAskingToShareScreen, isAlreadySharingScreen])
 
   useSocketListener(socketEvents.meeting.mute, (userIsMuted: boolean) => {
     setIsMuted(userIsMuted)
@@ -57,7 +73,7 @@ const MeetingMainControls = ({
     setIsHandRaised(userHasHandRaised)
   })
   useSocketListener(socketEvents.meeting.askingToShareScreen, () => {
-    setIsAskingtoShareScreen(true)
+    setIsAskingToShareScreen(true)
     openSnackbar(
       "info",
       { vertical: "bottom", horizontal: "center" },
@@ -73,7 +89,8 @@ const MeetingMainControls = ({
     )
   })
   useSocketListener(socketEvents.meeting.stopSharing, () => {
-    setIsAskingtoShareScreen(false)
+    setIsAskingToShareScreen(false)
+    setIsSharingScreen(false)
     openSnackbar(
       "error",
       { vertical: "bottom", horizontal: "center" },
@@ -141,7 +158,7 @@ const MeetingMainControls = ({
         )}
       </Grid>
       <Grid item xs={3}>
-        {!isAskingtoShareScreen ? (
+        {!(isAskingToShareScreen || isSharingScreen) ? (
           <ActionButton
             text="Partager l'écran"
             color="primary"

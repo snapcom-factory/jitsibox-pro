@@ -1,5 +1,6 @@
 import { Routes as Switch, Route, useNavigate, NavigateFunction } from "react-router-dom"
 import { GlobalStatus, socketEvents } from "@jitsi-box-pro/model"
+import { useState } from "react"
 import {
   HomeMenu,
   SharingPage,
@@ -10,49 +11,80 @@ import {
 } from "@/views"
 import { useSocketListener } from "@/services/socket"
 
+interface StatusProps {
+  setIsPlugged: (value: boolean) => void
+  setIsLoading: (value: boolean) => void
+  setIsAlreadyMuted: (value: boolean) => void
+  setIsCameraAlreadyOn: (value: boolean) => void
+  setIsHandAlreadyRaised: (value: boolean) => void
+  setIsAlreadyAskingToShareScreen: (value: boolean) => void
+  setIsAlreadySharingScreen: (value: boolean) => void
+}
+
 const adaptToCurrentStatus = (
   statusFromSocket : GlobalStatus,
+  localStatus : StatusProps,
   navigate : NavigateFunction
 ) => {
   switch (statusFromSocket.global.page) {
     case "localSharing":
-      navigate(
-        "/share",
-        {state: { isPlugged: statusFromSocket.localSharing.isPlugged }}
-      );
+      localStatus.setIsPlugged(statusFromSocket.localSharing.isPlugged)
+      navigate("/share");
       break;
     case "joiningCall":
-      navigate(
-        "/join",
-        {state: { isLoading: statusFromSocket.keyboardMenu.loading }}
-      );
+      localStatus.setIsLoading(statusFromSocket.keyboardMenu.loading)
+      navigate("/join");
       break;
     case "creatingCall":
-      navigate(
-        "/create",
-        {state: { isLoading: statusFromSocket.keyboardMenu.loading }}
-      );
+      localStatus.setIsLoading(statusFromSocket.keyboardMenu.loading)
+      navigate("/create");
       break;
     case "meeting":
-      navigate(
-        `/meeting/${statusFromSocket.meeting.meetingId}`,
-        {state: {
-          isAlreadyMuted: statusFromSocket.meeting.isMuted,
-          isCameraAlreadyOn: statusFromSocket.meeting.isCameraOn,
-          isHandAlreadyRaised: statusFromSocket.meeting.isHandRaised,
-          isAlreadyAskingToShareScreen: statusFromSocket.meeting.isAskingToShareScreen,
-          isAlreadySharingScreen: statusFromSocket.meeting.isSharingScreen,
-        }});
+      localStatus.setIsAlreadyMuted(statusFromSocket.meeting.isMuted)
+      localStatus.setIsCameraAlreadyOn(statusFromSocket.meeting.isCameraOn)
+      localStatus.setIsHandAlreadyRaised(statusFromSocket.meeting.isHandRaised)
+      localStatus.setIsAlreadyAskingToShareScreen(statusFromSocket.meeting.isAskingToShareScreen)
+      localStatus.setIsAlreadySharingScreen(statusFromSocket.meeting.isSharingScreen)
+      navigate(`/meeting/${statusFromSocket.meeting.meetingId}`)
       break;
     default:
       navigate("/");
+      // Reinitialization of local parameters
+      localStatus.setIsPlugged(statusFromSocket.localSharing.isPlugged)
+      localStatus.setIsLoading(statusFromSocket.keyboardMenu.loading)
+      localStatus.setIsAlreadyMuted(statusFromSocket.meeting.isMuted)
+      localStatus.setIsCameraAlreadyOn(statusFromSocket.meeting.isCameraOn)
+      localStatus.setIsHandAlreadyRaised(statusFromSocket.meeting.isHandRaised)
+      localStatus.setIsAlreadyAskingToShareScreen(statusFromSocket.meeting.isAskingToShareScreen)
+      localStatus.setIsAlreadySharingScreen(statusFromSocket.meeting.isSharingScreen)
+      break;
   }
 }
 
 const Routes = (): React.ReactElement => {
   const navigate = useNavigate()
 
-  useSocketListener(socketEvents.global.connectionData, (globalStatus : GlobalStatus) => adaptToCurrentStatus(globalStatus, navigate))
+  const [isPlugged, setIsPlugged] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isAlreadyMuted, setIsAlreadyMuted] = useState<boolean>(false)
+  const [isCameraAlreadyOn, setIsCameraAlreadyOn] = useState<boolean>(false)
+  const [isHandAlreadyRaised, setIsHandAlreadyRaised] = useState<boolean>(false)
+  const [isAlreadyAskingToShareScreen, setIsAlreadyAskingToShareScreen] = useState<boolean>(false)
+  const [isAlreadySharingScreen, setIsAlreadySharingScreen] = useState<boolean>(false)
+
+  const localStatus : StatusProps = {
+    setIsPlugged,
+    setIsLoading,
+    setIsAlreadyMuted,
+    setIsCameraAlreadyOn,
+    setIsHandAlreadyRaised,
+    setIsAlreadyAskingToShareScreen,
+    setIsAlreadySharingScreen
+  }
+
+  useSocketListener(socketEvents.global.connectionData, (globalStatus : GlobalStatus) => {
+    adaptToCurrentStatus(globalStatus, localStatus, navigate)
+  })
 
   useSocketListener(socketEvents.global.cancel, () => navigate("/"))
   useSocketListener(socketEvents.menu.share, () => navigate("/share"))
@@ -66,10 +98,18 @@ const Routes = (): React.ReactElement => {
   )
   return (
     <Switch>
-      <Route path="/share" element={<SharingPage />} />
-      <Route path="/meeting/:meetingId" element={<MeetingPage />} />
-      <Route path="/join" element={<JoinPage />} />
-      <Route path="/create" element={<CreatePage />} />
+      <Route path="/share" element={<SharingPage isPlugged={isPlugged} />} />
+      <Route path="/meeting/:meetingId" element={
+        <MeetingPage
+          isAlreadyMuted={isAlreadyMuted}
+          isCameraAlreadyOn={isCameraAlreadyOn}
+          isHandAlreadyRaised={isHandAlreadyRaised}
+          isAlreadyAskingToShareScreen={isAlreadyAskingToShareScreen}
+          isAlreadySharingScreen={isAlreadySharingScreen}
+        />
+      } />
+      <Route path="/join" element={<JoinPage isLoading={isLoading} />} />
+      <Route path="/create" element={<CreatePage isLoading={isLoading} />} />
       <Route path="/" element={<HomeMenu />} />
       <Route path="*" element={<NotFound />} />
     </Switch>

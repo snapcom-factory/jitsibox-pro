@@ -16,10 +16,12 @@ const socketMainScreen = (
 
   // Joining a call
   socket.on(socketEvents.joinCall.validate, (meetingId: string) => {
-    globalStatus.keyboardMenu.loading = false
-    globalStatus.global.page = "meeting"
-    globalStatus.meeting.meetingId = meetingId
-    controllers.emit(socketEvents.joinCall.validate, meetingId)
+    if (globalStatus.keyboardMenu.loading) {
+      globalStatus.keyboardMenu.loading = false
+      globalStatus.global.page = "meeting"
+      globalStatus.meeting.meetingId = meetingId
+      controllers.emit(socketEvents.joinCall.validate, meetingId)
+    }
   })
 
   socket.on(socketEvents.joinCall.error, (controllerId: string) => {
@@ -29,10 +31,12 @@ const socketMainScreen = (
 
   // Creating a call
   socket.on(socketEvents.createCall.validate, (meetingId: string) => {
-    globalStatus.keyboardMenu.loading = false
-    globalStatus.global.page = "meeting"
-    globalStatus.meeting.meetingId = meetingId
-    controllers.emit(socketEvents.createCall.validate, meetingId)
+    if (globalStatus.keyboardMenu.loading) {
+      globalStatus.keyboardMenu.loading = false
+      globalStatus.global.page = "meeting"
+      globalStatus.meeting.meetingId = meetingId
+      controllers.emit(socketEvents.createCall.validate, meetingId)
+    }
   })
 
   socket.on(socketEvents.createCall.error, (controllerId: string) => {
@@ -78,6 +82,7 @@ const socketMainScreen = (
       isSharingScreen: false,
     }
     controllers.emit(socketEvents.meeting.leave)
+    controllers.emit(socketEvents.global.connectionData, globalStatus)
   })
 
   socket.on(socketEvents.meeting.sharingScreen, () => {
