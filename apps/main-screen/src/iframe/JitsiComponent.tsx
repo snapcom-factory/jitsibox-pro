@@ -50,13 +50,13 @@ const JitsiComponent = (): React.ReactElement => {
   // listening to the events from the jitsi-meet-external-api
   const handleApiReady = (apiObj: IJitsiMeetExternalApi) => {
     apiRef.current = apiObj
-    apiRef.current.on("audioMuteStatusChanged", (payload) =>
+    apiRef.current.on("audioMuteStatusChanged", (payload: audioVideoPayload) =>
       handleAudioStatusChange(payload)
     )
-    apiRef.current.on("videoMuteStatusChanged", (payload) =>
+    apiRef.current.on("videoMuteStatusChanged", (payload: audioVideoPayload) =>
       handleVideoStatusChange(payload)
     )
-    apiRef.current.on("raiseHandUpdated", (payload) =>
+    apiRef.current.on("raiseHandUpdated", (payload: handRaisedPayload) =>
       handleHandUpdate(payload)
     )
   }
@@ -91,7 +91,7 @@ const JitsiComponent = (): React.ReactElement => {
         enableWelcomePage: false,
       }}
       userInfo={{
-        displayName: "YOUR_USERNAME",
+        displayName: "ROOM_2312",
         email: "",
       }}
       onApiReady={handleApiReady}
