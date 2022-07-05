@@ -1,10 +1,10 @@
 import { useEffect } from "react"
 
-import { ServerToControllerEvents } from "@jitsi-box-pro/model"
+import { ServerToMainScreenEvents } from "@jitsi-box-pro/model"
 import { useSocketContext } from "@/services/socket"
 
 const useSocketListener = (
-  eventName: keyof ServerToControllerEvents & string,
+  eventName: keyof ServerToMainScreenEvents & string,
   eventCallback: (...args: any[]) => void
 ) => {
   const { socket } = useSocketContext()
