@@ -1,6 +1,6 @@
-import { useState } from "react"
-import { ArrowForward } from "@mui/icons-material"
-import { Box, IconButton, InputBase } from "@mui/material"
+import { useEffect, useState } from "react"
+import { ArrowForward, CloseRounded, CheckRounded } from "@mui/icons-material"
+import { Box, IconButton, InputBase, Stack } from "@mui/material"
 import { socketEvents } from "@jitsi-box-pro/model"
 import { useSocketContext } from "@/services/socket"
 import { CustomKeyboard } from "@/components"
@@ -25,6 +25,18 @@ const TextInput = ({
   const { openSnackbar } = useSnackbarContext()
   const [input, setInput] = useState<string>("")
 
+  const [hasThreeDigits, setHasThreeDigits] = useState<boolean>(false)
+  const [hasTenCharacters, setHasTenCharacters] = useState<boolean>(false)
+
+  if (creating) {
+    useEffect(() => {
+      setHasThreeDigits(
+        input.split("").filter((elt) => "1234567890".includes(elt)).length >= 3
+      )
+      setHasTenCharacters(input.length >= 10)
+    }, [input])
+  }
+
   const handleInputChange = (): void => {
     openSnackbar(
       "warning",
@@ -35,7 +47,7 @@ const TextInput = ({
   }
 
   const handleSubmit = () => {
-    if (socket !== null) {
+    if (socket !== null && (!creating || (hasTenCharacters && hasThreeDigits))) {
       socket.emit(eventName, input)
     }
   }
@@ -89,6 +101,36 @@ const TextInput = ({
         >
           <ArrowForward />
         </IconButton>
+        {creating ? (
+          <div
+            style={{
+              paddingTop: "2vh"
+            }}
+          >
+            <Stack
+              sx = {{ color: hasTenCharacters ? "green" : "red" }}
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              {hasTenCharacters ? <CheckRounded /> : <CloseRounded />}
+              <div style={{ paddingBottom: "0.5vh" }}>
+                &nbsp; Au moins 10 caractères
+              </div>
+            </Stack>
+            <Stack
+              sx = {{ color: hasThreeDigits ? "green" : "red"}}
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              {hasThreeDigits ? <CheckRounded /> : <CloseRounded />}
+              <div style={{ paddingBottom: "0.5vh" }}>
+                &nbsp; Au moins 3 chiffres
+              </div>
+            </Stack>
+          </div>
+        ) : null}
       </Box>
       <CustomKeyboard
         setValue={setInput}
