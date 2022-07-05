@@ -13,8 +13,6 @@ import { useSocketListener } from "@/services/socket"
 const Routes = (): React.ReactElement => {
   const navigate = useNavigate()
 
-  const [value, setValue] = useState<string>("")
-
   useSocketListener(socketEvents.global.cancel, () => navigate("/"))
   useSocketListener(socketEvents.menu.share, () => navigate("/share"))
   useSocketListener(socketEvents.menu.join, () => navigate("/join"))
@@ -29,12 +27,8 @@ const Routes = (): React.ReactElement => {
     <Switch>
       <Route path="/share" element={<SharingPage />} />
       <Route path="/meeting/:meetingId" element={<MeetingPage />} />
-      <Route path="/join" element={<div>Join page</div>} />
-      <Route path="/create" element={<div>Create page</div>} />
-      <Route
-        path="/keyboard"
-        element={<CustomKeyboard setValue={setValue} />}
-      />
+      <Route path="/join" element={<JoinPage />} />
+      <Route path="/create" element={<CreatePage />} />
       <Route path="/" element={<HomeMenu />} />
       <Route path="*" element={<NotFound />} />
     </Switch>

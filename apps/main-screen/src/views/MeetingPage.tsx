@@ -5,6 +5,7 @@ import { socketEvents } from "@jitsi-box-pro/model"
 import { JitsiMeeting } from "@jitsi/react-sdk"
 import { useRef } from "react"
 import IJitsiMeetExternalApi from "@jitsi/react-sdk/lib/types/IJitsiMeetExternalApi"
+
 import { useSocketContext, useSocketListener } from "@/services/socket"
 
 interface audioVideoPayload {
@@ -16,7 +17,7 @@ interface handRaisedPayload {
   handRaised: number
 }
 
-const JitsiComponent = (): React.ReactElement => {
+const MeetingPage = (): React.ReactElement => {
   const apiRef = useRef<IJitsiMeetExternalApi>()
   const { socket } = useSocketContext()
   const id = "1234"
@@ -38,7 +39,7 @@ const JitsiComponent = (): React.ReactElement => {
   }
   const handleVideoStatusChange = (payload: audioVideoPayload) => {
     if (socket !== null) {
-      socket.emit(socketEvents.meeting.camera, payload.muted)
+      socket.emit(socketEvents.meeting.camera, !payload.muted)
     }
   }
   const handleHandUpdate = (payload: handRaisedPayload) => {
@@ -60,6 +61,7 @@ const JitsiComponent = (): React.ReactElement => {
       handleHandUpdate(payload)
     )
   }
+  console.log(import.meta.env.VITE_DOMAIN)
 
   return (
     <JitsiMeeting
@@ -104,4 +106,4 @@ const JitsiComponent = (): React.ReactElement => {
   )
 }
 
-export default JitsiComponent
+export default MeetingPage
