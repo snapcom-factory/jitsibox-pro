@@ -95,7 +95,7 @@ const JitsiComponent = (): React.ReactElement => {
         email: "",
       }}
       onApiReady={handleApiReady}
-      getIFrameRef={(iframeRef) => {
+      getIFrameRef={(iframeRef: HTMLDivElement) => {
         iframeRef.style.height = "100vh"
       }}
     />
