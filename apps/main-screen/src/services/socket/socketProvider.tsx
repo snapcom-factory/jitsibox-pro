@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react"
 import { io, Socket } from "socket.io-client"
 import {
-  ServerToControllerEvents,
-  ControllerToServerEvents,
+  ServerToMainScreenEvents,
+  MainScreenToServerEvents,
   mainScreenApiURL,
   token,
   roomName,
@@ -19,8 +19,8 @@ const SocketProvider = ({
   children,
 }: SocketProviderProps): React.ReactElement => {
   const [socket, setSocket] = useState<Socket<
-    ServerToControllerEvents,
-    ControllerToServerEvents
+    ServerToMainScreenEvents,
+    MainScreenToServerEvents
   > | null>(null)
   const [isConnected, setIsConnected] = useState<boolean>(false)
 
