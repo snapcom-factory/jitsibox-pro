@@ -27,7 +27,7 @@ const MeetingMainControls = (): React.ReactElement => {
   })
 
   useSocketListener(socketEvents.meeting.camera, (userHasCameraOn: boolean) => {
-    setIsCameraOn(!userHasCameraOn)
+    setIsCameraOn(userHasCameraOn)
   })
   useSocketListener(socketEvents.meeting.wave, (userHasHandRaised: boolean) => {
     setIsHandRaised(userHasHandRaised)

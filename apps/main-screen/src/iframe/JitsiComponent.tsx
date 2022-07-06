@@ -38,7 +38,7 @@ const JitsiComponent = (): React.ReactElement => {
   }
   const handleVideoStatusChange = (payload: audioVideoPayload) => {
     if (socket !== null) {
-      socket.emit(socketEvents.meeting.camera, payload.muted)
+      socket.emit(socketEvents.meeting.camera, !payload.muted)
     }
   }
   const handleHandUpdate = (payload: handRaisedPayload) => {
