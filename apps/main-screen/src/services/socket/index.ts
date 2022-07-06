@@ -1,3 +1,3 @@
-export { default as SocketProvider } from "./socketProvider"
-export { default as useSocketContext } from "./useSocketContext"
-export { default as useSocketListener } from "./useSocketListener"
+export { default as SocketProvider } from "@/services/socket/socketProvider"
+export { default as useSocketContext } from "@/services/socket/useSocketContext"
+export { default as useSocketListener } from "@/services/socket/useSocketListener"
