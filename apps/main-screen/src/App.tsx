@@ -1,9 +1,12 @@
-import { IFrame } from "./iframe"
+import { BrowserRouter } from "react-router-dom"
+import Routes from "@/Routes"
 import { SocketProvider } from "@/services/socket"
 
 const App = (): React.ReactElement => (
   <SocketProvider>
-    <IFrame />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
   </SocketProvider>
 )
 
