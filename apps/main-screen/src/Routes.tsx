@@ -1,5 +1,6 @@
 import { Routes as Switch, Route, useNavigate } from "react-router-dom"
 import { socketEvents } from "@jitsi-box-pro/model"
+import { NotFound } from "@/views"
 import { useSocketListener } from "@/services/socket"
 
 const Routes = (): React.ReactElement => {
@@ -22,7 +23,7 @@ const Routes = (): React.ReactElement => {
       <Route path="/join" element={<div>Join</div>} />
       <Route path="/create" element={<div>Create</div>} />
       <Route path="/" element={<div>Menu</div>} />
-      <Route path="*" element={<div>Not found</div>} />
+      <Route path="*" element={<NotFound />} />
     </Switch>
   )
 }
