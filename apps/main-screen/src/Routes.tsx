@@ -1,6 +1,12 @@
 import { Routes as Switch, Route, useNavigate } from "react-router-dom"
 import { socketEvents } from "@jitsi-box-pro/model"
-import { NotFound } from "@/views"
+import {
+  HomeMenu,
+  MeetingPage,
+  NotFound,
+  JoinPage,
+  CreatePage,
+} from "@/views"
 import { useSocketListener } from "@/services/socket"
 
 const Routes = (): React.ReactElement => {
@@ -19,10 +25,10 @@ const Routes = (): React.ReactElement => {
   return (
     <Switch>
       <Route path="/share" element={<div>Share</div>} />
-      <Route path="/meeting/:meetingId" element={<div>Meeting</div>} />
-      <Route path="/join" element={<div>Join</div>} />
-      <Route path="/create" element={<div>Create</div>} />
-      <Route path="/" element={<div>Menu</div>} />
+      <Route path="/meeting/:meetingId" element={<MeetingPage />} />
+      <Route path="/join" element={<JoinPage />} />
+      <Route path="/create" element={<CreatePage />} />
+      <Route path="/" element={<HomeMenu />} />
       <Route path="*" element={<NotFound />} />
     </Switch>
   )

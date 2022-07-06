@@ -1,1 +1,5 @@
+export { default as HomeMenu } from "@/views/HomeMenu"
+export { default as JoinPage } from "@/views/JoinPage"
+export { default as CreatePage } from "@/views/CreatePage"
 export { default as NotFound } from "@/views/NotFound"
+export { default as MeetingPage } from "@/views/MeetingPage"
