@@ -1,4 +1,3 @@
-import "./App.css"
 import { IFrame } from "./iframe"
 import { SocketProvider } from "@/services/socket"
 
