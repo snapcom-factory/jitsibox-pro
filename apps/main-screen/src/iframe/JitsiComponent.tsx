@@ -5,6 +5,8 @@ import { socketEvents } from "@jitsi-box-pro/model"
 import { JitsiMeeting } from "@jitsi/react-sdk"
 import { useRef } from "react"
 import IJitsiMeetExternalApi from "@jitsi/react-sdk/lib/types/IJitsiMeetExternalApi"
+import * as dotenv from "dotenv"
+
 import { useSocketContext, useSocketListener } from "@/services/socket"
 
 interface audioVideoPayload {
@@ -60,6 +62,7 @@ const JitsiComponent = (): React.ReactElement => {
       handleHandUpdate(payload)
     )
   }
+  console.log(import.meta.env.VITE_DOMAIN)
 
   return (
     <JitsiMeeting

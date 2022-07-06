@@ -6,11 +6,7 @@ import "@/components/CustomKeyboard/CustomKeyboard.css"
 import { useSnackbarContext } from "@/services/snackbar"
 import {
   alphabet,
-  defaultLayout,
-  defaultCapsLayout,
-  defaultCreatingLayout,
-  defaultCapsCreatingLayout,
-  numpadLayout,
+  getKeyboardLayout,
 } from "@/components/CustomKeyboard/CustomLayouts"
 
 interface KeyboardProps {
@@ -32,38 +28,27 @@ const CustomKeyboard = ({
   creating,
   handleSubmit,
 }: KeyboardProps): React.ReactElement => {
-  const [currentLayout, setCurrentLayout] = useState<string>(
-    creating ? "defaultCapsCreating" : "numpad"
-  )
+  const [numpad, setNumpad] = useState<boolean>(!creating);
+  const [caps, setCaps] = useState<boolean>(creating);
 
   const handleSpecialKeys = (button: string) => {
-    if (button === "{switchToABC}") {
-      setCurrentLayout("default")
-    } else if (button === "{switchTo123}") {
-      setCurrentLayout("numpad")
-    } else if (button === "{enter}") {
-      handleSubmit()
-    } else if (button === "{shift}") {
-      if (creating) {
-        setCurrentLayout(
-          currentLayout.includes("Caps")
-            ? "defaultCreating"
-            : "defaultCapsCreating"
-        )
-      } else {
-        setCurrentLayout(
-          currentLayout.includes("Caps") ? "default" : "defaultCaps"
-        )
-      }
-    } else if (
-      currentLayout.includes("Caps") &&
-      alphabet.toUpperCase().includes(button)
-    ) {
-      setCurrentLayout(
-        creating
-          ? "defaultCreating"
-          : "default"
-      )
+    switch (button) {
+      case "{switchToABC}":
+        setNumpad(false)
+        break;
+      case "{switchTo123}":
+        setNumpad(true)
+        break;
+      case "{enter}":
+        handleSubmit()
+        break;
+      case "{shift}":
+        setCaps((value) => !value)
+        break;
+      default:
+        if (caps && alphabet.toUpperCase().includes(button)) {
+          setCaps(false)
+        }
     }
   }
   const { openSnackbar } = useSnackbarContext()
@@ -98,7 +83,7 @@ const CustomKeyboard = ({
         maxLength={maxInputLength}
         disableCaretPositioning={false}
         onKeyPress={(button: string) => handleSpecialKeys(button)}
-        layoutName={currentLayout}
+        layoutName="default"
         display={{
           "{bksp}": "⌫",
           "{shift}": "⇧",
@@ -107,17 +92,13 @@ const CustomKeyboard = ({
           "{enter}": "Valider",
         }}
         layout={{
-          default: defaultLayout,
-          defaultCaps: defaultCapsLayout,
-          defaultCreating: defaultCreatingLayout,
-          defaultCapsCreating: defaultCapsCreatingLayout,
-          numpad: numpadLayout,
+          default: getKeyboardLayout(creating, numpad, caps)
         }}
         theme={`hg-theme-default keyboard ${
-          currentLayout === "numpad" ? "numpad" : ""
+          numpad ? "numpad" : ""
         }`}
         buttonTheme={
-          currentLayout !== "numpad"
+          !numpad
             ? [
                 {
                   class: "keyboard-classic-buttons buttons",
