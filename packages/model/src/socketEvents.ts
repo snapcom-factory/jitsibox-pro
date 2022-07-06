@@ -35,9 +35,6 @@ export interface GlobalStatus {
   global: {
     page: "menu" | "joiningCall" | "creatingCall" | "localSharing" | "meeting"
   }
-  localSharing: {
-    isPlugged: boolean
-  }
   keyboardMenu: {
     loading: boolean
   }

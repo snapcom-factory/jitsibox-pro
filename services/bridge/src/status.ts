@@ -2,9 +2,6 @@ interface GlobalStatus {
   global : {
     page: "menu" | "joiningCall" | "creatingCall" | "localSharing" | "meeting";
   },
-  localSharing : {
-    isPlugged: boolean;
-  },
   keyboardMenu : {
     loading: boolean;
   },
@@ -27,9 +24,6 @@ interface LocalStatus {
 export const globalStatus : GlobalStatus = {
   global: {
     page: "menu",
-  },
-  localSharing: {
-    isPlugged: false,
   },
   keyboardMenu: {
     loading: false,

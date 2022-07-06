@@ -12,7 +12,6 @@ import {
 import { useSocketListener } from "@/services/socket"
 
 interface StatusProps {
-  setIsPlugged: (value: boolean) => void
   setIsLoading: (value: boolean) => void
   setIsAlreadyMuted: (value: boolean) => void
   setIsCameraAlreadyOn: (value: boolean) => void
@@ -28,7 +27,6 @@ const adaptToCurrentStatus = (
 ) => {
   switch (statusFromSocket.global.page) {
     case "localSharing":
-      localStatus.setIsPlugged(statusFromSocket.localSharing.isPlugged)
       navigate("/share");
       break;
     case "joiningCall":
@@ -50,7 +48,6 @@ const adaptToCurrentStatus = (
     default:
       navigate("/");
       // Reinitialization of local parameters
-      localStatus.setIsPlugged(statusFromSocket.localSharing.isPlugged)
       localStatus.setIsLoading(statusFromSocket.keyboardMenu.loading)
       localStatus.setIsAlreadyMuted(statusFromSocket.meeting.isMuted)
       localStatus.setIsCameraAlreadyOn(statusFromSocket.meeting.isCameraOn)
@@ -64,7 +61,6 @@ const adaptToCurrentStatus = (
 const Routes = (): React.ReactElement => {
   const navigate = useNavigate()
 
-  const [isPlugged, setIsPlugged] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isAlreadyMuted, setIsAlreadyMuted] = useState<boolean>(false)
   const [isCameraAlreadyOn, setIsCameraAlreadyOn] = useState<boolean>(false)
@@ -73,7 +69,6 @@ const Routes = (): React.ReactElement => {
   const [isAlreadySharingScreen, setIsAlreadySharingScreen] = useState<boolean>(false)
 
   const localStatus : StatusProps = {
-    setIsPlugged,
     setIsLoading,
     setIsAlreadyMuted,
     setIsCameraAlreadyOn,
@@ -98,7 +93,7 @@ const Routes = (): React.ReactElement => {
   )
   return (
     <Switch>
-      <Route path="/share" element={<SharingPage isPlugged={isPlugged} />} />
+      <Route path="/share" element={<SharingPage />} />
       <Route path="/meeting/:meetingId" element={
         <MeetingPage
           isAlreadyMuted={isAlreadyMuted}

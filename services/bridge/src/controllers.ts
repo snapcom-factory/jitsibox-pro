@@ -19,7 +19,6 @@ const socketControllers = (
   socket.on(socketEvents.global.cancel, () => {
     globalStatus.global.page = "menu"
     globalStatus.keyboardMenu.loading = false
-    globalStatus.localSharing.isPlugged = false
     controllers.emit(socketEvents.global.cancel)
     mainScreen.emit(socketEvents.global.cancel)
   })

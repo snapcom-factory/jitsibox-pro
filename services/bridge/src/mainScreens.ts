@@ -46,12 +46,10 @@ const socketMainScreen = (
 
   // Local sharing
   socket.on(socketEvents.localSharing.start, () => {
-    globalStatus.localSharing.isPlugged = true
     controllers.emit(socketEvents.localSharing.start)
   })
 
   socket.on(socketEvents.localSharing.stop, () => {
-    globalStatus.localSharing.isPlugged = false
     controllers.emit(socketEvents.localSharing.stop)
   })
 
