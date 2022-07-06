@@ -1,12 +1,6 @@
 import { Routes as Switch, Route, useNavigate } from "react-router-dom"
 import { socketEvents } from "@jitsi-box-pro/model"
-import {
-  HomeMenu,
-  MeetingPage,
-  NotFound,
-  JoinPage,
-  CreatePage,
-} from "@/views"
+import { HomeMenu, MeetingPage, NotFound, JoinPage, CreatePage } from "@/views"
 import { useSocketListener } from "@/services/socket"
 
 const Routes = (): React.ReactElement => {
@@ -17,10 +11,10 @@ const Routes = (): React.ReactElement => {
   useSocketListener(socketEvents.menu.join, () => navigate("/join"))
   useSocketListener(socketEvents.menu.create, () => navigate("/create"))
   useSocketListener(socketEvents.joinCall.validate, (meetingId: string) =>
-    navigate(`/meeting/${meetingId}`)
+    console.log(meetingId)
   )
   useSocketListener(socketEvents.createCall.validate, (meetingId: string) =>
-    navigate(`/meeting/${meetingId}`)
+    console.log(meetingId)
   )
   return (
     <Switch>

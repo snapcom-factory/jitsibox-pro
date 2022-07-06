@@ -1,7 +1,7 @@
 import { Stack, Typography } from "@mui/material"
 import { ViewContainer } from "@/components"
 
-const HomeMenu: React.FC = () => (
+const HomeMenu = (): React.ReactElement => (
   <ViewContainer>
     <Stack
       direction="column"

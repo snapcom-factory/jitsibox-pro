@@ -3,7 +3,7 @@ import { Add, PresentToAll, Videocam } from "@mui/icons-material"
 import { socketEvents } from "@jitsi-box-pro/model"
 import { MenuButton, Header, Footer, ViewContainer } from "@/components"
 
-const HomeMenu: React.FC = () => (
+const HomeMenu = (): React.ReactElement => (
   <ViewContainer header={<Header />} footer={<Footer />}>
     <Container
       maxWidth="md"
