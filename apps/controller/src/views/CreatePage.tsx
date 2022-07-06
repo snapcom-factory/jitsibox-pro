@@ -1,6 +1,7 @@
 import { Stack, Typography } from "@mui/material"
 import { socketEvents } from "@jitsi-box-pro/model"
 import { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
 import {
   Header,
   Footer,
@@ -12,12 +13,16 @@ import { useSocketListener } from "@/services/socket"
 import { useSnackbarContext } from "@/services/snackbar"
 
 interface CreateProps {
-  isLoading: boolean
+  state: {
+    isLoading: boolean
+  } | undefined
 }
 
-const CreatePage = ({ isLoading } : CreateProps) => {
+const CreatePage = () => {
+  const { state } = useLocation() as CreateProps
+
   const [loading, setLoading] = useState<boolean>(false)
-  useEffect(() => setLoading(isLoading), [isLoading])
+  useEffect(() => setLoading(state?.isLoading ?? false), [state])
 
 
   const { openSnackbar } = useSnackbarContext()

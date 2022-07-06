@@ -6,15 +6,9 @@ import { ViewContainer, ActionButton, Header, Footer } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import QRCodeButton from "@/views/MeetingPage/QRCodeButton"
 import NumberOfParticipantsIndicator from "@/views/MeetingPage/NumberOfParticipantsIndicator"
-import MeetingMainControls, { MeetingProps } from "@/views/MeetingPage/MeetingMainControls"
+import MeetingMainControls from "@/views/MeetingPage/MeetingMainControls"
 
-const MeetingPage = ({
-  isAlreadyMuted,
-  isCameraAlreadyOn,
-  isHandAlreadyRaised,
-  isAlreadyAskingToShareScreen,
-  isAlreadySharingScreen
-} : MeetingProps) => {
+const MeetingPage = () => {
   const { meetingId } = useParams()
   const navigate = useNavigate()
   useSocketListener(socketEvents.meeting.leave, () => {
@@ -54,13 +48,7 @@ const MeetingPage = ({
           <Typography variant="body2">Identifiant de la réunion</Typography>
           <Typography variant="h2">{meetingId}</Typography>
         </Stack>
-        <MeetingMainControls
-          isAlreadyMuted={isAlreadyMuted}
-          isCameraAlreadyOn={isCameraAlreadyOn}
-          isHandAlreadyRaised={isHandAlreadyRaised}
-          isAlreadyAskingToShareScreen={isAlreadyAskingToShareScreen}
-          isAlreadySharingScreen={isAlreadySharingScreen}
-        />
+        <MeetingMainControls />
         <ActionButton
           color="secondary"
           Icon={CallEnd}

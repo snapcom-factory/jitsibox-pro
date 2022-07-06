@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Grid } from "@mui/material"
+import { useLocation } from "react-router-dom"
 import {
   CancelPresentation,
   Mic,
@@ -16,27 +17,37 @@ import WavingHand from "@/assets/WavingHand"
 import { useSnackbarContext } from "@/services/snackbar"
 
 export interface MeetingProps {
-  isAlreadyMuted: boolean
-  isCameraAlreadyOn: boolean
-  isHandAlreadyRaised: boolean
-  isAlreadyAskingToShareScreen: boolean
-  isAlreadySharingScreen: boolean
+  state: {
+    isAlreadyMuted: boolean
+    isCameraAlreadyOn: boolean
+    isHandAlreadyRaised: boolean
+    isAlreadyAskingToShareScreen: boolean
+    isAlreadySharingScreen: boolean
+  } | undefined
 }
 
-const MeetingMainControls = ({
-  isAlreadyMuted,
-  isCameraAlreadyOn,
-  isHandAlreadyRaised,
-  isAlreadyAskingToShareScreen,
-  isAlreadySharingScreen,
-}: MeetingProps): React.ReactElement => {
+const MeetingMainControls = (): React.ReactElement => {
+  const { state } = useLocation() as MeetingProps
+  const {
+    isAlreadyMuted,
+    isCameraAlreadyOn,
+    isHandAlreadyRaised,
+    isAlreadyAskingToShareScreen,
+    isAlreadySharingScreen
+  } = state ?? {
+    isAlreadyMuted: true,
+    isCameraAlreadyOn: false,
+    isHandAlreadyRaised: false,
+    isAlreadyAskingToShareScreen: false,
+    isAlreadySharingScreen: false
+  }
+
   const [isMuted, setIsMuted] = useState<boolean>(false)
   const [isCameraOn, setIsCameraOn] = useState<boolean>(false)
   const [isHandRaised, setIsHandRaised] = useState<boolean>(false)
   const [isAskingToShareScreen, setIsAskingToShareScreen] =
     useState<boolean>(false)
   const [isSharingScreen, setIsSharingScreen] = useState<boolean>(false)
-  const { openSnackbar } = useSnackbarContext()
 
   useEffect(() => {
     setIsMuted(isAlreadyMuted)
@@ -44,13 +55,9 @@ const MeetingMainControls = ({
     setIsHandRaised(isHandAlreadyRaised)
     setIsAskingToShareScreen(isAlreadyAskingToShareScreen)
     setIsSharingScreen(isAlreadySharingScreen)
-  }, [
-    isAlreadyMuted,
-    isCameraAlreadyOn,
-    isHandAlreadyRaised,
-    isAlreadyAskingToShareScreen,
-    isAlreadySharingScreen,
-  ])
+  }, [state])
+
+  const { openSnackbar } = useSnackbarContext()
 
   useEffect(() => {
     if (isAlreadyAskingToShareScreen && !isAlreadySharingScreen) {
