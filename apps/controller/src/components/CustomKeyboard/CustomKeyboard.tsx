@@ -44,7 +44,7 @@ const CustomKeyboard = ({
     } else if (button === "{enter}") {
       handleSubmit()
     } else if (button === "{shift}") {
-      if (currentLayout.includes("Creating")) {
+      if (creating) {
         setCurrentLayout(
           currentLayout.includes("Caps")
             ? "defaultCreating"
@@ -60,7 +60,7 @@ const CustomKeyboard = ({
       alphabet.toUpperCase().includes(button)
     ) {
       setCurrentLayout(
-        currentLayout.includes("Creating")
+        creating
           ? "defaultCreating"
           : "default"
       )

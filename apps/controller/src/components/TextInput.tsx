@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ArrowForward, CloseRounded, CheckRounded } from "@mui/icons-material"
-import { Box, IconButton, InputBase, Stack } from "@mui/material"
+import { Box, IconButton, InputBase, Stack, Typography } from "@mui/material"
 import { socketEvents } from "@jitsi-box-pro/model"
 import { useSocketContext } from "@/services/socket"
 import { CustomKeyboard } from "@/components"
@@ -25,17 +25,8 @@ const TextInput = ({
   const { openSnackbar } = useSnackbarContext()
   const [input, setInput] = useState<string>("")
 
-  const [hasThreeDigits, setHasThreeDigits] = useState<boolean>(false)
-  const [hasTenCharacters, setHasTenCharacters] = useState<boolean>(false)
-
-  if (creating) {
-    useEffect(() => {
-      setHasThreeDigits(
-        input.split("").filter((elt) => "1234567890".includes(elt)).length >= 3
-      )
-      setHasTenCharacters(input.length >= 10)
-    }, [input])
-  }
+  const hasThreeDigits = input.split("").filter((elt) => "1234567890".includes(elt)).length >= 3
+  const hasTenCharacters = input.length >= 10
 
   const handleInputChange = (): void => {
     openSnackbar(
@@ -108,26 +99,26 @@ const TextInput = ({
             }}
           >
             <Stack
-              sx = {{ color: hasTenCharacters ? "green" : "red" }}
+              sx = {{ color: hasTenCharacters ? "success.main" : "error.main" }}
               direction="row"
               justifyContent="center"
               alignItems="center"
             >
               {hasTenCharacters ? <CheckRounded /> : <CloseRounded />}
-              <div style={{ paddingBottom: "0.5vh" }}>
+              <Typography variant="body1" style={{ paddingBottom: "0.5vh" }}>
                 &nbsp; Au moins 10 caractères
-              </div>
+              </Typography>
             </Stack>
             <Stack
-              sx = {{ color: hasThreeDigits ? "green" : "red"}}
+              sx = {{ color: hasThreeDigits ? "success.main" : "error.main" }}
               direction="row"
               justifyContent="center"
               alignItems="center"
             >
               {hasThreeDigits ? <CheckRounded /> : <CloseRounded />}
-              <div style={{ paddingBottom: "0.5vh" }}>
+              <Typography variant="body1" sx={{ paddingBottom: "0.5vh" }}>
                 &nbsp; Au moins 3 chiffres
-              </div>
+              </Typography>
             </Stack>
           </div>
         ) : null}
