@@ -3,7 +3,7 @@ import { globalStatus } from "./status"
 import {
   socketEvents,
   ControllerToServerEvents,
-  ServerToClientEvents
+  ServerToClientEvents,
 } from "../../../packages/model/src/socketEvents"
 
 const socketControllers = (

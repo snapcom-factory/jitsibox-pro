@@ -44,15 +44,6 @@ const socketMainScreen = (
     io.of("/controllers").to(controllerId).emit(socketEvents.createCall.error)
   })
 
-  // Local sharing
-  socket.on(socketEvents.localSharing.start, () => {
-    controllers.emit(socketEvents.localSharing.start)
-  })
-
-  socket.on(socketEvents.localSharing.stop, () => {
-    controllers.emit(socketEvents.localSharing.stop)
-  })
-
   // When in a meeting
   socket.on(socketEvents.meeting.mute, (isMuted: boolean) => {
     globalStatus.meeting.isMuted = isMuted

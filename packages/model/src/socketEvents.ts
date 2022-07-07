@@ -16,10 +16,6 @@ export const socketEvents = {
     validate: "validateCreationTyping",
     error: "validationFailed",
   },
-  localSharing: {
-    start: "startSharing",
-    stop: "stopSharing",
-  },
   meeting: {
     mute: "muteMicrophone",
     camera: "toggleCamera",
@@ -73,8 +69,6 @@ export interface ServerToControllerEvents {
   [socketEvents.joinCall.error]: (error: string) => void
   [socketEvents.createCall.validate]: (meetingId: string) => void
   [socketEvents.createCall.error]: (error: string) => void
-  [socketEvents.localSharing.start]: () => void
-  [socketEvents.localSharing.stop]: () => void
   [socketEvents.meeting.mute]: (isMuted: boolean) => void
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void
   [socketEvents.meeting.wave]: (isHandRaised: boolean) => void
@@ -111,8 +105,6 @@ export interface MainScreenToServerEvents {
   [socketEvents.joinCall.error]: (error: string, controllerId: string) => void
   [socketEvents.createCall.validate]: (meetingId: string) => void
   [socketEvents.createCall.error]: (error: string, controllerId: string) => void
-  [socketEvents.localSharing.start]: () => void
-  [socketEvents.localSharing.stop]: () => void
   [socketEvents.meeting.mute]: (isMuted: boolean) => void
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void
   [socketEvents.meeting.wave]: (isHandRaised: boolean) => void
