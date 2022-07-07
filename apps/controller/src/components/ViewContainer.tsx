@@ -22,7 +22,7 @@ const ViewContainer = ({
       <Grid
         container
         direction="column"
-        style={{
+        sx={{
           minHeight: "100vh",
           minWidth: "100vh",
         }}
