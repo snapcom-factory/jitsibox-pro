@@ -92,7 +92,7 @@ const TextInput = ({
         >
           <ArrowForward />
         </IconButton>
-        {creating ? (
+        {creating && input.length > 0 ? (
           <div
             style={{
               paddingTop: "2vh"
