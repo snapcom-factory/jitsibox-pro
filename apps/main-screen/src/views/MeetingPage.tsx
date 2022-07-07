@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 
+import { useParams, useNavigate } from "react-router-dom"
 import { socketEvents } from "@jitsi-box-pro/model"
 import { JitsiMeeting } from "@jitsi/react-sdk"
 import { useRef } from "react"
@@ -17,16 +18,37 @@ interface handRaisedPayload {
   handRaised: number
 }
 
+const defaultParams = {
+  audioMuted: false,
+  videoMuted: false,
+}
+
+const nameToDisplay = "ROOM_2312"
+
 const MeetingPage = (): React.ReactElement => {
+  const meetingParam = useParams<string>()
+  const meetingId = meetingParam.meetingId ?? "default"
+  const navigate = useNavigate()
+
+  let participantId = "";
+
+  if (meetingId === undefined || meetingId.length === 0) navigate("/")
+
   const apiRef = useRef<IJitsiMeetExternalApi>()
   const { socket } = useSocketContext()
-  const id = "1234"
   // commands
   const execute = (command: string) => {
     if (!apiRef.current) return
     apiRef.current.executeCommand(command)
   }
   // listening to events from bridge
+  useSocketListener(socketEvents.meeting.leave, () => {
+    execute("hangup")
+    navigate("/")
+    if (socket !== null) {
+      socket.emit(socketEvents.meeting.leave)
+    }
+  })
   useSocketListener(socketEvents.meeting.camera, () => execute("toggleVideo"))
   useSocketListener(socketEvents.meeting.mute, () => execute("toggleAudio"))
   useSocketListener(socketEvents.meeting.wave, () => execute("toggleRaiseHand"))
@@ -43,38 +65,69 @@ const MeetingPage = (): React.ReactElement => {
     }
   }
   const handleHandUpdate = (payload: handRaisedPayload) => {
-    if (socket !== null && payload.id === id) {
+    if (socket !== null && payload.id === participantId) {
       socket.emit(socketEvents.meeting.wave, payload.handRaised !== 0) // 0  means hand is lowered
     }
   }
 
   // listening to the events from the jitsi-meet-external-api
   const handleApiReady = (apiObj: IJitsiMeetExternalApi) => {
+    // Warn the controller that the API is ready
+    if (socket !== null) {
+      socket.emit(socketEvents.joinCall.validate, {
+        meetingId: meetingId,
+        defaultParams: defaultParams
+      })
+      socket.emit(socketEvents.createCall.validate, {
+        meetingId: meetingId,
+        defaultParams: defaultParams
+      })
+    }
     apiRef.current = apiObj
+
+    apiRef.current.on("videoConferenceJoined", ({ id }: { id: string}) => {
+      participantId = id
+    })
     apiRef.current.on("audioMuteStatusChanged", (payload: audioVideoPayload) =>
       handleAudioStatusChange(payload)
     )
-    apiRef.current.on("videoMuteStatusChanged", (payload: audioVideoPayload) =>
+    apiRef.current.on("videoMuteStatusChanged", (payload: audioVideoPayload) => {
       handleVideoStatusChange(payload)
-    )
+    })
     apiRef.current.on("raiseHandUpdated", (payload: handRaisedPayload) =>
       handleHandUpdate(payload)
     )
   }
-  console.log(import.meta.env.VITE_DOMAIN)
 
   return (
     <JitsiMeeting
       domain={import.meta.env.VITE_DOMAIN}
       jwt={import.meta.env.VITE_WEBCONF_TOKEN}
-      roomName="ROOMSNAPCOM1234"
+      roomName={meetingId}
+      interfaceConfigOverwrite={{
+        MOBILE_APP_PROMO: false,
+        filmStripOnly: false,
+        SHOW_CHROME_EXTENSION_BANNER: false,
+        DISPLAY_WELCOME_PAGE_CONTENT: false,
+        TOOLBAR_ALWAYS_VISIBLE: true,
+        TOOLBAR_BUTTONS: [
+          "microphone",
+          "camera",
+          "videoquality",
+          "fodeviceselection",
+          "raisehand",
+          "tileview",
+        ],
+        DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
+        SHOW_DEEP_LINKING_IMAGE: false,
+      }}
       configOverwrite={{
         disableSimulcast: false,
         disableDeepLinking: true,
         prejoinPageEnabled: false,
         preferH264: true,
-        startWithVideoMuted: true,
-        startWithAudioMuted: true,
+        startWithVideoMuted: defaultParams.videoMuted,
+        startWithAudioMuted: defaultParams.audioMuted,
         enableWelcomePage: false,
         toolbarButtons: [],
         notifications: [],
@@ -84,7 +137,7 @@ const MeetingPage = (): React.ReactElement => {
         },
       }}
       userInfo={{
-        displayName: "Participant 1",
+        displayName: nameToDisplay,
         email: "",
       }}
       onApiReady={handleApiReady}

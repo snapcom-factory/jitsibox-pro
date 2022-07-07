@@ -1,5 +1,5 @@
 import { Server, Socket } from "socket.io"
-import { globalStatus } from "./status"
+import globalStatus from "./status"
 import {
   socketEvents,
   ControllerToServerEvents,

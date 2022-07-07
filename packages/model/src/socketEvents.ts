@@ -65,9 +65,21 @@ export interface ServerToControllerEvents {
   [socketEvents.menu.join]: () => void
   [socketEvents.menu.create]: () => void
   [socketEvents.menu.share]: () => void
-  [socketEvents.joinCall.validate]: (meetingId: string) => void
+  [socketEvents.joinCall.validate]: (props: {
+    meetingId: string
+    defaultParams: {
+      audioMuted: boolean
+      videoMuted: boolean
+    }
+  }) => void
   [socketEvents.joinCall.error]: (error: string) => void
-  [socketEvents.createCall.validate]: (meetingId: string) => void
+  [socketEvents.createCall.validate]: (props: {
+    meetingId: string
+    defaultParams: {
+      audioMuted: boolean
+      videoMuted: boolean
+    }
+  }) => void
   [socketEvents.createCall.error]: (error: string) => void
   [socketEvents.meeting.mute]: (isMuted: boolean) => void
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void
@@ -101,9 +113,21 @@ export interface ServerToMainScreenEvents {
 }
 
 export interface MainScreenToServerEvents {
-  [socketEvents.joinCall.validate]: (meetingId: string) => void
+  [socketEvents.joinCall.validate]: (value : {
+    meetingId: string,
+    defaultParams: {
+      audioMuted: boolean
+      videoMuted: boolean
+    }
+  }) => void
   [socketEvents.joinCall.error]: (error: string, controllerId: string) => void
-  [socketEvents.createCall.validate]: (meetingId: string) => void
+  [socketEvents.createCall.validate]: (value : {
+    meetingId: string,
+    defaultParams: {
+      audioMuted: boolean
+      videoMuted: boolean
+    }
+  }) => void
   [socketEvents.createCall.error]: (error: string, controllerId: string) => void
   [socketEvents.meeting.mute]: (isMuted: boolean) => void
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void

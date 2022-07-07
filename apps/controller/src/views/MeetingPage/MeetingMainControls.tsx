@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { Grid } from "@mui/material"
 import { useLocation } from "react-router-dom"
+import { Grid } from "@mui/material"
 import {
   CancelPresentation,
   Mic,
@@ -35,26 +35,23 @@ const MeetingMainControls = (): React.ReactElement => {
     isAlreadyAskingToShareScreen,
     isAlreadySharingScreen
   } = state ?? {
-    isAlreadyMuted: true,
-    isCameraAlreadyOn: false,
+    isAlreadyMuted: false,
+    isCameraAlreadyOn: true,
     isHandAlreadyRaised: false,
     isAlreadyAskingToShareScreen: false,
     isAlreadySharingScreen: false
   }
 
   const [isMuted, setIsMuted] = useState<boolean>(false)
-  const [isCameraOn, setIsCameraOn] = useState<boolean>(false)
+  const [isCameraOn, setIsCameraOn] = useState<boolean>(true)
   const [isHandRaised, setIsHandRaised] = useState<boolean>(false)
-  const [isAskingToShareScreen, setIsAskingToShareScreen] =
-    useState<boolean>(false)
-  const [isSharingScreen, setIsSharingScreen] = useState<boolean>(false)
+  const [isAskingToShareScreen, setIsAskingToShareScreen] = useState<boolean>(false)
 
   useEffect(() => {
     setIsMuted(isAlreadyMuted)
     setIsCameraOn(isCameraAlreadyOn)
     setIsHandRaised(isHandAlreadyRaised)
     setIsAskingToShareScreen(isAlreadyAskingToShareScreen)
-    setIsSharingScreen(isAlreadySharingScreen)
   }, [state])
 
   const { openSnackbar } = useSnackbarContext()
@@ -97,7 +94,6 @@ const MeetingMainControls = (): React.ReactElement => {
   })
   useSocketListener(socketEvents.meeting.stopSharing, () => {
     setIsAskingToShareScreen(false)
-    setIsSharingScreen(false)
     openSnackbar(
       "error",
       { vertical: "bottom", horizontal: "center" },
@@ -165,7 +161,7 @@ const MeetingMainControls = (): React.ReactElement => {
         )}
       </Grid>
       <Grid item xs={3}>
-        {!(isAskingToShareScreen || isSharingScreen) ? (
+        {!isAskingToShareScreen ? (
           <ActionButton
             text="Partager l'écran"
             color="primary"

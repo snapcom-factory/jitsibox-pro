@@ -15,13 +15,7 @@ interface GlobalStatus {
   }
 }
 
-interface LocalStatus {
-  mainScreenId: string
-  isControllerConnected: boolean
-  isMainScreenConnected: boolean
-}
-
-export const globalStatus: GlobalStatus = {
+const globalStatus: GlobalStatus = {
   global: {
     page: "menu",
   },
@@ -38,8 +32,4 @@ export const globalStatus: GlobalStatus = {
   },
 }
 
-export const localStatus: LocalStatus = {
-  mainScreenId: "",
-  isControllerConnected: false,
-  isMainScreenConnected: false,
-}
+export default globalStatus

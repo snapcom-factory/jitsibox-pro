@@ -1,10 +1,18 @@
 import { Server, Socket } from "socket.io"
-import { globalStatus, localStatus } from "./status"
+import globalStatus from "./status"
 import {
   socketEvents,
   MainScreenToServerEvents,
   ServerToClientEvents,
 } from "../../../packages/model/src/socketEvents"
+
+interface NewMeetingProps {
+  meetingId: string
+  defaultParams: {
+    audioMuted: boolean
+    videoMuted: boolean
+  }
+}
 
 const socketMainScreen = (
   io: Server,
@@ -15,12 +23,12 @@ const socketMainScreen = (
   const controllers = io.of("/controllers").to(roomName)
 
   // Joining a call
-  socket.on(socketEvents.joinCall.validate, (meetingId: string) => {
+  socket.on(socketEvents.joinCall.validate, (props: NewMeetingProps) => {
     if (globalStatus.keyboardMenu.loading) {
       globalStatus.keyboardMenu.loading = false
       globalStatus.global.page = "meeting"
-      globalStatus.meeting.meetingId = meetingId
-      controllers.emit(socketEvents.joinCall.validate, meetingId)
+      globalStatus.meeting.meetingId = props.meetingId
+      controllers.emit(socketEvents.joinCall.validate, props)
     }
   })
 
@@ -30,12 +38,12 @@ const socketMainScreen = (
   })
 
   // Creating a call
-  socket.on(socketEvents.createCall.validate, (meetingId: string) => {
+  socket.on(socketEvents.createCall.validate, (props: NewMeetingProps) => {
     if (globalStatus.keyboardMenu.loading) {
       globalStatus.keyboardMenu.loading = false
       globalStatus.global.page = "meeting"
-      globalStatus.meeting.meetingId = meetingId
-      controllers.emit(socketEvents.createCall.validate, meetingId)
+      globalStatus.meeting.meetingId = props.meetingId
+      controllers.emit(socketEvents.createCall.validate, props)
     }
   })
 
@@ -86,10 +94,6 @@ const socketMainScreen = (
     globalStatus.meeting.isAskingToShareScreen = false
     globalStatus.meeting.isSharingScreen = false
     controllers.emit(socketEvents.meeting.stopSharing)
-  })
-
-  socket.on("disconnect", () => {
-    localStatus.mainScreenId = ""
   })
 }
 

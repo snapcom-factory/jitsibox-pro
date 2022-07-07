@@ -1,9 +1,8 @@
 import express from "express"
 import http from "http"
-import path from "path"
 import { Server, Socket } from "socket.io"
 import { ExtendedError } from "socket.io/dist/namespace"
-import { globalStatus, localStatus } from "./status"
+import globalStatus from "./status"
 import {
   token,
   controllersURL,
@@ -56,10 +55,7 @@ io.of("/mainScreens").use(
     const providedToken = socket.handshake.auth.token
     if (providedToken !== token) {
       next(new Error("Authentication error"))
-    } else if (localStatus.mainScreenId !== "") {
-      next(new Error("Main screen already connected"))
     } else {
-      localStatus.mainScreenId = socket.id
       next()
     }
   }

@@ -18,10 +18,10 @@ const Routes = (): React.ReactElement => {
   useSocketListener(socketEvents.menu.join, () => navigate("/join"))
   useSocketListener(socketEvents.menu.create, () => navigate("/create"))
   useSocketListener(socketEvents.joinCall.validate, (meetingId: string) =>
-    console.log(meetingId)
+    navigate(`/meeting/${meetingId}`)
   )
   useSocketListener(socketEvents.createCall.validate, (meetingId: string) =>
-    console.log(meetingId)
+    navigate(`/meeting/${meetingId}`)
   )
   return (
     <Switch>

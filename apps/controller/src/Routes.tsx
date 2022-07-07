@@ -11,6 +11,14 @@ import {
 } from "@/views"
 import { useSocketListener } from "@/services/socket"
 
+interface NewMeetingProps {
+  meetingId: string
+  defaultParams: {
+    audioMuted: boolean
+    videoMuted: boolean
+  }
+}
+
 const adaptToCurrentStatus = (
   statusFromSocket : GlobalStatus,
   navigate : CustomNavigateFunction
@@ -51,11 +59,23 @@ const Routes = (): React.ReactElement => {
   useSocketListener(socketEvents.menu.share, () => navigate("/share"))
   useSocketListener(socketEvents.menu.join, () => navigate("/join"))
   useSocketListener(socketEvents.menu.create, () => navigate("/create"))
-  useSocketListener(socketEvents.joinCall.validate, (meetingId: string) =>
-    navigate(`/meeting/${meetingId}`)
+  useSocketListener(socketEvents.joinCall.validate, ({ meetingId, defaultParams }: NewMeetingProps) =>
+    navigate(`/meeting/${meetingId}`, {
+      isAlreadyMuted: defaultParams.audioMuted,
+      isCameraAlreadyOn: !defaultParams.videoMuted,
+      isHandAlreadyRaised: false,
+      isAlreadyAskingToShareScreen: false,
+      isAlreadySharingScreen: false
+    })
   )
-  useSocketListener(socketEvents.createCall.validate, (meetingId: string) =>
-    navigate(`/meeting/${meetingId}`)
+  useSocketListener(socketEvents.createCall.validate, ({ meetingId, defaultParams }: NewMeetingProps) =>
+    navigate(`/meeting/${meetingId}`, {
+      isAlreadyMuted: defaultParams.audioMuted,
+      isCameraAlreadyOn: !defaultParams.videoMuted,
+      isHandAlreadyRaised: false,
+      isAlreadyAskingToShareScreen: false,
+      isAlreadySharingScreen: false
+    })
   )
   return (
     <Switch>
