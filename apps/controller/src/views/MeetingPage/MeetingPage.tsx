@@ -1,7 +1,8 @@
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
+import { socketEvents } from "@jitsi-box-pro/model"
 import { Container, Stack, Typography } from "@mui/material"
 import { CallEnd } from "@mui/icons-material"
-import { socketEvents } from "@jitsi-box-pro/model"
+import useCustomNavigate from "@/services/useCustomNavigate"
 import { ViewContainer, ActionButton, Header, Footer } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import QRCodeButton from "@/views/MeetingPage/QRCodeButton"
@@ -10,7 +11,7 @@ import MeetingMainControls from "@/views/MeetingPage/MeetingMainControls"
 
 const MeetingPage = () => {
   const { meetingId } = useParams()
-  const navigate = useNavigate()
+  const navigate = useCustomNavigate()
   useSocketListener(socketEvents.meeting.leave, () => {
     navigate("/")
   })

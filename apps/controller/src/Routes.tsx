@@ -1,5 +1,6 @@
-import { Routes as Switch, Route, useNavigate, NavigateFunction } from "react-router-dom"
+import { Routes as Switch, Route } from "react-router-dom"
 import { GlobalStatus, socketEvents } from "@jitsi-box-pro/model"
+import useCustomNavigate, { CustomNavigateFunction } from "@/services/useCustomNavigate"
 import {
   HomeMenu,
   SharingPage,
@@ -12,26 +13,26 @@ import { useSocketListener } from "@/services/socket"
 
 const adaptToCurrentStatus = (
   statusFromSocket : GlobalStatus,
-  navigate : NavigateFunction
+  navigate : CustomNavigateFunction
 ) => {
   switch (statusFromSocket.global.page) {
     case "localSharing":
       navigate("/share");
       break;
     case "joiningCall":
-      navigate("/join", {state: { isLoading: statusFromSocket.keyboardMenu.loading }});
+      navigate("/join", { isLoading: statusFromSocket.keyboardMenu.loading });
       break;
     case "creatingCall":
-      navigate("/create", {state: { isLoading: statusFromSocket.keyboardMenu.loading }});
+      navigate("/create", { isLoading: statusFromSocket.keyboardMenu.loading });
       break;
     case "meeting":
-      navigate(`/meeting/${statusFromSocket.meeting.meetingId}`, {state: {
+      navigate(`/meeting/${statusFromSocket.meeting.meetingId}`, {
         isAlreadyMuted: statusFromSocket.meeting.isMuted,
         isCameraAlreadyOn: statusFromSocket.meeting.isCameraOn,
         isHandAlreadyRaised: statusFromSocket.meeting.isHandRaised,
         isAlreadyAskingToShareScreen: statusFromSocket.meeting.isAskingToShareScreen,
         isAlreadySharingScreen: statusFromSocket.meeting.isSharingScreen
-      }})
+      })
       break;
     default:
       navigate("/");
@@ -40,7 +41,7 @@ const adaptToCurrentStatus = (
 }
 
 const Routes = (): React.ReactElement => {
-  const navigate = useNavigate()
+  const navigate = useCustomNavigate()
 
   useSocketListener(socketEvents.global.connectionData, (globalStatus : GlobalStatus) => {
     adaptToCurrentStatus(globalStatus, navigate)
