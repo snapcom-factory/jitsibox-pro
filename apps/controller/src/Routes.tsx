@@ -35,13 +35,6 @@ const adaptToCurrentStatus = (
       break;
     default:
       navigate("/");
-      // Reinitialization of local parameters
-      // localStatus.setIsLoading(statusFromSocket.keyboardMenu.loading)
-      // localStatus.setIsAlreadyMuted(statusFromSocket.meeting.isMuted)
-      // localStatus.setIsCameraAlreadyOn(statusFromSocket.meeting.isCameraOn)
-      // localStatus.setIsHandAlreadyRaised(statusFromSocket.meeting.isHandRaised)
-      // localStatus.setIsAlreadyAskingToShareScreen(statusFromSocket.meeting.isAskingToShareScreen)
-      // localStatus.setIsAlreadySharingScreen(statusFromSocket.meeting.isSharingScreen)
       break;
   }
 }

@@ -1,7 +1,5 @@
 import { Stack, Typography } from "@mui/material"
 import { socketEvents } from "@jitsi-box-pro/model"
-import { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom"
 import {
   Header,
   Footer,
@@ -12,21 +10,9 @@ import {
 import { useSocketListener } from "@/services/socket"
 import { useSnackbarContext } from "@/services/snackbar"
 
-interface JoinProps {
-  state: {
-    isLoading: boolean
-  } | undefined
-}
-
 const JoinPage = () => {
-  const { state } = useLocation() as JoinProps
-
-  const [loading, setLoading] = useState<boolean>(false)
-  useEffect(() => setLoading(state?.isLoading ?? false), [state])
-
   const { openSnackbar } = useSnackbarContext()
   useSocketListener(socketEvents.joinCall.error, () => {
-    setLoading(false);
     openSnackbar(
       "error",
       { vertical: "top", horizontal: "center" },
@@ -53,8 +39,6 @@ const JoinPage = () => {
         <TextInput
           placeholder="Saisir le nom ou le code du meeting..."
           eventName={socketEvents.joinCall.validate}
-          loading={loading}
-          setLoading={setLoading}
         />
       </Stack>
     </ViewContainer>

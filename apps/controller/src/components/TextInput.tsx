@@ -1,8 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
 import { ArrowForward, CloseRounded, CheckRounded } from "@mui/icons-material"
 import { Box, IconButton, InputBase, Stack, Typography, CircularProgress } from "@mui/material"
 import { socketEvents } from "@jitsi-box-pro/model"
-import { useSocketContext } from "@/services/socket"
+import { useSocketContext, useSocketListener } from "@/services/socket"
 import { CustomKeyboard } from "@/components"
 import { useSnackbarContext } from "@/services/snackbar"
 
@@ -10,21 +11,31 @@ type AllowedEvents =
   | `${typeof socketEvents.joinCall.validate}`
   | `${typeof socketEvents.createCall.validate}`
 
+interface LoadingProps {
+  state: {
+    isLoading: boolean
+  } | undefined
+}
+
 interface TextInputProps {
   eventName: AllowedEvents
   placeholder: string
   creating?: boolean
-  loading: boolean
-  setLoading: (value: boolean) => void
 }
 
 const TextInput = ({
   eventName,
   placeholder,
   creating = false,
-  loading,
-  setLoading
 }: TextInputProps): React.ReactElement => {
+  const { state } = useLocation() as LoadingProps
+
+  const [loading, setLoading] = useState<boolean>(false)
+  useEffect(() => setLoading(state?.isLoading ?? false), [state])
+
+  useSocketListener(socketEvents.joinCall.error, () => setLoading(false))
+  useSocketListener(socketEvents.createCall.error, () => setLoading(false))
+
   const { socket } = useSocketContext()
   const { openSnackbar } = useSnackbarContext()
   const [input, setInput] = useState<string>("")

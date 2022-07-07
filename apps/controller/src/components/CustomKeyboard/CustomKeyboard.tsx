@@ -29,7 +29,7 @@ const CustomKeyboard = ({
   handleSubmit,
 }: KeyboardProps): React.ReactElement => {
   const [numpad, setNumpad] = useState<boolean>(!creating);
-  const [caps, setCaps] = useState<boolean>(creating);
+  const [caps, setCaps] = useState<boolean>(!creating);
 
   const handleSpecialKeys = (button: string) => {
     switch (button) {
@@ -55,6 +55,7 @@ const CustomKeyboard = ({
 
   const handleChange = (input: string) => {
     setValue(input)
+    if (input.length === 0) setCaps(true)
     if (input.length === maxInputLength) {
       openSnackbar(
         "warning",
