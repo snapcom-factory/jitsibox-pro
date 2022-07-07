@@ -67,35 +67,24 @@ const MeetingPage = (): React.ReactElement => {
     <JitsiMeeting
       domain={import.meta.env.VITE_DOMAIN}
       jwt={import.meta.env.VITE_WEBCONF_TOKEN}
-      roomName="azerfdsi67832"
-      interfaceConfigOverwrite={{
-        MOBILE_APP_PROMO: false,
-        filmStripOnly: false,
-        SHOW_CHROME_EXTENSION_BANNER: false,
-        DISPLAY_WELCOME_PAGE_CONTENT: false,
-        TOOLBAR_ALWAYS_VISIBLE: true,
-        TOOLBAR_BUTTONS: [
-          "microphone",
-          "camera",
-          "videoquality",
-          "fodeviceselection",
-          "raisehand",
-          "tileview",
-        ],
-        DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
-        SHOW_DEEP_LINKING_IMAGE: false,
-      }}
+      roomName="ROOMSNAPCOM1234"
       configOverwrite={{
         disableSimulcast: false,
         disableDeepLinking: true,
         prejoinPageEnabled: false,
         preferH264: true,
-        startWithVideoMuted: false,
+        startWithVideoMuted: true,
         startWithAudioMuted: true,
         enableWelcomePage: false,
+        toolbarButtons: [],
+        notifications: [],
+        conferenceInfo: {
+          alwaysVisible: [],
+          autoHide: [],
+        },
       }}
       userInfo={{
-        displayName: "ROOM_2312",
+        displayName: "Participant 1",
         email: "",
       }}
       onApiReady={handleApiReady}
