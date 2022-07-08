@@ -29,7 +29,7 @@ const CustomKeyboard = ({
   handleSubmit,
 }: KeyboardProps): React.ReactElement => {
   const [numpad, setNumpad] = useState<boolean>(!creating);
-  const [caps, setCaps] = useState<boolean>(!creating);
+  const [caps, setCaps] = useState<boolean>(true);
 
   const handleSpecialKeys = (button: string) => {
     switch (button) {
