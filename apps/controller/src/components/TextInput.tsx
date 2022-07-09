@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { ArrowForward, CloseRounded, CheckRounded } from "@mui/icons-material"
-import { Box, IconButton, InputBase, Stack, Typography, CircularProgress } from "@mui/material"
+import {
+  Box,
+  IconButton,
+  InputBase,
+  Stack,
+  Typography,
+  CircularProgress,
+} from "@mui/material"
 import { socketEvents } from "@jitsi-box-pro/model"
 import { useSocketContext, useSocketListener } from "@/services/socket"
 import { CustomKeyboard } from "@/components"
@@ -12,9 +19,11 @@ type AllowedEvents =
   | `${typeof socketEvents.createCall.validate}`
 
 interface LoadingProps {
-  state: {
-    isLoading: boolean
-  } | undefined
+  state:
+    | {
+        isLoading: boolean
+      }
+    | undefined
 }
 
 interface TextInputProps {
@@ -40,7 +49,8 @@ const TextInput = ({
   const { openSnackbar } = useSnackbarContext()
   const [input, setInput] = useState<string>("")
 
-  const hasThreeDigits = input.split("").filter((elt) => "1234567890".includes(elt)).length >= 3
+  const hasThreeDigits =
+    input.split("").filter((elt) => "1234567890".includes(elt)).length >= 3
   const hasTenCharacters = input.length >= 10
 
   const handleInputChange = (): void => {
@@ -53,7 +63,10 @@ const TextInput = ({
   }
 
   const handleSubmit = () => {
-    if (socket !== null && (!creating || (hasTenCharacters && hasThreeDigits))) {
+    if (
+      socket !== null &&
+      (!creating || (hasTenCharacters && hasThreeDigits))
+    ) {
       setLoading(true)
       socket.emit(eventName, input)
     }
@@ -106,20 +119,16 @@ const TextInput = ({
           }}
           onClick={handleSubmit}
         >
-          {loading ? (
-            <CircularProgress />
-          ) : (
-            <ArrowForward />
-          )}
+          {loading ? <CircularProgress /> : <ArrowForward />}
         </IconButton>
         {creating && input.length > 0 ? (
           <div
             style={{
-              paddingTop: "2vh"
+              paddingTop: "2vh",
             }}
           >
             <Stack
-              sx = {{ color: hasTenCharacters ? "success.main" : "error.main" }}
+              sx={{ color: hasTenCharacters ? "success.main" : "error.main" }}
               direction="row"
               justifyContent="center"
               alignItems="center"
@@ -130,7 +139,7 @@ const TextInput = ({
               </Typography>
             </Stack>
             <Stack
-              sx = {{ color: hasThreeDigits ? "success.main" : "error.main" }}
+              sx={{ color: hasThreeDigits ? "success.main" : "error.main" }}
               direction="row"
               justifyContent="center"
               alignItems="center"

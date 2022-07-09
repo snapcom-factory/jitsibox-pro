@@ -28,23 +28,23 @@ const CustomKeyboard = ({
   creating,
   handleSubmit,
 }: KeyboardProps): React.ReactElement => {
-  const [numpad, setNumpad] = useState<boolean>(!creating);
-  const [caps, setCaps] = useState<boolean>(true);
+  const [numpad, setNumpad] = useState<boolean>(!creating)
+  const [caps, setCaps] = useState<boolean>(true)
 
   const handleSpecialKeys = (button: string) => {
     switch (button) {
       case "{switchToABC}":
         setNumpad(false)
-        break;
+        break
       case "{switchTo123}":
         setNumpad(true)
-        break;
+        break
       case "{enter}":
         handleSubmit()
-        break;
+        break
       case "{shift}":
         setCaps((value) => !value)
-        break;
+        break
       default:
         if (caps && alphabet.toUpperCase().includes(button)) {
           setCaps(false)
@@ -93,11 +93,9 @@ const CustomKeyboard = ({
           "{enter}": "Valider",
         }}
         layout={{
-          default: getKeyboardLayout(creating, numpad, caps)
+          default: getKeyboardLayout(creating, numpad, caps),
         }}
-        theme={`hg-theme-default keyboard ${
-          numpad ? "numpad" : ""
-        }`}
+        theme={`hg-theme-default keyboard ${numpad ? "numpad" : ""}`}
         buttonTheme={
           !numpad
             ? [

@@ -113,16 +113,16 @@ export interface ServerToMainScreenEvents {
 }
 
 export interface MainScreenToServerEvents {
-  [socketEvents.joinCall.validate]: (value : {
-    meetingId: string,
+  [socketEvents.joinCall.validate]: (value: {
+    meetingId: string
     defaultParams: {
       audioMuted: boolean
       videoMuted: boolean
     }
   }) => void
   [socketEvents.joinCall.error]: (error: string, controllerId: string) => void
-  [socketEvents.createCall.validate]: (value : {
-    meetingId: string,
+  [socketEvents.createCall.validate]: (value: {
+    meetingId: string
     defaultParams: {
       audioMuted: boolean
       videoMuted: boolean

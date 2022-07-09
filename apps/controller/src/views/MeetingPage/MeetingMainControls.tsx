@@ -17,13 +17,15 @@ import WavingHand from "@/assets/WavingHand"
 import { useSnackbarContext } from "@/services/snackbar"
 
 export interface MeetingProps {
-  state: {
-    isAlreadyMuted: boolean
-    isCameraAlreadyOn: boolean
-    isHandAlreadyRaised: boolean
-    isAlreadyAskingToShareScreen: boolean
-    isAlreadySharingScreen: boolean
-  } | undefined
+  state:
+    | {
+        isAlreadyMuted: boolean
+        isCameraAlreadyOn: boolean
+        isHandAlreadyRaised: boolean
+        isAlreadyAskingToShareScreen: boolean
+        isAlreadySharingScreen: boolean
+      }
+    | undefined
 }
 
 const MeetingMainControls = (): React.ReactElement => {
@@ -33,19 +35,20 @@ const MeetingMainControls = (): React.ReactElement => {
     isCameraAlreadyOn,
     isHandAlreadyRaised,
     isAlreadyAskingToShareScreen,
-    isAlreadySharingScreen
+    isAlreadySharingScreen,
   } = state ?? {
     isAlreadyMuted: false,
     isCameraAlreadyOn: true,
     isHandAlreadyRaised: false,
     isAlreadyAskingToShareScreen: false,
-    isAlreadySharingScreen: false
+    isAlreadySharingScreen: false,
   }
 
   const [isMuted, setIsMuted] = useState<boolean>(false)
   const [isCameraOn, setIsCameraOn] = useState<boolean>(true)
   const [isHandRaised, setIsHandRaised] = useState<boolean>(false)
-  const [isAskingToShareScreen, setIsAskingToShareScreen] = useState<boolean>(false)
+  const [isAskingToShareScreen, setIsAskingToShareScreen] =
+    useState<boolean>(false)
 
   useEffect(() => {
     setIsMuted(isAlreadyMuted)

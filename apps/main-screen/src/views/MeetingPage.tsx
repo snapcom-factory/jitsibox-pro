@@ -30,7 +30,7 @@ const MeetingPage = (): React.ReactElement => {
   const meetingId = meetingParam.meetingId ?? "default"
   const navigate = useNavigate()
 
-  let participantId = "";
+  let participantId = ""
 
   if (meetingId === undefined || meetingId.length === 0) navigate("/")
 
@@ -75,25 +75,28 @@ const MeetingPage = (): React.ReactElement => {
     // Warn the controller that the API is ready
     if (socket !== null) {
       socket.emit(socketEvents.joinCall.validate, {
-        meetingId: meetingId,
-        defaultParams: defaultParams
+        meetingId,
+        defaultParams,
       })
       socket.emit(socketEvents.createCall.validate, {
-        meetingId: meetingId,
-        defaultParams: defaultParams
+        meetingId,
+        defaultParams,
       })
     }
     apiRef.current = apiObj
 
-    apiRef.current.on("videoConferenceJoined", ({ id }: { id: string}) => {
+    apiRef.current.on("videoConferenceJoined", ({ id }: { id: string }) => {
       participantId = id
     })
     apiRef.current.on("audioMuteStatusChanged", (payload: audioVideoPayload) =>
       handleAudioStatusChange(payload)
     )
-    apiRef.current.on("videoMuteStatusChanged", (payload: audioVideoPayload) => {
-      handleVideoStatusChange(payload)
-    })
+    apiRef.current.on(
+      "videoMuteStatusChanged",
+      (payload: audioVideoPayload) => {
+        handleVideoStatusChange(payload)
+      }
+    )
     apiRef.current.on("raiseHandUpdated", (payload: handRaisedPayload) =>
       handleHandUpdate(payload)
     )

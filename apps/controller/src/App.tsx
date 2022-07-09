@@ -7,15 +7,14 @@ import { SocketProvider } from "@/services/socket"
 import { SnackbarProvider } from "@/services/snackbar"
 
 const App = (): React.ReactElement => {
-
   // Disable zoom on tablets and mobile devices
-  const disablePinchZoom = (e : TouchEvent) => {
+  const disablePinchZoom = (e: TouchEvent) => {
     if (e.touches.length > 1) {
       e.preventDefault()
     }
   }
   document.addEventListener("touchmove", disablePinchZoom, {
-      passive: false
+    passive: false,
   })
 
   return (
