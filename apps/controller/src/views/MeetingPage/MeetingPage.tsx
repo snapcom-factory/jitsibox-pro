@@ -21,7 +21,9 @@ const MeetingPage = () => {
       header={
         <Header
           middleContent={
-            <QRCodeButton meetingLink="webconf.numerique.gouv.fr/tuweruywe345" />
+            <QRCodeButton
+              meetingLink={`${import.meta.env.VITE_DOMAIN}/${meetingId}`}
+            />
           }
           endContent={<NumberOfParticipantsIndicator />}
         />
