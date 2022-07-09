@@ -21,6 +21,7 @@ const socketMainScreen = (
       globalStatus.keyboardMenu.loading = false
       globalStatus.global.page = "meeting"
       globalStatus.meeting.meetingId = props.meetingId
+      globalStatus.meeting.participants = props.numberOfParticipants
       controllers.emit(socketEvents.joinCall.validate, props)
     }
   })
@@ -36,6 +37,7 @@ const socketMainScreen = (
       globalStatus.keyboardMenu.loading = false
       globalStatus.global.page = "meeting"
       globalStatus.meeting.meetingId = props.meetingId
+      globalStatus.meeting.participants = props.numberOfParticipants
       controllers.emit(socketEvents.createCall.validate, props)
     }
   })
@@ -65,6 +67,7 @@ const socketMainScreen = (
     globalStatus.global.page = "menu"
     globalStatus.meeting = {
       meetingId: "",
+      participants: 0,
       isMuted: false,
       isCameraOn: true,
       isHandRaised: false,
@@ -88,6 +91,14 @@ const socketMainScreen = (
     globalStatus.meeting.isSharingScreen = false
     controllers.emit(socketEvents.meeting.stopSharing)
   })
+
+  socket.on(
+    socketEvents.meeting.participants,
+    (numberOfParticipants: number) => {
+      globalStatus.meeting.participants = numberOfParticipants
+      controllers.emit(socketEvents.meeting.participants, numberOfParticipants)
+    }
+  )
 }
 
 export default socketMainScreen

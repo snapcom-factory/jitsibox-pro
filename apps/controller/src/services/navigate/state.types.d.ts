@@ -10,6 +10,7 @@ export interface MeetingState {
   isHandAlreadyRaised: boolean
   isAlreadyAskingToShareScreen: boolean
   isAlreadySharingScreen: boolean
+  numberOfParticipants: number
 }
 
 export type NavigateState = TextInputState | MeetingState

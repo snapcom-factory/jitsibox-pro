@@ -24,6 +24,7 @@ export const socketEvents = {
     askingToShareScreen: "askingToShareScreen",
     sharingScreen: "shareScreen",
     stopSharing: "stopSharing",
+    participants: "numberOfParticipants",
   },
 } as const
 
@@ -41,11 +42,13 @@ export interface GlobalStatus {
     isHandRaised: boolean
     isAskingToShareScreen: boolean
     isSharingScreen: boolean
+    participants: number
   }
 }
 
 export interface NewMeetingProps {
   meetingId: string
+  numberOfParticipants: number
   defaultParams: {
     audioMuted: boolean
     videoMuted: boolean
@@ -83,6 +86,7 @@ export interface ServerToControllerEvents {
   [socketEvents.meeting.askingToShareScreen]: () => void
   [socketEvents.meeting.sharingScreen]: () => void
   [socketEvents.meeting.stopSharing]: () => void
+  [socketEvents.meeting.participants]: (numberOfParticipants: number) => void
   [socketEvents.meeting.leave]: () => void
 }
 
@@ -118,6 +122,7 @@ export interface MainScreenToServerEvents {
   [socketEvents.meeting.wave]: (isHandRaised: boolean) => void
   [socketEvents.meeting.sharingScreen]: () => void
   [socketEvents.meeting.stopSharing]: () => void
+  [socketEvents.meeting.participants]: (numberOfParticipants: number) => void
   [socketEvents.meeting.leave]: () => void
 }
 

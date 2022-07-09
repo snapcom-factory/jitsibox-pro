@@ -9,6 +9,7 @@ const globalStatus: GlobalStatus = {
   },
   meeting: {
     meetingId: "",
+    participants: 0,
     isMuted: false,
     isCameraOn: true,
     isHandRaised: false,

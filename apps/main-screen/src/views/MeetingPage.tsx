@@ -70,24 +70,37 @@ const MeetingPage = (): React.ReactElement => {
     }
   }
 
+  const handleParticipantChange = () => {
+    if (!apiRef.current) return
+    const numberOfParticipants = apiRef.current.getNumberOfParticipants()
+    if (socket !== null) {
+      socket.emit(socketEvents.meeting.participants, numberOfParticipants)
+    }
+  }
+
   // listening to the events from the jitsi-meet-external-api
   const handleApiReady = (apiObj: IJitsiMeetExternalApi) => {
-    // Warn the controller that the API is ready
-    if (socket !== null) {
-      socket.emit(socketEvents.joinCall.validate, {
-        meetingId,
-        defaultParams,
-      })
-      socket.emit(socketEvents.createCall.validate, {
-        meetingId,
-        defaultParams,
-      })
-    }
     apiRef.current = apiObj
 
+    // Warn the controller that the API is ready
     apiRef.current.on("videoConferenceJoined", ({ id }: { id: string }) => {
+      if (!apiRef.current) return
+      const numberOfParticipants = apiRef.current.getNumberOfParticipants()
       participantId = id
+      if (socket !== null) {
+        socket.emit(socketEvents.joinCall.validate, {
+          meetingId,
+          numberOfParticipants,
+          defaultParams,
+        })
+        socket.emit(socketEvents.createCall.validate, {
+          meetingId,
+          numberOfParticipants,
+          defaultParams,
+        })
+      }
     })
+
     apiRef.current.on("audioMuteStatusChanged", (payload: audioVideoPayload) =>
       handleAudioStatusChange(payload)
     )
@@ -100,6 +113,10 @@ const MeetingPage = (): React.ReactElement => {
     apiRef.current.on("raiseHandUpdated", (payload: handRaisedPayload) =>
       handleHandUpdate(payload)
     )
+
+    apiRef.current.on("participantJoined", () => handleParticipantChange())
+    apiRef.current.on("participantKickedOut", () => handleParticipantChange())
+    apiRef.current.on("participantLeft", () => handleParticipantChange())
   }
 
   return (

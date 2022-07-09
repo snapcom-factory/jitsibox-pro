@@ -37,6 +37,7 @@ const adaptToCurrentStatus = (
         isAlreadyAskingToShareScreen:
           statusFromSocket.meeting.isAskingToShareScreen,
         isAlreadySharingScreen: statusFromSocket.meeting.isSharingScreen,
+        numberOfParticipants: statusFromSocket.meeting.participants,
       })
       break
     default:
@@ -61,24 +62,26 @@ const Routes = (): React.ReactElement => {
   useSocketListener(socketEvents.menu.create, () => navigate("/create"))
   useSocketListener(
     socketEvents.joinCall.validate,
-    ({ meetingId, defaultParams }: NewMeetingProps) =>
+    ({ meetingId, numberOfParticipants, defaultParams }: NewMeetingProps) =>
       navigate(`/meeting/${meetingId}`, {
         isAlreadyMuted: defaultParams.audioMuted,
         isCameraAlreadyOn: !defaultParams.videoMuted,
         isHandAlreadyRaised: false,
         isAlreadyAskingToShareScreen: false,
         isAlreadySharingScreen: false,
+        numberOfParticipants,
       })
   )
   useSocketListener(
     socketEvents.createCall.validate,
-    ({ meetingId, defaultParams }: NewMeetingProps) =>
+    ({ meetingId, numberOfParticipants, defaultParams }: NewMeetingProps) =>
       navigate(`/meeting/${meetingId}`, {
         isAlreadyMuted: defaultParams.audioMuted,
         isCameraAlreadyOn: !defaultParams.videoMuted,
         isHandAlreadyRaised: false,
         isAlreadyAskingToShareScreen: false,
         isAlreadySharingScreen: false,
+        numberOfParticipants,
       })
   )
   return (
