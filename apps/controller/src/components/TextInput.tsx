@@ -21,13 +21,13 @@ type AllowedEvents =
 interface TextInputProps {
   eventName: AllowedEvents
   placeholder: string
-  creating?: boolean
+  namesOnly?: boolean
 }
 
 const TextInput = ({
   eventName,
   placeholder,
-  creating = false,
+  namesOnly = false,
 }: TextInputProps): React.ReactElement => {
   const { state } = useLocation() as Location<TextInputState>
 
@@ -57,7 +57,7 @@ const TextInput = ({
   const handleSubmit = () => {
     if (
       socket !== null &&
-      (!creating || (hasTenCharacters && hasThreeDigits))
+      (!namesOnly || (hasTenCharacters && hasThreeDigits))
     ) {
       setLoading(true)
       socket.emit(eventName, input)
@@ -113,7 +113,7 @@ const TextInput = ({
         >
           {loading ? <CircularProgress /> : <ArrowForward />}
         </IconButton>
-        {creating && input.length > 0 ? (
+        {namesOnly && input.length > 0 ? (
           <div
             style={{
               paddingTop: "2vh",
@@ -146,7 +146,7 @@ const TextInput = ({
       </Box>
       <CustomKeyboard
         setValue={setInput}
-        creating={creating}
+        namesOnly={namesOnly}
         handleSubmit={handleSubmit}
       />
     </>

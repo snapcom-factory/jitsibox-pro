@@ -11,7 +11,7 @@ import {
 
 interface KeyboardProps {
   setValue: (value: string) => void
-  creating: boolean
+  namesOnly: boolean
   handleSubmit: () => void
 }
 
@@ -25,10 +25,10 @@ const maxInputLength = 46
 
 const CustomKeyboard = ({
   setValue,
-  creating,
+  namesOnly,
   handleSubmit,
 }: KeyboardProps): React.ReactElement => {
-  const [numpad, setNumpad] = useState<boolean>(!creating)
+  const [numpad, setNumpad] = useState<boolean>(!namesOnly)
   const [caps, setCaps] = useState<boolean>(true)
 
   const handleSpecialKeys = (button: string) => {
@@ -93,7 +93,7 @@ const CustomKeyboard = ({
           "{enter}": "Valider",
         }}
         layout={{
-          default: getKeyboardLayout(creating, numpad, caps),
+          default: getKeyboardLayout(namesOnly, numpad, caps),
         }}
         theme={`hg-theme-default keyboard ${numpad ? "numpad" : ""}`}
         buttonTheme={
