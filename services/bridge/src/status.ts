@@ -1,19 +1,4 @@
-interface GlobalStatus {
-  global: {
-    page: "menu" | "joiningCall" | "creatingCall" | "localSharing" | "meeting"
-  }
-  keyboardMenu: {
-    loading: boolean
-  }
-  meeting: {
-    meetingId: string
-    isMuted: boolean
-    isCameraOn: boolean
-    isHandRaised: boolean
-    isAskingToShareScreen: boolean
-    isSharingScreen: boolean
-  }
-}
+import { GlobalStatus } from "../../../packages/model/src"
 
 const globalStatus: GlobalStatus = {
   global: {

@@ -13,19 +13,11 @@ import { socketEvents } from "@jitsi-box-pro/model"
 import { useSocketContext, useSocketListener } from "@/services/socket"
 import { CustomKeyboard } from "@/components"
 import { useSnackbarContext } from "@/services/snackbar"
+import { Location, TextInputState } from "@/services/navigate"
 
 type AllowedEvents =
   | `${typeof socketEvents.joinCall.validate}`
   | `${typeof socketEvents.createCall.validate}`
-
-interface LoadingProps {
-  state:
-    | {
-        isLoading: boolean
-      }
-    | undefined
-}
-
 interface TextInputProps {
   eventName: AllowedEvents
   placeholder: string
@@ -37,7 +29,7 @@ const TextInput = ({
   placeholder,
   creating = false,
 }: TextInputProps): React.ReactElement => {
-  const { state } = useLocation() as LoadingProps
+  const { state } = useLocation() as Location<TextInputState>
 
   const [loading, setLoading] = useState<boolean>(false)
   useEffect(() => setLoading(state?.isLoading ?? false), [state])

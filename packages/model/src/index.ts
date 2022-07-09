@@ -1,6 +1,7 @@
 export { socketEvents } from "./socketEvents"
 
 export type {
+  NewMeetingProps,
   GlobalStatus,
   ServerToControllerEvents,
   ControllerToServerEvents,

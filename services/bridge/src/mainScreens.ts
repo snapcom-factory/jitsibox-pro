@@ -1,18 +1,11 @@
 import { Server, Socket } from "socket.io"
 import globalStatus from "./status"
 import {
+  NewMeetingProps,
   socketEvents,
   MainScreenToServerEvents,
   ServerToClientEvents,
 } from "../../../packages/model/src/socketEvents"
-
-interface NewMeetingProps {
-  meetingId: string
-  defaultParams: {
-    audioMuted: boolean
-    videoMuted: boolean
-  }
-}
 
 const socketMainScreen = (
   io: Server,

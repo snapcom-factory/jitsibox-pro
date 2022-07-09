@@ -1,8 +1,10 @@
 import { Routes as Switch, Route } from "react-router-dom"
-import { GlobalStatus, socketEvents } from "@jitsi-box-pro/model"
-import useCustomNavigate, {
-  CustomNavigateFunction,
-} from "@/services/useCustomNavigate"
+import {
+  NewMeetingProps,
+  GlobalStatus,
+  socketEvents,
+} from "@jitsi-box-pro/model"
+import { useCustomNavigate, CustomNavigateFunction } from "@/services/navigate"
 import {
   HomeMenu,
   SharingPage,
@@ -12,14 +14,6 @@ import {
   CreatePage,
 } from "@/views"
 import { useSocketListener } from "@/services/socket"
-
-interface NewMeetingProps {
-  meetingId: string
-  defaultParams: {
-    audioMuted: boolean
-    videoMuted: boolean
-  }
-}
 
 const adaptToCurrentStatus = (
   statusFromSocket: GlobalStatus,

@@ -15,21 +15,10 @@ import { useSocketListener } from "@/services/socket"
 import WaveHand from "@/assets/WaveHand"
 import WavingHand from "@/assets/WavingHand"
 import { useSnackbarContext } from "@/services/snackbar"
-
-export interface MeetingProps {
-  state:
-    | {
-        isAlreadyMuted: boolean
-        isCameraAlreadyOn: boolean
-        isHandAlreadyRaised: boolean
-        isAlreadyAskingToShareScreen: boolean
-        isAlreadySharingScreen: boolean
-      }
-    | undefined
-}
+import { Location, MeetingState } from "@/services/navigate"
 
 const MeetingMainControls = (): React.ReactElement => {
-  const { state } = useLocation() as MeetingProps
+  const { state } = useLocation() as Location<MeetingState>
   const {
     isAlreadyMuted,
     isCameraAlreadyOn,
