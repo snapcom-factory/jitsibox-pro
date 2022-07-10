@@ -152,7 +152,7 @@ const MeetingMainControls = (): React.ReactElement => {
           />
         )}
       </Grid>
-      <Grid item xs={3}>
+      {/* <Grid item xs={3}>
         {!isAskingToShareScreen ? (
           <ActionButton
             text="Partager l'écran"
@@ -168,7 +168,7 @@ const MeetingMainControls = (): React.ReactElement => {
             event={{ name: socketEvents.meeting.stopSharing }}
           />
         )}
-      </Grid>
+      </Grid> */}
     </Grid>
   )
 }

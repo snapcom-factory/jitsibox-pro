@@ -39,6 +39,7 @@ const JoinPage = () => {
         <TextInput
           placeholder="Saisir le nom ou le code du meeting..."
           eventName={socketEvents.joinCall.validate}
+          namesOnly
         />
       </Stack>
     </ViewContainer>
