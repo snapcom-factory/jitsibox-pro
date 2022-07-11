@@ -8,7 +8,11 @@ import { useRef } from "react"
 import IJitsiMeetExternalApi from "@jitsi/react-sdk/lib/types/IJitsiMeetExternalApi"
 
 import { useSocketContext, useSocketListener } from "@/services/socket"
-import { getCameraDevice } from "@/services/mediaDevices"
+import {
+  getCameraDevice,
+  getInputMicDevice,
+  getOutputSpeakerDevice,
+} from "@/services/mediaDevices"
 
 interface audioVideoPayload {
   muted: boolean
@@ -107,6 +111,20 @@ const MeetingPage = (): React.ReactElement => {
           apiRef.current.setVideoInputDevice(
             cameraDevice.label,
             cameraDevice.deviceId
+          )
+        }
+        const micDevice = await getInputMicDevice()
+        if (micDevice !== undefined) {
+          apiRef.current.setAudioInputDevice(
+            micDevice.label,
+            micDevice.deviceId
+          )
+        }
+        const speakerDevice = await getOutputSpeakerDevice()
+        if (speakerDevice !== undefined) {
+          apiRef.current.setAudioOutputDevice(
+            speakerDevice.label,
+            speakerDevice.deviceId
           )
         }
       }
