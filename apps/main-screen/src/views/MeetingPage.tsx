@@ -8,6 +8,7 @@ import { useRef } from "react"
 import IJitsiMeetExternalApi from "@jitsi/react-sdk/lib/types/IJitsiMeetExternalApi"
 
 import { useSocketContext, useSocketListener } from "@/services/socket"
+import { getCameraDevice } from "@/services/mediaDevices"
 
 interface audioVideoPayload {
   muted: boolean
@@ -83,23 +84,33 @@ const MeetingPage = (): React.ReactElement => {
     apiRef.current = apiObj
 
     // Warn the controller that the API is ready
-    apiRef.current.on("videoConferenceJoined", ({ id }: { id: string }) => {
-      if (!apiRef.current) return
-      const numberOfParticipants = apiRef.current.getNumberOfParticipants()
-      participantId = id
-      if (socket !== null) {
-        socket.emit(socketEvents.joinCall.validate, {
-          meetingId,
-          numberOfParticipants,
-          defaultParams,
-        })
-        socket.emit(socketEvents.createCall.validate, {
-          meetingId,
-          numberOfParticipants,
-          defaultParams,
-        })
+    apiRef.current.on(
+      "videoConferenceJoined",
+      async ({ id }: { id: string }) => {
+        if (!apiRef.current) return
+        const numberOfParticipants = apiRef.current.getNumberOfParticipants()
+        participantId = id
+        if (socket !== null) {
+          socket.emit(socketEvents.joinCall.validate, {
+            meetingId,
+            numberOfParticipants,
+            defaultParams,
+          })
+          socket.emit(socketEvents.createCall.validate, {
+            meetingId,
+            numberOfParticipants,
+            defaultParams,
+          })
+        }
+        const cameraDevice = await getCameraDevice()
+        if (cameraDevice !== undefined) {
+          apiRef.current.setVideoInputDevice(
+            cameraDevice.label,
+            cameraDevice.deviceId
+          )
+        }
       }
-    })
+    )
 
     apiRef.current.on("audioMuteStatusChanged", (payload: audioVideoPayload) =>
       handleAudioStatusChange(payload)
