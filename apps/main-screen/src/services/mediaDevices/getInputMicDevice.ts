@@ -1,22 +1,6 @@
-const inputMicDeviceLabels: string[] = [
-  "Polycom Studio Audio",
-  "Réseau de microphones",
-]
+import { inputMicDeviceLabels } from "@/services/config"
+import getDeviceFunction from "@/services/mediaDevices/utils"
 
-const getInputMicDevice = async (): Promise<MediaDeviceInfo | undefined> => {
-  const mediaDevices = await navigator.mediaDevices.enumerateDevices()
-  const inputAudioMediaDevices = mediaDevices.filter(
-    (device) => device.kind === "audioinput"
-  )
-  // eslint-disable-next-line no-restricted-syntax
-  for (const micLabel of inputMicDeviceLabels) {
-    const micDevice = inputAudioMediaDevices.find((device) =>
-      device.label.includes(micLabel)
-    )
-    if (micDevice !== undefined) {
-      return micDevice
-    }
-  }
-  return undefined
-}
+const getInputMicDevice = getDeviceFunction("audioinput", inputMicDeviceLabels)
+
 export default getInputMicDevice

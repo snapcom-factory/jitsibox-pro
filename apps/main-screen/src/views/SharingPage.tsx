@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Typography, Stack } from "@mui/material"
 import { ViewContainer } from "@/components"
-import { getShareDeviceId } from "@/services/mediaDevices"
+import { getShareDevice } from "@/services/mediaDevices"
 
 const SharingPage = () => {
   const [hasSource, setHasSource] = useState<boolean>(false)
@@ -10,11 +10,11 @@ const SharingPage = () => {
   )
   const localVideo = useRef<HTMLVideoElement>(null)
   const handleDeviceChange = async () => {
-    const sharingId = await getShareDeviceId()
-    if (sharingId !== undefined) {
+    const sharingDevice = await getShareDevice()
+    if (sharingDevice !== undefined) {
       const videoStream: MediaStream =
         await navigator.mediaDevices.getUserMedia({
-          video: { advanced: [{ deviceId: sharingId }] },
+          video: { advanced: [{ deviceId: sharingDevice.deviceId }] },
         })
       if (localVideo.current) {
         // TODO: remove VideoStream when leaving the page
