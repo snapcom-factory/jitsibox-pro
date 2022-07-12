@@ -9,7 +9,7 @@ import {
   Videocam,
   VideocamOff,
 } from "@mui/icons-material"
-import { socketEvents } from "@jitsi-box-pro/model"
+import { socketEvents } from "../../../../../packages/model/src"
 import { ActionButton } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import WaveHand from "@/assets/WaveHand"

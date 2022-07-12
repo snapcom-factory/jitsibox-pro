@@ -1,6 +1,6 @@
 import { Typography, Stack, Grid } from "@mui/material"
 import { Close } from "@mui/icons-material"
-import { socketEvents } from "@jitsi-box-pro/model"
+import { socketEvents } from "../../../../packages/model/src"
 import {
   ViewContainer,
   Header,

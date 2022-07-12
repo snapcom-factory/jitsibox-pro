@@ -1,5 +1,5 @@
 import { Routes as Switch, Route, useNavigate } from "react-router-dom"
-import { socketEvents } from "@jitsi-box-pro/model"
+import { socketEvents } from "../../../packages/model/src"
 import {
   HomeMenu,
   SharingPage,

@@ -1,6 +1,6 @@
 import { Button, Stack, SvgIconTypeMap, Typography } from "@mui/material"
 import { OverridableComponent } from "@mui/material/OverridableComponent"
-import { ControllerToServerEvents } from "@jitsi-box-pro/model"
+import { ControllerToServerEvents } from "../../../../packages/model/src"
 import { useSocketContext } from "@/services/socket"
 
 interface MenuButtonProps {

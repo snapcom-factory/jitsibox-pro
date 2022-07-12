@@ -1,9 +1,9 @@
+import { createContext } from "react"
+import { Socket } from "socket.io-client"
 import {
   ControllerToServerEvents,
   ServerToControllerEvents,
-} from "@jitsi-box-pro/model"
-import { createContext } from "react"
-import { Socket } from "socket.io-client"
+} from "../../../../../packages/model/src"
 
 export interface SocketContextType {
   socket: Socket<ServerToControllerEvents, ControllerToServerEvents> | null

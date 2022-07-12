@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-import { ServerToMainScreenEvents } from "@jitsi-box-pro/model"
+import { ServerToMainScreenEvents } from "../../../../../packages/model/src"
 import { useSocketContext } from "@/services/socket"
 
 const useSocketListener = (

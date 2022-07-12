@@ -1,6 +1,6 @@
 import { Grid, Container } from "@mui/material"
 import { Add, PresentToAll, Videocam } from "@mui/icons-material"
-import { socketEvents } from "@jitsi-box-pro/model"
+import { socketEvents } from "../../../../packages/model/src"
 import { MenuButton, Header, Footer, ViewContainer } from "@/components"
 
 const HomeMenu = (): React.ReactElement => (

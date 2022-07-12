@@ -3,7 +3,7 @@ import {
   NewMeetingProps,
   GlobalStatus,
   socketEvents,
-} from "@jitsi-box-pro/model"
+} from "../../../packages/model/src"
 import { useCustomNavigate, CustomNavigateFunction } from "@/services/navigate"
 import {
   HomeMenu,

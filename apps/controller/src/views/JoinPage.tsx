@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material"
-import { socketEvents } from "@jitsi-box-pro/model"
+import { socketEvents } from "../../../../packages/model/src"
 import {
   Header,
   Footer,

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { Person } from "@mui/icons-material"
 import { Chip } from "@mui/material"
-import { socketEvents } from "@jitsi-box-pro/model"
+import { socketEvents } from "../../../../../packages/model/src"
 import { Location, MeetingState } from "@/services/navigate"
 import { useSocketListener } from "@/services/socket"
 

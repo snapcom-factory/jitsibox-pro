@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
-import { socketEvents } from "@jitsi-box-pro/model"
 import { Container, Stack, Typography } from "@mui/material"
 import { CallEnd } from "@mui/icons-material"
+import { socketEvents } from "../../../../../packages/model/src"
 import useCustomNavigate from "@/services/navigate/useCustomNavigate"
 import { ViewContainer, ActionButton, Header, Footer } from "@/components"
 import { useSocketListener } from "@/services/socket"

@@ -6,7 +6,7 @@ import {
   mainScreenApiURL,
   token,
   roomName,
-} from "@jitsi-box-pro/model"
+} from "../../../../../packages/model/src"
 import SocketContext, {
   SocketContextType,
 } from "@/services/socket/socketContext"

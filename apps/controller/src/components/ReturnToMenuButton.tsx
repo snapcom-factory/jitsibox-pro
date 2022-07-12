@@ -1,6 +1,6 @@
 import { ArrowCircleLeft } from "@mui/icons-material"
 import { ButtonBase, Stack, Typography } from "@mui/material"
-import { socketEvents } from "@jitsi-box-pro/model"
+import { socketEvents } from "../../../../packages/model/src"
 import { useSocketContext } from "@/services/socket"
 
 const ReturnToMenuButton = () => {
