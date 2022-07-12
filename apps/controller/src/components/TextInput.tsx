@@ -76,12 +76,22 @@ const TextInput = ({
   }
 
   const handleSubmit = () => {
-    if (
-      socket !== null &&
-      (!namesOnly || (hasTenCharacters && hasThreeDigits))
-    ) {
+    if (socket == null) return
+    if (!namesOnly || (hasTenCharacters && hasThreeDigits)) {
       setLoading(true)
       socket.emit(eventName, input)
+      openSnackbar(
+        "success",
+        { vertical: "top", horizontal: "center" },
+        "Veuillez patienter..."
+      )
+    } else {
+      openSnackbar(
+        "error",
+        { vertical: "top", horizontal: "center" },
+        "Nom de réunion invalide",
+        3000
+      )
     }
   }
   return (
