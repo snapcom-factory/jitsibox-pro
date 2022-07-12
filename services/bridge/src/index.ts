@@ -10,7 +10,7 @@ import {
   ServerToClientEvents,
   ClientToServerEvents,
   socketEvents,
-} from "../../../packages/model/src"
+} from "./model"
 import socketControllers from "./controllers"
 import socketMainScreen from "./mainScreens"
 

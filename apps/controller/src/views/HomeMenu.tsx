@@ -1,6 +1,6 @@
 import { Grid, Container } from "@mui/material"
 import { Add, PresentToAll, Videocam } from "@mui/icons-material"
-import { socketEvents } from "../../../../packages/model/src"
+import { socketEvents } from "@/model"
 import { MenuButton, Header, Footer, ViewContainer } from "@/components"
 
 const HomeMenu = (): React.ReactElement => (

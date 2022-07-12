@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-import { ServerToMainScreenEvents } from "../../../../../packages/model/src"
+import { ServerToMainScreenEvents } from "@/model"
 import { useSocketContext } from "@/services/socket"
 
 const useSocketListener = (

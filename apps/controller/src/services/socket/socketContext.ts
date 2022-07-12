@@ -3,7 +3,7 @@ import { Socket } from "socket.io-client"
 import {
   ControllerToServerEvents,
   ServerToControllerEvents,
-} from "../../../../../packages/model/src"
+} from "@/model"
 
 export interface SocketContextType {
   socket: Socket<ServerToControllerEvents, ControllerToServerEvents> | null

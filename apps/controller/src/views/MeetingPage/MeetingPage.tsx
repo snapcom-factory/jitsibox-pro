@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { Container, Stack, Typography } from "@mui/material"
 import { CallEnd } from "@mui/icons-material"
-import { socketEvents } from "../../../../../packages/model/src"
+import { socketEvents } from "@/model"
 import useCustomNavigate from "@/services/navigate/useCustomNavigate"
 import { ViewContainer, ActionButton, Header, Footer } from "@/components"
 import { useSocketListener } from "@/services/socket"

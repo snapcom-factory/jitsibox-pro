@@ -4,7 +4,7 @@ import {
   socketEvents,
   ControllerToServerEvents,
   ServerToClientEvents,
-} from "../../../packages/model/src/socketEvents"
+} from "./model"
 
 const socketControllers = (
   io: Server,

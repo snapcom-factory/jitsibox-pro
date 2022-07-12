@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material"
 import Typography from "@mui/material/Typography"
 import { Close } from "@mui/icons-material"
-import { socketEvents } from "../../../../packages/model/src"
+import { socketEvents } from "@/model"
 import { ActionButton, Footer, Header, ViewContainer } from "@/components"
 
 const NotFound = () => (

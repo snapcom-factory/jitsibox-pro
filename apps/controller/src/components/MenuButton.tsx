@@ -1,6 +1,6 @@
 import { Button, Stack, SvgIconTypeMap, Typography } from "@mui/material"
 import { OverridableComponent } from "@mui/material/OverridableComponent"
-import { ControllerToServerEvents } from "../../../../packages/model/src"
+import { ControllerToServerEvents } from "@/model"
 import { useSocketContext } from "@/services/socket"
 
 interface MenuButtonProps {

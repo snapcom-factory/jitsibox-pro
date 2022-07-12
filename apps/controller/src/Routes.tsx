@@ -3,7 +3,7 @@ import {
   NewMeetingProps,
   GlobalStatus,
   socketEvents,
-} from "../../../packages/model/src"
+} from "@/model"
 import { useCustomNavigate, CustomNavigateFunction } from "@/services/navigate"
 import {
   HomeMenu,

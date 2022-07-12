@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { JitsiMeeting } from "@jitsi/react-sdk"
 import { useRef } from "react"
 import IJitsiMeetExternalApi from "@jitsi/react-sdk/lib/types/IJitsiMeetExternalApi"
-import { socketEvents } from "../../../../packages/model/src"
+import { socketEvents } from "@/model"
 
 import { useSocketContext, useSocketListener } from "@/services/socket"
 import {

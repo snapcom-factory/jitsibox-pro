@@ -1,6 +1,6 @@
 import { ArrowCircleLeft } from "@mui/icons-material"
 import { ButtonBase, Stack, Typography } from "@mui/material"
-import { socketEvents } from "../../../../packages/model/src"
+import { socketEvents } from "@/model"
 import { useSocketContext } from "@/services/socket"
 
 const ReturnToMenuButton = () => {

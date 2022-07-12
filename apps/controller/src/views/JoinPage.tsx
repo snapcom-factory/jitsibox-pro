@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material"
-import { socketEvents } from "../../../../packages/model/src"
+import { socketEvents } from "@/model"
 import {
   Header,
   Footer,

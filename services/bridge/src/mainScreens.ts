@@ -5,7 +5,7 @@ import {
   socketEvents,
   MainScreenToServerEvents,
   ServerToClientEvents,
-} from "../../../packages/model/src/socketEvents"
+} from "./model"
 
 const socketMainScreen = (
   io: Server,

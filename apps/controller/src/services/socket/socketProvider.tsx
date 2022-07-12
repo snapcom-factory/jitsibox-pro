@@ -6,7 +6,7 @@ import {
   token,
   roomName,
   controllersApiURL,
-} from "../../../../../packages/model/src"
+} from "@/model"
 import SocketContext, {
   SocketContextType,
 } from "@/services/socket/socketContext"

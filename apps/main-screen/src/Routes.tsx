@@ -1,5 +1,5 @@
 import { Routes as Switch, Route, useNavigate } from "react-router-dom"
-import { socketEvents } from "../../../packages/model/src"
+import { socketEvents } from "@/model"
 import {
   HomeMenu,
   SharingPage,

@@ -9,7 +9,7 @@ import {
   Typography,
   CircularProgress,
 } from "@mui/material"
-import { socketEvents } from "../../../../packages/model/src"
+import { socketEvents } from "@/model"
 import { useSocketContext, useSocketListener } from "@/services/socket"
 import { CustomKeyboard } from "@/components"
 import { useSnackbarContext } from "@/services/snackbar"

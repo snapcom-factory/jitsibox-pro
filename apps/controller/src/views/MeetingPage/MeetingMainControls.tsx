@@ -9,7 +9,7 @@ import {
   Videocam,
   VideocamOff,
 } from "@mui/icons-material"
-import { socketEvents } from "../../../../../packages/model/src"
+import { socketEvents } from "@/model"
 import { ActionButton } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import WaveHand from "@/assets/WaveHand"

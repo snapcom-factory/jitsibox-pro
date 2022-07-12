@@ -1,4 +1,4 @@
-import { GlobalStatus } from "../../../packages/model/src"
+import { GlobalStatus } from "./model"
 
 const globalStatus: GlobalStatus = {
   global: {
