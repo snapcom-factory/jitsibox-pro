@@ -118,6 +118,8 @@ export interface MainScreenToServerEvents {
   [socketEvents.meeting.mute]: (isMuted: boolean) => void
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void
   [socketEvents.meeting.wave]: (isHandRaised: boolean) => void
+  [socketEvents.meeting.askingToShareScreen]: () => void
+  [socketEvents.meeting.stopSharing]: () => void
   [socketEvents.meeting.participants]: (numberOfParticipants: number) => void
   [socketEvents.meeting.leave]: () => void
 }

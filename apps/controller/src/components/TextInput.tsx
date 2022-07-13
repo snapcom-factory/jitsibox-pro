@@ -34,11 +34,32 @@ const TextInput = ({
   const [loading, setLoading] = useState<boolean>(false)
   useEffect(() => setLoading(state?.isLoading ?? false), [state])
 
-  useSocketListener(socketEvents.joinCall.error, () => setLoading(false))
-  useSocketListener(socketEvents.createCall.error, () => setLoading(false))
+  const { openSnackbar } = useSnackbarContext()
+
+  useSocketListener(socketEvents.joinCall.error, (
+    error = "Une erreur est survenue, veuillez réessayer"
+  ) => {
+    setLoading(false);
+    openSnackbar(
+      "error",
+      { vertical: "top", horizontal: "center" },
+      error,
+      3000
+    )
+  })
+  useSocketListener(socketEvents.createCall.error, (
+    error = "Une erreur est survenue, veuillez réessayer"
+  ) => {
+    setLoading(false);
+    openSnackbar(
+      "error",
+      { vertical: "top", horizontal: "center" },
+      error,
+      3000
+    )
+  })
 
   const { socket } = useSocketContext()
-  const { openSnackbar } = useSnackbarContext()
   const [input, setInput] = useState<string>("")
 
   const hasThreeDigits =

@@ -84,9 +84,7 @@ const socketControllers = (
   })
 
   socket.on(socketEvents.meeting.askingToShareScreen, () => {
-    globalStatus.meeting.isAskingToShareScreen = true
     mainScreen.emit(socketEvents.meeting.askingToShareScreen)
-    controllers.emit(socketEvents.meeting.askingToShareScreen)
   })
 
   socket.on(socketEvents.meeting.stopSharing, () => {
