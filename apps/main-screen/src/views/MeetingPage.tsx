@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, useLocation } from "react-router-dom"
 import { JitsiMeeting } from "@jitsi/react-sdk"
 import { useRef } from "react"
 import IJitsiMeetExternalApi from "@jitsi/react-sdk/lib/types/IJitsiMeetExternalApi"
@@ -23,6 +23,17 @@ interface handRaisedPayload {
   handRaised: number
 }
 
+interface MeetingProps {
+  state:
+    | {
+        isAlreadyMuted: boolean
+        isVideoAlreadyMuted: boolean
+        isHandAlreadyRaised: boolean
+        isAlreadyAskingToShareScreen: boolean
+      }
+    | undefined
+}
+
 const defaultParams = {
   audioMuted: false,
   videoMuted: false,
@@ -38,6 +49,14 @@ const MeetingPage = (): React.ReactElement => {
   let participantId = ""
 
   if (meetingId === undefined || meetingId.length === 0) navigate("/")
+
+  const { state } = useLocation() as MeetingProps
+  const { isAlreadyMuted, isVideoAlreadyMuted, isHandAlreadyRaised } =
+    state ?? {
+      isAlreadyMuted: defaultParams.audioMuted,
+      isCameraAlreadyOn: defaultParams.videoMuted,
+      isHandAlreadyRaised: false,
+    }
 
   const apiRef = useRef<IJitsiMeetExternalApi>()
   const { socket } = useSocketContext()
@@ -127,6 +146,9 @@ const MeetingPage = (): React.ReactElement => {
             speakerDevice.deviceId
           )
         }
+        if (isHandAlreadyRaised) {
+          apiRef.current.executeCommand("toggleRaiseHand")
+        }
       }
     )
 
@@ -175,8 +197,8 @@ const MeetingPage = (): React.ReactElement => {
         disableDeepLinking: true,
         prejoinPageEnabled: false,
         preferH264: true,
-        startWithVideoMuted: defaultParams.videoMuted,
-        startWithAudioMuted: defaultParams.audioMuted,
+        startWithVideoMuted: isVideoAlreadyMuted,
+        startWithAudioMuted: isAlreadyMuted,
         enableWelcomePage: false,
         toolbarButtons: [],
         notifications: [],

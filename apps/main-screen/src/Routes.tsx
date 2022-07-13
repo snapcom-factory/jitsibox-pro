@@ -1,5 +1,10 @@
-import { Routes as Switch, Route, useNavigate } from "react-router-dom"
-import { socketEvents } from "@/model"
+import {
+  Routes as Switch,
+  Route,
+  useNavigate,
+  NavigateFunction,
+} from "react-router-dom"
+import { socketEvents, GlobalStatus } from "@/model"
 import {
   HomeMenu,
   SharingPage,
@@ -9,6 +14,37 @@ import {
   CreatePage,
 } from "@/views"
 import { useSocketListener } from "@/services/socket"
+
+const adaptToCurrentStatus = (
+  statusFromSocket: GlobalStatus,
+  navigate: NavigateFunction
+) => {
+  switch (statusFromSocket.global.page) {
+    case "localSharing":
+      navigate("/share")
+      break
+    case "joiningCall":
+      navigate("/join")
+      break
+    case "creatingCall":
+      navigate("/create")
+      break
+    case "meeting":
+      navigate(`/meeting/${statusFromSocket.meeting.meetingId}`, {
+        state: {
+          isAlreadyMuted: statusFromSocket.meeting.isMuted,
+          isVideoAlreadyMuted: !statusFromSocket.meeting.isCameraOn,
+          isHandAlreadyRaised: statusFromSocket.meeting.isHandRaised,
+          isAlreadyAskingToShareScreen:
+            statusFromSocket.meeting.isAskingToShareScreen,
+        },
+      })
+      break
+    default:
+      navigate("/")
+      break
+  }
+}
 
 const Routes = (): React.ReactElement => {
   const navigate = useNavigate()
@@ -22,6 +58,11 @@ const Routes = (): React.ReactElement => {
   )
   useSocketListener(socketEvents.createCall.validate, (meetingId: string) =>
     navigate(`/meeting/${meetingId}`)
+  )
+  useSocketListener(
+    socketEvents.global.connectionData,
+    (statusFromSocket: GlobalStatus) =>
+      adaptToCurrentStatus(statusFromSocket, navigate)
   )
   return (
     <Switch>
