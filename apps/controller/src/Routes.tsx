@@ -36,7 +36,6 @@ const adaptToCurrentStatus = (
         isHandAlreadyRaised: statusFromSocket.meeting.isHandRaised,
         isAlreadyAskingToShareScreen:
           statusFromSocket.meeting.isAskingToShareScreen,
-        isAlreadySharingScreen: statusFromSocket.meeting.isSharingScreen,
         numberOfParticipants: statusFromSocket.meeting.participants,
       })
       break
@@ -68,7 +67,6 @@ const Routes = (): React.ReactElement => {
         isCameraAlreadyOn: !defaultParams.videoMuted,
         isHandAlreadyRaised: false,
         isAlreadyAskingToShareScreen: false,
-        isAlreadySharingScreen: false,
         numberOfParticipants,
       })
   )
@@ -80,7 +78,6 @@ const Routes = (): React.ReactElement => {
         isCameraAlreadyOn: !defaultParams.videoMuted,
         isHandAlreadyRaised: false,
         isAlreadyAskingToShareScreen: false,
-        isAlreadySharingScreen: false,
         numberOfParticipants,
       })
   )

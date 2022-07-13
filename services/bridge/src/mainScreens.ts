@@ -71,25 +71,10 @@ const socketMainScreen = (
       isMuted: false,
       isCameraOn: true,
       isHandRaised: false,
-      isAskingToShareScreen: false,
-      isSharingScreen: false,
+      isAskingToShareScreen: false
     }
     controllers.emit(socketEvents.meeting.leave)
     controllers.emit(socketEvents.global.connectionData, globalStatus)
-  })
-
-  socket.on(socketEvents.meeting.sharingScreen, () => {
-    if (globalStatus.meeting.isAskingToShareScreen) {
-      globalStatus.meeting.isAskingToShareScreen = false
-      globalStatus.meeting.isSharingScreen = true
-      controllers.emit(socketEvents.meeting.sharingScreen)
-    }
-  })
-
-  socket.on(socketEvents.meeting.stopSharing, () => {
-    globalStatus.meeting.isAskingToShareScreen = false
-    globalStatus.meeting.isSharingScreen = false
-    controllers.emit(socketEvents.meeting.stopSharing)
   })
 
   socket.on(

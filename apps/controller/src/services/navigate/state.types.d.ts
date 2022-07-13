@@ -9,7 +9,6 @@ export interface MeetingState {
   isCameraAlreadyOn: boolean
   isHandAlreadyRaised: boolean
   isAlreadyAskingToShareScreen: boolean
-  isAlreadySharingScreen: boolean
   numberOfParticipants: number
 }
 

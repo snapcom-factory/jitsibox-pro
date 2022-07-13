@@ -46,16 +46,20 @@ const socketControllers = (
   })
 
   socket.on(socketEvents.joinCall.validate, (meetingId: string) => {
-    globalStatus.keyboardMenu.loading = true
-    // The socket id is sent to the main screen in order to answer only to
-    // the sender if there is any error
-    mainScreen.emit(socketEvents.joinCall.validate, meetingId, socket.id)
+    if (!globalStatus.keyboardMenu.loading) {
+      globalStatus.keyboardMenu.loading = true
+      // The socket id is sent to the main screen in order to answer only to
+      // the sender if there is any error
+      mainScreen.emit(socketEvents.joinCall.validate, meetingId, socket.id)
+    }
   })
 
   // When creating a call
   socket.on(socketEvents.createCall.validate, (meetingId: string) => {
-    globalStatus.keyboardMenu.loading = true
-    mainScreen.emit(socketEvents.createCall.validate, meetingId, socket.id)
+    if (!globalStatus.keyboardMenu.loading) {
+      globalStatus.keyboardMenu.loading = true
+      mainScreen.emit(socketEvents.createCall.validate, meetingId, socket.id)
+    }
   })
 
   // The controller doesn't say whether the local sharing starts or not, only the

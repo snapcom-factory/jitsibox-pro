@@ -41,7 +41,6 @@ export interface GlobalStatus {
     isCameraOn: boolean
     isHandRaised: boolean
     isAskingToShareScreen: boolean
-    isSharingScreen: boolean
     participants: number
   }
 }
@@ -84,7 +83,6 @@ export interface ServerToControllerEvents {
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void
   [socketEvents.meeting.wave]: (isHandRaised: boolean) => void
   [socketEvents.meeting.askingToShareScreen]: () => void
-  [socketEvents.meeting.sharingScreen]: () => void
   [socketEvents.meeting.stopSharing]: () => void
   [socketEvents.meeting.participants]: (numberOfParticipants: number) => void
   [socketEvents.meeting.leave]: () => void
@@ -120,8 +118,6 @@ export interface MainScreenToServerEvents {
   [socketEvents.meeting.mute]: (isMuted: boolean) => void
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void
   [socketEvents.meeting.wave]: (isHandRaised: boolean) => void
-  [socketEvents.meeting.sharingScreen]: () => void
-  [socketEvents.meeting.stopSharing]: () => void
   [socketEvents.meeting.participants]: (numberOfParticipants: number) => void
   [socketEvents.meeting.leave]: () => void
 }

@@ -24,13 +24,11 @@ const MeetingMainControls = (): React.ReactElement => {
     isCameraAlreadyOn,
     isHandAlreadyRaised,
     isAlreadyAskingToShareScreen,
-    isAlreadySharingScreen,
   } = state ?? {
     isAlreadyMuted: false,
     isCameraAlreadyOn: true,
     isHandAlreadyRaised: false,
     isAlreadyAskingToShareScreen: false,
-    isAlreadySharingScreen: false,
   }
 
   const [isMuted, setIsMuted] = useState<boolean>(false)
@@ -48,16 +46,6 @@ const MeetingMainControls = (): React.ReactElement => {
 
   const { openSnackbar } = useSnackbarContext()
 
-  useEffect(() => {
-    if (isAlreadyAskingToShareScreen && !isAlreadySharingScreen) {
-      openSnackbar(
-        "info",
-        { vertical: "bottom", horizontal: "center" },
-        "Pour partager votre écran dans le meeting, brancher le câble HDMI à votre ordinateur."
-      )
-    }
-  }, [isAlreadyAskingToShareScreen, isAlreadySharingScreen])
-
   useSocketListener(socketEvents.meeting.mute, (userIsMuted: boolean) => {
     setIsMuted(userIsMuted)
   })
@@ -73,15 +61,8 @@ const MeetingMainControls = (): React.ReactElement => {
     openSnackbar(
       "info",
       { vertical: "bottom", horizontal: "center" },
-      "Pour partager votre écran dans le meeting, brancher le câble HDMI à votre ordinateur."
-    )
-  })
-  useSocketListener(socketEvents.meeting.sharingScreen, () => {
-    openSnackbar(
-      "success",
-      { vertical: "bottom", horizontal: "center" },
-      "Écran partagé",
-      3000
+      "Pour partager votre écran dans le meeting, brancher le câble HDMI à votre ordinateur.",
+      5000
     )
   })
   useSocketListener(socketEvents.meeting.stopSharing, () => {

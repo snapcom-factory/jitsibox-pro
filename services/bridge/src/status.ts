@@ -14,7 +14,6 @@ const globalStatus: GlobalStatus = {
     isCameraOn: true,
     isHandRaised: false,
     isAskingToShareScreen: false,
-    isSharingScreen: false,
   },
 }
 
