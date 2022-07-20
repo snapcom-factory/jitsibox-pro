@@ -19,14 +19,14 @@ Before installation, you should add the following to `.env` files:
 - in the `controller` app, add the following `.env` file at the same level of the `index.html` and `package.json` files :
 
 ```
-VITE_DOMAIN = webconf.numerique.gouv.fr
+VITE_DOMAIN = meet.jit.si
 ```
 
 - in the `main-screen` app, add the following `.env` file at the same level of the `index.html` and `package.json` files :
 
 ```
 VITE_WEBCONF_TOKEN = #add the Webconf JWT
-VITE_DOMAIN = webconf.numerique.gouv.fr
+VITE_DOMAIN = meet.jit.si
 ```
 
 By running `npm i` in each app folder you should be able to install all of the dependencies necessary for the project to run. Next, you can use the various `npm` scripts to launch the app (`npm run dev` for development for example).
