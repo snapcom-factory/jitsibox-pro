@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknew_project=self.webpackChunknew_project||[]).push([[4842],{4592:e=>{e.exports=JSON.parse('{"permalink":"/jitsibox-pro/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

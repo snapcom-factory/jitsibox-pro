@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_project=self.webpackChunknew_project||[]).push([[267],{426:e=>{e.exports=JSON.parse('{"label":"hola","permalink":"/jitsibox-pro/blog/tags/hola","allTagsPath":"/jitsibox-pro/blog/tags","count":1}')}}]);

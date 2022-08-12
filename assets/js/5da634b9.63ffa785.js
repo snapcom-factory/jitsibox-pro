@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknew_project=self.webpackChunknew_project||[]).push([[7232],{7002:e=>{e.exports=JSON.parse('{"permalink":"/jitsibox-pro/blog/tags/facebook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
