@@ -65,13 +65,13 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'jitsi-pro-read-me',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Menu',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/snapcom-factory/jitsibox-pro',
             label: 'GitHub',
             position: 'right',
           },
