@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Jitsi Pro',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Créer une alternative aux Zoom/Microsoft Teams Rooms',
   url: 'https://snapcom-factory.github.io',
   baseUrl: '/jitsibox-pro/',
   onBrokenLinks: 'throw',
@@ -57,10 +57,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Home',
+        title: '',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/snap.png',
         },
         items: [
           {
@@ -69,7 +69,6 @@ const config = {
             position: 'left',
             label: 'Menu',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/snapcom-factory/jitsibox-pro',
             label: 'GitHub',
@@ -83,10 +82,6 @@ const config = {
           {
             title: 'Docs',
             items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
             ],
           },
           {
@@ -110,12 +105,8 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/snapcom-factory/jitsibox-pro',
               },
             ],
           },
