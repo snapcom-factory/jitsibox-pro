@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Installation avec le Kiosk Mode Windows (avec Edge)TTT
+# Installation avec le Kiosk Mode Windows (avec Edge)
 
 ### Activer le Kiosk Mode Windows
 

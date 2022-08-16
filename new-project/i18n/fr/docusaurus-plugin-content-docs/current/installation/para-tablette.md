@@ -1,8 +1,26 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
-# Installation avec ChromeTTTT
+# Paramètres tablette
+
+## Permettre à la tablette d'avoir un écran tactile séparé
+
+- S'assurer que la tablette est branché et que l'écran est bien étendu (cliquer sur Windows+P, puis sur `Étendre l'affichage` pour s'en assurer).
+- Ouvrir le `Panneau de configuration`, et sélectionner `Affichage par grandes icônes`.
+- Cliquer sur `Paramètres du Tablet PC` (ou le chercher dans la barre de recherche s'il n'apparaît pas), puis sur `Configurer`.
+- Un message `Touchez cet écran si vous voulez l’identifier comme l’écran tactile` apparaît sur l'écran principal. Appuyez sur `Entrée` pour le faire passer sur le deuxième écran, et cliquer sur ce deuxième écran avec la souris pour valider.
+
+## Empêcher l'ouverture du centre de notifications et de l'affichage des tâches
+
+- Ouvrir l'éditeur de registres avec `Windows Key + R`, taper `regedit` et valider.
+- Dans l'éditeur de registre, naviguer jusqu'à `HKEY_LOCAL_MACHINE > SOFTWARE > Policies > Microsoft > Windows > EdgeUI`
+- Si le dossier `EdgeUI` existe, le sélectionner et double-cliquer sur la clé `AllowEdgeSwipe` pour remplacer la valeur `0` par `1`. Redémarrer ensuite l'ordinateur.
+- Sinon, faire un clic droit sur le dossier `Windows`, et sélectionner `Nouveau > Clé`. Nommer cette clé `EdgeUI`.
+- Faire ensuite un clic droit sur la nouvelle clé `EdgeUI`, puis sélectionner `Nouveau > Valeur DWORD 32 bits`. Nommer cette valeur `AllowEdgeSwipe`, et valider.
+- Double-cliquer sur cette nouvelle valeur, et remplacer la valeur `0` par `1`. Redémarrer ensuite l'ordinateur.
+
+## Installation avec Chrome
 
 ### Empêcher de sortir du mode plein écran (Kiosk Mode)
 

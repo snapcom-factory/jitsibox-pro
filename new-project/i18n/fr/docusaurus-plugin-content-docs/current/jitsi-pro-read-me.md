@@ -2,9 +2,13 @@
 sidebar_position: 1
 ---
 
-# Paramètres tablette
+# Jitsi Box Pro
 
-## Permettre à la tablette d'avoir un écran tactile séparéTTTT
+Projet en partenariat avec Snapcom pour créer une alternative aux Zoom/Microsoft Teams Rooms
+
+# Installation
+
+## Permettre à la tablette d'avoir un écran tactile séparé
 
 - S'assurer que la tablette est branché et que l'écran est bien étendu (cliquer sur Windows+P, puis sur `Étendre l'affichage` pour s'en assurer).
 - Ouvrir le `Panneau de configuration`, et sélectionner `Affichage par grandes icônes`.

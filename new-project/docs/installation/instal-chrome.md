@@ -2,32 +2,23 @@
 sidebar_position: 2
 ---
 
-# Installation avec Chrome
+# Installation with Chrome
 
-### Empêcher de sortir du mode plein écran (Kiosk Mode)
+### Prevent exiting from full screen mode (Kiosk Mode)
 
-- Créer un nouvel utilisateur `JitsiBox` en cliquant sur l'icône 👤 en haut à droite, puis sur `Ajouter` en bas de la pop-up.
-- Cliquer sur `Continuer sans compte`, puis entrer `JitsiBox` en tant que nom et choisir une couleur de profil.
-- S'assurer que la case `Créer un raccourci sur le bureau` est bien cochée, et cliquer sur `OK`.
-- Faire un clic droit sur l'icône nouvellement créée sur le bureau, puis sélectionner `Propriétés`.
-- Au bout de la ligne `Cible`, écrire `--kiosk` sans aucun guillemet, et cliquer sur `OK`.
+- Create a new `JitsiBox` user by clicking on the 👤 icon at the top right, then `Add` at the bottom of the pop-up.
+- Click `Continue without account`, then put `JitsiBox` as the name and choose a profile color.
+- Make sure the `Create desktop shortcut` box is checked, and click `OK`.
+- Right-click on the newly created desktop icon, then select `Properties`.
+- At the end of the `Target` line, type `--kiosk` without any quotes, and click `OK`.
 
-### Permettre l'affichage d'une fenêtre en Kiosk Mode sur chaque écran
 
-- Copier-coller l'icône permettant d'ouvrir Chrome en Kiosk Mode (pour avoir une icône pour le controller et pour le main screen)
-- Faire un clic droit sur l'icône destinée au main screen, puis sélectionner `Propriétés`.
-- Dans la ligne `Cible`, juste avant `--kiosk`, ajouter `--window-position=0,0`.
-- Juste après `--kiosk`, ajouter `localhost:3002` (ou l'adresse du main screen s'il n'est pas hébergé en local).
-- Ajouter ensuite `--user-data-dir=c:/monitor1` (l'ordre des paramètres est important).
-- Cliquer sur `OK`.
-- Faire la même chose sur l'icône destinée au controller, en remplaçant `0,0` par `1680,0` dans `--window-position`, `localhost:3002` par `localhost:3000` et `monitor1` par `monitor2` dans `--user-data-dir`.
+### Enable the display of a window in Kiosk Mode on each screen
 
-## Installation avec le Kiosk Mode Windows (avec Edge)
-
-### Activer le Kiosk Mode Windows
-
-- Accéder aux paramètres utilisateurs en ouvrant le menu `Démarrer` de Windows, puis en sélectionnant `Paramètres` puis `Comptes`.
-- Cliquer sur l'onglet `Famille et autres utilisateurs`, puis sur `Accès attribué`.
-- Créer un utilisateur appelé `Kiosk`, et sélectionner comme application de lancement `Microsoft Edge`.
-- Dans l'URL du site Web, entrer `localhost:3000` et cliquer sur `Enregistrer`.
-- Redémarrer l'ordinateur : il démarrera automatiquement sur le profil `Kiosk`.
+- Copy and paste the icon to open Chrome in Kiosk Mode (to have an icon for the controller and for the main screen)
+- Right click on the icon for the main screen, then select `Properties`.
+- In the `Target` line, just before `--kiosk`, add `--window-position=0,0`.
+- Just after `--kiosk`, add `localhost:3002` (or the address of the main screen if it is not hosted locally).
+- Then add `--user-data-dir=c:/monitor1` (the order of the parameters is important).
+- Click `OK`.
+- Do the same thing on the controller icon, replacing `0,0` with `1680,0` in `--window-position`, `localhost:3002` with `localhost:3000` and `monitor1` with `monitor2` in `--user-data-dir`.
