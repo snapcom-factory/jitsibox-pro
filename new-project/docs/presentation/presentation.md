@@ -7,5 +7,6 @@ Interface d’accueil sur tablette – tactile
 - Créer une réunion
 - Rejoindre une réunion
 - Partager l’écran
-![image](https://user-images.githubusercontent.com/30130845/184889851-ef4be724-81a7-4bf9-b576-6a28522db9d1.png)
+![image](https://user-images.githubusercontent.com/30130845/184890011-85ace48d-73e0-434e-b6ea-242609a4f166.png)
+
 
