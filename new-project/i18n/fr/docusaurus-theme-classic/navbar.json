@@ -1,0 +1,10 @@
+{
+  "item.label.Menu": {
+    "message": "Menu",
+    "description": "Navbar item with label Menu"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
