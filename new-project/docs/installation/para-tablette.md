@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Tablet settings
+# Tablet settings TEST TEST
 
 ## Allow the tablet to have a separate touch screen
 
