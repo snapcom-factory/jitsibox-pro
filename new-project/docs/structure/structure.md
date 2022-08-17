@@ -3,6 +3,7 @@ sidebar_position: 1
 ---
 
 Introduction
+
 These apps are what the users see on the controller and the main screens. They communicate between each other thanks to the bridge.
 
 These apps used the same technologies :
