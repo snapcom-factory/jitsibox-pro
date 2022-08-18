@@ -49,9 +49,7 @@ const config = {
             return `https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
           }
           return `https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/${docPath}`;
-        },  
-          // editUrl:
-          //   'https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/',
+        },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
