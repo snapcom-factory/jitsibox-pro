@@ -18,5 +18,9 @@
   "sidebar.tutorialSidebar.category.Installation": {
     "message": "Installation",
     "description": "The label for category Installation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.GitHub Readme files": {
+    "message": "GitHub Readme files",
+    "description": "The label for category GitHub Readme files in sidebar tutorialSidebar"
   }
 }

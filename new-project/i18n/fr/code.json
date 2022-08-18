@@ -249,5 +249,11 @@
   "theme.docs.sidebar.expandButtonAriaLabel": {
     "message": "Déplier le menu latéral",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "Create an alternative to Zoom/Microsoft Teams Rooms": {
+    "message": "Créer une alternative à Zoom/Microsoft Teams Rooms"
+  },
+  "Jitsi Pro": {
+    "message": "Jitsi Pro"
   }
 }
