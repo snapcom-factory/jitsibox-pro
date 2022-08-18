@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/jitsibox-pro/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo-jitsi.png',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -26,6 +26,13 @@ const config = {
     defaultLocale: 'en',
     locales: ['en', 'fr'],
   },
+
+  customFields: {
+    image: 'img/logo-jitsi.png',
+    keywords: [],
+  },
+
+
 
   presets: [
     [
@@ -49,12 +56,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: 'img/logo-jitsi.png',
       navbar: {
         title: '',
         logo: {
           alt: 'My Site Logo',
           src: 'img/snap.png',
         },
+
         items: [
           {
             type: 'doc',
