@@ -27,10 +27,12 @@ const config = {
     locales: ['en', 'fr'],
   },
 
-  customFields: {
-    image: 'img/logo-jitsi.png',
-    keywords: [],
-  },
+
+
+  // customFields: {
+  //   image: 'img/logo-jitsi.png',
+  //   keywords: [],
+  // },
 
 
 
