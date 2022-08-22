@@ -2,8 +2,8 @@
 sidebar_position: 3
 ---
 
-# Entrer dans une conference via son code plutot que via son nom
-
+# Call with conference code
+Entrer dans une conference avec son code plutot que son nom
 
 
 Convertrir le code en nom via l"api du confmapper : 
