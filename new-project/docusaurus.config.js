@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Jitsi Pro',
-  tagline: 'Create an alternative to Zoom/Microsoft Teams Rooms',
+  tagline: 'Créer une alternative à Zoom/Microsoft Teams Rooms',
   url: 'https://snapcom-factory.github.io',
   baseUrl: '/jitsibox-pro/',
   onBrokenLinks: 'throw',
@@ -47,7 +47,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
 
           editUrl: ({locale,  docPath}) => {  
-          if (locale !== 'en') {
+          if (locale !== 'fr') {
             return `https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
           }
           return `https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/${docPath}`;

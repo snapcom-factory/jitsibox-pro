@@ -2,12 +2,12 @@
 sidebar_position: 3
 ---
 
-# Installation with Kiosk Mode Windows (with Edge)
+# Installation avec le Kiosk Mode Windows (avec Edge)
 
-### Activate Windows Kiosk Mode 
+### Activer le Kiosk Mode Windows
 
-- Access the user settings by opening the `Start` menu in Windows, then selecting `Settings` then `Accounts`.
-- Click on the `Family and Other Users` tab, then `Assigned Access`.
-- Create a user called `Kiosk`, and select `Microsoft Edge` as the launch application.
-- In the Web site URL, enter `localhost:3000` and click `Save`.
-- Restart the computer: it will automatically boot to the `Kiosk` profile.
+- Accéder aux paramètres utilisateurs en ouvrant le menu `Démarrer` de Windows, puis en sélectionnant `Paramètres` puis `Comptes`.
+- Cliquer sur l'onglet `Famille et autres utilisateurs`, puis sur `Accès attribué`.
+- Créer un utilisateur appelé `Kiosk`, et sélectionner comme application de lancement `Microsoft Edge`.
+- Dans l'URL du site Web, entrer `localhost:3000` et cliquer sur `Enregistrer`.
+- Redémarrer l'ordinateur : il démarrera automatiquement sur le profil `Kiosk`.

@@ -17,7 +17,7 @@ function HomepageHeader() {
           Jitsi Pro
           </Translate></h1>
         <p className="hero__subtitle"><Translate>
-          Create an alternative to Zoom/Microsoft Teams Rooms
+          Créer une alternative à Zoom/Microsoft Teams Rooms
           </Translate></p>
         <div className={styles.buttons}>
         </div>
