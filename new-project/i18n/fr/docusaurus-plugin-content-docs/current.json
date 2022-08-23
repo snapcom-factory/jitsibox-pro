@@ -22,5 +22,9 @@
   "sidebar.tutorialSidebar.category.GitHub Readme files": {
     "message": "GitHub Readme files",
     "description": "The label for category GitHub Readme files in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Roadmap": {
+    "message": "Roadmap",
+    "description": "The label for category Roadmap in sidebar tutorialSidebar"
   }
 }
