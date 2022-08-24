@@ -1,0 +1,150 @@
+{
+  "/jitsibox-pro/__docusaurus/debug-374": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---jitsibox-pro-docusaurus-debugcf-5-f23"
+    }
+  },
+  "/jitsibox-pro/__docusaurus/debug/config-f2e": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---jitsibox-pro-docusaurus-debugcf-5-f23"
+    }
+  },
+  "/jitsibox-pro/__docusaurus/debug/content-c72": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---jitsibox-pro-docusaurus-debugcf-5-f23"
+    },
+    "allContent": "allContent---jitsibox-pro-docusaurus-debug-content-246-c14"
+  },
+  "/jitsibox-pro/__docusaurus/debug/globalData-443": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---jitsibox-pro-docusaurus-debugcf-5-f23"
+    }
+  },
+  "/jitsibox-pro/__docusaurus/debug/metadata-e83": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---jitsibox-pro-docusaurus-debugcf-5-f23"
+    }
+  },
+  "/jitsibox-pro/__docusaurus/debug/registry-a09": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---jitsibox-pro-docusaurus-debugcf-5-f23"
+    }
+  },
+  "/jitsibox-pro/__docusaurus/debug/routes-d76": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---jitsibox-pro-docusaurus-debugcf-5-f23"
+    }
+  },
+  "/jitsibox-pro/markdown-page-3ed": {
+    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__context": {
+      "plugin": "plugin---jitsibox-pro-markdown-pageb-1-b-d6d"
+    },
+    "content": "content---jitsibox-pro-markdown-page-393-534"
+  },
+  "/jitsibox-pro/docs-927": {
+    "__comp": "__comp---theme-doc-page-1-be-9be",
+    "__context": {
+      "plugin": "plugin---jitsibox-pro-docsc-91-0eb"
+    },
+    "versionMetadata": "versionMetadata---jitsibox-pro-docs-935-ec1"
+  },
+  "/jitsibox-pro/docs/github-read-me/apps/apps-read-me-99d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-github-read-me-apps-apps-read-me-2-fd-6ed"
+  },
+  "/jitsibox-pro/docs/github-read-me/apps/controller-read-me-0f3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-github-read-me-apps-controller-read-me-953-0a2"
+  },
+  "/jitsibox-pro/docs/github-read-me/apps/main-screen-read-me-af4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-github-read-me-apps-main-screen-read-me-4-cb-341"
+  },
+  "/jitsibox-pro/docs/github-read-me/packages/model-read-me-68a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-github-read-me-packages-model-read-meac-4-f0b"
+  },
+  "/jitsibox-pro/docs/github-read-me/packages/packages-read-me-078": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-github-read-me-packages-packages-read-mea-17-f4e"
+  },
+  "/jitsibox-pro/docs/github-read-me/packages/ui-read-me-eaf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-github-read-me-packages-ui-read-me-046-e21"
+  },
+  "/jitsibox-pro/docs/github-read-me/services/bridge-read-me-2d6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-github-read-me-services-bridge-read-me-9-da-e4c"
+  },
+  "/jitsibox-pro/docs/github-read-me/services/services-read-me-fbf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-github-read-me-services-services-read-me-679-cc5"
+  },
+  "/jitsibox-pro/docs/installation/fontend-app-dfa": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-installation-fontend-appb-39-c03"
+  },
+  "/jitsibox-pro/docs/installation/fontend-app copy-833": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-installation-fontend-app-copy-1-b-0-f78"
+  },
+  "/jitsibox-pro/docs/installation/instal-chrome-5ef": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-installation-instal-chrome-6-a-8-9ac"
+  },
+  "/jitsibox-pro/docs/installation/instal-kiosk-811": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-installation-instal-kiosk-88-f-c1e"
+  },
+  "/jitsibox-pro/docs/installation/para-tablette-de0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-installation-para-tablette-66-f-6a2"
+  },
+  "/jitsibox-pro/docs/jitsi-pro-read-me-51c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-jitsi-pro-read-mee-51-458"
+  },
+  "/jitsibox-pro/docs/presentation/-77b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-presentation-1-e-0-929"
+  },
+  "/jitsibox-pro/docs/Roadmap/-3a1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-roadmap-24-c-785"
+  },
+  "/jitsibox-pro/docs/Roadmap/AfficherParticipants-828": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-roadmap-afficher-participants-0-ac-b92"
+  },
+  "/jitsibox-pro/docs/Roadmap/AfficherTchat-efc": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-roadmap-afficher-tchat-58-b-384"
+  },
+  "/jitsibox-pro/docs/Roadmap/CallViaConfNumber-03c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-roadmap-call-via-conf-numberaa-2-044"
+  },
+  "/jitsibox-pro/docs/Roadmap/GestionVolume-4de": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-roadmap-gestion-volume-251-b8a"
+  },
+  "/jitsibox-pro/docs/structure/-615": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---jitsibox-pro-docs-structure-1-ff-a08"
+  },
+  "/jitsibox-pro/-2a4": {
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__context": {
+      "plugin": "plugin---jitsibox-pro-markdown-pageb-1-b-d6d"
+    },
+    "config": "config---jitsibox-pro-5-e-9-61c"
+  }
+}

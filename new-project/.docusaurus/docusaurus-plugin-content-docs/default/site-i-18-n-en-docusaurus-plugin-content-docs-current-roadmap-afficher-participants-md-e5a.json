@@ -1,0 +1,27 @@
+{
+  "unversionedId": "Roadmap/AfficherParticipants",
+  "id": "Roadmap/AfficherParticipants",
+  "title": "Afficher Participants",
+  "description": "Afficher les participants présents dans le meeting sur la tablette",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/AfficherParticipants.md",
+  "sourceDirName": "Roadmap",
+  "slug": "/Roadmap/AfficherParticipants",
+  "permalink": "/jitsibox-pro/en/docs/Roadmap/AfficherParticipants",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/AfficherParticipants.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Afficher Tchat",
+    "permalink": "/jitsibox-pro/en/docs/Roadmap/AfficherTchat"
+  },
+  "next": {
+    "title": "Call with conference code",
+    "permalink": "/jitsibox-pro/en/docs/Roadmap/CallViaConfNumber"
+  }
+}

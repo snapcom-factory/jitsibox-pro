@@ -1,0 +1,133 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/jitsibox-pro/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/jitsibox-pro/docs",
+          "mainDocId": "jitsi-pro-read-me",
+          "docs": [
+            {
+              "id": "github-read-me/apps/apps-read-me",
+              "path": "/jitsibox-pro/docs/github-read-me/apps/apps-read-me",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "github-read-me/apps/controller-read-me",
+              "path": "/jitsibox-pro/docs/github-read-me/apps/controller-read-me",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "github-read-me/apps/main-screen-read-me",
+              "path": "/jitsibox-pro/docs/github-read-me/apps/main-screen-read-me",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "github-read-me/packages/model-read-me",
+              "path": "/jitsibox-pro/docs/github-read-me/packages/model-read-me",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "github-read-me/packages/packages-read-me",
+              "path": "/jitsibox-pro/docs/github-read-me/packages/packages-read-me",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "github-read-me/packages/ui-read-me",
+              "path": "/jitsibox-pro/docs/github-read-me/packages/ui-read-me",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "github-read-me/services/bridge-read-me",
+              "path": "/jitsibox-pro/docs/github-read-me/services/bridge-read-me",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "github-read-me/services/services-read-me",
+              "path": "/jitsibox-pro/docs/github-read-me/services/services-read-me",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "installation/fontend-app",
+              "path": "/jitsibox-pro/docs/installation/fontend-app",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "installation/fontend-app copy",
+              "path": "/jitsibox-pro/docs/installation/fontend-app copy",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "installation/instal-chrome",
+              "path": "/jitsibox-pro/docs/installation/instal-chrome",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "installation/instal-kiosk",
+              "path": "/jitsibox-pro/docs/installation/instal-kiosk",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "installation/para-tablette",
+              "path": "/jitsibox-pro/docs/installation/para-tablette",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "jitsi-pro-read-me",
+              "path": "/jitsibox-pro/docs/jitsi-pro-read-me",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "presentation/presentation",
+              "path": "/jitsibox-pro/docs/presentation/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Roadmap/AfficherParticipants",
+              "path": "/jitsibox-pro/docs/Roadmap/AfficherParticipants",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Roadmap/AfficherTchat",
+              "path": "/jitsibox-pro/docs/Roadmap/AfficherTchat",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Roadmap/CallViaConfNumber",
+              "path": "/jitsibox-pro/docs/Roadmap/CallViaConfNumber",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Roadmap/GestionVolume",
+              "path": "/jitsibox-pro/docs/Roadmap/GestionVolume",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Roadmap/roadmap",
+              "path": "/jitsibox-pro/docs/Roadmap/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "structure/structure",
+              "path": "/jitsibox-pro/docs/structure/",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/jitsibox-pro/docs/jitsi-pro-read-me",
+                "label": "jitsi-pro-read-me"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

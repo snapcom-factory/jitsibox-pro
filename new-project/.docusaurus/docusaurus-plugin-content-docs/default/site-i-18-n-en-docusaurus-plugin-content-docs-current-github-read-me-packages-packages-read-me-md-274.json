@@ -1,0 +1,27 @@
+{
+  "unversionedId": "github-read-me/packages/packages-read-me",
+  "id": "github-read-me/packages/packages-read-me",
+  "title": "Packages",
+  "description": "Packages designed to be consumed by other packages, and not run on their own.",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/packages/packages-read-me.md",
+  "sourceDirName": "github-read-me/packages",
+  "slug": "/github-read-me/packages/packages-read-me",
+  "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/packages-read-me",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/packages/packages-read-me.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Using the local sharing feature",
+    "permalink": "/jitsibox-pro/en/docs/github-read-me/apps/main-screen-read-me"
+  },
+  "next": {
+    "title": "Model",
+    "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/model-read-me"
+  }
+}

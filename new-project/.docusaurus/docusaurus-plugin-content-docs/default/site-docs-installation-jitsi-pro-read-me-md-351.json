@@ -1,0 +1,27 @@
+{
+  "unversionedId": "installation/jitsi-pro-read-me",
+  "id": "installation/jitsi-pro-read-me",
+  "title": "Jitsi Box Pro",
+  "description": "Projet en partenariat avec Snapcom pour créer une alternative aux Zoom/Microsoft Teams Rooms",
+  "source": "@site/docs/installation/jitsi-pro-read-me.md",
+  "sourceDirName": "installation",
+  "slug": "/installation/jitsi-pro-read-me",
+  "permalink": "/jitsibox-pro/docs/installation/jitsi-pro-read-me",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/installation/jitsi-pro-read-me.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Jitsi Box Pro",
+    "permalink": "/jitsibox-pro/docs/installation/instal-chrome"
+  },
+  "next": {
+    "title": "Jitsi Box Pro",
+    "permalink": "/jitsibox-pro/docs/installation/para-tablette"
+  }
+}

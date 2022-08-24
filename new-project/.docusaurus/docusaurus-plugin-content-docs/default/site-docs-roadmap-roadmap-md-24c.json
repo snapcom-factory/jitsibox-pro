@@ -1,0 +1,27 @@
+{
+  "unversionedId": "Roadmap/roadmap",
+  "id": "Roadmap/roadmap",
+  "title": "Roadmap",
+  "description": "",
+  "source": "@site/docs/Roadmap/roadmap.md",
+  "sourceDirName": "Roadmap",
+  "slug": "/Roadmap/",
+  "permalink": "/jitsibox-pro/docs/Roadmap/",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/Roadmap/roadmap.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/jitsibox-pro/docs/structure/"
+  },
+  "next": {
+    "title": "Afficher Participants",
+    "permalink": "/jitsibox-pro/docs/Roadmap/AfficherParticipants"
+  }
+}

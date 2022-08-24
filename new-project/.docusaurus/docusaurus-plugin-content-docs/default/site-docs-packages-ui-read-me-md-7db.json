@@ -1,0 +1,27 @@
+{
+  "unversionedId": "packages/ui-read-me",
+  "id": "packages/ui-read-me",
+  "title": "UI",
+  "description": "Définition de la librairie interface utilisateur utilisée par les différentes applications, facile à changer.",
+  "source": "@site/docs/packages/ui-read-me.md",
+  "sourceDirName": "packages",
+  "slug": "/packages/ui-read-me",
+  "permalink": "/jitsibox-pro/docs/packages/ui-read-me",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/packages/ui-read-me.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Model",
+    "permalink": "/jitsibox-pro/docs/packages/model-read-me"
+  },
+  "next": {
+    "title": "Services",
+    "permalink": "/jitsibox-pro/docs/services/services-read-me"
+  }
+}

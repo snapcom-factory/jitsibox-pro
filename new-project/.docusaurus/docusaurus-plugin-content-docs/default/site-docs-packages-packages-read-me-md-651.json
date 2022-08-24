@@ -1,0 +1,27 @@
+{
+  "unversionedId": "packages/packages-read-me",
+  "id": "packages/packages-read-me",
+  "title": "Packages",
+  "description": "Packages designed to be consumed by other packages, and not run on their own.",
+  "source": "@site/docs/packages/packages-read-me.md",
+  "sourceDirName": "packages",
+  "slug": "/packages/packages-read-me",
+  "permalink": "/jitsibox-pro/docs/packages/packages-read-me",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/packages/packages-read-me.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Using the local sharing feature",
+    "permalink": "/jitsibox-pro/docs/apps/main-screen-read-me"
+  },
+  "next": {
+    "title": "Model",
+    "permalink": "/jitsibox-pro/docs/packages/model-read-me"
+  }
+}

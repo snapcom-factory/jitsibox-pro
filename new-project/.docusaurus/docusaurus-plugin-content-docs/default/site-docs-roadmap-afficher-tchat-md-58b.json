@@ -1,0 +1,27 @@
+{
+  "unversionedId": "Roadmap/AfficherTchat",
+  "id": "Roadmap/AfficherTchat",
+  "title": "Afficher Tchat",
+  "description": "Afficher/Masquer la fenetre de tchat du meeting sur l'ecran principale via la tablette",
+  "source": "@site/docs/Roadmap/AfficherTchat.md",
+  "sourceDirName": "Roadmap",
+  "slug": "/Roadmap/AfficherTchat",
+  "permalink": "/jitsibox-pro/docs/Roadmap/AfficherTchat",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/Roadmap/AfficherTchat.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Afficher Participants",
+    "permalink": "/jitsibox-pro/docs/Roadmap/AfficherParticipants"
+  },
+  "next": {
+    "title": "Entrer dans une conference via son code plutot que via son nom",
+    "permalink": "/jitsibox-pro/docs/Roadmap/CallViaConfNumber"
+  }
+}

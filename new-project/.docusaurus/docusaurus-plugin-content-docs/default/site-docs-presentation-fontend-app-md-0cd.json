@@ -1,0 +1,27 @@
+{
+  "unversionedId": "presentation/fontend-app",
+  "id": "presentation/fontend-app",
+  "title": "Présentation",
+  "description": "",
+  "source": "@site/docs/presentation/fontend-app.md",
+  "sourceDirName": "presentation",
+  "slug": "/presentation/fontend-app",
+  "permalink": "/jitsibox-pro/docs/presentation/fontend-app",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/presentation/fontend-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Jitsi Box Pro",
+    "permalink": "/jitsibox-pro/docs/jitsi-pro-read-me"
+  },
+  "next": {
+    "title": "Tablet settings",
+    "permalink": "/jitsibox-pro/docs/installation/para-tablette"
+  }
+}

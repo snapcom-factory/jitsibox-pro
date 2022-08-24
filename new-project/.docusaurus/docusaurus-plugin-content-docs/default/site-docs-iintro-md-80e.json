@@ -1,0 +1,20 @@
+{
+  "unversionedId": "iintro",
+  "id": "iintro",
+  "title": "iintro",
+  "description": "",
+  "source": "@site/docs/iintro.md",
+  "sourceDirName": ".",
+  "slug": "/iintro",
+  "permalink": "/jitsibox-pro/docs/iintro",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/iintro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Bridge",
+    "permalink": "/jitsibox-pro/docs/services/bridge-read-me"
+  }
+}

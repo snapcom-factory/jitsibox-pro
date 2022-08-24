@@ -1,0 +1,27 @@
+{
+  "unversionedId": "structure/fontend-app",
+  "id": "structure/fontend-app",
+  "title": "Structure",
+  "description": "",
+  "source": "@site/docs/structure/fontend-app.md",
+  "sourceDirName": "structure",
+  "slug": "/structure/fontend-app",
+  "permalink": "/jitsibox-pro/docs/structure/fontend-app",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/structure/fontend-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Frontend Apps",
+    "permalink": "/jitsibox-pro/docs/installation/fontend-app"
+  },
+  "next": {
+    "title": "Roadmap",
+    "permalink": "/jitsibox-pro/docs/Roadmap/"
+  }
+}

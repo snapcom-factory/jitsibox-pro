@@ -1,0 +1,27 @@
+{
+  "unversionedId": "installation/instal-kiosk",
+  "id": "installation/instal-kiosk",
+  "title": "Installation avec le Kiosk Mode Windows (avec Edge)",
+  "description": "Activer le Kiosk Mode Windows",
+  "source": "@site/docs/installation/instal-kiosk.md",
+  "sourceDirName": "installation",
+  "slug": "/installation/instal-kiosk",
+  "permalink": "/jitsibox-pro/docs/installation/instal-kiosk",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/installation/instal-kiosk.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Installation avec Chrome",
+    "permalink": "/jitsibox-pro/docs/installation/instal-chrome"
+  },
+  "next": {
+    "title": "Application Frontend Copy",
+    "permalink": "/jitsibox-pro/docs/installation/fontend-app copy"
+  }
+}

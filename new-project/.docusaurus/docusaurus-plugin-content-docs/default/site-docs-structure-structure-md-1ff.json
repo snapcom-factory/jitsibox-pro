@@ -1,0 +1,27 @@
+{
+  "unversionedId": "structure/structure",
+  "id": "structure/structure",
+  "title": "Introduction",
+  "description": "These apps are what the users see on the controller and the main screens. They communicate between each other thanks to the bridge.",
+  "source": "@site/docs/structure/structure.md",
+  "sourceDirName": "structure",
+  "slug": "/structure/",
+  "permalink": "/jitsibox-pro/docs/structure/",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/structure/structure.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Présentation",
+    "permalink": "/jitsibox-pro/docs/presentation/"
+  },
+  "next": {
+    "title": "Roadmap",
+    "permalink": "/jitsibox-pro/docs/Roadmap/"
+  }
+}

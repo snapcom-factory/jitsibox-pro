@@ -1,0 +1,27 @@
+{
+  "unversionedId": "installation/fontend-app",
+  "id": "installation/fontend-app",
+  "title": "Application Frontend",
+  "description": "Introduction",
+  "source": "@site/docs/installation/fontend-app.md",
+  "sourceDirName": "installation",
+  "slug": "/installation/fontend-app",
+  "permalink": "/jitsibox-pro/docs/installation/fontend-app",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/installation/fontend-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Application Frontend Copy",
+    "permalink": "/jitsibox-pro/docs/installation/fontend-app copy"
+  },
+  "next": {
+    "title": "Frontend Apps",
+    "permalink": "/jitsibox-pro/docs/github-read-me/apps/apps-read-me"
+  }
+}

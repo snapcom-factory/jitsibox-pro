@@ -1,0 +1,27 @@
+{
+  "unversionedId": "installation/fontend-app",
+  "id": "installation/fontend-app",
+  "title": "Application Frontend",
+  "description": "Introduction",
+  "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/installation/fontend-app.md",
+  "sourceDirName": "installation",
+  "slug": "/installation/fontend-app",
+  "permalink": "/jitsibox-pro/fr/docs/installation/fontend-app",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/fr/docusaurus-plugin-content-docs/current/installation/fontend-app.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Installation avec le Kiosk Mode Windows (avec Edge)",
+    "permalink": "/jitsibox-pro/fr/docs/installation/instal-kiosk"
+  },
+  "next": {
+    "title": "Introduction",
+    "permalink": "/jitsibox-pro/fr/docs/structure/"
+  }
+}

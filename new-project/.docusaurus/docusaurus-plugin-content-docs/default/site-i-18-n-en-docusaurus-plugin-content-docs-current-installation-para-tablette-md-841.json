@@ -1,0 +1,27 @@
+{
+  "unversionedId": "installation/para-tablette",
+  "id": "installation/para-tablette",
+  "title": "Tablet settings TEST TEST",
+  "description": "Allow the tablet to have a separate touch screen",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/installation/para-tablette.md",
+  "sourceDirName": "installation",
+  "slug": "/installation/para-tablette",
+  "permalink": "/jitsibox-pro/en/docs/installation/para-tablette",
+  "draft": false,
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/installation/para-tablette.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Gestion du volume du meeting",
+    "permalink": "/jitsibox-pro/en/docs/Roadmap/GestionVolume"
+  },
+  "next": {
+    "title": "Installation with Chrome",
+    "permalink": "/jitsibox-pro/en/docs/installation/instal-chrome"
+  }
+}
