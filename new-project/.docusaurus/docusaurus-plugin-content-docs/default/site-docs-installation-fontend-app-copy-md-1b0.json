@@ -6,9 +6,9 @@
   "source": "@site/docs/installation/fontend-app copy.md",
   "sourceDirName": "installation",
   "slug": "/installation/fontend-app copy",
-  "permalink": "/jitsibox-pro/docs/installation/fontend-app copy",
+  "permalink": "/jitsibox-pro/en/docs/installation/fontend-app copy",
   "draft": false,
-  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/installation/fontend-app copy.md",
+  "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/installation/fontend-app copy.md",
   "tags": [],
   "version": "current",
   "sidebarPosition": 4,
@@ -17,11 +17,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Installation avec le Kiosk Mode Windows (avec Edge)",
-    "permalink": "/jitsibox-pro/docs/installation/instal-kiosk"
+    "title": "Installation with Kiosk Mode Windows (with Edge)",
+    "permalink": "/jitsibox-pro/en/docs/installation/instal-kiosk"
   },
   "next": {
-    "title": "Application Frontend",
-    "permalink": "/jitsibox-pro/docs/installation/fontend-app"
+    "title": "Frontend Apps",
+    "permalink": "/jitsibox-pro/en/docs/installation/fontend-app"
   }
 }

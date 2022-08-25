@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Jitsi Box Pro : 
+# Jitsi Box Pro
 
 ![box](https://user-images.githubusercontent.com/30130845/185927477-8b2c42dd-5cf2-4181-b213-dcf341341d89.png)
 

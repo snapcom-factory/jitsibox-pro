@@ -98,7 +98,7 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'Communité',
             items: [
               // {
               //   label: 'Stack Overflow',
@@ -115,7 +115,7 @@ const config = {
             ],
           },
           {
-            title: 'More',
+            title: 'Plus',
             items: [
               {
                 label: 'GitHub',

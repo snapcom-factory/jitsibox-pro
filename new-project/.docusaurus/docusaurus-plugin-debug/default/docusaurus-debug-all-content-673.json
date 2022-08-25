@@ -8,25 +8,25 @@
           "banner": null,
           "badge": false,
           "className": "docs-version-current",
-          "path": "/jitsibox-pro/docs",
-          "tagsPath": "/jitsibox-pro/docs/tags",
+          "path": "/jitsibox-pro/en/docs",
+          "tagsPath": "/jitsibox-pro/en/docs/tags",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "C:\\Users\\AJAYGOSH Ioan\\Docasaurus-jitsi\\jitsibox-pro\\new-project\\sidebars.js",
           "contentPath": "C:\\Users\\AJAYGOSH Ioan\\Docasaurus-jitsi\\jitsibox-pro\\new-project\\docs",
-          "contentPathLocalized": "C:\\Users\\AJAYGOSH Ioan\\Docasaurus-jitsi\\jitsibox-pro\\new-project\\i18n\\fr\\docusaurus-plugin-content-docs\\current",
+          "contentPathLocalized": "C:\\Users\\AJAYGOSH Ioan\\Docasaurus-jitsi\\jitsibox-pro\\new-project\\i18n\\en\\docusaurus-plugin-content-docs\\current",
           "docs": [
             {
               "unversionedId": "github-read-me/apps/apps-read-me",
               "id": "github-read-me/apps/apps-read-me",
               "title": "Frontend Apps",
               "description": "Introduction",
-              "source": "@site/docs/github-read-me/apps/apps-read-me.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/apps/apps-read-me.md",
               "sourceDirName": "github-read-me/apps",
               "slug": "/github-read-me/apps/apps-read-me",
-              "permalink": "/jitsibox-pro/docs/github-read-me/apps/apps-read-me",
+              "permalink": "/jitsibox-pro/en/docs/github-read-me/apps/apps-read-me",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/github-read-me/apps/apps-read-me.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/apps/apps-read-me.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -35,12 +35,12 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Application Frontend",
-                "permalink": "/jitsibox-pro/docs/installation/fontend-app"
+                "title": "Frontend Apps",
+                "permalink": "/jitsibox-pro/en/docs/installation/fontend-app"
               },
               "next": {
                 "title": "Controller",
-                "permalink": "/jitsibox-pro/docs/github-read-me/apps/controller-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/apps/controller-read-me"
               }
             },
             {
@@ -48,12 +48,12 @@
               "id": "github-read-me/apps/controller-read-me",
               "title": "Controller",
               "description": "",
-              "source": "@site/docs/github-read-me/apps/controller-read-me.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/apps/controller-read-me.md",
               "sourceDirName": "github-read-me/apps",
               "slug": "/github-read-me/apps/controller-read-me",
-              "permalink": "/jitsibox-pro/docs/github-read-me/apps/controller-read-me",
+              "permalink": "/jitsibox-pro/en/docs/github-read-me/apps/controller-read-me",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/github-read-me/apps/controller-read-me.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/apps/controller-read-me.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -63,11 +63,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Frontend Apps",
-                "permalink": "/jitsibox-pro/docs/github-read-me/apps/apps-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/apps/apps-read-me"
               },
               "next": {
                 "title": "Using the local sharing feature",
-                "permalink": "/jitsibox-pro/docs/github-read-me/apps/main-screen-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/apps/main-screen-read-me"
               }
             },
             {
@@ -75,12 +75,12 @@
               "id": "github-read-me/apps/main-screen-read-me",
               "title": "Using the local sharing feature",
               "description": "The navigator.mediaDevices object need to be accessible for the local sharing to work.",
-              "source": "@site/docs/github-read-me/apps/main-screen-read-me.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/apps/main-screen-read-me.md",
               "sourceDirName": "github-read-me/apps",
               "slug": "/github-read-me/apps/main-screen-read-me",
-              "permalink": "/jitsibox-pro/docs/github-read-me/apps/main-screen-read-me",
+              "permalink": "/jitsibox-pro/en/docs/github-read-me/apps/main-screen-read-me",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/github-read-me/apps/main-screen-read-me.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/apps/main-screen-read-me.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 3,
@@ -90,11 +90,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Controller",
-                "permalink": "/jitsibox-pro/docs/github-read-me/apps/controller-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/apps/controller-read-me"
               },
               "next": {
                 "title": "Packages",
-                "permalink": "/jitsibox-pro/docs/github-read-me/packages/packages-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/packages-read-me"
               }
             },
             {
@@ -102,12 +102,12 @@
               "id": "github-read-me/packages/model-read-me",
               "title": "Model",
               "description": "Définitions des interfaces de modèles de données partagés entre les applications et les services.",
-              "source": "@site/docs/github-read-me/packages/model-read-me.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/packages/model-read-me.md",
               "sourceDirName": "github-read-me/packages",
               "slug": "/github-read-me/packages/model-read-me",
-              "permalink": "/jitsibox-pro/docs/github-read-me/packages/model-read-me",
+              "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/model-read-me",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/github-read-me/packages/model-read-me.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/packages/model-read-me.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -117,11 +117,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Packages",
-                "permalink": "/jitsibox-pro/docs/github-read-me/packages/packages-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/packages-read-me"
               },
               "next": {
                 "title": "UI",
-                "permalink": "/jitsibox-pro/docs/github-read-me/packages/ui-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/ui-read-me"
               }
             },
             {
@@ -129,12 +129,12 @@
               "id": "github-read-me/packages/packages-read-me",
               "title": "Packages",
               "description": "Packages designed to be consumed by other packages, and not run on their own.",
-              "source": "@site/docs/github-read-me/packages/packages-read-me.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/packages/packages-read-me.md",
               "sourceDirName": "github-read-me/packages",
               "slug": "/github-read-me/packages/packages-read-me",
-              "permalink": "/jitsibox-pro/docs/github-read-me/packages/packages-read-me",
+              "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/packages-read-me",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/github-read-me/packages/packages-read-me.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/packages/packages-read-me.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -144,11 +144,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Using the local sharing feature",
-                "permalink": "/jitsibox-pro/docs/github-read-me/apps/main-screen-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/apps/main-screen-read-me"
               },
               "next": {
                 "title": "Model",
-                "permalink": "/jitsibox-pro/docs/github-read-me/packages/model-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/model-read-me"
               }
             },
             {
@@ -156,12 +156,12 @@
               "id": "github-read-me/packages/ui-read-me",
               "title": "UI",
               "description": "Définition de la librairie interface utilisateur utilisée par les différentes applications, facile à changer.",
-              "source": "@site/docs/github-read-me/packages/ui-read-me.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/packages/ui-read-me.md",
               "sourceDirName": "github-read-me/packages",
               "slug": "/github-read-me/packages/ui-read-me",
-              "permalink": "/jitsibox-pro/docs/github-read-me/packages/ui-read-me",
+              "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/ui-read-me",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/github-read-me/packages/ui-read-me.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/packages/ui-read-me.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 3,
@@ -171,11 +171,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Model",
-                "permalink": "/jitsibox-pro/docs/github-read-me/packages/model-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/model-read-me"
               },
               "next": {
                 "title": "Services",
-                "permalink": "/jitsibox-pro/docs/github-read-me/services/services-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/services/services-read-me"
               }
             },
             {
@@ -183,12 +183,12 @@
               "id": "github-read-me/services/bridge-read-me",
               "title": "Bridge",
               "description": "",
-              "source": "@site/docs/github-read-me/services/bridge-read-me.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/services/bridge-read-me.md",
               "sourceDirName": "github-read-me/services",
               "slug": "/github-read-me/services/bridge-read-me",
-              "permalink": "/jitsibox-pro/docs/github-read-me/services/bridge-read-me",
+              "permalink": "/jitsibox-pro/en/docs/github-read-me/services/bridge-read-me",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/github-read-me/services/bridge-read-me.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/services/bridge-read-me.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -198,7 +198,7 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Services",
-                "permalink": "/jitsibox-pro/docs/github-read-me/services/services-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/services/services-read-me"
               }
             },
             {
@@ -206,12 +206,12 @@
               "id": "github-read-me/services/services-read-me",
               "title": "Services",
               "description": "The backend is the core of the application. It acts as a bridge between the controllers and the main screen.",
-              "source": "@site/docs/github-read-me/services/services-read-me.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/services/services-read-me.md",
               "sourceDirName": "github-read-me/services",
               "slug": "/github-read-me/services/services-read-me",
-              "permalink": "/jitsibox-pro/docs/github-read-me/services/services-read-me",
+              "permalink": "/jitsibox-pro/en/docs/github-read-me/services/services-read-me",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/github-read-me/services/services-read-me.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/github-read-me/services/services-read-me.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -221,24 +221,24 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "UI",
-                "permalink": "/jitsibox-pro/docs/github-read-me/packages/ui-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/packages/ui-read-me"
               },
               "next": {
                 "title": "Bridge",
-                "permalink": "/jitsibox-pro/docs/github-read-me/services/bridge-read-me"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/services/bridge-read-me"
               }
             },
             {
               "unversionedId": "installation/fontend-app",
               "id": "installation/fontend-app",
-              "title": "Application Frontend",
+              "title": "Frontend Apps",
               "description": "Introduction",
-              "source": "@site/docs/installation/fontend-app.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/installation/fontend-app.md",
               "sourceDirName": "installation",
               "slug": "/installation/fontend-app",
-              "permalink": "/jitsibox-pro/docs/installation/fontend-app",
+              "permalink": "/jitsibox-pro/en/docs/installation/fontend-app",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/installation/fontend-app.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/installation/fontend-app.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 4,
@@ -247,52 +247,25 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Application Frontend Copy",
-                "permalink": "/jitsibox-pro/docs/installation/fontend-app copy"
+                "title": "Installation with Kiosk Mode Windows (with Edge)",
+                "permalink": "/jitsibox-pro/en/docs/installation/instal-kiosk"
               },
               "next": {
                 "title": "Frontend Apps",
-                "permalink": "/jitsibox-pro/docs/github-read-me/apps/apps-read-me"
-              }
-            },
-            {
-              "unversionedId": "installation/fontend-app copy",
-              "id": "installation/fontend-app copy",
-              "title": "Application Frontend Copy",
-              "description": "Introduction",
-              "source": "@site/docs/installation/fontend-app copy.md",
-              "sourceDirName": "installation",
-              "slug": "/installation/fontend-app copy",
-              "permalink": "/jitsibox-pro/docs/installation/fontend-app copy",
-              "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/installation/fontend-app copy.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 4,
-              "frontMatter": {
-                "sidebar_position": 4
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Installation avec le Kiosk Mode Windows (avec Edge)",
-                "permalink": "/jitsibox-pro/docs/installation/instal-kiosk"
-              },
-              "next": {
-                "title": "Application Frontend",
-                "permalink": "/jitsibox-pro/docs/installation/fontend-app"
+                "permalink": "/jitsibox-pro/en/docs/github-read-me/apps/apps-read-me"
               }
             },
             {
               "unversionedId": "installation/instal-chrome",
               "id": "installation/instal-chrome",
-              "title": "Installation avec Chrome",
-              "description": "Empêcher de sortir du mode plein écran (Kiosk Mode)",
-              "source": "@site/docs/installation/instal-chrome.md",
+              "title": "Installation with Chrome",
+              "description": "Prevent exiting from full screen mode (Kiosk Mode)",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/installation/instal-chrome.md",
               "sourceDirName": "installation",
               "slug": "/installation/instal-chrome",
-              "permalink": "/jitsibox-pro/docs/installation/instal-chrome",
+              "permalink": "/jitsibox-pro/en/docs/installation/instal-chrome",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/installation/instal-chrome.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/installation/instal-chrome.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -301,25 +274,25 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Paramètres tablette",
-                "permalink": "/jitsibox-pro/docs/installation/para-tablette"
+                "title": "Tablet settings",
+                "permalink": "/jitsibox-pro/en/docs/installation/para-tablette"
               },
               "next": {
-                "title": "Installation avec le Kiosk Mode Windows (avec Edge)",
-                "permalink": "/jitsibox-pro/docs/installation/instal-kiosk"
+                "title": "Installation with Kiosk Mode Windows (with Edge)",
+                "permalink": "/jitsibox-pro/en/docs/installation/instal-kiosk"
               }
             },
             {
               "unversionedId": "installation/instal-kiosk",
               "id": "installation/instal-kiosk",
-              "title": "Installation avec le Kiosk Mode Windows (avec Edge)",
-              "description": "Activer le Kiosk Mode Windows",
-              "source": "@site/docs/installation/instal-kiosk.md",
+              "title": "Installation with Kiosk Mode Windows (with Edge)",
+              "description": "Activate Windows Kiosk Mode",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/installation/instal-kiosk.md",
               "sourceDirName": "installation",
               "slug": "/installation/instal-kiosk",
-              "permalink": "/jitsibox-pro/docs/installation/instal-kiosk",
+              "permalink": "/jitsibox-pro/en/docs/installation/instal-kiosk",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/installation/instal-kiosk.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/installation/instal-kiosk.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 3,
@@ -328,25 +301,25 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Installation avec Chrome",
-                "permalink": "/jitsibox-pro/docs/installation/instal-chrome"
+                "title": "Installation with Chrome",
+                "permalink": "/jitsibox-pro/en/docs/installation/instal-chrome"
               },
               "next": {
-                "title": "Application Frontend Copy",
-                "permalink": "/jitsibox-pro/docs/installation/fontend-app copy"
+                "title": "Frontend Apps",
+                "permalink": "/jitsibox-pro/en/docs/installation/fontend-app"
               }
             },
             {
               "unversionedId": "installation/para-tablette",
               "id": "installation/para-tablette",
-              "title": "Paramètres tablette",
-              "description": "Permettre à la tablette d'avoir un écran tactile séparé",
-              "source": "@site/docs/installation/para-tablette.md",
+              "title": "Tablet settings",
+              "description": "Allow the tablet to have a separate touch screen",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/installation/para-tablette.md",
               "sourceDirName": "installation",
               "slug": "/installation/para-tablette",
-              "permalink": "/jitsibox-pro/docs/installation/para-tablette",
+              "permalink": "/jitsibox-pro/en/docs/installation/para-tablette",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/installation/para-tablette.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/installation/para-tablette.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -356,24 +329,24 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Gestion du volume du meeting",
-                "permalink": "/jitsibox-pro/docs/Roadmap/GestionVolume"
+                "permalink": "/jitsibox-pro/en/docs/Roadmap/GestionVolume"
               },
               "next": {
-                "title": "Installation avec Chrome",
-                "permalink": "/jitsibox-pro/docs/installation/instal-chrome"
+                "title": "Installation with Chrome",
+                "permalink": "/jitsibox-pro/en/docs/installation/instal-chrome"
               }
             },
             {
               "unversionedId": "jitsi-pro-read-me",
               "id": "jitsi-pro-read-me",
               "title": "Jitsi Box Pro",
-              "description": "Le projet consiste à la mise en place d'une solution de webconference Jitsi de salle équipée d'une tablette de controle.",
-              "source": "@site/docs/jitsi-pro-read-me.md",
+              "description": "box",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/jitsi-pro-read-me.md",
               "sourceDirName": ".",
               "slug": "/jitsi-pro-read-me",
-              "permalink": "/jitsibox-pro/docs/jitsi-pro-read-me",
+              "permalink": "/jitsibox-pro/en/docs/jitsi-pro-read-me",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/jitsi-pro-read-me.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/jitsi-pro-read-me.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -383,7 +356,7 @@
               "sidebar": "tutorialSidebar",
               "next": {
                 "title": "Présentation",
-                "permalink": "/jitsibox-pro/docs/presentation/"
+                "permalink": "/jitsibox-pro/en/docs/presentation/"
               }
             },
             {
@@ -391,12 +364,12 @@
               "id": "presentation/presentation",
               "title": "Présentation",
               "description": "Interface d’accueil sur tablette – tactile",
-              "source": "@site/docs/presentation/presentation.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/presentation/presentation.md",
               "sourceDirName": "presentation",
               "slug": "/presentation/",
-              "permalink": "/jitsibox-pro/docs/presentation/",
+              "permalink": "/jitsibox-pro/en/docs/presentation/",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/presentation/presentation.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/presentation/presentation.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -406,11 +379,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Jitsi Box Pro",
-                "permalink": "/jitsibox-pro/docs/jitsi-pro-read-me"
+                "permalink": "/jitsibox-pro/en/docs/jitsi-pro-read-me"
               },
               "next": {
                 "title": "Introduction",
-                "permalink": "/jitsibox-pro/docs/structure/"
+                "permalink": "/jitsibox-pro/en/docs/structure/"
               }
             },
             {
@@ -418,12 +391,39 @@
               "id": "Roadmap/AfficherParticipants",
               "title": "Afficher Participants",
               "description": "Afficher les participants présents dans le meeting sur la tablette",
-              "source": "@site/docs/Roadmap/AfficherParticipants.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/AfficherParticipants.md",
               "sourceDirName": "Roadmap",
               "slug": "/Roadmap/AfficherParticipants",
-              "permalink": "/jitsibox-pro/docs/Roadmap/AfficherParticipants",
+              "permalink": "/jitsibox-pro/en/docs/Roadmap/AfficherParticipants",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/Roadmap/AfficherParticipants.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/AfficherParticipants.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_position": 3
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Afficher Tchat",
+                "permalink": "/jitsibox-pro/en/docs/Roadmap/AfficherTchat"
+              },
+              "next": {
+                "title": "Call with conference code",
+                "permalink": "/jitsibox-pro/en/docs/Roadmap/CallViaConfNumber"
+              }
+            },
+            {
+              "unversionedId": "Roadmap/AfficherTchat",
+              "id": "Roadmap/AfficherTchat",
+              "title": "Afficher Tchat",
+              "description": "Afficher/Masquer la fenetre de tchat du meeting sur l'ecran principale via la tablette",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/AfficherTchat.md",
+              "sourceDirName": "Roadmap",
+              "slug": "/Roadmap/AfficherTchat",
+              "permalink": "/jitsibox-pro/en/docs/Roadmap/AfficherTchat",
+              "draft": false,
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/AfficherTchat.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -433,65 +433,38 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Roadmap",
-                "permalink": "/jitsibox-pro/docs/Roadmap/"
+                "permalink": "/jitsibox-pro/en/docs/Roadmap/"
               },
               "next": {
-                "title": "Afficher Tchat",
-                "permalink": "/jitsibox-pro/docs/Roadmap/AfficherTchat"
-              }
-            },
-            {
-              "unversionedId": "Roadmap/AfficherTchat",
-              "id": "Roadmap/AfficherTchat",
-              "title": "Afficher Tchat",
-              "description": "Afficher/Masquer la fenetre de tchat du meeting sur l'ecran principale via la tablette",
-              "source": "@site/docs/Roadmap/AfficherTchat.md",
-              "sourceDirName": "Roadmap",
-              "slug": "/Roadmap/AfficherTchat",
-              "permalink": "/jitsibox-pro/docs/Roadmap/AfficherTchat",
-              "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/Roadmap/AfficherTchat.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "sidebar_position": 1
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
                 "title": "Afficher Participants",
-                "permalink": "/jitsibox-pro/docs/Roadmap/AfficherParticipants"
-              },
-              "next": {
-                "title": "Entrer dans une conference via son code plutot que via son nom",
-                "permalink": "/jitsibox-pro/docs/Roadmap/CallViaConfNumber"
+                "permalink": "/jitsibox-pro/en/docs/Roadmap/AfficherParticipants"
               }
             },
             {
               "unversionedId": "Roadmap/CallViaConfNumber",
               "id": "Roadmap/CallViaConfNumber",
-              "title": "Entrer dans une conference via son code plutot que via son nom",
-              "description": "Convertrir le code en nom via l\"api du confmapper :",
-              "source": "@site/docs/Roadmap/CallViaConfNumber.md",
+              "title": "Call with conference code",
+              "description": "Entrer dans une conference avec son code plutot que son nom",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/CallViaConfNumber.md",
               "sourceDirName": "Roadmap",
               "slug": "/Roadmap/CallViaConfNumber",
-              "permalink": "/jitsibox-pro/docs/Roadmap/CallViaConfNumber",
+              "permalink": "/jitsibox-pro/en/docs/Roadmap/CallViaConfNumber",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/Roadmap/CallViaConfNumber.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/CallViaConfNumber.md",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 1,
+              "sidebarPosition": 3,
               "frontMatter": {
-                "sidebar_position": 1
+                "sidebar_position": 3
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Afficher Tchat",
-                "permalink": "/jitsibox-pro/docs/Roadmap/AfficherTchat"
+                "title": "Afficher Participants",
+                "permalink": "/jitsibox-pro/en/docs/Roadmap/AfficherParticipants"
               },
               "next": {
                 "title": "Gestion du volume du meeting",
-                "permalink": "/jitsibox-pro/docs/Roadmap/GestionVolume"
+                "permalink": "/jitsibox-pro/en/docs/Roadmap/GestionVolume"
               }
             },
             {
@@ -499,26 +472,26 @@
               "id": "Roadmap/GestionVolume",
               "title": "Gestion du volume du meeting",
               "description": "Afficher une barre permettant de gerer le volume du meeting.",
-              "source": "@site/docs/Roadmap/GestionVolume.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/GestionVolume.md",
               "sourceDirName": "Roadmap",
               "slug": "/Roadmap/GestionVolume",
-              "permalink": "/jitsibox-pro/docs/Roadmap/GestionVolume",
+              "permalink": "/jitsibox-pro/en/docs/Roadmap/GestionVolume",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/Roadmap/GestionVolume.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/GestionVolume.md",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 1,
+              "sidebarPosition": 4,
               "frontMatter": {
-                "sidebar_position": 1
+                "sidebar_position": 4
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Entrer dans une conference via son code plutot que via son nom",
-                "permalink": "/jitsibox-pro/docs/Roadmap/CallViaConfNumber"
+                "title": "Call with conference code",
+                "permalink": "/jitsibox-pro/en/docs/Roadmap/CallViaConfNumber"
               },
               "next": {
-                "title": "Paramètres tablette",
-                "permalink": "/jitsibox-pro/docs/installation/para-tablette"
+                "title": "Tablet settings",
+                "permalink": "/jitsibox-pro/en/docs/installation/para-tablette"
               }
             },
             {
@@ -526,12 +499,12 @@
               "id": "Roadmap/roadmap",
               "title": "Roadmap",
               "description": "",
-              "source": "@site/docs/Roadmap/roadmap.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/roadmap.md",
               "sourceDirName": "Roadmap",
               "slug": "/Roadmap/",
-              "permalink": "/jitsibox-pro/docs/Roadmap/",
+              "permalink": "/jitsibox-pro/en/docs/Roadmap/",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/Roadmap/roadmap.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/Roadmap/roadmap.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -541,11 +514,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Introduction",
-                "permalink": "/jitsibox-pro/docs/structure/"
+                "permalink": "/jitsibox-pro/en/docs/structure/"
               },
               "next": {
-                "title": "Afficher Participants",
-                "permalink": "/jitsibox-pro/docs/Roadmap/AfficherParticipants"
+                "title": "Afficher Tchat",
+                "permalink": "/jitsibox-pro/en/docs/Roadmap/AfficherTchat"
               }
             },
             {
@@ -553,12 +526,12 @@
               "id": "structure/structure",
               "title": "Introduction",
               "description": "These apps are what the users see on the controller and the main screens. They communicate between each other thanks to the bridge.",
-              "source": "@site/docs/structure/structure.md",
+              "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/structure/structure.md",
               "sourceDirName": "structure",
               "slug": "/structure/",
-              "permalink": "/jitsibox-pro/docs/structure/",
+              "permalink": "/jitsibox-pro/en/docs/structure/",
               "draft": false,
-              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/structure/structure.md",
+              "editUrl": "https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/en/docusaurus-plugin-content-docs/current/structure/structure.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -568,11 +541,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Présentation",
-                "permalink": "/jitsibox-pro/docs/presentation/"
+                "permalink": "/jitsibox-pro/en/docs/presentation/"
               },
               "next": {
                 "title": "Roadmap",
-                "permalink": "/jitsibox-pro/docs/Roadmap/"
+                "permalink": "/jitsibox-pro/en/docs/Roadmap/"
               }
             }
           ],
@@ -601,11 +574,11 @@
                 "items": [
                   {
                     "type": "doc",
-                    "id": "Roadmap/AfficherParticipants"
+                    "id": "Roadmap/AfficherTchat"
                   },
                   {
                     "type": "doc",
-                    "id": "Roadmap/AfficherTchat"
+                    "id": "Roadmap/AfficherParticipants"
                   },
                   {
                     "type": "doc",
@@ -638,10 +611,6 @@
                   {
                     "type": "doc",
                     "id": "installation/instal-kiosk"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "installation/fontend-app copy"
                   },
                   {
                     "type": "doc",
@@ -725,7 +694,7 @@
       "blogPosts": [],
       "blogListPaginated": [],
       "blogTags": {},
-      "blogTagsListPath": "/jitsibox-pro/blog/tags",
+      "blogTagsListPath": "/jitsibox-pro/en/blog/tags",
       "blogTagsPaginated": []
     }
   },
@@ -733,12 +702,12 @@
     "default": [
       {
         "type": "jsx",
-        "permalink": "/jitsibox-pro/",
+        "permalink": "/jitsibox-pro/en/",
         "source": "@site/src/pages/index.js"
       },
       {
         "type": "mdx",
-        "permalink": "/jitsibox-pro/markdown-page",
+        "permalink": "/jitsibox-pro/en/markdown-page",
         "source": "@site/src/pages/markdown-page.md",
         "title": "Markdown page example",
         "description": "You don't need React to write simple standalone pages.",

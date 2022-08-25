@@ -1,7 +1,7 @@
 {
   "unversionedId": "installation/para-tablette",
   "id": "installation/para-tablette",
-  "title": "Tablet settings TEST TEST",
+  "title": "Tablet settings",
   "description": "Allow the tablet to have a separate touch screen",
   "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/installation/para-tablette.md",
   "sourceDirName": "installation",

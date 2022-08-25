@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Frontend Apps TEST
+# Frontend Apps
 
 ## Introduction
 

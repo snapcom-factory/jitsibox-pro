@@ -7,7 +7,7 @@ export default {
   "title": "Jitsi Pro",
   "tagline": "Créer une alternative à Zoom/Microsoft Teams Rooms",
   "url": "https://snapcom-factory.github.io",
-  "baseUrl": "/jitsibox-pro/",
+  "baseUrl": "/jitsibox-pro/en/",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "favicon": "img/logo-jitsi.png",

@@ -1,6 +1,6 @@
 {
   "type": "mdx",
-  "permalink": "/jitsibox-pro/markdown-page",
+  "permalink": "/jitsibox-pro/en/markdown-page",
   "source": "@site/src/pages/markdown-page.md",
   "title": "Markdown page example",
   "description": "You don't need React to write simple standalone pages.",

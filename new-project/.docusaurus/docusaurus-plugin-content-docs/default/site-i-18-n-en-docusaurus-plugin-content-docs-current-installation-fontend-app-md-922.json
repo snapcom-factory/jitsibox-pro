@@ -1,7 +1,7 @@
 {
   "unversionedId": "installation/fontend-app",
   "id": "installation/fontend-app",
-  "title": "Frontend Apps TEST",
+  "title": "Frontend Apps",
   "description": "Introduction",
   "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/installation/fontend-app.md",
   "sourceDirName": "installation",
@@ -17,8 +17,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Application Frontend Copy",
-    "permalink": "/jitsibox-pro/en/docs/installation/fontend-app copy"
+    "title": "Installation with Kiosk Mode Windows (with Edge)",
+    "permalink": "/jitsibox-pro/en/docs/installation/instal-kiosk"
   },
   "next": {
     "title": "Frontend Apps",
