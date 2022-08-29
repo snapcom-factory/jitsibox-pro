@@ -46,10 +46,47 @@ Etape : Configuration & ajout ecran touch
 - Exécuter les commandes suivantes :
     ```js
     cd C:\
+    ```
+    ```js
     git clone https://github.com/snapcom-factory/jitsibox-pro.git
+    ```
+- Fermer Git Bash.
 
+### Etape : Run Project
+
+- Dans `C:\jitsibox-pro\apps\controller`, créer un fichier `.env`
+- Insérer dans ce fichier : 
+    ```js
+    VITE_WEBCONF_TOKEN =
     ```
 
-Etape : Run Project
+- Dans `C:\jitsibox-pro\apps\main-screen`, créer un fichier `.env`
+- Insérer dans ce fichier : 
+    ```js
+    VITE_WEBCONF_TOKEN =
+    VITE_DOMAIN = 
+    ```
 
-Etape : Create Chromium "Jitsi-Box-Pro user"
+- Ouvrir `Node.js command prompt`. ![image](https://user-images.githubusercontent.com/110535664/187236978-da226428-8c42-42be-a1c4-d6400d4b92ba.png)
+- Exécuter les commandes suivantes :
+    ```js
+    cd C:\jitsibox-pro
+    ```
+    ```js
+    npm i concurrently --save
+    ```
+    ```js
+    npm run install-packages
+    ```
+    ```js
+    npm run dev
+    ```
+    ```js
+    C:\
+    ```
+    ```js
+    git clone https://github.com/snapcom-factory/jitsibox-pro.git
+    ```
+- Ouvrir `Node.js command prompt`.
+
+### Etape : Create Chromium "Jitsi-Box-Pro user"
