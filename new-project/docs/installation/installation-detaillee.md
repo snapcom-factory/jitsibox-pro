@@ -52,7 +52,7 @@ Etape : Configuration & ajout ecran touch
     ```
 - Fermer Git Bash.
 
-### Etape : Run Project
+### Etape : Configure Project
 
 - Dans `C:\jitsibox-pro\apps\controller`, créer un fichier `.env`
 - Insérer dans ce fichier : 
@@ -66,6 +66,9 @@ Etape : Configuration & ajout ecran touch
     VITE_WEBCONF_TOKEN =
     VITE_DOMAIN = 
     ```
+- Aller dans `C:\jitsibox-pro\packages\model\src`
+- Ouvrir le fichier `constants`.
+- Remplacer toutes les occurence de `localhost` par votre adresse IP.
 
 - Ouvrir `Node.js command prompt`. ![image](https://user-images.githubusercontent.com/110535664/187236978-da226428-8c42-42be-a1c4-d6400d4b92ba.png)
 - Exécuter les commandes suivantes :
@@ -87,6 +90,42 @@ Etape : Configuration & ajout ecran touch
     ```js
     git clone https://github.com/snapcom-factory/jitsibox-pro.git
     ```
-- Ouvrir `Node.js command prompt`.
+- Fermer `Node.js command prompt`.
 
 ### Etape : Create Chromium "Jitsi-Box-Pro user"
+
+- Ouvrir `chrome.exe` depuis `C:\chrome-win`.
+- Cliquer sur ![image](https://user-images.githubusercontent.com/110535664/187238172-bc7776d8-1b06-4620-84fe-8f5b7f94f6a1.png)
+- Cliquer sur `Ajouter`.![image](https://user-images.githubusercontent.com/110535664/187240623-632bcf59-1f02-400d-b6cf-ae351d0cb5a6.png)
+- Remplir comme suit : ![image](https://user-images.githubusercontent.com/110535664/187240773-897d9838-afab-4517-832f-eba3901476d4.png)
+- Vérifier que la case `Créer un raccourci sur le bureau` est bien cochée. ![image](https://user-images.githubusercontent.com/110535664/187240907-92a069a6-40aa-4d22-b5cf-1019cacf7777.png)
+- Puis cliquer sur `OK`. ![image](https://user-images.githubusercontent.com/110535664/187240988-869654eb-fb7f-4142-acde-ae4c614ccaaa.png)
+- Fermer la fenêtre Chrome.
+
+- Chercher  le raccourci sur bureau 
+- Dupliquer le raccourci
+- Changer le nom des raccourcis: 
+1: Jitsi Box Pro - Controller
+2: Jitsi Box Pro - Main Screen
+- Faire un clic droit sur le raccourci `Controller`.
+- Dans la partie cible, ajouter apres la partie "Profile" :
+**Remplacer par la bonne adresse IP.**
+    ```js
+    --window-position=0,0 --kiosk http://IP:3000 --user-data-dir=c:/monitor1
+    ```
+- Cliquer sur `OK` pour sauvegarder.
+
+- Faire un clic droit sur le raccourci `Main Screen`.
+- Dans la partie cible, ajouter apres la partie "Profile" :
+    ```js
+    --window-position=1680,0 --kiosk http://IP:3002 --user-data-dir=c:/monitor2 --unsafely-treat-insecure-origin-as-secure=http://IP:3002
+    ```
+- Cliquer sur `OK` pour sauvegarder.
+
+
+### Etape : Startup Chrome
+
+### Etape : Boot Serveur
+
+### Etape : Nettoyage Windows
+
