@@ -2,6 +2,21 @@
 
 ## Depuis le compte admin
 
+### Optimisation performance Windows
+
+- Ouvrir l'invité de commande `Windows`. 
+- Exécuter la commande suivante :
+    ```js
+    powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+    ```
+- Fermer l'invité de commande Windows.
+- Faire un clic droit sur l'icône Windows dans la barre des tâches. ![image](https://user-images.githubusercontent.com/110535664/187230954-50f10bcb-51f4-481f-aa52-a3c23811d80a.png)
+- Cliquer sur `Options d'alimentation`. ![image](https://user-images.githubusercontent.com/110535664/187386540-03214707-62f9-4ce4-9c49-5ad3ff3415e1.png)
+- Cliquer sur `Paramètres d'alimentation supplémentaires`.
+- À droite de `Maquer les modes supplémentaires`, cliquer sur ![image](https://user-images.githubusercontent.com/110535664/187387097-2c4c4d53-a30e-4348-b51a-b19952c46f69.png)
+- Sélectionner `Performances optimales`.
+
+
 ### Etape : Creation compte "Jitsi-Box-Pro"
 
 - Cliquer sur le bouton `Windows`. ![image](https://user-images.githubusercontent.com/110535664/187230954-50f10bcb-51f4-481f-aa52-a3c23811d80a.png)
@@ -34,11 +49,17 @@
 ### Etape : Installation Node js
 
 - Télécharger le fichier suivant : https://nodejs.org/dist/v16.17.0/node-v16.17.0-x64.msi
-- Cliquer sur `Newt & Install`.
+- Cliquer sur `Next & Install`.
 
-Etape : Configuration & ajout ecran touch
+### Etape : Configuration & Ajout écran touch
 
-(Etape : Startup)
+- Aller dans `Panneau de configuration`. ![image](https://user-images.githubusercontent.com/110535664/187390041-fe4662a9-e23a-47ff-9adf-302d263a45ce.png)
+- Selectionnez l'option Afficher par : `Grandes icônes`. ![image](https://user-images.githubusercontent.com/110535664/187390452-604bfca3-6b10-43f4-997c-8200746e4ca8.png)
+- Cliquer sur `Paramètres du Tablet PC` (ou le chercher dans la barre de recherche s'il n'apparaît pas)![image](https://user-images.githubusercontent.com/110535664/187391033-a4fe154a-e8e2-4331-93a4-03009915f6fe.png)
+- Puis cliquer sur `Configurer`. ![image](https://user-images.githubusercontent.com/110535664/187391059-35ad9637-55ef-43e6-9e5a-8b553bca70e2.png)
+- Un message `Appuyez sur cet écran...` apparaît. Cliquer sur l'écran touch.
+
+### (Etape : Startup)
 
 ### Etape : Get Project
 
