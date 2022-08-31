@@ -50,10 +50,10 @@
 
 - Ouvrir `Git Bash`. <p>![image](https://user-images.githubusercontent.com/110535664/187235305-a79347c1-d0b5-4e86-960b-97a4360ce885.png)
 - Exécuter les commandes suivantes :
-    ```js
+    ```
     cd C:\
     ```
-    ```js
+    ```
     git clone https://github.com/snapcom-factory/jitsibox-pro.git
     ```
 - Fermer Git Bash.
@@ -62,13 +62,13 @@
 
 - Dans `C:\jitsibox-pro\apps\controller`, créer un fichier `.env`
 - Insérer dans ce fichier : 
-    ```js
+    ```
     VITE_WEBCONF_TOKEN =
     ```
 
 - Dans `C:\jitsibox-pro\apps\main-screen`, créer un fichier `.env`
 - Insérer dans ce fichier : 
-    ```js
+    ```
     VITE_WEBCONF_TOKEN =
     VITE_DOMAIN = 
     ```
@@ -78,22 +78,22 @@
 
 - Ouvrir `Node.js command prompt`. <p>![image](https://user-images.githubusercontent.com/110535664/187236978-da226428-8c42-42be-a1c4-d6400d4b92ba.png)
 - Exécuter les commandes suivantes :
-    ```js
+    ```
     cd C:\jitsibox-pro
     ```
-    ```js
+    ```
     npm i concurrently --save
     ```
-    ```js
+    ```
     npm run install-packages
     ```
-    ```js
+    ```
     npm run dev
     ```
-    ```js
+    ```
     C:\
     ```
-    ```js
+    ```
     git clone https://github.com/snapcom-factory/jitsibox-pro.git
     ```
 - Fermer `Node.js command prompt`.
@@ -110,7 +110,7 @@
     
 ### Etape : Creation Startup Script"
 - Ouvrir Notepad et insérer dans ce fichier:
-  ```js
+  ```
   @ECHO OFF
   taskkill /f /im explorer.exe
   cd C:\jitsibox-pro && npm run dev
@@ -118,7 +118,7 @@
 - Sauvegarder le fichier sous le nom `RUN-Jitsi-Box-Pro`dans `C:\` en `.bat`
 
 - Ouvrir Notepad et insérer dans ce fichier:
-  ```js
+  ```
   @ECHO OFF
   timeout -t 5
   C:\chrome-win\chrome.exe --profile-directory="Profile 1" --window-position=0,0 --kiosk http://localhost:3000 --user-data-dir=c:/monitor2 --unsafely-treat-insecure-origin-as-secure=http://localhost:3000
@@ -126,7 +126,7 @@
 - Sauvegarder le fichier sous le nom `RUN-Jitsi-Box-Pro - Controller`dans `C:\` en `.bat`
 
 - Ouvrir Notepad et insérer dans ce fichier:
-  ```js
+  ```
   @ECHO OFF
   timeout -t 5
   C:\chrome-win\chrome.exe --profile-directory="Profile 1" --window-position=1680,0 --kiosk http://localhost:3002 --user-data-dir=c:/monitor1 --unsafely-treat-insecure-origin-as-secure=http://localhost:3002
@@ -142,7 +142,7 @@
 
 -  Taper `Regedit` dans la zone de commande Exécuter `(Win + R)`, puis appuyez sur la touche `Entrée`. 
 -  Dans l'Éditeur du Registre, accéder à la clé suivante:
-    ```js
+    ```
     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
     ```
 - Faire un clic droit sur la clé Winlogon > Nouveau > Valeur de chaîne et nommez-le `DefaultUserName`.
@@ -158,7 +158,7 @@
 
 - Ouvrir l'invité de commande `Windows`. 
 - Exécuter la commande suivante :
-    ```js
+    ```
     powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
     ```
 - Fermer l'invité de commande Windows.

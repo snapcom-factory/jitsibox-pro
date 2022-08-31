@@ -1,146 +1,107 @@
 {
-  "/jitsibox-pro/en/__docusaurus/debug-fef": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
+  "/jitsibox-pro/markdown-page-845": {
+    "__comp": "1f391b9e",
     "__context": {
-      "plugin": "plugin---jitsibox-pro-en-docusaurus-debugcf-5-289"
-    }
-  },
-  "/jitsibox-pro/en/__docusaurus/debug/config-f9d": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---jitsibox-pro-en-docusaurus-debugcf-5-289"
-    }
-  },
-  "/jitsibox-pro/en/__docusaurus/debug/content-608": {
-    "__comp": "__comp---theme-debug-contentba-8-ce7",
-    "__context": {
-      "plugin": "plugin---jitsibox-pro-en-docusaurus-debugcf-5-289"
+      "plugin": "ae130f6b"
     },
-    "allContent": "allContent---jitsibox-pro-en-docusaurus-debug-content-246-b74"
+    "content": "393be207"
   },
-  "/jitsibox-pro/en/__docusaurus/debug/globalData-be9": {
-    "__comp": "__comp---theme-debug-global-dataede-0fa",
+  "/jitsibox-pro/docs-04f": {
+    "__comp": "1be78505",
     "__context": {
-      "plugin": "plugin---jitsibox-pro-en-docusaurus-debugcf-5-289"
-    }
-  },
-  "/jitsibox-pro/en/__docusaurus/debug/metadata-b0e": {
-    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
-    "__context": {
-      "plugin": "plugin---jitsibox-pro-en-docusaurus-debugcf-5-289"
-    }
-  },
-  "/jitsibox-pro/en/__docusaurus/debug/registry-4a2": {
-    "__comp": "__comp---theme-debug-registry-679-501",
-    "__context": {
-      "plugin": "plugin---jitsibox-pro-en-docusaurus-debugcf-5-289"
-    }
-  },
-  "/jitsibox-pro/en/__docusaurus/debug/routes-e5a": {
-    "__comp": "__comp---theme-debug-routes-946-699",
-    "__context": {
-      "plugin": "plugin---jitsibox-pro-en-docusaurus-debugcf-5-289"
-    }
-  },
-  "/jitsibox-pro/en/markdown-page-2f0": {
-    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
-    "__context": {
-      "plugin": "plugin---jitsibox-pro-en-markdown-pageb-1-b-f5b"
+      "plugin": "8758b2e8"
     },
-    "content": "content---jitsibox-pro-en-markdown-page-393-1c0"
+    "versionMetadata": "935f2afb"
   },
-  "/jitsibox-pro/en/docs-f3e": {
-    "__comp": "__comp---theme-doc-page-1-be-9be",
+  "/jitsibox-pro/docs/github-read-me/apps/apps-read-me-99d": {
+    "__comp": "17896441",
+    "content": "2fd87eeb"
+  },
+  "/jitsibox-pro/docs/github-read-me/apps/controller-read-me-0f3": {
+    "__comp": "17896441",
+    "content": "9533dc5b"
+  },
+  "/jitsibox-pro/docs/github-read-me/apps/main-screen-read-me-af4": {
+    "__comp": "17896441",
+    "content": "4cbe34a2"
+  },
+  "/jitsibox-pro/docs/github-read-me/packages/model-read-me-68a": {
+    "__comp": "17896441",
+    "content": "ac4cb97e"
+  },
+  "/jitsibox-pro/docs/github-read-me/packages/packages-read-me-078": {
+    "__comp": "17896441",
+    "content": "a17c7e6c"
+  },
+  "/jitsibox-pro/docs/github-read-me/packages/ui-read-me-eaf": {
+    "__comp": "17896441",
+    "content": "04691bb1"
+  },
+  "/jitsibox-pro/docs/github-read-me/services/bridge-read-me-2d6": {
+    "__comp": "17896441",
+    "content": "9da8bd55"
+  },
+  "/jitsibox-pro/docs/github-read-me/services/services-read-me-fbf": {
+    "__comp": "17896441",
+    "content": "679ae299"
+  },
+  "/jitsibox-pro/docs/installation/fontend-app-dfa": {
+    "__comp": "17896441",
+    "content": "b39975ca"
+  },
+  "/jitsibox-pro/docs/installation/instal-chrome-5ef": {
+    "__comp": "17896441",
+    "content": "6a8e8cdc"
+  },
+  "/jitsibox-pro/docs/installation/instal-kiosk-811": {
+    "__comp": "17896441",
+    "content": "88f167d9"
+  },
+  "/jitsibox-pro/docs/installation/installation-detaillee-557": {
+    "__comp": "17896441",
+    "content": "a1a13ca1"
+  },
+  "/jitsibox-pro/docs/installation/para-tablette-de0": {
+    "__comp": "17896441",
+    "content": "66f76585"
+  },
+  "/jitsibox-pro/docs/jitsi-pro-read-me-51c": {
+    "__comp": "17896441",
+    "content": "e513a0ac"
+  },
+  "/jitsibox-pro/docs/presentation/-77b": {
+    "__comp": "17896441",
+    "content": "1e00585a"
+  },
+  "/jitsibox-pro/docs/Roadmap/-3a1": {
+    "__comp": "17896441",
+    "content": "24c86545"
+  },
+  "/jitsibox-pro/docs/Roadmap/AfficherParticipants-828": {
+    "__comp": "17896441",
+    "content": "0acc1771"
+  },
+  "/jitsibox-pro/docs/Roadmap/AfficherTchat-efc": {
+    "__comp": "17896441",
+    "content": "58b70c7a"
+  },
+  "/jitsibox-pro/docs/Roadmap/CallViaConfNumber-03c": {
+    "__comp": "17896441",
+    "content": "aa2a5af1"
+  },
+  "/jitsibox-pro/docs/Roadmap/GestionVolume-4de": {
+    "__comp": "17896441",
+    "content": "251668a5"
+  },
+  "/jitsibox-pro/docs/structure/-615": {
+    "__comp": "17896441",
+    "content": "1ff51164"
+  },
+  "/jitsibox-pro/-bd7": {
+    "__comp": "c4f5d8e4",
     "__context": {
-      "plugin": "plugin---jitsibox-pro-en-docsc-91-ed6"
+      "plugin": "ae130f6b"
     },
-    "versionMetadata": "versionMetadata---jitsibox-pro-en-docs-935-00a"
-  },
-  "/jitsibox-pro/en/docs/github-read-me/apps/apps-read-me-369": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-github-read-me-apps-apps-read-me-7-c-7-327"
-  },
-  "/jitsibox-pro/en/docs/github-read-me/apps/controller-read-me-54a": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-github-read-me-apps-controller-read-me-869-873"
-  },
-  "/jitsibox-pro/en/docs/github-read-me/apps/main-screen-read-me-07e": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-github-read-me-apps-main-screen-read-me-46-e-70e"
-  },
-  "/jitsibox-pro/en/docs/github-read-me/packages/model-read-me-23e": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-github-read-me-packages-model-read-me-9-fd-eac"
-  },
-  "/jitsibox-pro/en/docs/github-read-me/packages/packages-read-me-751": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-github-read-me-packages-packages-read-me-274-b1d"
-  },
-  "/jitsibox-pro/en/docs/github-read-me/packages/ui-read-me-f66": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-github-read-me-packages-ui-read-me-8-d-2-bdc"
-  },
-  "/jitsibox-pro/en/docs/github-read-me/services/bridge-read-me-605": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-github-read-me-services-bridge-read-meab-8-a6f"
-  },
-  "/jitsibox-pro/en/docs/github-read-me/services/services-read-me-e48": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-github-read-me-services-services-read-me-654-e5e"
-  },
-  "/jitsibox-pro/en/docs/installation/fontend-app-821": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-installation-fontend-app-922-79a"
-  },
-  "/jitsibox-pro/en/docs/installation/instal-chrome-acb": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-installation-instal-chromef-59-c50"
-  },
-  "/jitsibox-pro/en/docs/installation/instal-kiosk-304": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-installation-instal-kiosk-79-d-47e"
-  },
-  "/jitsibox-pro/en/docs/installation/para-tablette-22d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-installation-para-tablette-841-e2f"
-  },
-  "/jitsibox-pro/en/docs/jitsi-pro-read-me-ba4": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-jitsi-pro-read-me-0-de-025"
-  },
-  "/jitsibox-pro/en/docs/presentation/-119": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-presentation-4-ea-cf4"
-  },
-  "/jitsibox-pro/en/docs/Roadmap/-58b": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-roadmap-e-1-d-0c4"
-  },
-  "/jitsibox-pro/en/docs/Roadmap/AfficherParticipants-059": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-roadmap-afficher-participantse-5-a-6e7"
-  },
-  "/jitsibox-pro/en/docs/Roadmap/AfficherTchat-a95": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-roadmap-afficher-tchat-1-e-0-b3a"
-  },
-  "/jitsibox-pro/en/docs/Roadmap/CallViaConfNumber-9d2": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-roadmap-call-via-conf-number-09-b-4a3"
-  },
-  "/jitsibox-pro/en/docs/Roadmap/GestionVolume-8d7": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-roadmap-gestion-volumec-3-b-ccb"
-  },
-  "/jitsibox-pro/en/docs/structure/-0e2": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---jitsibox-pro-en-docs-structure-691-2d2"
-  },
-  "/jitsibox-pro/en/-d49": {
-    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
-    "__context": {
-      "plugin": "plugin---jitsibox-pro-en-markdown-pageb-1-b-f5b"
-    },
-    "config": "config---jitsibox-pro-en-5-e-9-763"
+    "config": "5e9f5e1a"
   }
 }

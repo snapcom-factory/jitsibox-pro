@@ -2,7 +2,7 @@
   "unversionedId": "jitsi-pro-read-me",
   "id": "jitsi-pro-read-me",
   "title": "Jitsi Box Pro",
-  "description": "LE projet consiste à la mise en place d'une solution de webconference Jitsi de salle équipée d'une tablette de controle.",
+  "description": "Le projet consiste à la mise en place d'une solution de webconference Jitsi de salle équipée d'une tablette de controle.",
   "source": "@site/docs/jitsi-pro-read-me.md",
   "sourceDirName": ".",
   "slug": "/jitsi-pro-read-me",

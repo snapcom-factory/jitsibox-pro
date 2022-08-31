@@ -3,174 +3,145 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/jitsibox-pro/en/__docusaurus/debug',
-    component: ComponentCreator('/jitsibox-pro/en/__docusaurus/debug', 'fef'),
+    path: '/jitsibox-pro/markdown-page',
+    component: ComponentCreator('/jitsibox-pro/markdown-page', '845'),
     exact: true
   },
   {
-    path: '/jitsibox-pro/en/__docusaurus/debug/config',
-    component: ComponentCreator('/jitsibox-pro/en/__docusaurus/debug/config', 'f9d'),
-    exact: true
-  },
-  {
-    path: '/jitsibox-pro/en/__docusaurus/debug/content',
-    component: ComponentCreator('/jitsibox-pro/en/__docusaurus/debug/content', '608'),
-    exact: true
-  },
-  {
-    path: '/jitsibox-pro/en/__docusaurus/debug/globalData',
-    component: ComponentCreator('/jitsibox-pro/en/__docusaurus/debug/globalData', 'be9'),
-    exact: true
-  },
-  {
-    path: '/jitsibox-pro/en/__docusaurus/debug/metadata',
-    component: ComponentCreator('/jitsibox-pro/en/__docusaurus/debug/metadata', 'b0e'),
-    exact: true
-  },
-  {
-    path: '/jitsibox-pro/en/__docusaurus/debug/registry',
-    component: ComponentCreator('/jitsibox-pro/en/__docusaurus/debug/registry', '4a2'),
-    exact: true
-  },
-  {
-    path: '/jitsibox-pro/en/__docusaurus/debug/routes',
-    component: ComponentCreator('/jitsibox-pro/en/__docusaurus/debug/routes', 'e5a'),
-    exact: true
-  },
-  {
-    path: '/jitsibox-pro/en/markdown-page',
-    component: ComponentCreator('/jitsibox-pro/en/markdown-page', '2f0'),
-    exact: true
-  },
-  {
-    path: '/jitsibox-pro/en/docs',
-    component: ComponentCreator('/jitsibox-pro/en/docs', 'f3e'),
+    path: '/jitsibox-pro/docs',
+    component: ComponentCreator('/jitsibox-pro/docs', '04f'),
     routes: [
       {
-        path: '/jitsibox-pro/en/docs/github-read-me/apps/apps-read-me',
-        component: ComponentCreator('/jitsibox-pro/en/docs/github-read-me/apps/apps-read-me', '369'),
+        path: '/jitsibox-pro/docs/github-read-me/apps/apps-read-me',
+        component: ComponentCreator('/jitsibox-pro/docs/github-read-me/apps/apps-read-me', '99d'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/github-read-me/apps/controller-read-me',
-        component: ComponentCreator('/jitsibox-pro/en/docs/github-read-me/apps/controller-read-me', '54a'),
+        path: '/jitsibox-pro/docs/github-read-me/apps/controller-read-me',
+        component: ComponentCreator('/jitsibox-pro/docs/github-read-me/apps/controller-read-me', '0f3'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/github-read-me/apps/main-screen-read-me',
-        component: ComponentCreator('/jitsibox-pro/en/docs/github-read-me/apps/main-screen-read-me', '07e'),
+        path: '/jitsibox-pro/docs/github-read-me/apps/main-screen-read-me',
+        component: ComponentCreator('/jitsibox-pro/docs/github-read-me/apps/main-screen-read-me', 'af4'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/github-read-me/packages/model-read-me',
-        component: ComponentCreator('/jitsibox-pro/en/docs/github-read-me/packages/model-read-me', '23e'),
+        path: '/jitsibox-pro/docs/github-read-me/packages/model-read-me',
+        component: ComponentCreator('/jitsibox-pro/docs/github-read-me/packages/model-read-me', '68a'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/github-read-me/packages/packages-read-me',
-        component: ComponentCreator('/jitsibox-pro/en/docs/github-read-me/packages/packages-read-me', '751'),
+        path: '/jitsibox-pro/docs/github-read-me/packages/packages-read-me',
+        component: ComponentCreator('/jitsibox-pro/docs/github-read-me/packages/packages-read-me', '078'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/github-read-me/packages/ui-read-me',
-        component: ComponentCreator('/jitsibox-pro/en/docs/github-read-me/packages/ui-read-me', 'f66'),
+        path: '/jitsibox-pro/docs/github-read-me/packages/ui-read-me',
+        component: ComponentCreator('/jitsibox-pro/docs/github-read-me/packages/ui-read-me', 'eaf'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/github-read-me/services/bridge-read-me',
-        component: ComponentCreator('/jitsibox-pro/en/docs/github-read-me/services/bridge-read-me', '605'),
+        path: '/jitsibox-pro/docs/github-read-me/services/bridge-read-me',
+        component: ComponentCreator('/jitsibox-pro/docs/github-read-me/services/bridge-read-me', '2d6'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/github-read-me/services/services-read-me',
-        component: ComponentCreator('/jitsibox-pro/en/docs/github-read-me/services/services-read-me', 'e48'),
+        path: '/jitsibox-pro/docs/github-read-me/services/services-read-me',
+        component: ComponentCreator('/jitsibox-pro/docs/github-read-me/services/services-read-me', 'fbf'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/installation/fontend-app',
-        component: ComponentCreator('/jitsibox-pro/en/docs/installation/fontend-app', '821'),
+        path: '/jitsibox-pro/docs/installation/fontend-app',
+        component: ComponentCreator('/jitsibox-pro/docs/installation/fontend-app', 'dfa'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/installation/instal-chrome',
-        component: ComponentCreator('/jitsibox-pro/en/docs/installation/instal-chrome', 'acb'),
+        path: '/jitsibox-pro/docs/installation/instal-chrome',
+        component: ComponentCreator('/jitsibox-pro/docs/installation/instal-chrome', '5ef'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/installation/instal-kiosk',
-        component: ComponentCreator('/jitsibox-pro/en/docs/installation/instal-kiosk', '304'),
+        path: '/jitsibox-pro/docs/installation/instal-kiosk',
+        component: ComponentCreator('/jitsibox-pro/docs/installation/instal-kiosk', '811'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/installation/para-tablette',
-        component: ComponentCreator('/jitsibox-pro/en/docs/installation/para-tablette', '22d'),
+        path: '/jitsibox-pro/docs/installation/installation-detaillee',
+        component: ComponentCreator('/jitsibox-pro/docs/installation/installation-detaillee', '557'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/jitsi-pro-read-me',
-        component: ComponentCreator('/jitsibox-pro/en/docs/jitsi-pro-read-me', 'ba4'),
+        path: '/jitsibox-pro/docs/installation/para-tablette',
+        component: ComponentCreator('/jitsibox-pro/docs/installation/para-tablette', 'de0'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/presentation/',
-        component: ComponentCreator('/jitsibox-pro/en/docs/presentation/', '119'),
+        path: '/jitsibox-pro/docs/jitsi-pro-read-me',
+        component: ComponentCreator('/jitsibox-pro/docs/jitsi-pro-read-me', '51c'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/Roadmap/',
-        component: ComponentCreator('/jitsibox-pro/en/docs/Roadmap/', '58b'),
+        path: '/jitsibox-pro/docs/presentation/',
+        component: ComponentCreator('/jitsibox-pro/docs/presentation/', '77b'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/Roadmap/AfficherParticipants',
-        component: ComponentCreator('/jitsibox-pro/en/docs/Roadmap/AfficherParticipants', '059'),
+        path: '/jitsibox-pro/docs/Roadmap/',
+        component: ComponentCreator('/jitsibox-pro/docs/Roadmap/', '3a1'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/Roadmap/AfficherTchat',
-        component: ComponentCreator('/jitsibox-pro/en/docs/Roadmap/AfficherTchat', 'a95'),
+        path: '/jitsibox-pro/docs/Roadmap/AfficherParticipants',
+        component: ComponentCreator('/jitsibox-pro/docs/Roadmap/AfficherParticipants', '828'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/Roadmap/CallViaConfNumber',
-        component: ComponentCreator('/jitsibox-pro/en/docs/Roadmap/CallViaConfNumber', '9d2'),
+        path: '/jitsibox-pro/docs/Roadmap/AfficherTchat',
+        component: ComponentCreator('/jitsibox-pro/docs/Roadmap/AfficherTchat', 'efc'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/Roadmap/GestionVolume',
-        component: ComponentCreator('/jitsibox-pro/en/docs/Roadmap/GestionVolume', '8d7'),
+        path: '/jitsibox-pro/docs/Roadmap/CallViaConfNumber',
+        component: ComponentCreator('/jitsibox-pro/docs/Roadmap/CallViaConfNumber', '03c'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/jitsibox-pro/en/docs/structure/',
-        component: ComponentCreator('/jitsibox-pro/en/docs/structure/', '0e2'),
+        path: '/jitsibox-pro/docs/Roadmap/GestionVolume',
+        component: ComponentCreator('/jitsibox-pro/docs/Roadmap/GestionVolume', '4de'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/jitsibox-pro/docs/structure/',
+        component: ComponentCreator('/jitsibox-pro/docs/structure/', '615'),
         exact: true,
         sidebar: "tutorialSidebar"
       }
     ]
   },
   {
-    path: '/jitsibox-pro/en/',
-    component: ComponentCreator('/jitsibox-pro/en/', 'd49'),
+    path: '/jitsibox-pro/',
+    component: ComponentCreator('/jitsibox-pro/', 'bd7'),
     exact: true
   },
   {
