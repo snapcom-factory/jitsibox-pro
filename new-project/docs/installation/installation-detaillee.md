@@ -2,6 +2,21 @@
 
 ## Depuis le compte admin
 
+### Optimisation performance Windows
+
+- Ouvrir l'invité de commande `Windows`. 
+- Exécuter la commande suivante :
+    ```js
+    powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+    ```
+- Fermer l'invité de commande Windows.
+- Faire un clic droit sur l'icône Windows dans la barre des tâches. <p>![image](https://user-images.githubusercontent.com/110535664/187230954-50f10bcb-51f4-481f-aa52-a3c23811d80a.png)
+- Cliquer sur `Options d'alimentation`. <p>![image](https://user-images.githubusercontent.com/110535664/187386540-03214707-62f9-4ce4-9c49-5ad3ff3415e1.png)
+- Cliquer sur `Paramètres d'alimentation supplémentaires`.
+- À droite de `Maquer les modes supplémentaires`, cliquer sur ![image](https://user-images.githubusercontent.com/110535664/187424109-7db9aa03-1ac2-45dd-96e7-f4732c9315f1.png)
+- Sélectionner `Performances optimales`.
+
+    
 ### Etape : Creation compte "Jitsi-Box-Pro"
 
 - Cliquer sur le bouton `Windows`. <p>![image](https://user-images.githubusercontent.com/110535664/187230954-50f10bcb-51f4-481f-aa52-a3c23811d80a.png)
@@ -107,36 +122,26 @@
 - Vérifier que la case `Créer un raccourci sur le bureau` est bien cochée. <p>![image](https://user-images.githubusercontent.com/110535664/187240907-92a069a6-40aa-4d22-b5cf-1019cacf7777.png)
 - Puis cliquer sur `OK`. <p>![image](https://user-images.githubusercontent.com/110535664/187240988-869654eb-fb7f-4142-acde-ae4c614ccaaa.png)
 - Fermer la fenêtre Chrome.
-    
-### Etape : Creation Startup Script"
-- Ouvrir Notepad et insérer dans ce fichier:
-  ```js
-  @ECHO OFF
-  taskkill /f /im explorer.exe
-  cd C:\jitsibox-pro && npm run dev
-  ```  
-- Sauvegarder le fichier sous le nom `RUN-Jitsi-Box-Pro`dans `C:\` en `.bat`
 
-- Ouvrir Notepad et insérer dans ce fichier:
-  ```js
-  @ECHO OFF
-  timeout -t 5
-  C:\chrome-win\chrome.exe --profile-directory="Profile 1" --window-position=0,0 --kiosk http://localhost:3000 --user-data-dir=c:/monitor2 --unsafely-treat-insecure-origin-as-secure=http://localhost:3000
-  ```  
-- Sauvegarder le fichier sous le nom `RUN-Jitsi-Box-Pro - Controller`dans `C:\` en `.bat`
+- Chercher  le raccourci sur bureau 
+- Dupliquer le raccourci
+- Changer le nom des raccourcis: 
+1: Jitsi Box Pro - Controller
+2: Jitsi Box Pro - Main Screen
+- Faire un clic droit sur le raccourci `Controller`.
+- Dans la partie cible, ajouter apres la partie "Profile" :
+**Remplacer par la bonne adresse IP.**
+    ```js
+    --window-position=0,0 --kiosk http://IP:3000 --user-data-dir=c:/monitor1
+    ```
+- Cliquer sur `OK` pour sauvegarder.
 
-- Ouvrir Notepad et insérer dans ce fichier:
-  ```js
-  @ECHO OFF
-  timeout -t 5
-  C:\chrome-win\chrome.exe --profile-directory="Profile 1" --window-position=1680,0 --kiosk http://localhost:3002 --user-data-dir=c:/monitor1 --unsafely-treat-insecure-origin-as-secure=http://localhost:3002
-  ```  
-- Sauvegarder le fichier sous le nom `RUN-Jitsi-Box-Pro - Main Screen`dans `C:\` en `.bat`
- 
-- Creer un raccourci pour chaque ficher .bat
-- Aller dans les proprietes de chaque raccourci et changer l'execution Fenetre normale => Reduite
-- Bouger les raccourcis dans C:\Users\Jitsi-Box-Pro\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-
+- Faire un clic droit sur le raccourci `Main Screen`.
+- Dans la partie cible, ajouter apres la partie "Profile" :
+    ```js
+    --window-position=1680,0 --kiosk http://IP:3002 --user-data-dir=c:/monitor2 --unsafely-treat-insecure-origin-as-secure=http://IP:3002
+    ```
+- Cliquer sur `OK` pour sauvegarder.
 
 ### Etape : Configurer la connexion automatique Windows 10
 
@@ -152,18 +157,9 @@
 - Fermer l'Éditeur du Registre.
 - Redémarrer.
 
+### Etape : Startup Chrome
+
+### Etape : Boot Serveur
+
 ### Etape : Nettoyage Windows
 
-### Optimisation performance Windows
-
-- Ouvrir l'invité de commande `Windows`. 
-- Exécuter la commande suivante :
-    ```js
-    powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
-    ```
-- Fermer l'invité de commande Windows.
-- Faire un clic droit sur l'icône Windows dans la barre des tâches. <p>![image](https://user-images.githubusercontent.com/110535664/187230954-50f10bcb-51f4-481f-aa52-a3c23811d80a.png)
-- Cliquer sur `Options d'alimentation`. <p>![image](https://user-images.githubusercontent.com/110535664/187386540-03214707-62f9-4ce4-9c49-5ad3ff3415e1.png)
-- Cliquer sur `Paramètres d'alimentation supplémentaires`.
-- À droite de `Maquer les modes supplémentaires`, cliquer sur ![image](https://user-images.githubusercontent.com/110535664/187424109-7db9aa03-1ac2-45dd-96e7-f4732c9315f1.png)
-- Sélectionner `Performances optimales`.
