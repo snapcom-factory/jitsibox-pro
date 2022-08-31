@@ -11,19 +11,19 @@
       {
         "type": "link",
         "label": "Jitsi Box Pro",
-        "href": "/jitsibox-pro/docs/jitsi-pro-read-me",
+        "href": "/jitsibox-pro/en/docs/jitsi-pro-read-me",
         "docId": "jitsi-pro-read-me"
       },
       {
         "type": "link",
         "label": "Présentation",
-        "href": "/jitsibox-pro/docs/presentation/",
+        "href": "/jitsibox-pro/en/docs/presentation/",
         "docId": "presentation/presentation"
       },
       {
         "type": "link",
         "label": "Structure",
-        "href": "/jitsibox-pro/docs/structure/",
+        "href": "/jitsibox-pro/en/docs/structure/",
         "docId": "structure/structure"
       },
       {
@@ -34,30 +34,30 @@
         "items": [
           {
             "type": "link",
-            "label": "Afficher Participants",
-            "href": "/jitsibox-pro/docs/Roadmap/AfficherParticipants",
-            "docId": "Roadmap/AfficherParticipants"
-          },
-          {
-            "type": "link",
             "label": "Afficher Tchat",
-            "href": "/jitsibox-pro/docs/Roadmap/AfficherTchat",
+            "href": "/jitsibox-pro/en/docs/Roadmap/AfficherTchat",
             "docId": "Roadmap/AfficherTchat"
           },
           {
             "type": "link",
-            "label": "Entrer dans une conference via son code plutot que via son nom",
-            "href": "/jitsibox-pro/docs/Roadmap/CallViaConfNumber",
+            "label": "Afficher Participants",
+            "href": "/jitsibox-pro/en/docs/Roadmap/AfficherParticipants",
+            "docId": "Roadmap/AfficherParticipants"
+          },
+          {
+            "type": "link",
+            "label": "Call with conference code",
+            "href": "/jitsibox-pro/en/docs/Roadmap/CallViaConfNumber",
             "docId": "Roadmap/CallViaConfNumber"
           },
           {
             "type": "link",
             "label": "Gestion du volume du meeting",
-            "href": "/jitsibox-pro/docs/Roadmap/GestionVolume",
+            "href": "/jitsibox-pro/en/docs/Roadmap/GestionVolume",
             "docId": "Roadmap/GestionVolume"
           }
         ],
-        "href": "/jitsibox-pro/docs/Roadmap/"
+        "href": "/jitsibox-pro/en/docs/Roadmap/"
       },
       {
         "type": "category",
@@ -67,32 +67,32 @@
         "items": [
           {
             "type": "link",
-            "label": "Paramètres tablette",
-            "href": "/jitsibox-pro/docs/installation/para-tablette",
+            "label": "Tablet settings",
+            "href": "/jitsibox-pro/en/docs/installation/para-tablette",
             "docId": "installation/para-tablette"
           },
           {
             "type": "link",
-            "label": "Installation avec Chrome",
-            "href": "/jitsibox-pro/docs/installation/instal-chrome",
+            "label": "Installation with Chrome",
+            "href": "/jitsibox-pro/en/docs/installation/instal-chrome",
             "docId": "installation/instal-chrome"
           },
           {
             "type": "link",
-            "label": "Installation avec le Kiosk Mode Windows (avec Edge)",
-            "href": "/jitsibox-pro/docs/installation/instal-kiosk",
+            "label": "Installation with Kiosk Mode Windows (with Edge)",
+            "href": "/jitsibox-pro/en/docs/installation/instal-kiosk",
             "docId": "installation/instal-kiosk"
           },
           {
             "type": "link",
-            "label": "Application Frontend",
-            "href": "/jitsibox-pro/docs/installation/fontend-app",
+            "label": "Frontend Apps",
+            "href": "/jitsibox-pro/en/docs/installation/fontend-app",
             "docId": "installation/fontend-app"
           },
           {
             "type": "link",
             "label": "Installation détaillée",
-            "href": "/jitsibox-pro/docs/installation/installation-detaillee",
+            "href": "/jitsibox-pro/en/docs/installation/installation-detaillee",
             "docId": "installation/installation-detaillee"
           }
         ]
@@ -112,19 +112,19 @@
               {
                 "type": "link",
                 "label": "Frontend Apps",
-                "href": "/jitsibox-pro/docs/github-read-me/apps/apps-read-me",
+                "href": "/jitsibox-pro/en/docs/github-read-me/apps/apps-read-me",
                 "docId": "github-read-me/apps/apps-read-me"
               },
               {
                 "type": "link",
                 "label": "Controller",
-                "href": "/jitsibox-pro/docs/github-read-me/apps/controller-read-me",
+                "href": "/jitsibox-pro/en/docs/github-read-me/apps/controller-read-me",
                 "docId": "github-read-me/apps/controller-read-me"
               },
               {
                 "type": "link",
                 "label": "Using the local sharing feature",
-                "href": "/jitsibox-pro/docs/github-read-me/apps/main-screen-read-me",
+                "href": "/jitsibox-pro/en/docs/github-read-me/apps/main-screen-read-me",
                 "docId": "github-read-me/apps/main-screen-read-me"
               }
             ]
@@ -138,19 +138,19 @@
               {
                 "type": "link",
                 "label": "Packages",
-                "href": "/jitsibox-pro/docs/github-read-me/packages/packages-read-me",
+                "href": "/jitsibox-pro/en/docs/github-read-me/packages/packages-read-me",
                 "docId": "github-read-me/packages/packages-read-me"
               },
               {
                 "type": "link",
                 "label": "Model",
-                "href": "/jitsibox-pro/docs/github-read-me/packages/model-read-me",
+                "href": "/jitsibox-pro/en/docs/github-read-me/packages/model-read-me",
                 "docId": "github-read-me/packages/model-read-me"
               },
               {
                 "type": "link",
                 "label": "UI",
-                "href": "/jitsibox-pro/docs/github-read-me/packages/ui-read-me",
+                "href": "/jitsibox-pro/en/docs/github-read-me/packages/ui-read-me",
                 "docId": "github-read-me/packages/ui-read-me"
               }
             ]
@@ -164,13 +164,13 @@
               {
                 "type": "link",
                 "label": "Services",
-                "href": "/jitsibox-pro/docs/github-read-me/services/services-read-me",
+                "href": "/jitsibox-pro/en/docs/github-read-me/services/services-read-me",
                 "docId": "github-read-me/services/services-read-me"
               },
               {
                 "type": "link",
                 "label": "Bridge",
-                "href": "/jitsibox-pro/docs/github-read-me/services/bridge-read-me",
+                "href": "/jitsibox-pro/en/docs/github-read-me/services/bridge-read-me",
                 "docId": "github-read-me/services/bridge-read-me"
               }
             ]
@@ -230,20 +230,20 @@
     },
     "installation/fontend-app": {
       "id": "installation/fontend-app",
-      "title": "Application Frontend",
+      "title": "Frontend Apps",
       "description": "Introduction",
       "sidebar": "tutorialSidebar"
     },
     "installation/instal-chrome": {
       "id": "installation/instal-chrome",
-      "title": "Installation avec Chrome",
-      "description": "Empêcher de sortir du mode plein écran (Kiosk Mode)",
+      "title": "Installation with Chrome",
+      "description": "Prevent exiting from full screen mode (Kiosk Mode)",
       "sidebar": "tutorialSidebar"
     },
     "installation/instal-kiosk": {
       "id": "installation/instal-kiosk",
-      "title": "Installation avec le Kiosk Mode Windows (avec Edge)",
-      "description": "Activer le Kiosk Mode Windows",
+      "title": "Installation with Kiosk Mode Windows (with Edge)",
+      "description": "Activate Windows Kiosk Mode",
       "sidebar": "tutorialSidebar"
     },
     "installation/installation-detaillee": {
@@ -254,14 +254,14 @@
     },
     "installation/para-tablette": {
       "id": "installation/para-tablette",
-      "title": "Paramètres tablette",
-      "description": "Permettre à la tablette d'avoir un écran tactile séparé",
+      "title": "Tablet settings",
+      "description": "Allow the tablet to have a separate touch screen",
       "sidebar": "tutorialSidebar"
     },
     "jitsi-pro-read-me": {
       "id": "jitsi-pro-read-me",
       "title": "Jitsi Box Pro",
-      "description": "Le projet consiste à la mise en place d'une solution de webconference Jitsi de salle équipée d'une tablette de controle.",
+      "description": "box",
       "sidebar": "tutorialSidebar"
     },
     "presentation/presentation": {
@@ -284,8 +284,8 @@
     },
     "Roadmap/CallViaConfNumber": {
       "id": "Roadmap/CallViaConfNumber",
-      "title": "Entrer dans une conference via son code plutot que via son nom",
-      "description": "Convertrir le code en nom via l\"api du confmapper :",
+      "title": "Call with conference code",
+      "description": "Entrer dans une conference avec son code plutot que son nom",
       "sidebar": "tutorialSidebar"
     },
     "Roadmap/GestionVolume": {
