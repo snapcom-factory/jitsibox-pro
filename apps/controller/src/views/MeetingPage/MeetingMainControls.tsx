@@ -14,6 +14,8 @@ import { ActionButton } from "@/components"
 import { useSocketListener } from "@/services/socket"
 import WaveHand from "@/assets/WaveHand"
 import WavingHand from "@/assets/WavingHand"
+import DisplayChat from "@/assets/DisplayChat"
+import HideChat from "@/assets/HideChat"
 import { useSnackbarContext } from "@/services/snackbar"
 import { Location, MeetingState } from "@/services/navigate"
 
@@ -23,17 +25,20 @@ const MeetingMainControls = (): React.ReactElement => {
     isAlreadyMuted,
     isCameraAlreadyOn,
     isHandAlreadyRaised,
+    isChatAlreadyDisplayed,
     isAlreadyAskingToShareScreen,
   } = state ?? {
     isAlreadyMuted: false,
     isCameraAlreadyOn: true,
     isHandAlreadyRaised: false,
+    isChatAlreadyDisplayed: false,
     isAlreadyAskingToShareScreen: false,
   }
 
   const [isMuted, setIsMuted] = useState<boolean>(false)
   const [isCameraOn, setIsCameraOn] = useState<boolean>(true)
   const [isHandRaised, setIsHandRaised] = useState<boolean>(false)
+  const [isChat, setIsChatDisplayed] = useState<boolean>(false)
   const [isAskingToShareScreen, setIsAskingToShareScreen] =
     useState<boolean>(false)
 
@@ -41,6 +46,7 @@ const MeetingMainControls = (): React.ReactElement => {
     setIsMuted(isAlreadyMuted)
     setIsCameraOn(isCameraAlreadyOn)
     setIsHandRaised(isHandAlreadyRaised)
+    setIsChatDisplayed(isChatAlreadyDisplayed)
     setIsAskingToShareScreen(isAlreadyAskingToShareScreen)
   }, [state])
 
@@ -55,6 +61,9 @@ const MeetingMainControls = (): React.ReactElement => {
   })
   useSocketListener(socketEvents.meeting.wave, (userHasHandRaised: boolean) => {
     setIsHandRaised(userHasHandRaised)
+  })
+  useSocketListener(socketEvents.meeting.chat, (userHasChatDisplayed: boolean) => {
+    setIsChatDisplayed(userHasChatDisplayed)
   })
   useSocketListener(socketEvents.meeting.askingToShareScreen, () => {
     setIsAskingToShareScreen(true)
@@ -133,6 +142,24 @@ const MeetingMainControls = (): React.ReactElement => {
           />
         )}
       </Grid>
+      <Grid item xs={3}>
+        {!isChat ? (
+          <ActionButton
+            text="Afficher le Chat"
+            color="primary"
+            Icon={DisplayChat}
+            event={{ name: socketEvents.meeting.chat, payload: true }}
+          />
+        ) : (
+          <ActionButton
+            text="Supprimer le Chat"
+            color="primary"
+            Icon={HideChat}
+            event={{ name: socketEvents.meeting.chat, payload: false }}
+          />
+        )}
+      </Grid>
+
       {/* <Grid item xs={3}>
         {!isAskingToShareScreen ? (
           <ActionButton

@@ -34,6 +34,7 @@ const adaptToCurrentStatus = (
         isAlreadyMuted: statusFromSocket.meeting.isMuted,
         isCameraAlreadyOn: statusFromSocket.meeting.isCameraOn,
         isHandAlreadyRaised: statusFromSocket.meeting.isHandRaised,
+        isChatAlreadyDisplayed: statusFromSocket.meeting.isChat,
         isAlreadyAskingToShareScreen:
           statusFromSocket.meeting.isAskingToShareScreen,
         numberOfParticipants: statusFromSocket.meeting.participants,
@@ -66,6 +67,7 @@ const Routes = (): React.ReactElement => {
         isAlreadyMuted: defaultParams.audioMuted,
         isCameraAlreadyOn: !defaultParams.videoMuted,
         isHandAlreadyRaised: false,
+        isChatAlreadyDisplayed: false,
         isAlreadyAskingToShareScreen: false,
         numberOfParticipants,
       })
@@ -77,6 +79,7 @@ const Routes = (): React.ReactElement => {
         isAlreadyMuted: defaultParams.audioMuted,
         isCameraAlreadyOn: !defaultParams.videoMuted,
         isHandAlreadyRaised: false,
+        isChatAlreadyDisplayed: false,
         isAlreadyAskingToShareScreen: false,
         numberOfParticipants,
       })

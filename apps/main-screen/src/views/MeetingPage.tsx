@@ -23,12 +23,18 @@ interface handRaisedPayload {
   handRaised: number
 }
 
+interface chatPayload {
+  isOpen: boolean
+  unreadCount: number
+}
+
 interface MeetingProps {
   state:
     | {
         isAlreadyMuted: boolean
         isVideoAlreadyMuted: boolean
         isHandAlreadyRaised: boolean
+        isChatAlreadyDisplayed: boolean
         isAlreadyAskingToShareScreen: boolean
       }
     | undefined
@@ -51,11 +57,12 @@ const MeetingPage = (): React.ReactElement => {
   if (meetingId === undefined || meetingId.length === 0) navigate("/")
 
   const { state } = useLocation() as MeetingProps
-  const { isAlreadyMuted, isVideoAlreadyMuted, isHandAlreadyRaised } =
+  const { isAlreadyMuted, isVideoAlreadyMuted, isHandAlreadyRaised, isChatAlreadyDisplayed } =
     state ?? {
       isAlreadyMuted: defaultParams.audioMuted,
       isCameraAlreadyOn: defaultParams.videoMuted,
       isHandAlreadyRaised: false,
+      isChatAlreadyDisplayed: false,
     }
 
   const apiRef = useRef<IJitsiMeetExternalApi>()
@@ -76,6 +83,7 @@ const MeetingPage = (): React.ReactElement => {
   useSocketListener(socketEvents.meeting.camera, () => execute("toggleVideo"))
   useSocketListener(socketEvents.meeting.mute, () => execute("toggleAudio"))
   useSocketListener(socketEvents.meeting.wave, () => execute("toggleRaiseHand"))
+  useSocketListener(socketEvents.meeting.chat, () => execute("toggleChat"))
 
   // sending events to bridge
   const handleAudioStatusChange = (payload: audioVideoPayload) => {
@@ -91,6 +99,11 @@ const MeetingPage = (): React.ReactElement => {
   const handleHandUpdate = (payload: handRaisedPayload) => {
     if (socket !== null && payload.id === participantId) {
       socket.emit(socketEvents.meeting.wave, payload.handRaised !== 0) // 0  means hand is lowered
+    }
+  }
+  const handleChatUpdate = (payload: chatPayload) => {
+    if (socket !== null ) {
+      socket.emit(socketEvents.meeting.chat, payload.isOpen !== false) // false  means chat is not displayed
     }
   }
 
@@ -149,6 +162,9 @@ const MeetingPage = (): React.ReactElement => {
         if (isHandAlreadyRaised) {
           apiRef.current.executeCommand("toggleRaiseHand")
         }
+        if (isChatAlreadyDisplayed) {
+          apiRef.current.executeCommand("toggleChat")
+        }
       }
     )
 
@@ -163,6 +179,10 @@ const MeetingPage = (): React.ReactElement => {
     )
     apiRef.current.on("raiseHandUpdated", (payload: handRaisedPayload) =>
       handleHandUpdate(payload)
+    )
+
+    apiRef.current.on("chatUpdated", (payload: chatPayload) =>
+      handleChatUpdate(payload)
     )
 
     apiRef.current.on("participantJoined", () => handleParticipantChange())
@@ -187,6 +207,7 @@ const MeetingPage = (): React.ReactElement => {
           "videoquality",
           "fodeviceselection",
           "raisehand",
+          "displaychat",
           "tileview",
         ],
         DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,

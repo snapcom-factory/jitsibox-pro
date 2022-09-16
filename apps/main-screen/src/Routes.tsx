@@ -35,6 +35,7 @@ const adaptToCurrentStatus = (
           isAlreadyMuted: statusFromSocket.meeting.isMuted,
           isVideoAlreadyMuted: !statusFromSocket.meeting.isCameraOn,
           isHandAlreadyRaised: statusFromSocket.meeting.isHandRaised,
+          isChatAlreadyDisplayed: statusFromSocket.meeting.isChat,
           isAlreadyAskingToShareScreen:
             statusFromSocket.meeting.isAskingToShareScreen,
         },

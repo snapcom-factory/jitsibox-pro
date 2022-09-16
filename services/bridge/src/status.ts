@@ -13,6 +13,7 @@ const globalStatus: GlobalStatus = {
     isMuted: false,
     isCameraOn: true,
     isHandRaised: false,
+    isChat: false,
     isAskingToShareScreen: false,
   },
 }

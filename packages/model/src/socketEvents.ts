@@ -25,6 +25,7 @@ export const socketEvents = {
     sharingScreen: "shareScreen",
     stopSharing: "stopSharing",
     participants: "numberOfParticipants",
+    chat: "toggleChat",
   },
 } as const
 
@@ -42,6 +43,7 @@ export interface GlobalStatus {
     isHandRaised: boolean
     isAskingToShareScreen: boolean
     participants: number
+    isChat: boolean
   }
 }
 
@@ -64,6 +66,7 @@ export interface ControllerToServerEvents {
   [socketEvents.meeting.mute]: (isMuted: boolean) => void
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void
   [socketEvents.meeting.wave]: (isHandRaised: boolean) => void
+  [socketEvents.meeting.chat]: (isChat: boolean) => void
   [socketEvents.meeting.askingToShareScreen]: () => void
   [socketEvents.meeting.stopSharing]: () => void
   [socketEvents.meeting.leave]: () => void
@@ -82,6 +85,7 @@ export interface ServerToControllerEvents {
   [socketEvents.meeting.mute]: (isMuted: boolean) => void
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void
   [socketEvents.meeting.wave]: (isHandRaised: boolean) => void
+  [socketEvents.meeting.chat]: (isChat: boolean) => void
   [socketEvents.meeting.askingToShareScreen]: () => void
   [socketEvents.meeting.stopSharing]: () => void
   [socketEvents.meeting.participants]: (numberOfParticipants: number) => void
@@ -105,6 +109,7 @@ export interface ServerToMainScreenEvents {
   [socketEvents.meeting.mute]: (isMuted: boolean) => void
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void
   [socketEvents.meeting.wave]: (isHandRaised: boolean) => void
+  [socketEvents.meeting.chat]: (isChat: boolean) => void
   [socketEvents.meeting.askingToShareScreen]: () => void
   [socketEvents.meeting.stopSharing]: () => void
   [socketEvents.meeting.leave]: () => void
@@ -118,6 +123,7 @@ export interface MainScreenToServerEvents {
   [socketEvents.meeting.mute]: (isMuted: boolean) => void
   [socketEvents.meeting.camera]: (isCameraOn: boolean) => void
   [socketEvents.meeting.wave]: (isHandRaised: boolean) => void
+  [socketEvents.meeting.chat]: (isChat: boolean) => void
   [socketEvents.meeting.askingToShareScreen]: () => void
   [socketEvents.meeting.stopSharing]: () => void
   [socketEvents.meeting.participants]: (numberOfParticipants: number) => void

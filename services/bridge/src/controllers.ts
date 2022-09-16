@@ -79,6 +79,10 @@ const socketControllers = (
     mainScreen.emit(socketEvents.meeting.wave, isHandRaised)
   })
 
+  socket.on(socketEvents.meeting.chat, (isChat: boolean) => {
+    mainScreen.emit(socketEvents.meeting.chat, isChat)
+  })
+
   socket.on(socketEvents.meeting.leave, () => {
     mainScreen.emit(socketEvents.meeting.leave)
   })

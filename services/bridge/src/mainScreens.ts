@@ -63,6 +63,11 @@ const socketMainScreen = (
     controllers.emit(socketEvents.meeting.wave, isHandRaised)
   })
 
+  socket.on(socketEvents.meeting.chat, (isChat: boolean) => {
+    globalStatus.meeting.isChat = isChat
+    controllers.emit(socketEvents.meeting.chat, isChat)
+  })
+
   socket.on(socketEvents.meeting.leave, () => {
     globalStatus.global.page = "menu"
     globalStatus.meeting = {
@@ -71,6 +76,7 @@ const socketMainScreen = (
       isMuted: false,
       isCameraOn: true,
       isHandRaised: false,
+      isChat: false,
       isAskingToShareScreen: false
     }
     controllers.emit(socketEvents.meeting.leave)
