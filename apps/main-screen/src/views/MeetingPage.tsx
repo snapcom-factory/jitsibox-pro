@@ -217,6 +217,7 @@ const MeetingPage = (): React.ReactElement => {
         SHOW_DEEP_LINKING_IMAGE: false,
       }}
       configOverwrite={{
+        prejoinConfig: false,
         disableSimulcast: false,
         disableDeepLinking: true,
         prejoinPageEnabled: false,
