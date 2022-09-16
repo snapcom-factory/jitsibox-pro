@@ -18,7 +18,10 @@ import DisplayChat from "@/assets/DisplayChat"
 import HideChat from "@/assets/HideChat"
 import { useSnackbarContext } from "@/services/snackbar"
 import { Location, MeetingState } from "@/services/navigate"
-
+const microphoneButton_visible :boolean = true
+const cameraButton_visible :boolean = true
+const raiseHandButton_visible :boolean = true
+const chatButton_visible :boolean = true
 const MeetingMainControls = (): React.ReactElement => {
   const { state } = useLocation() as Location<MeetingState>
   const {
@@ -93,14 +96,14 @@ const MeetingMainControls = (): React.ReactElement => {
     >
       <Grid item xs={3}>
         {!isMuted ? (
-          <ActionButton
+          microphoneButton_visible && <ActionButton
             text="Couper le micro"
             color="primary"
             Icon={Mic}
             event={{ name: socketEvents.meeting.mute, payload: true }}
           />
         ) : (
-          <ActionButton
+          microphoneButton_visible && <ActionButton
             text="Allumer le micro"
             color="primary"
             Icon={MicOff}
@@ -110,14 +113,14 @@ const MeetingMainControls = (): React.ReactElement => {
       </Grid>
       <Grid item xs={3}>
         {isCameraOn ? (
-          <ActionButton
+          cameraButton_visible && <ActionButton
             text="Couper la caméra"
             color="primary"
             Icon={Videocam}
             event={{ name: socketEvents.meeting.camera, payload: false }}
           />
         ) : (
-          <ActionButton
+          cameraButton_visible && <ActionButton
             text="Allumer la caméra"
             color="primary"
             Icon={VideocamOff}
@@ -127,14 +130,14 @@ const MeetingMainControls = (): React.ReactElement => {
       </Grid>
       <Grid item xs={3}>
         {!isHandRaised ? (
-          <ActionButton
+          raiseHandButton_visible && <ActionButton
             text="Lever la main"
             color="primary"
             Icon={WaveHand}
             event={{ name: socketEvents.meeting.wave, payload: true }}
           />
         ) : (
-          <ActionButton
+          raiseHandButton_visible && <ActionButton
             text="Baisser la main"
             color="primary"
             Icon={WavingHand}
@@ -144,14 +147,14 @@ const MeetingMainControls = (): React.ReactElement => {
       </Grid>
       <Grid item xs={3}>
         {!isChat ? (
-          <ActionButton
+          chatButton_visible && <ActionButton
             text="Afficher le Chat"
             color="primary"
             Icon={DisplayChat}
             event={{ name: socketEvents.meeting.chat, payload: true }}
           />
         ) : (
-          <ActionButton
+          chatButton_visible && <ActionButton
             text="Supprimer le Chat"
             color="primary"
             Icon={HideChat}
