@@ -67,10 +67,13 @@ const MeetingPage = (): React.ReactElement => {
 
   const apiRef = useRef<IJitsiMeetExternalApi>()
   const { socket } = useSocketContext()
+  interface DictionnaryType {
+    [key: string]: boolean
+}
   // commands
-  const execute = (command: string) => {
+  const execute = (command: string, ...argumens:DictionnaryType[]) => {
     if (!apiRef.current) return
-    apiRef.current.executeCommand(command)
+    apiRef.current.executeCommand(command, ...argumens)
   }
   // listening to events from bridge
   useSocketListener(socketEvents.meeting.leave, () => {
