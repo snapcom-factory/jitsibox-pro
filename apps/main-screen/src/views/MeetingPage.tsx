@@ -40,6 +40,14 @@ interface MeetingProps {
     | undefined
 }
 
+interface jitsiRequestResponse {
+  name?: string;
+  code?: string;
+  statusCode?: number;
+  message?: string;
+  error?: string;
+}
+
 const defaultParams = {
   audioMuted: false,
   videoMuted: false,
@@ -49,12 +57,28 @@ const nameToDisplay = "ROOM_2312"
 
 const MeetingPage = (): React.ReactElement => {
   const meetingParam = useParams<string>()
-  const meetingId = meetingParam.meetingId ?? "default"
+  let meetingId = meetingParam.meetingId ?? "default"
   const navigate = useNavigate()
 
   let participantId = ""
 
   if (meetingId === undefined || meetingId.length === 0) navigate("/")
+  const myAsynFunction = async (meetingId: string) : Promise<string> => {
+    let headersList = {
+      "Authorization": "Api-Key E8b5HjsPVV"
+     }
+    let response = await fetch("https://voxapi.joona.fr/api/v1/conn/external/conference/info?code="+meetingId, { method: "GET", headers: headersList});
+    let data = await response.text();
+    let jsonObject : jitsiRequestResponse = JSON.parse(data)
+
+    if (!(jsonObject.name === undefined)) {meetingId = jsonObject.name;} else {navigate("/NotFound")}
+
+    localStorage.setItem('meetingIdValueX', meetingId);
+    return meetingId;
+}
+if (/^[0-9]+$/.test(meetingId)) {
+  myAsynFunction(meetingId);
+  meetingId = localStorage.getItem('meetingIdValueX')??"default";};
 
   const { state } = useLocation() as MeetingProps
   const { isAlreadyMuted, isVideoAlreadyMuted, isHandAlreadyRaised, isChatAlreadyDisplayed } =
