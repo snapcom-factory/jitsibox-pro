@@ -4,7 +4,7 @@ import {
   Header,
   Footer,
   ReturnToMenuButton,
-  TextInput,
+  TextInputJoinPage,
   ViewContainer,
 } from "@/components"
 import { useSocketListener } from "@/services/socket"
@@ -36,7 +36,7 @@ const JoinPage = () => {
           Pour rejoindre une réunion en cours,
           <br /> entrer le nom du meeting ou le code réunion à 10 chiffres
         </Typography>
-        <TextInput
+        <TextInputJoinPage
           placeholder="Saisir le nom ou le code du meeting..."
           eventName={socketEvents.joinCall.validate}
           namesOnly
