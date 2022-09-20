@@ -1,5 +1,5 @@
 import { Grid, Stack, Typography } from "@mui/material"
-import MarianneLogo from "@/assets/Marianne.svg?component"
+import MarianneLogo from "@/assets/logo_fr.svg?component"
 
 export interface HeaderProps {
   middleContent?: React.ReactNode
@@ -15,7 +15,9 @@ const Header = ({
       <Stack direction="column">
         <MarianneLogo height="2rem" />
         <Typography variant="h4" sx={{ paddingTop: 0.5 }}>
-          WEBCONFÉRENCE <br /> DE L&apos;ÉTAT
+          {`${import.meta.env.VITE_COMPANY_NAME}`}
+          <br />
+          {`${import.meta.env.VITE_COMPANY_NAME2}`}
         </Typography>
       </Stack>
     </Grid>
