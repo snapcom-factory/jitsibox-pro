@@ -40,38 +40,74 @@ interface MeetingProps {
     | undefined
 }
 
+interface jitsiRequestResponse {
+  name?: string
+  code?: string
+  statusCode?: number
+  message?: string
+  error?: string
+}
+
 const defaultParams = {
   audioMuted: false,
   videoMuted: false,
 }
 
-const nameToDisplay = "ROOM_2312"
+const nameToDisplay = `${import.meta.env.VITE_ROOM_NAME}`
 
 const MeetingPage = (): React.ReactElement => {
   const meetingParam = useParams<string>()
-  const meetingId = meetingParam.meetingId ?? "default"
+  let meetingId = meetingParam.meetingId ?? "default"
   const navigate = useNavigate()
 
   let participantId = ""
 
   if (meetingId === undefined || meetingId.length === 0) navigate("/")
+  const myAsynFunction = async (meetingId: string): Promise<string> => {
+    let headersList = {
+      Authorization: "Api-Key" + ` ${import.meta.env.VITE_API_KEY}`,
+    }
+    let response = await fetch(`${import.meta.env.VITE_API_URL}` + meetingId, {
+      method: "GET",
+      headers: headersList,
+    })
+    let data = await response.text()
+    let jsonObject: jitsiRequestResponse = JSON.parse(data)
+
+    if (!(jsonObject.name === undefined)) {
+      meetingId = jsonObject.name
+    } else {
+      navigate("/NotFound")
+    }
+
+    localStorage.setItem("meetingIdValueX", meetingId)
+    return meetingId
+  }
+  if (/^[0-9]+$/.test(meetingId)) {
+    myAsynFunction(meetingId)
+    meetingId = localStorage.getItem("meetingIdValueX") ?? "default"
+  }
 
   const { state } = useLocation() as MeetingProps
-  const { isAlreadyMuted, isVideoAlreadyMuted, isHandAlreadyRaised, isChatAlreadyDisplayed } =
-    state ?? {
-      isAlreadyMuted: defaultParams.audioMuted,
-      isCameraAlreadyOn: defaultParams.videoMuted,
-      isHandAlreadyRaised: false,
-      isChatAlreadyDisplayed: false,
-    }
+  const {
+    isAlreadyMuted,
+    isVideoAlreadyMuted,
+    isHandAlreadyRaised,
+    isChatAlreadyDisplayed,
+  } = state ?? {
+    isAlreadyMuted: defaultParams.audioMuted,
+    isCameraAlreadyOn: defaultParams.videoMuted,
+    isHandAlreadyRaised: false,
+    isChatAlreadyDisplayed: false,
+  }
 
   const apiRef = useRef<IJitsiMeetExternalApi>()
   const { socket } = useSocketContext()
   interface DictionnaryType {
     [key: string]: boolean
-}
+  }
   // commands
-  const execute = (command: string, ...argumens:DictionnaryType[]) => {
+  const execute = (command: string, ...argumens: DictionnaryType[]) => {
     if (!apiRef.current) return
     apiRef.current.executeCommand(command, ...argumens)
   }
@@ -105,7 +141,7 @@ const MeetingPage = (): React.ReactElement => {
     }
   }
   const handleChatUpdate = (payload: chatPayload) => {
-    if (socket !== null ) {
+    if (socket !== null) {
       socket.emit(socketEvents.meeting.chat, payload.isOpen !== false) // false  means chat is not displayed
     }
   }

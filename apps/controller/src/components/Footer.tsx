@@ -8,7 +8,7 @@ const Footer = (): React.ReactElement => (
       alignItems="flex-start"
     >
       <Typography variant="caption">
-        Jitsi-Box <br /> Controller #1234
+        Jitsi-Box by SNAPCOM <br /> Controller #1234
       </Typography>
     </Stack>
   </Stack>
