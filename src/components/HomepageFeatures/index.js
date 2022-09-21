@@ -4,8 +4,8 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Facile à utiliser',
+    Svg: require('@site/static/img/front-page/easy.svg').default,
     description: (
       <>
         
@@ -13,8 +13,8 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Centré sur l\'essentiel',
+    Svg: require('@site/static/img/front-page/focus.svg').default,
     description: (
       <>
         
@@ -22,8 +22,8 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Faible empreinte carbone',
+    Svg: require('@site/static/img/front-page/eco.svg').default,
     description: (
       <>
         
@@ -34,12 +34,14 @@ const FeatureList = [
 
 function Feature({Svg, title, description}) {
   return (
+    
     <div className={clsx('col col--4')}>
+      <p></p>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+      <h3>{title}</h3>
         <p>{description}</p>
       </div>
     </div>
