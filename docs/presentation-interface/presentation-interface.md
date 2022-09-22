@@ -6,11 +6,11 @@ sidebar_position: 2
 
 ## Ecran
 
-Interface d’accueil sur l'ecran:
+#### Interface d’accueil sur l'ecran:
 
 ![image](../../static/img/main-screen/main-screen.png "Main-Screen")
 
-Interface d'appel sur l'ecran:
+#### Interface d'appel sur l'ecran:
 
 ## Tablette – tactile
 #### Interface d’accueil:

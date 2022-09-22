@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Etape 1: Creation du compte "Jitsi-Box-Pro"
+### Etape 1: Creation du compte "Jitsi-Box-Pro"
 
 - Cliquer sur le bouton [`Windows`](https://user-images.githubusercontent.com/110535664/187230954-50f10bcb-51f4-481f-aa52-a3c23811d80a.png).
 
@@ -25,39 +25,42 @@ import TabItem from '@theme/TabItem';
 
 - Répondre `Non` à toutes les questions Microsoft.
 
+### Etape 2: Installation Chromium
 
+:::caution
+Les prochaines etapes sont faites a partir du compte "Jitsi-Box-Pro".
 
-## Depuis le compte "Jitsi-Box-Pro" 
+:::
 
-### Etape : Installation Chromium
+- Aller sur le site [`chromium`](https://download-chromium.appspot.com) et télécharger le fichier .zip.
+- Extraire le fichier sur le disque `C`.
 
-- Aller sur https://download-chromium.appspot.com et télécharger le fichier .zip.
-- Extraire le fichier en C.
+### Etape 3: Installation Git
 
-### Etape : Installation Git
-
-- Télécharger le fichier suivant : https://github.com/git-for-windows/git/releases/download/v2.37.2.windows.2/Git-2.37.2.2-64-bit.exe
-- Cliquer sur `Next` à chaque étape.
+- Télécharger [`GIT`](https://github.com/git-for-windows/git/releases/download/v2.37.2.windows.2/Git-2.37.2.2-64-bit.exe).
+- Executer l'executable et cliquer sur `Next` à chaque étape.
 - Cliquer sur `Finish`.
 
-### Etape : Installation Node js
+### Etape 4: Installation Node js
 
-- Télécharger le fichier suivant : https://nodejs.org/dist/v16.17.0/node-v16.17.0-x64.msi
-- Cliquer sur `Next & Install`.
+- Télécharger [`Node JS`](https://nodejs.org/dist/v16.17.0/node-v16.17.0-x64.msi).
+- Executer l'executable et cliquer sur `Next` à chaque étape.
 
-### Etape : Configuration & Ajout écran touch
+### Etape 5: Configuration & Ajout écran touch
 
-- Aller dans `Panneau de configuration`. ![image](https://user-images.githubusercontent.com/110535664/187390041-fe4662a9-e23a-47ff-9adf-302d263a45ce.png)
-- Selectionnez l'option Afficher par : `Grandes icônes`. ![image](https://user-images.githubusercontent.com/110535664/187390452-604bfca3-6b10-43f4-997c-8200746e4ca8.png)
-- Cliquer sur `Paramètres du Tablet PC` (ou le chercher dans la barre de recherche s'il n'apparaît pas)![image](https://user-images.githubusercontent.com/110535664/187391033-a4fe154a-e8e2-4331-93a4-03009915f6fe.png)
-- Puis cliquer sur `Configurer`. ![image](https://user-images.githubusercontent.com/110535664/187391059-35ad9637-55ef-43e6-9e5a-8b553bca70e2.png)
+- Aller dans [`Panneau de configuration`](https://user-images.githubusercontent.com/110535664/187390041-fe4662a9-e23a-47ff-9adf-302d263a45ce.png).
+
+- Selectionnez l'option Afficher par [`Grandes icônes`](https://user-images.githubusercontent.com/110535664/187390452-604bfca3-6b10-43f4-997c-8200746e4ca8.png).
+
+- Cliquer sur [`Paramètres du Tablet PC`](https://user-images.githubusercontent.com/110535664/187391033-a4fe154a-e8e2-4331-93a4-03009915f6fe.png). (ou le chercher dans la barre de recherche s'il n'apparaît pas)
+
+- Puis cliquer sur [`Configurer`](https://user-images.githubusercontent.com/110535664/187391059-35ad9637-55ef-43e6-9e5a-8b553bca70e2.png).
+
 - Un message `Appuyez sur cet écran...` apparaît. Cliquer sur l'écran touch.
 
-### (Etape : Startup)
+### Etape 6: Recuperation du projet
 
-### Etape : Get Project
-
-- Ouvrir `Git Bash`. ![image](https://user-images.githubusercontent.com/110535664/187235305-a79347c1-d0b5-4e86-960b-97a4360ce885.png)
+- Ouvrir [`Git Bash`](https://user-images.githubusercontent.com/110535664/187235305-a79347c1-d0b5-4e86-960b-97a4360ce885.png)
 - Exécuter les commandes suivantes :
     ```js
     cd C:\
@@ -65,27 +68,34 @@ import TabItem from '@theme/TabItem';
     ```js
     git clone https://github.com/snapcom-factory/jitsibox-pro.git
     ```
-- Fermer Git Bash.
+- Fermer `Git Bash`.
 
-### Etape : Configure & Run Project
+### Etape 7: Configuration & Executrion du projet
 
 - Dans `C:\jitsibox-pro\apps\controller`, créer un fichier `.env`
 - Insérer dans ce fichier : 
     ```js
-    VITE_WEBCONF_TOKEN =
+    VITE_DOMAIN=
+    VITE_COMPANY_NAME=
+    VITE_COMPANY_NAME2=
     ```
 
 - Dans `C:\jitsibox-pro\apps\main-screen`, créer un fichier `.env`
 - Insérer dans ce fichier : 
     ```js
-    VITE_WEBCONF_TOKEN =
-    VITE_DOMAIN = 
+    VITE_WEBCONF_TOKEN=
+    VITE_DOMAIN=
+    VITE_COMPANY_NAME=
+    VITE_COMPANY_NAME2= 
+    VITE_ROOM_NAME= 
+    VITE_API_KEY=
+    VITE_API_URL=
     ```
 - Aller dans `C:\jitsibox-pro\packages\model\src`
 - Ouvrir le fichier `constants`.
-- Remplacer toutes les occurence de `localhost` par votre adresse IP.
+- Remplacer toutes les occurence de `localhost` par votre adresse IP ou laisser en `localhost` par defaut.
 
-- Ouvrir `Node.js command prompt`. ![image](https://user-images.githubusercontent.com/110535664/187236978-da226428-8c42-42be-a1c4-d6400d4b92ba.png)
+- Ouvrir [`Node.js`](https://user-images.githubusercontent.com/110535664/187236978-da226428-8c42-42be-a1c4-d6400d4b92ba.png).
 - Exécuter les commandes suivantes :
     ```js
     cd C:\jitsibox-pro
@@ -99,25 +109,25 @@ import TabItem from '@theme/TabItem';
     ```js
     npm run dev
     ```
-    ```js
-    C:\
-    ```
-    ```js
-    git clone https://github.com/snapcom-factory/jitsibox-pro.git
-    ```
-- Fermer `Node.js command prompt`.
+- Fermer `Node.js`.
 
-### Etape : Create Chromium "Jitsi-Box-Pro user"
+### Etape 8: Create Chromium "Jitsi-Box-Pro user"
 
 - Ouvrir `chrome.exe` depuis `C:\chrome-win`.
-- Cliquer sur ![image](https://user-images.githubusercontent.com/110535664/187238172-bc7776d8-1b06-4620-84fe-8f5b7f94f6a1.png)
-- Cliquer sur `Ajouter`.![image](https://user-images.githubusercontent.com/110535664/187240623-632bcf59-1f02-400d-b6cf-ae351d0cb5a6.png)
-- Remplir comme suit : ![image](https://user-images.githubusercontent.com/110535664/187240773-897d9838-afab-4517-832f-eba3901476d4.png)
-- Vérifier que la case `Créer un raccourci sur le bureau` est bien cochée. ![image](https://user-images.githubusercontent.com/110535664/187240907-92a069a6-40aa-4d22-b5cf-1019cacf7777.png)
-- Puis cliquer sur `OK`. ![image](https://user-images.githubusercontent.com/110535664/187240988-869654eb-fb7f-4142-acde-ae4c614ccaaa.png)
+
+- Cliquer sur [`l'icone`](https://user-images.githubusercontent.com/110535664/187238172-bc7776d8-1b06-4620-84fe-8f5b7f94f6a1.png).
+
+- Cliquer sur [`Ajouter`](https://user-images.githubusercontent.com/110535664/187240623-632bcf59-1f02-400d-b6cf-ae351d0cb5a6.png).
+
+- Remplir en mettant [`Jitsi Box Pro`](https://user-images.githubusercontent.com/110535664/187240773-897d9838-afab-4517-832f-eba3901476d4.png)
+
+- Vérifier que la case [`Créer un raccourci sur le bureau`](https://user-images.githubusercontent.com/110535664/187240907-92a069a6-40aa-4d22-b5cf-1019cacf7777.png)est bien cochée.
+
+- Puis cliquer sur [`OK`](https://user-images.githubusercontent.com/110535664/187240988-869654eb-fb7f-4142-acde-ae4c614ccaaa.png)
+
 - Fermer la fenêtre Chrome.
     
-### Etape : Creation Startup Script"
+### Etape 9: Creation du script au demarrage
 - Ouvrir Notepad et insérer dans ce fichier:
   ```js
   @ECHO OFF
@@ -143,11 +153,11 @@ import TabItem from '@theme/TabItem';
 - Sauvegarder le fichier sous le nom `RUN-Jitsi-Box-Pro - Main Screen`dans `C:\` en `.bat`
  
 - Creer un raccourci pour chaque ficher .bat
-- Aller dans les proprietes de chaque raccourci et changer l'execution Fenetre normale => Reduite
-- Bouger les raccourcis dans C:\Users\Jitsi-Box-Pro\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+- Aller dans les proprietes de chaque raccourci et changer l'execution de la fenetre. `Fenetre normale => Reduite`
+- Bouger les raccourcis dans `C:\Users\Jitsi-Box-Pro\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`
 
 
-### Etape : Configurer la connexion automatique Windows 10
+### Etape 10: Configurer la connexion automatique Windows 10
 
 -  Taper `Regedit` dans la zone de commande Exécuter `(Win + R)`, puis appuyez sur la touche `Entrée`. 
 -  Dans l'Éditeur du Registre, accéder à la clé suivante:
@@ -161,18 +171,26 @@ import TabItem from '@theme/TabItem';
 - Fermer l'Éditeur du Registre.
 - Redémarrer.
 
-### Etape : Nettoyage Windows
+### Etape 11: Nettoyage Windows
 
-### Optimisation performance Windows
+#### Optimisation performance Windows
 
+:::caution
+Cette configuration force votre PC d'utiliser tous les capasités disponibles et peut reduire la duree de vide du votre PC.
+
+:::
 - Ouvrir l'invité de commande `Windows`. 
 - Exécuter la commande suivante :
     ```js
     powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
     ```
 - Fermer l'invité de commande Windows.
-- Faire un clic droit sur l'icône Windows dans la barre des tâches. ![image](https://user-images.githubusercontent.com/110535664/187230954-50f10bcb-51f4-481f-aa52-a3c23811d80a.png)
-- Cliquer sur `Options d'alimentation`. ![image](https://user-images.githubusercontent.com/110535664/187386540-03214707-62f9-4ce4-9c49-5ad3ff3415e1.png)
+- Faire un clic droit sur l'icône [`Windows`](https://user-images.githubusercontent.com/110535664/187230954-50f10bcb-51f4-481f-aa52-a3c23811d80a.png) dans la barre des tâches.
+
+- Cliquer sur [`Options d'alimentation`](https://user-images.githubusercontent.com/110535664/187386540-03214707-62f9-4ce4-9c49-5ad3ff3415e1.png)
+
 - Cliquer sur `Paramètres d'alimentation supplémentaires`.
+
 - À droite de `Maquer les modes supplémentaires`, cliquer sur ![image](https://user-images.githubusercontent.com/110535664/187424109-7db9aa03-1ac2-45dd-96e7-f4732c9315f1.png)
+
 - Sélectionner `Performances optimales`.
