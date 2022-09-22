@@ -79,12 +79,12 @@ const config = {
             label: 'Menu',
           },
           {
-            href: 'https://github.com/snapcom-factory/jitsibox-pro',
-            label: 'GitHub',
+            type: 'localeDropdown',
             position: 'left',
           },
           {
-            type: 'localeDropdown',
+            href: 'https://github.com/snapcom-factory/jitsibox-pro',
+            label: 'GitHub',
             position: 'left',
           },
         ],
