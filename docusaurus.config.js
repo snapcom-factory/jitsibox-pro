@@ -48,9 +48,9 @@ const config = {
 
           editUrl: ({locale,  docPath}) => {  
           if (locale !== 'fr') {
-            return `https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/new-project/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
+            return `https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
           }
-          return `https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/new-project/docs/${docPath}`;
+          return `https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/docs/${docPath}`;
         },
         },
         theme: {
@@ -74,14 +74,14 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'jitsi-pro-read-me',
+            docId: 'jitsi-box-pro',
             position: 'left',
             label: 'Menu',
           },
           {
             href: 'https://github.com/snapcom-factory/jitsibox-pro',
             label: 'GitHub',
-            position: 'right',
+            position: 'left',
           },
           {
             type: 'localeDropdown',

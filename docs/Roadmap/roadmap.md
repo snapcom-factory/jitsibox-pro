@@ -2,4 +2,6 @@
 sidebar_position: 1
 ---
 
-# Roadmap
+# 
+
+![image](../../static/img/roadmap.png "Roadmap")
