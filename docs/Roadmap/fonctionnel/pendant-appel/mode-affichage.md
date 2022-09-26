@@ -1,0 +1,1 @@
+# Changer le mode d'affichage
