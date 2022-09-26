@@ -20,8 +20,9 @@ import TabItem from '@theme/TabItem';
 
 - Hors Appel
     - [ ] Assistance
-    - [ ] Code de conférence
     - [ ] Planification: One Click
+    - [ ] Code de conférence
+        - Entrer dans une conférence via son code plutôt que via son nom
 
 - En cours de conférence
     - [ ] Diffusion de contenu
@@ -33,7 +34,7 @@ import TabItem from '@theme/TabItem';
     - [ ] Gestion du camera
     - [ ] Modification de la qualité de l'appel
     - [ ] Paramètres avancés (Lobby, Pin de conférence)
-        - Entrer dans une conférence via son code plutôt que via son nom
+ 
 
 
   </TabItem>
@@ -41,6 +42,7 @@ import TabItem from '@theme/TabItem';
 
 - [ ] Linter
 - [ ] Logger les actions
+- [ ] Plain Test
 
 
   </TabItem>
