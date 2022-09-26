@@ -1,6 +1,17 @@
 
 # Installation détaillée
 
+Hardware:
+
+- [x] Ecran Principale - Ecran `1920x1080`
+- [x] Ecran touch - Polycom GC8 `1280x800`
+- [x] Camera/Microphone - Polycom Studio
+- [x] PC - NUC
+    - [x] CPU - Xeon E3-1200 v6 (7eme generation)
+    - [x] GPU - Iris Plus Graphics 640
+    - [x] RAM - 8 GB
+
+Software:
 - [x] Ubuntu `22.04`
 - [x] Microsoft Edge `105.0.1343.27`
 - [x] Display Link Driver `5.6.1-59.184`
@@ -88,7 +99,7 @@ Vérification de la version: `(18.8.0)`
 
     node -v
 
-### Etape 5: Installation & configuration du projet Jitsi Box Pro
+### Etape 6: Installation & configuration du projet Jitsi Box Pro
 
 Récupération du projet depuis github:
 
@@ -121,13 +132,13 @@ Veuillez remplacer les valeurs dans le valiables!
     EOF
 
 
-### Etape 5: Installation NPM packages
+### Etape 7: Installation NPM packages
 
 Installation des packages pour l'exécution du projet :
 
     npm install --prefix /opt/jitsi/jitsi-box-pro/ concurrently --save && npm run --prefix /opt/jitsi/jitsi-box-pro/ install-packages
 
-### Etape 5: Autologin
+### Etape 8: Autologin
 
 Création du service ``Autologin`` pour entrer automatiquement intimement dans l Jitsi-Box-Pro sans entrer le mot de passe :
 
@@ -166,7 +177,7 @@ Activation du service au redémarrage:
     sudo systemctl enable x11-autologin.service && sudo cp /etc/X11/xinit/xinitrc /opt/xinitrc
 
 
- ### Etape 6: Script au demarrage
+ ### Etape 9: Script au demarrage
 
 Création du script au démarrage pour qu'il exécute la liaison hardware et le projet:
 
@@ -212,7 +223,7 @@ Veuillez vérifier que la résolution et les noms des sorties sont corrects sur 
 
 
 
- ### Etape 7: Script Serveur
+ ### Etape 10: Script Serveur
 
 Création du script serveur pour lancer l'exécution du jitsi-box-pro:
 
@@ -222,9 +233,9 @@ Création du script serveur pour lancer l'exécution du jitsi-box-pro:
     EOF
 
     chmod +x /home/jitsi-box-pro/.config/openbox/server.sh
- ### Etape 8: Script Main-screen
+ ### Etape 11: Script Main-screen
 
-Création du script main-screen pour lancer l'exécution de la main-screen en oeuvrant une page Edge en mode kiosk avec l'adresse prédéfinie:
+Création du script main-screen pour lancer l'exécution de la main-screen en ouvrant une page Edge en mode kiosk avec l'adresse prédéfinie:
 
 :::caution
 Veuillez changer la partie adresse si vous avez changé cette partie dans la configuration du projet jitsi-box-pro.
@@ -237,9 +248,9 @@ Veuillez changer la partie adresse si vous avez changé cette partie dans la con
     EOF
 
     chmod +x /home/jitsi-box-pro/.config/openbox/main-screen.sh
- ### Etape 9: Script Controlleur
+ ### Etape 12: Script Controlleur
 
-Création du script controlleur pour lancer l'exécution du controlleur en oeuvrant une page Edge en mode kiosk avec l'adresse l'adresse prédéfinie:
+Création du script controlleur pour lancer l'exécution du controlleur en ouvrant une page Edge en mode kiosk avec l'adresse l'adresse prédéfinie:
 
 :::caution
 Veuillez  changer la partie adresse si vous avez changé cette partie dans la configuration du projet jitsi-box-pro.<br></br>
@@ -254,13 +265,13 @@ Veuillez  changer la partie ``--window-position`` si la talle de votre écran es
 
     chmod +x /home/jitsi-box-pro/.config/openbox/controller.sh
 
- ### Etape 10: Logo au redémarrage
+ ### Etape 13: Logo au redémarrage
 
 Faire en sorte que le processus de démarrage soit silencieux et de ne pas afficher toutes sortes de messages qui perturberaient l'écran d'accueil: 
 
     sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=""/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/g' /etc/default/grub && sudo update-grub
 
-Creation de la theme Jitsi-Box-Pro pour changer l'ecran de demarrage:
+Creation du theme Jitsi-Box-Pro pour changer l'ecran de demarrage:
  
     cat << 'EOF' > /usr/share/plymouth/themes/jitsi-box-pro/jitsi-box-pro.plymouth
     [Plymouth Theme]
@@ -301,13 +312,13 @@ Mise à jour du initramfs:
     sudo update-initramfs -u
 
 
-### Etape 11: Redemarrage
+### Etape 14: Redemarrage
 
 Modification des droits pour l'utilisateur jitsi-box-pro permet à l'exécution des scripts et services:
 
     sudo chown jitsi-box-pro:jitsi-box-pro /opt/ ~/.config/ -R && sudo reboot
 
-### Etape 12: Apres Redemarrage
+### Etape 15: Apres Redemarrage
 
 Après le redémarrage vous avec l'écran d'accueil du Microsoft Edge, veuillez redémarrer le PC encore une fois pour ne pas avoir cet écran d'accueil.
 
