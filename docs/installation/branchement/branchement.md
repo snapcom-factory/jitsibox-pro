@@ -1,5 +1,5 @@
 
-# Branchement & materiel testé
+# Branchements & matériels testés
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

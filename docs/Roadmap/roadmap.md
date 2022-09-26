@@ -42,7 +42,10 @@ import TabItem from '@theme/TabItem';
 
 - [ ] Linter
 - [ ] Logger les actions
-- [ ] Plain Test
+- [ ] Plan de Test
+    - [ ] Test unitaires
+    - [ ] Test d'intégration
+    - [ ] Tests end-to-end
 
 
   </TabItem>

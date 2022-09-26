@@ -5,7 +5,7 @@ sidebar_position: 3
 # Introduction
 
 Jitsi-Box-Pro se compose de trois applications essentielles qui rendent la vidéoconférence simple et facile. Ces applications sont :
-- <b>Contrôleur</b>
+- <b>Controller</b>
 - <b>Service Bridge</b>
 - <b>Main-Screen</b>
 
@@ -40,4 +40,4 @@ Toutes les applications ont la même structure de dossiers de base :
 ## Caractéristiques à noter
 
 - `services/theme.ts` définit le thème de l'application (couleur, typographie, ...). Il est utilisé par tous les composants MUI et est également compatible avec les librairies JS externes grâce au hook `useTheme` : vous pouvez en apprendre plus avec la [documentation MUI](https://mui.com/material-ui/customization/theming/)
-- Nous utilisons un plugin à Vite qui permet d'utiliser la bibliothèque SVGR : il transforme les fichiers `.svg` en composants React permettant une utilisation facile des SVGs dans React.
+- Nous utilisons un plugin Vite qui permet d'utiliser la bibliothèque SVGR : il transforme les fichiers `.svg` en composants React permettant une utilisation facile des SVGs dans React.

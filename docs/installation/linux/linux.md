@@ -104,7 +104,7 @@ Récupération du projet depuis github:
 
     sudo git clone https://github.com/snapcom-factory/jitsibox-pro.git /opt/jitsi/jitsi-box-pro && sudo chown 
 
-Création du fichier ``.ENV`` pour la configuration du contrôleur:
+Création du fichier ``.ENV`` pour la configuration du controller:
 :::caution
 Veuillez remplacer les valeurs dans le valiables!
 :::
