@@ -4,8 +4,8 @@
 Hardware:
 
 - [x] Ecran Principale - Ecran `1920x1080`
-- [x] Ecran touch - Polycom GC8 `1280x800`
-- [x] Camera/Microphone - Polycom Studio
+- [x] Ecran touch - [`Polycom TC8 (1280x800)`](https://www.poly.com/fr/fr/products/video-conferencing/accessories/tc8)
+- [x] Camera/Microphone - [`Polycom Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
 - [x] PC - NUC
     - [x] CPU - Xeon E3-1200 v6 (7eme generation)
     - [x] GPU - Iris Plus Graphics 640
@@ -16,7 +16,6 @@ Software:
 - [x] Microsoft Edge `105.0.1343.27`
 - [x] Display Link Driver `5.6.1-59.184`
 - [x] NodeJS `18.8.0`
-
 
 ## Arborescence du projet
 ```bash

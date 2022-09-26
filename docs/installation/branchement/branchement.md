@@ -17,16 +17,18 @@ import TabItem from '@theme/TabItem';
 
 ### Ecran Principale
  
-- ✅ `Ecran 1920x1080`
+- ✅ `Ecran (1920x1080)`
 
 ### Ecran touch 
 
-- ✅ `Polycom GC8 1280x800`
+- ✅ [`Polycom TC8 (1280x800)`](https://www.poly.com/fr/fr/products/video-conferencing/accessories/tc8)
 
 
 ### Camera/Microphone
 
-- ✅ Camera/Microphone - `Polycom Studio`
+- ✅ [`Polycom Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
+
+
 
 ### Ordinateur (NUC)
 
@@ -38,7 +40,7 @@ import TabItem from '@theme/TabItem';
         - CPU: 16%
         - RAM: 19%
 
-    - Consommation pendant un appel :
+    - Consommation pendant un appel (6 participants):
         - CPU: 55%
         - RAM: 21%
 
@@ -48,6 +50,7 @@ import TabItem from '@theme/TabItem';
 - ✅ `Microsoft Edge 105.0.1343.27`
 - ✅ `Chrome 105.0.5195.125`
 - ❌ `Chromium 105.0.5195.102`
+    - Probleme de recuparation des peripheriques audio/video
 
 ### Pilote d'affichage
 
@@ -68,16 +71,16 @@ import TabItem from '@theme/TabItem';
 
 ### Ecran Principale
  
-- ✅ `Ecran 1920x1080`
+- ✅ `Ecran (1920x1080)`
 
 ### Ecran touch 
 
-- ✅ `Polycom GC8 1280x800`
+- ✅ [`Polycom TC8 (1280x800)`](https://www.poly.com/fr/fr/products/video-conferencing/accessories/tc8)
 
 
 ### Camera/Microphone
 
-- ✅ Camera/Microphone - `Polycom Studio`
+- ✅ [`Polycom Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
 
 ### Ordinateur (NUC)
 
@@ -91,7 +94,7 @@ import TabItem from '@theme/TabItem';
 - ✅ `Microsoft Edge 105.0.1343.27`
 - ✅ `Chrome 105.0.5195.125`
 - ❌ `Chromium 105.0.5195.102`
-
+    - Probleme de recuparation des peripheriques audio/video
 ### Pilote d'affichage
 
 - ✅ `Display Link Driver 5.6.1-59.184`
