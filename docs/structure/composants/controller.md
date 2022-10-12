@@ -92,6 +92,8 @@ jitsibox-pro/apps/controller/
 - `Index.html` point d'entrée du site depuis le navigateur exemple: `https://localhost:3000`
 - `src/Main.tsx` est exécuté dans index.html, rend une application react
 - `src/App.tsx` est le point d'entrée de l'application React
+- Le dossier `src/components` contient les composants React
+- Le dossier `src/components/CustomKeyboard` contient les fichiers dédiés au clavier:
 
 
 
