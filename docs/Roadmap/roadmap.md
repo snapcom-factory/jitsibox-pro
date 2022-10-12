@@ -19,6 +19,7 @@ import TabItem from '@theme/TabItem';
     - [ ] Test compatibilité 
 
 - Hors Appel
+    - [X] Lancement d'un appel (v1.0)
     - [ ] Assistance
     - [ ] Planification: One Click
     - [ ] Code de conférence
