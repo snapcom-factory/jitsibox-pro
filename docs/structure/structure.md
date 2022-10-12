@@ -25,6 +25,15 @@ Ces applications sont basées sur technologies suivantes :
 
 ## Structure des dossiers
 
+A la racine, le dossier `apps` est divisé en 2 parties:
+- CONTROLLER : contient tout ce qui permet de gérer l'affichage et le paramétrage de la tablette 
+- MAINSCREEN : contient tout ce qui permet de gérer l'affichage de l'écran qui contiendra l'iframe Jitsi
+
+A la racine, le dossier `services` contient l'application Bridge:
+- BRIDGE : La communication se fait via le Bridge. En envoyant et recevant des sockets entre le bridge et le controller d'une part et entre le bridge et le mainscreen d'une autre part.
+
+
+
 Toutes les applications ont la même structure de dossiers de base :
 
 - `index.html est le point d'entrée du site pour le navigateur
