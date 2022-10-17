@@ -18,7 +18,7 @@ Software:
 - [x] NodeJS `18.8.0`
 
 ## Arborescence du projet
-```bash
+```
 root-directory
 ├── opt
 │   ├── display-link-driver (installation driver de l\'ecran touch)
@@ -47,7 +47,7 @@ root-directory
 ### Etape 1: Mise à jour & téléchargement des packages
 
 Installation des packages nécessaire:
-
+    
     sudo apt-get update && sudo apt-get install dkms libc6-dev git npm wget unzip xinit unclutter xorg openbox pulseaudio apt-transport-https plymouth-themes plymouth-label -y
 
 Sélectionnez tous les services et cliquez sur OK
