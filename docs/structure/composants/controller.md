@@ -95,6 +95,8 @@ jitsibox-pro/apps/controller/
 
 ### Dossier: Controller
 
+Le dossier `Controller` contient l'application Controller.
+
 ```bash
 
 jitsibox-pro/apps/
@@ -122,6 +124,7 @@ jitsibox-pro/apps/
 
 ### Dossier: Scr
 
+Le dossier `Scr` contient le code source du Controller.
 ```bash
 
 jitsibox-pro/apps/controller/
@@ -137,9 +140,9 @@ jitsibox-pro/apps/controller/
     └── vite-env.d.ts
 
 ```
-**App.tsx**: est le point d'entrée de l'application React
+**App.tsx**: est le point d'entrée de l'application React.
 
-**Main.tsx**: est exécuté dans [index.html](#dossier-controller), rend une application react
+**Main.tsx**: est exécuté dans [index.html](#dossier-controller), rend une application react.
 
 **Routes.tsx**: composant principal dans App.tsx , rend les pages contenues dans Views en fonction de l'URL:
 
@@ -149,6 +152,7 @@ jitsibox-pro/apps/controller/
 
 ### Dossier: Assets
 
+Le dossier `Assets` contient les images, les logos & les polices.
 ```bash
 
 jitsibox-pro/apps/controller/
@@ -175,6 +179,8 @@ jitsibox-pro/apps/controller/
 ```
 **fonts**: est un dossier qui contient les fonts qui seront utilisés pour l'affichage des textes etc… (.woff2)
 
+**logo_eng.svg** & **logo_eng.svg**  : sont des logos génériques.
+
 **.tsx**: sont des fichiers qui implémenteront les icônes des boutons affichés sur le Controller.
 
 Le code dans les fichiers `.tsx` est formé à l'aide du module **CreateSvgIcon de Mui/Materials** en utilisant le path d pour créer les icônes:
@@ -186,7 +192,8 @@ Le code dans les fichiers `.tsx` est formé à l'aide du module **CreateSvgIcon 
 
 ### Dossier: Components
 
-Le dossier `Components` contient les composants React.
+Le dossier `Components`  contient les composants réutilisables qui se trouvent dans l'ensemble de l'application. (reconnexion, en-têtes, etc...)
+
 ```bash
 
 jitsibox-pro/apps/controller/
@@ -216,7 +223,7 @@ jitsibox-pro/apps/controller/
 
 **CustomKeyboard/Index.ts**: le point d'entrée à la page affichant le clavier.
 
-**CustomKeyboard/CustomLayouts.ts** & **CustomKeyboard/CustomKeyboard.ts**: contiennent le code permettant le layout du contenu à afficher tels que les lettres de l'alphabet et les chiffres en majuscules et minuscules etc… 
+**CustomKeyboard/CustomLayouts.ts** & **CustomKeyboard/CustomKeyboard.ts**: contiennent le code permettant le layout du contenu à afficher tels que les lettres de l'alphabet et les chiffres en majuscules et minuscules.
 
 **CustomKeyboard.css**: contient la forme et le design du clavier.
 
@@ -231,16 +238,19 @@ jitsibox-pro/apps/controller/
 
 **MenuButton.tsx**: pour les boutons qui s'affichent au menu ex: `Créer une réunion` ou `Rejoindre une Réunion`
 
-**ReconnectingBackDrop.tsx**: le composant qui affiche le "Reconnecting" tant que le bridge n'est pas accessible ou la connexion est perdue etc…
+**ReconnectingBackDrop.tsx**: le composant qui affiche le "Reconnecting" tant que le bridge n'est pas accessible ou la connexion est perdue.
 
-**ReturnToMenuButton.tsx**: pour le bouton de retour à la page de menu
+**ReturnToMenuButton.tsx**: pour le bouton de retour à la page de menu.
 
-**TextInput.tsx**: pour les espaces de saisie de texte d'entrée
+**TextInput.tsx**: pour les espaces de saisie de texte d'entrée.
 
-**ViewContainer.tsx**: pour les conteneurs qui contiendront l'ensemble des boutons et éléments HTML de chaque page affichée etc…
+**ViewContainer.tsx**: pour les conteneurs qui contiendront l'ensemble des boutons et éléments HTML de chaque page affichée.
 
 
 ### Dossier: Services 
+
+
+Le dossier `Services` contient divers éléments de logique que l'application utilise.
 
 ```bash
 
@@ -267,12 +277,13 @@ jitsibox-pro/apps/controller/
      
 ```
 
-**services/snackbar** est un dossier dans lequel  on définit un composant d'alerte qui peut facilement être appelé n'importe où dans l'application. Vous pouvez lire la philosophie de notre snackbar [ici](https://medium.com/swlh/snackbars-in-react-an-exercise-in-hooks-and-context-299b43fd2a2b)
+**Snackbar** est un dossier dans lequel on définit un composant d'alerte qui peut facilement être appelé n'importe où dans l'application. Vous pouvez lire la philosophie de notre snackbar [ici](https://medium.com/swlh/snackbars-in-react-an-exercise-in-hooks-and-context-299b43fd2a2b)
 
+**Socket**: est un dossier permettant de gérer la partie socket entre les applications.
 
 ### Dossier: Views
 
-Le dossier `Views` rends toutes les pages de l'application du Controller.
+Le dossier `Views` contient les différentes pages rendues par Routes.tsx.
 ```bash
 
 jitsibox-pro/apps/controller/
