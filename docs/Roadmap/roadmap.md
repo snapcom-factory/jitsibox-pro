@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
     - [ ] [Paramètres réseaux](/docs/Roadmap/fonctionnel/menu-admin/reseaux)
     - [ ] [Administration à distance](/docs/Roadmap/fonctionnel/menu-admin/administration-distance)
     - [ ] [Changer le nom de la box](/docs/Roadmap/fonctionnel/menu-admin/rename)
-    - [ ] [Afficher / Masquer les boutons](/docs/Roadmap/fonctionnel/menu-admin/affichage-boutons)
+    - [ ] [Afficher / Masquer les boutons](/docs/Roadmap/fonctionnel/menu-admin/affichage-fonctionnalites)
     - [ ] [Test compatibilité](/docs/Roadmap/fonctionnel/menu-admin/test-compatabilite)
 
 - Hors Appel
