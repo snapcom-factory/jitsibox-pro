@@ -42,15 +42,21 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-
           editUrl: ({locale,  docPath}) => {  
           if (locale !== 'fr') {
             return `https://github.com/snapcom-factory/jitsibox-pro/tree/wiki/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
           }
-          return `https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/docs/${docPath}`;
+            return `https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/docs/${docPath}`;
+        },
+        lastVersion: 'current',
+        versions: {
+          current: {
+            label: 'v1.0',
+            badge: true,
+            path: 'docs',
+          },
         },
         },
         theme: {

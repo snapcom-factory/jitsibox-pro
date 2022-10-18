@@ -4,8 +4,23 @@ sidebar_position: 1
 
 # Gestion du volume
 
-Afficher une barre permettant de gerer le volume du meeting.<br></br>
-Iframe API Commands : <b>setParticipantVolume</b>
+Afficher une barre permettant de gérer le volume du meeting.
+Voici un exemple de la barre:
+
+![image](./images/gestion-volume-1.png "Gestion du volume")
 
 
-![image](https://user-images.githubusercontent.com/30130845/185893556-3564ba39-8da3-45b9-8bbd-a08eeb194dd8.png)
+Le gestion du volume durant un appel:
+
+![image](./images/gestion-volume-2.png "Gestion du volume")
+
+
+## API & Commands
+**Iframe API Commands** : `setParticipantVolume`
+
+```javascript
+api.setParticipantVolume()
+const api = new JitsiMeetExternalAPI(domain, options); ... api.
+executeCommand('setParticipantVolume', participantId, volume);
+
+```

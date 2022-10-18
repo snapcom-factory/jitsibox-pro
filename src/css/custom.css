@@ -31,4 +31,15 @@
   
 }
 
+/* Navigation bar */
+nav {
+  /*padding-bottom: 10px;*/
+}
+
+
+/* Version*/
+span.badge {
+  margin-bottom: 25px;
+}
+
 

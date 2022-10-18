@@ -4,11 +4,29 @@ sidebar_position: 1
 
 # Afficher Tchat
 
-Afficher/Masquer la fenetre de tchat du meeting sur l'ecran principale via la tablette
+Afficher/Masquer la fenêtre de tchat du meeting sur l'écran principal via la tablette. Voici un exemple des boutons possibles:
 
 ![image](https://user-images.githubusercontent.com/30130845/185937466-6ac01f4f-5211-4346-97e9-c5c0aead1241.png)
 
 
-![image](https://user-images.githubusercontent.com/30130845/185937399-d50db4f8-9f7f-4991-9ea2-188e94fa8df6.png)
+Le bouton durant un appel:
 
-![image](https://user-images.githubusercontent.com/30130845/185937420-1a5c6c72-e6db-4d4d-82b9-6cc228cf7c3c.png)
+![image](./images/afficher-tchat-1.png "Afficher le tchat")
+
+La fenêtre du tchat sur l'écran:
+
+![image](./images/afficher-tchat-2.png "Afficher le tchat")
+
+## API & Commands
+**Iframe API Events** : pour avoir le statut
+- mis à jour du tchat
+    - Est ouvert : boolean
+    - Compte non lu : nombre des messages non lus
+    - Message entrant (de, surnom, privée, message)
+
+
+**Iframe API commands** : pour afficher ou masquer
+`api.executeCommand('toggleChat’);`
+
+**Configuration disabledNotifications** : affiche les notificatsion de tchat
+`disabledNotifications: ['notify.chatMessages'];`
