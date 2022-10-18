@@ -50,14 +50,14 @@ const config = {
           }
             return `https://github.com/snapcom-factory/jitsibox-pro/blob/wiki/docs/${docPath}`;
         },
-        lastVersion: 'current',
+        /*lastVersion: 'current',
         versions: {
           current: {
             label: 'v1.0',
-            //badge: true,
+            badge: true,
             path: 'docs',
           },
-        },
+        },*/
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
