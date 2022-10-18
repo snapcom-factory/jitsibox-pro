@@ -191,6 +191,6 @@ Cette configuration force votre PC d'utiliser tous les capasités disponibles et
 
 - Cliquer sur `Paramètres d'alimentation supplémentaires`.
 
-- À droite de `Maquer les modes supplémentaires`, cliquer sur ![image](https://user-images.githubusercontent.com/110535664/187424109-7db9aa03-1ac2-45dd-96e7-f4732c9315f1.png)
+- À droite de `Masquer les modes supplémentaires`, cliquer sur ![image](https://user-images.githubusercontent.com/110535664/187424109-7db9aa03-1ac2-45dd-96e7-f4732c9315f1.png)
 
 - Sélectionner `Performances optimales`.

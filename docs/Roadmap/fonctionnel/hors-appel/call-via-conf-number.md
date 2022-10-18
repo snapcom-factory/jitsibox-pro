@@ -4,6 +4,11 @@ sidebar_position: 1
 
 # Code de conférence 
 
+
+Cette fonctionnalité depend d'un conf mapper.
+Elle est à retravailler pour etre intégré comme un plugin et non comme une fonctionnalité de base.
+
+
 Entrer dans une conference via son code plutot que via son nom.
 
 ![image](./images/call-via-conf-number-1.png "Code de conference")

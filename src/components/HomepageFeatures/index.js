@@ -23,8 +23,8 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Faible empreinte carbone',
-    Svg: require('@site/static/img/front-page/eco.svg').default,
+    title: 'Solution sécurise',
+    Svg: require('@site/static/img/front-page/lock.svg').default,
     description: (
       <>
         
