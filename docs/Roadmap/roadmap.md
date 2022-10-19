@@ -41,12 +41,12 @@ import TabItem from '@theme/TabItem';
   </TabItem>
   <TabItem value="optimisationindows" label="Optimisation" default>
 
-- [ ] [Linter](/docs/Roadmap/optimisation/linter)
+- [ ] [ Formatage et analyse du code ](/docs/Roadmap/optimisation/formatage)
 - [ ] [Logger les actions](/docs/Roadmap/optimisation/logger-actions)
 - [ ] Plan de Test
-    - [ ] [Test unitaires](/docs/Roadmap/optimisation/plan-test/test-unitaires)
-    - [ ] [Test d'intégration](/docs/Roadmap/optimisation/plan-test/test-intergration)
-    - [ ] [Tests end-to-end](/docs/Roadmap/optimisation/plan-test/test-end-to-end)
+    - [ ] [Unitaires](/docs/Roadmap/optimisation/plan-test/test-unitaires)
+    - [ ] [Intégration](/docs/Roadmap/optimisation/plan-test/test-intergration)
+    - [ ] [End-to-end](/docs/Roadmap/optimisation/plan-test/test-end-to-end)
 
 
   </TabItem>
