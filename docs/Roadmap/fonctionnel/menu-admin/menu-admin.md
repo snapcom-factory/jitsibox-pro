@@ -16,7 +16,7 @@ Après il faut entre le mot de passe administrateur:
 
 Voici le menu d'administration:
 
-![image](./images/settings-page.png)
+![image](./images/setting-page.png)
 
 
 ## API & Commands
