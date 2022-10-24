@@ -6,9 +6,21 @@ sidebar_position: 4
 
 ### Menu Principale
 
-![image](../../../static/img/structure/structure-default-menu.png)
+![image](./images/fonctionnement-menu-principale.png)
 
 
 ### Rejoindre un appel
 
-![image](../../../static/img/structure/structure-join-call.png)
+![image](./images/fonctionnement-rejoindre-appel.png)
+
+### Créer un appel
+
+![image](./images/fonctionnement-creer-appel.png)
+
+### Partage en local
+
+![image](./images/fonctionnement-partage-local.png)
+
+### Pendant la réunion
+
+![image](./images/fonctionnement-pendant-reunion.png)
