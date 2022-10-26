@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Afficher/Masquer la fenêtre de tchat du meeting sur l'écran principal via la tablette. Voici un exemple des boutons possibles:
 
-![image](https://user-images.githubusercontent.com/30130845/185937466-6ac01f4f-5211-4346-97e9-c5c0aead1241.png)
+![image](./images/afficher-tchat-3.png "Afficher le tchat")
 
 
 Le bouton durant un appel:

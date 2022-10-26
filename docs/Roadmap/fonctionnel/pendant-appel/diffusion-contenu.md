@@ -6,3 +6,13 @@ Voici un exemple du bouton:
 
 ![image](./images/bouton-partage-ecran.png)
 
+## Points de blocage
+
+Le flux de partage est reconnu comme un flux d’une deuxième camera:
+
+![image](./images/diffusion-contenu-camera.png)
+
+Le flux de partage n'est pas present sur le partage de contenu et la tablette USB (Contoller) est vu comme deuxième ecran :
+
+![image](./images/diffusion-contenu-partage.png)
+

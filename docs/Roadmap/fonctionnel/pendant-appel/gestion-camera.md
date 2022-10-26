@@ -9,6 +9,6 @@ Il est possible de changer la mode de suivi, la vitesse de suivi ou la taille de
 
 
 ## Realisation
-Pour realiser cette fonctionnalité il faut etudier le  Polycom Companion ou le Poly Lens.
+Pour realiser cette fonctionnalité il faut etudier le  Poly Companion ou le Poly Lens.
 
 ![image](./images/bouton-camera-control.png)

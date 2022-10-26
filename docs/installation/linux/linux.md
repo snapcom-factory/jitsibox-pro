@@ -4,8 +4,8 @@
 Hardware:
 
 - [x] Ecran Principale - Ecran `1920x1080`
-- [x] Ecran touch - [`Polycom TC8 (1280x800)`](https://www.poly.com/fr/fr/products/video-conferencing/accessories/tc8)
-- [x] Camera/Microphone - [`Polycom Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
+- [x] Ecran touch - [`Poly GC8 (1280x800)`](https://www.poly.com/us/en/support/products/video-conferencing/group-solutions/poly-gc8)
+- [x] Camera/Microphone - [`Poly Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
 - [x] PC - NUC
     - [x] CPU - Xeon E3-1200 v6 (7eme generation)
     - [x] GPU - Iris Plus Graphics 640

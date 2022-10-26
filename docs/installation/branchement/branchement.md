@@ -21,12 +21,12 @@ import TabItem from '@theme/TabItem';
 
 ### Ecran touch 
 
-- ✅ [`Polycom TC8 (1280x800)`](https://www.poly.com/fr/fr/products/video-conferencing/accessories/tc8)
+- ✅ [`Poly (1280x800)`](https://www.poly.com/us/en/support/products/video-conferencing/group-solutions/poly-gc8)
 
 
 ### Camera/Microphone
 
-- ✅ [`Polycom Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
+- ✅ [`Poly Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
 
 
 
@@ -75,12 +75,12 @@ import TabItem from '@theme/TabItem';
 
 ### Ecran touch 
 
-- ✅ [`Polycom TC8 (1280x800)`](https://www.poly.com/fr/fr/products/video-conferencing/accessories/tc8)
+- ✅ [`Poly GC8 (1280x800)`](https://www.poly.com/us/en/support/products/video-conferencing/group-solutions/poly-gc8)
 
 
 ### Camera/Microphone
 
-- ✅ [`Polycom Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
+- ✅ [`Poly Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
 
 ### Ordinateur (NUC)
 
