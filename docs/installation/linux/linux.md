@@ -56,7 +56,7 @@ Sélectionnez tous les services et cliquez sur OK
 
 Création des dossiers du projet:
 
-    mkdir -p /opt/{display-link-driver,microsoft} /opt/jitsi/{nodejs,kiosk,monitor1,monitor2} /usr/share/plymouth/themes/jitsi-box-pro /home/jitsi-box-pro/.config/openbox
+    sudo mkdir -p /opt/{display-link-driver,microsoft} /opt/jitsi/{nodejs,kiosk,monitor1,monitor2} /usr/share/plymouth/themes/jitsi-box-pro /home/jitsi-box-pro/.config/openbox
 
 ### Etape 3: Installation Microsoft Edge
 
@@ -109,18 +109,18 @@ Création du fichier ``.ENV`` pour la configuration du controller:
 Veuillez remplacer les valeurs dans le valiables!
 :::
 
-    cat << 'EOF' > /opt/jitsi/jitsi-box-pro/apps/controller/.env
+    sudo bash -c 'cat << 'EOF' > /opt/jitsi/jitsi-box-pro/apps/controller/.env
     VITE_DOMAIN = meet.jit.si
     VITE_COMPANY_NAME = COMPANY
     VITE_COMPANY_NAME2 = NAME
-    EOF
+    EOF'
 
 Création du fichier``.ENV`` pour la configuration de la main-screen:
 :::caution
 Veuillez remplacer les valeurs dans le valiables!
 :::
 
-    cat << 'EOF' > /opt/jitsi/jitsi-box-pro/apps/main-screen/.env
+    sudo bash -c 'cat << 'EOF' > /opt/jitsi/jitsi-box-pro/apps/main-screen/.env
     VITE_WEBCONF_TOKEN =
     VITE_DOMAIN = meet.jit.si
     VITE_COMPANY_NAME = COMPANY
@@ -128,23 +128,20 @@ Veuillez remplacer les valeurs dans le valiables!
     VITE_ROOM_NAME = MY_ROOM
     VITE_API_KEY =
     VITE_API_UR = 
-    EOF
+    EOF'
 
 
 ### Etape 7: Installation NPM packages
 
 Installation des packages pour l'exécution du projet :
 
-    npm install --prefix /opt/jitsi/jitsi-box-pro/ concurrently --save && npm run --prefix /opt/jitsi/jitsi-box-pro/ install-packages
+    sudo npm install --prefix /opt/jitsi/jitsi-box-pro/ concurrently --save && sudo npm run --prefix /opt/jitsi/jitsi-box-pro/ install-packages
 
 ### Etape 8: Autologin
 
 Création du service ``Autologin`` pour entrer automatiquement intimement dans l Jitsi-Box-Pro sans entrer le mot de passe :
 
-    sudo vi /etc/systemd/system/x11-autologin.service
-
-Collez dans le fichier :
-
+    sudo bash -c 'cat << 'EOF' > /etc/systemd/system/x11-autologin.service
     [Unit]
     Description=X11 session for Jitsi-box-pro
     After=graphical.target systemd-user-sessions.service
@@ -169,6 +166,7 @@ Collez dans le fichier :
 
     [Install]
     WantedBy=graphical.target
+    EOF'
 
 
 Activation du service au redémarrage:
@@ -188,9 +186,6 @@ Veuillez vérifier que la résolution et les noms des sorties sont corrects sur 
     
     # Masquer la souris à l'écran
     unclutter &
-
-    # Désactiver le port tactile (pour déboguer l'écran tactile)
-    xrandr --output DVI-I-1-1 --off && sleep 1 &&
 
     # Créer un affichage 1920x1080 (écran principal) (DP-1 est le nom de la sortie)
     xrandr --auto --output DP-1 --mode 1920x1080 --left-of DVI-I-1-1 &&
@@ -226,12 +221,12 @@ Veuillez vérifier que la résolution et les noms des sorties sont corrects sur 
 
 Création du script serveur pour lancer l'exécution du jitsi-box-pro:
 
-    cat << 'EOF' > /home/jitsi-box-pro/.config/openbox/server.sh
+    sudo bash -c 'cat << 'EOF' > /home/jitsi-box-pro/.config/openbox/server.sh
     #!/bin/bash
     cd /opt/jitsi/jitsi-box-pro/ && npm run dev &
-    EOF
+    EOF'
 
-    chmod +x /home/jitsi-box-pro/.config/openbox/server.sh
+    sudo chmod +x /home/jitsi-box-pro/.config/openbox/server.sh
  ### Etape 11: Script Main-screen
 
 Création du script main-screen pour lancer l'exécution de la main-screen en ouvrant une page Edge en mode kiosk avec l'adresse prédéfinie:
@@ -240,13 +235,13 @@ Création du script main-screen pour lancer l'exécution de la main-screen en ou
 Veuillez changer la partie adresse si vous avez changé cette partie dans la configuration du projet jitsi-box-pro.
 :::
 
-    cat << 'EOF' > /home/jitsi-box-pro/.config/openbox/main-screen.sh 
+    sudo bash -c 'cat << 'EOF' > /home/jitsi-box-pro/.config/openbox/main-screen.sh 
     #!/bin/bash
     /usr/bin/microsoft-edge --profile-directory="Profile 1" --window-position=0,0 --kiosk http://localhost:3002 --user-data-dir=/opt/jitsi/monitor1/ &
 
-    EOF
+    EOF'
 
-    chmod +x /home/jitsi-box-pro/.config/openbox/main-screen.sh
+    sudo chmod +x /home/jitsi-box-pro/.config/openbox/main-screen.sh
  ### Etape 12: Script Controlleur
 
 Création du script controlleur pour lancer l'exécution du controlleur en ouvrant une page Edge en mode kiosk avec l'adresse l'adresse prédéfinie:
@@ -256,13 +251,13 @@ Veuillez  changer la partie adresse si vous avez changé cette partie dans la co
 Veuillez  changer la partie ``--window-position`` si la talle de votre écran est different!
 :::
 
-    cat << 'EOF' > /home/jitsi-box-pro/.config/openbox/controller.sh
+    sudo bash -c 'cat << 'EOF' > /home/jitsi-box-pro/.config/openbox/controller.sh
     #!/bin/bash
     /usr/bin/microsoft-edge --profile-directory="Profile 1" --window-position=1920,0 --kiosk http://localhost:3000 --user-data-dir=/opt/jitsi/monitor2/ &
 
-    EOF
+    EOF'
 
-    chmod +x /home/jitsi-box-pro/.config/openbox/controller.sh
+    sudo chmod +x /home/jitsi-box-pro/.config/openbox/controller.sh
 
  ### Etape 13: Logo au redémarrage
 
@@ -272,7 +267,7 @@ Faire en sorte que le processus de démarrage soit silencieux et de ne pas affic
 
 Creation du theme Jitsi-Box-Pro pour changer l'ecran de demarrage:
  
-    cat << 'EOF' > /usr/share/plymouth/themes/jitsi-box-pro/jitsi-box-pro.plymouth
+    sudo bash -c 'cat << 'EOF' > /usr/share/plymouth/themes/jitsi-box-pro/jitsi-box-pro.plymouth
     [Plymouth Theme]
     Name=jitsi-box-pro
     Description=Jitsi Box Pro theme
@@ -281,22 +276,22 @@ Creation du theme Jitsi-Box-Pro pour changer l'ecran de demarrage:
     [script]
     ImageDir=/usr/share/plymouth/themes/jitsi-box-pro
     ScriptFile=/usr/share/plymouth/themes/jitsi-box-pro/jitsi-box-pro.script
-    EOF
+    EOF'
 
-    chmod +x /usr/share/plymouth/themes/jitsi-box-pro/jitsi-box-pro.plymouth
+    sudo chmod +x /usr/share/plymouth/themes/jitsi-box-pro/jitsi-box-pro.plymouth
 
 Création du script Jitsi-Box-Pro pour utiliser une photo spécifique au démarrage:
 
-    cat << 'EOF' > /usr/share/plymouth/themes/jitsi-box-pro/jitsi-box-pro.script
+    sudo bash -c 'cat << 'EOF' > /usr/share/plymouth/themes/jitsi-box-pro/jitsi-box-pro.script
     wallpaper_image=Image("logo.png");
     screen_width=Window.GetWidth();
     screen_height=Window.GetHeight();
     resized_wallpaper_image=wallpaper_image.Scale(screen_width,screen_height);
     wallpaper_sprite=Sprite(resized_wallpaper_image);
     wallpaper_sprite.SetZ(-100);
-    EOF
+    EOF'
 
-    chmod +x /usr/share/plymouth/themes/jitsi-box-pro/jitsi-box-pro.script
+    sudo chmod +x /usr/share/plymouth/themes/jitsi-box-pro/jitsi-box-pro.script
 
 Déplacer la photo dans le répertoire du thème jitsi-box-pro:
 
