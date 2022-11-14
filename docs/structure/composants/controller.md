@@ -144,7 +144,7 @@ jitsibox-pro/apps/controller/
 
 **Main.tsx**: est exécuté dans [index.html](#dossier-controller), rend une application react.
 
-**Routes.tsx**: composant principal dans App.tsx , rend les pages contenues dans Views en fonction de l'URL:
+**Routes.tsx**: composant principal dans App.tsx , permettant d’afficher pages contenues dans Views en fonction de l'URL:
 
 - / share: rend la page de partage d'écran SharingPage.tsx
 - /create: rend la page de création de réunion CreatePage.tsx
@@ -234,7 +234,7 @@ jitsibox-pro/apps/controller/
 
 **ActionButton**: pour les boutons des fonctionnalités durant la réunion `Activer / Désactiver Micro` etc…
 
-**Index.tsx**: export tous les composants utilisés.
+**Index.tsx**: export de tous les composants utilisés.
 
 **MenuButton.tsx**: pour les boutons qui s'affichent au menu ex: `Créer une réunion` ou `Rejoindre une Réunion`
 
@@ -304,17 +304,17 @@ jitsibox-pro/apps/controller/
      
 
 ```
-**CreatePage.tsx**: rends la page de création de la réunion.
+**CreatePage.tsx**: affichage de la page de création de la réunion.
 
-**JoinPage.tsx**: rends la page de rejoindre une réunion.
+**JoinPage.tsx**: Affiche la page de rejoindre une réunion.
 
-**NotFound.tsx**: rends la page  en cas d'url invalide.
+**NotFound.tsx**: Affiche la page  en cas d'url invalide.
 
-**HomeMenu.tsx**: rends la page se contenant le menu principal pour choisir entre `créer` ou `rejoindre une réunion`.
+**HomeMenu.tsx**: Affiche la page se contenant le menu principal pour choisir entre `créer` ou `rejoindre une réunion`.
 
-**SharingPage.tsx**: rends la page de lors d'un partage d'écran.
+**SharingPage.tsx**: Affiche la page de lors d'un partage d'écran.
 
-**MeetingPage.tsx**: rends la page de lors d'une réunion composée.
+**MeetingPage.tsx**: Affiche la page de lors d'une réunion composée.
 
 **MeetingPage/MeetingMainControls.tsx**: Les boutons représentant des fonctionnalités lors de la réunion telle que l'activation et la désactivation de l'audio et de la vidéo, la levée ou baisse de main, affichage ou masque du chat etc… Ces boutons étant créés à l'aide du composant `React ActionButton`.
 

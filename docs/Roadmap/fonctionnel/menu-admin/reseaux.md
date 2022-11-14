@@ -2,13 +2,13 @@
 sidebar_position: 1
 ---
 
-# Paramètres réseaux
+# Paramètres réseau
 
 
 
-Cette fonctionnalité permet de facilement changer le nom de la Jitsi Box pro par un administrateur.
+Cette fonctionnalité permet à un administrateur de changer facilement les paramètres réseau.
 
-Après avoir entré dans l'espace administrateur vous pouvez changer les paramètres réseaux.
+Après avoir accédé à l'espace administrateur, vous pouvez changer les paramètres réseau.
 
 Voici un exemple du bouton:
 

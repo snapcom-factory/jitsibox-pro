@@ -5,18 +5,19 @@ sidebar_position: 1
 # Code de conférence 
 
 
-Cette fonctionnalité depend d'un conf mapper.
-Elle est à retravailler pour etre intégré comme un plugin et non comme une fonctionnalité de base.
+ette fonctionnalité améliore l’expérience utilisateur en lui permettant de rejoindre une conférence en saississant son code de préférence à son nom.
 
+Sa mise en place dépend d'un conf. Mapper pour gérer la correspondance entre le numéro et le nom, qi est le seul identifiant de la conférence dans le système.
 
-Entrer dans une conference via son code plutot que via son nom.
+Elle est à retravailler pour être intégrée comme un plugin et non comme une fonctionnalité de base.
+
 
 ![image](./images/call-via-conf-number-1.png "Code de conference")
 
 
 ## API & Commands
 
-Convertrir le code en nom via l'api du confmapper : <br></br><br></br>
+Convertir le code en nom via l'api du confmapper : <br></br><br></br>
 Requêtes GET sur un URL avec le paramètre code
   -	Authentification par API Key (cf. mail suivant), dans le header Authorization
     (ex: `curl [...] -H 'Authorization: Api-Key XXXXXXX'` )

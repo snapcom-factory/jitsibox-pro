@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Afficher Tchat
 
-Afficher/Masquer la fenetre de tchat du meeting sur l'ecran principale via la tablette
+Afficher/Masquer la fenetre de tchat du meeting sur l'ecran principal via la tablette
 
 ![image](https://user-images.githubusercontent.com/30130845/185937466-6ac01f4f-5211-4346-97e9-c5c0aead1241.png)
 

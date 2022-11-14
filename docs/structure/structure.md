@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Introduction
 
-Jitsi-Box-Pro se compose de trois applications essentielles qui rendent la vidéoconférence simple et facile. Ces applications sont :
+Trois applications essentielles rendent la vidéoconférence à la fois simple et facile avec Jitsi-Box-Pro. Ces applications sont :
 - <b>Controller</b>
 - <b>Service Bridge</b>
 - <b>Main-Screen</b>

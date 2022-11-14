@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
  
 - ✅ `Ubuntu 22.04`
 
-### Ecran Principale
+### Ecran Principal
  
 - ✅ `Ecran (1920x1080)`
 
@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 - ✅ [`Poly (1280x800)`](https://www.poly.com/us/en/support/products/video-conferencing/group-solutions/poly-gc8)
 
 
-### Camera/Microphone
+### Caméra/Microphone
 
 - ✅ [`Poly Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
 
@@ -78,7 +78,7 @@ import TabItem from '@theme/TabItem';
 - ✅ [`Poly GC8 (1280x800)`](https://www.poly.com/us/en/support/products/video-conferencing/group-solutions/poly-gc8)
 
 
-### Camera/Microphone
+### Caméra/Microphone
 
 - ✅ [`Poly Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
 

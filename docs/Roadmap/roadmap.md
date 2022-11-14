@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 - Menu d'administration
     - [ ] [Redémarrage](/docs/Roadmap/fonctionnel/menu-admin/redemarrage)
     - [ ] [Choix de la langue (EN/FR)](/docs/Roadmap/fonctionnel/menu-admin/language)
-    - [ ] [Paramètres réseaux](/docs/Roadmap/fonctionnel/menu-admin/reseaux)
+    - [ ] [Paramètres réseau](/docs/Roadmap/fonctionnel/menu-admin/reseaux)
     - [ ] [Administration à distance](/docs/Roadmap/fonctionnel/menu-admin/administration-distance)
     - [ ] [Changer le nom de la box](/docs/Roadmap/fonctionnel/menu-admin/rename)
     - [ ] [Afficher / Masquer les boutons](/docs/Roadmap/fonctionnel/menu-admin/affichage-fonctionnalites)
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
     - [ ] [Changer le mode d'affichage](/docs/Roadmap/fonctionnel/pendant-appel/mode-affichage)
     - [ ] [Durée d'appel](/docs/Roadmap/fonctionnel/pendant-appel/duree-appel)
     - [ ] [Gestion du volume](/docs/Roadmap/fonctionnel/pendant-appel/gestion-volume)
-    - [ ] [Gestion du camera](/docs/Roadmap/fonctionnel/pendant-appel/gestion-camera)
+    - [ ] [Gestion de la caméra](/docs/Roadmap/fonctionnel/pendant-appel/gestion-camera)
     - [ ] [Modification de la qualité de l'appel](/docs/Roadmap/fonctionnel/pendant-appel/qualite-appel)
     - [ ] [Paramètres avancés (Lobby, Pin de conférence)](/docs/Roadmap/fonctionnel/pendant-appel/parametres-avances)
  

@@ -5,7 +5,7 @@ sidebar_position: 1
 # Modification de la qualité de l'appel
 
 
-Cette fonctionnalité permet de changer la qualité de votre appel. 
+Cette fonctionnalité permet d’ajuster la qualité de l’appel visioconférence à la performance de sa connexion au réseau. Il est ainsi possible de dégrader ou d’augmenter la qualité.
 
 Voici un exemple du bouton:
 

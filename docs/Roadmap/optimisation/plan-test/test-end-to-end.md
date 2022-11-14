@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # End-to-end
 
-L'objectif ici est de vérifier le fonctionnement de la Jitsi Box entière du point de vue de l'utilisateur.
+L'objectif ici est de tester fonctionnellement, pour vérifier le bon fonctionnement global de la Jitsi Box du point de vue de l'utilisateur.
 
 Par exemple :
 

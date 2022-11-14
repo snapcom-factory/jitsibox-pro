@@ -119,7 +119,7 @@ jitsibox-pro/apps/main-screen/
 **App.tsx**: est le point d'entrée de l'application React.
 
 
-**Routes.tsx**: composant principal dans App.tsx , rend les pages contenues dans Views en fonction de l'URL:
+**Routes.tsx**: composant principal dans App.tsx , permettant d’afficher pages contenues dans Views en fonction de l'URL:
 
 - /share: rend la page de partage d'écran SharingPage.tsx
 - /create: rend la page de création de réunion CreatePage.tsx
@@ -174,7 +174,7 @@ jitsibox-pro/apps/main-screen/
 **ViewContainer.tsx**: pour les conteneurs qui contiendront l'ensemble des boutons et éléments HTML de chaque page affichée.
 
 
-**Index.tsx**: export tous les composants utilisés.
+**Index.tsx**: export de tous les composants utilisés.
 
 
 
@@ -232,17 +232,17 @@ jitsibox-pro/apps/main-screen/
 
 ```
 
-**CreatePage.tsx**: rends la page de création de la réunion.
+**CreatePage.tsx**: affichage de la page de création de la réunion.
 
-**HomeMenu.tsx**: rends la page se contenant le menu principal pour choisir entre `créer` ou `rejoindre une réunion`.
+**HomeMenu.tsx**: Affiche la page se contenant le menu principal pour choisir entre `créer` ou `rejoindre une réunion`.
 
-**JoinPage.tsx**: rends la page de rejoindre une réunion.
+**JoinPage.tsx**: Affiche la page de rejoindre une réunion.
 
-**MeetingPage.tsx**: rends la page de lors d'une réunion composée.
+**MeetingPage.tsx**: Affiche la page de lors d'une réunion composée.
 
-**NotFound.tsx**: rends la page  en cas d'url invalide.
+**NotFound.tsx**: Affiche la page  en cas d'url invalide.
 
-**SharingPage.tsx**: rends la page de lors d'un partage d'écran.
+**SharingPage.tsx**: Affiche la page de lors d'un partage d'écran.
 
 
 
@@ -251,5 +251,5 @@ jitsibox-pro/apps/main-screen/
 ## Caractéristiques à noter
 
 
-- La SharePage essaie d'obtenir un périphérique de partage qu'elle affiche à l'écran : pour l'instant, le périphérique de partage est le flux vidéo provenant de ce qui est branché sur le port d'entrée HDMI du Poly GC8.
+- La SharePage essaie d'obtenir un périphérique de partage qu'elle affiche à l'écran : pour l'instant, le périphérique de partage est le flux vidéo provenant de ce qui est branché sur le port d'entrée HDMI de la tablette de contrôle.
 - Le MeetingPage utilise le Jitsi React SDK, qui est sous le capot l'API Jitsi IFrame. Ainsi, nous sommes pour l'instant limités par ce que l'API IFrame propose. Cela limite la fonctionnalité de partage à l'intérieur d'une réunion : il n'y a actuellement aucun moyen de sélectionner un dispositif de partage lorsque l'on active le partage d'écran.

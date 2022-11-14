@@ -28,5 +28,5 @@ La fenêtre du tchat sur l'écran:
 **Iframe API commands** : pour afficher ou masquer
 `api.executeCommand('toggleChat’);`
 
-**Configuration disabledNotifications** : affiche les notificatsion de tchat
+**Configuration disabledNotifications** : affiche les notifications de tchat
 `disabledNotifications: ['notify.chatMessages'];`

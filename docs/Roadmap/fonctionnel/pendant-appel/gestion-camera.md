@@ -2,13 +2,13 @@
 sidebar_position: 1
 ---
 
-# Gestion camera
+# Gestion de la caméra
 
-Cette fonctionnalité permet un administrateur ou un utilisateur de la Jitsi Box de contrôler la camera.
-Il est possible de changer la mode de suivi, la vitesse de suivi ou la taille de cadrage.
+Cette fonctionnalité permet à un administrateur comme à un utilisateur de la Jitsi Box de contrôler la camera. 
+Il est possible de changer le mode de suivi, la vitesse de suivi ou la taille de cadrage.
 
 
-## Realisation
-Pour realiser cette fonctionnalité il faut etudier le  Poly Companion ou le Poly Lens.
+## Réalisation
+Pour réaliser cette fonctionnalité il faut étudier les possibilités offertes par les API  de l’application Poly Companion de la caméra Poly Studio ou de l’application Poly Lens.
 
 ![image](./images/bouton-camera-control.png)

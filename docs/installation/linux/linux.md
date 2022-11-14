@@ -3,9 +3,9 @@
 
 Hardware:
 
-- [x] Ecran Principale - Ecran `1920x1080`
+- [x] Ecran Principal - Ecran `1920x1080`
 - [x] Ecran touch - [`Poly GC8 (1280x800)`](https://www.poly.com/us/en/support/products/video-conferencing/group-solutions/poly-gc8)
-- [x] Camera/Microphone - [`Poly Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
+- [x] Caméra/Microphone - [`Poly Studio`](https://www.poly.com/fr/fr/products/video-conferencing/studio/studio)
 - [x] PC - NUC
     - [x] CPU - Xeon E3-1200 v6 (7eme generation)
     - [x] GPU - Iris Plus Graphics 640
@@ -46,7 +46,7 @@ root-directory
 
 ### Etape 1: Mise à jour & téléchargement des packages
 
-Installation des packages nécessaire:
+Installation des packages nécessaires:
     
     sudo apt-get update && sudo apt-get install dkms libc6-dev git npm wget unzip xinit unclutter xorg openbox pulseaudio apt-transport-https plymouth-themes plymouth-label -y
 
@@ -314,6 +314,6 @@ Modification des droits pour l'utilisateur jitsi-box-pro permet à l'exécution 
 
 ### Etape 15: Apres Redemarrage
 
-Après le redémarrage vous avec l'écran d'accueil du Microsoft Edge, veuillez redémarrer le PC encore une fois pour ne pas avoir cet écran d'accueil.
+Après le redémarrage, avec l'écran d'accueil du navigateur Microsoft Edge, veuillez redémarrer le PC encore une fois pour ne pas avoir cet écran d'accueil.
 
-Créez une conférence, pour la première fois cliquez sur ``accepter les périphériques``.
+Pour créer une conférence pour la première fois, cliquer sur ``accepter les périphériques``.

@@ -38,13 +38,13 @@ Les prochaines etapes sont faites a partir du compte "Jitsi-Box-Pro".
 ### Etape 3: Installation Git
 
 - Télécharger [`GIT`](https://github.com/git-for-windows/git/releases/download/v2.37.2.windows.2/Git-2.37.2.2-64-bit.exe).
-- Executer l'executable et cliquer sur `Next` à chaque étape.
+- Executer l'exécutable et cliquer sur `Next` à chaque étape.
 - Cliquer sur `Finish`.
 
 ### Etape 4: Installation Node js
 
 - Télécharger [`Node JS`](https://nodejs.org/dist/v16.17.0/node-v16.17.0-x64.msi).
-- Executer l'executable et cliquer sur `Next` à chaque étape.
+- Executer l'exécutable  et cliquer sur `Next` à chaque étape.
 
 ### Etape 5: Configuration & Ajout écran touch
 
@@ -93,7 +93,8 @@ Les prochaines etapes sont faites a partir du compte "Jitsi-Box-Pro".
     ```
 - Aller dans `C:\jitsibox-pro\packages\model\src`
 - Ouvrir le fichier `constants`.
-- Remplacer toutes les occurence de `localhost` par votre adresse IP ou laisser en `localhost` par defaut.
+- Remplacer toutes les occurences de `localhost` par votre adresse IP ou laisser en `localhost` par défaut.
+
 
 - Ouvrir [`Node.js`](https://user-images.githubusercontent.com/110535664/187236978-da226428-8c42-42be-a1c4-d6400d4b92ba.png).
 - Exécuter les commandes suivantes :
@@ -115,7 +116,7 @@ Les prochaines etapes sont faites a partir du compte "Jitsi-Box-Pro".
 
 - Ouvrir `chrome.exe` depuis `C:\chrome-win`.
 
-- Cliquer sur [`l'icone`](https://user-images.githubusercontent.com/110535664/187238172-bc7776d8-1b06-4620-84fe-8f5b7f94f6a1.png).
+- Cliquer sur [`L’icône`](https://user-images.githubusercontent.com/110535664/187238172-bc7776d8-1b06-4620-84fe-8f5b7f94f6a1.png).
 
 - Cliquer sur [`Ajouter`](https://user-images.githubusercontent.com/110535664/187240623-632bcf59-1f02-400d-b6cf-ae351d0cb5a6.png).
 
@@ -176,7 +177,7 @@ Les prochaines etapes sont faites a partir du compte "Jitsi-Box-Pro".
 #### Optimisation performance Windows
 
 :::caution
-Cette configuration force votre PC d'utiliser tous les capasités disponibles et peut reduire la duree de vide du votre PC.
+Cette configuration force votre PC à utiliser tous les capacités disponibles et peut réduire la durée de vie de votre PC. 
 
 :::
 - Ouvrir l'invité de commande `Windows`. 
@@ -184,7 +185,7 @@ Cette configuration force votre PC d'utiliser tous les capasités disponibles et
     ```js
     powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
     ```
-- Fermer l'invité de commande Windows.
+- Fermer l'invite de commande Windows.
 - Faire un clic droit sur l'icône [`Windows`](https://user-images.githubusercontent.com/110535664/187230954-50f10bcb-51f4-481f-aa52-a3c23811d80a.png) dans la barre des tâches.
 
 - Cliquer sur [`Options d'alimentation`](https://user-images.githubusercontent.com/110535664/187386540-03214707-62f9-4ce4-9c49-5ad3ff3415e1.png)

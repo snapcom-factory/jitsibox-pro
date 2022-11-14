@@ -10,4 +10,4 @@ Par exemple :
 
 - Vérifier les bugs
 - Tester composant par composant en vérifiant le fonctionnement
-- Vérifier la pêrformence de chaque composant
+- Vérifier la performance de chaque composant

@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Fonctionnement de l'application
 
-### Menu Principale
+### Menu Principal
 
 ![image](./images/fonctionnement-menu-principale.png)
 

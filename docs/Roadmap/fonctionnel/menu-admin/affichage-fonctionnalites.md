@@ -4,9 +4,9 @@ sidebar_position: 1
 
 # Afficher / Masquer les fonctionnalités
 
-Cette fonctionnalité permet de facilement afficher les fonctionnalités utilisés et masques les fonctionnalités non utilisés sur les Jitsi Box pro.
+Cette fonctionnalité permet d’afficher facilement les fonctionnalités utilisées et au contraire de masquer les fonctionnalités non utilisés sur les Jitsi Box pro.
 
-Après avoir entré dans l'espace administrateur vous pouvez afficher et masquer les fonctionnalités shouitees.
+Après avoir accédé à l'espace administrateur, vous pouvez afficher et masquer les fonctionnalités souhaitées.
 
 Voici un exemple du bouton:
 

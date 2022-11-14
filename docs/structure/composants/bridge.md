@@ -46,7 +46,7 @@ Ce fichier initie la connexion entre le serveur de socket et ses clients. Il dé
 
 Deux middlewares ont été ajoutés (en fait deux fois le même, mais pour les deux espaces de noms) afin d'implémenter une certaine authentification. Chaque fois qu'un client se connecte au serveur de socket, il doit fournir deux choses :
 - Un jeton d'authentification, actuellement stocké dans `packages/model`, mais qui devrait être une variable d'environnement.
-- Le nom (ou l'identifiant) de la pièce physique dans laquelle se trouve le client (pour faciliter l'implémentation d'un serveur central, voir les étapes suivantes pour plus de détails).
+- Le nom (ou l'identifiant) de la pièce du bâtiment dans lequel se trouve le client (pour faciliter l'implémentation d'un serveur central, voir les étapes suivantes pour plus de détails).
 Le middleware vérifie alors simplement si le jeton est valide, et bloque la connexion si ce n'est pas le cas.
 
 Ensuite, lors de la connexion du client, le pont envoie le dictionnaire `globalStatus` au client, et ajoute le client au socket room correspondant au nom du room physique fourni par le client.
