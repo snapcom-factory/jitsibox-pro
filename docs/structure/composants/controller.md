@@ -240,7 +240,7 @@ jitsibox-pro/apps/controller/
 
 **ReconnectingBackDrop.tsx**: le composant qui affiche le "Reconnecting" tant que le bridge n'est pas accessible ou la connexion est perdue.
 
-**ReturnToMenuButton.tsx**: pour le bouton de retour à la page de menu.
+**ReturnToMenuButton.tsx**: pour le bouton de retour à l’écran d’accueil.
 
 **TextInput.tsx**: pour les espaces de saisie de texte d'entrée.
 
